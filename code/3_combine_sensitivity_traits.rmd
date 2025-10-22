@@ -46,10 +46,13 @@ spe_tax_phylo_BM_FFG  <- spe_tax_phylo_BM_FFG %>% mutate(log_mass_c = scale(log_
 # 2. Filter predicted sensitivity dataset
 ```{r message=FALSE, warning=FALSE}
 # Load the prediction dataset
-predicted_sensitivity <- read_csv(here("data/2_predicted_sensitivity/predictions.csv"))
+#predicted_sensitivity <- read_csv(here("data/2_predicted_sensitivity/predictions.csv"))
+#predicitons_ML_duration24h <- predicted_sensitivity %>% filter(duration ==24)
+
+predicitons_ML_duration24h <- readRDS(here("data/2_predicted_sensitivity/predicitons_ML_duration24h.rds"))
 
 # correct species names
-predicted_sensitivity <- predicted_sensitivity %>%
+predicted_sensitivity <- predicitons_ML_duration24h %>%
   mutate(latin = species) %>%
   mutate(
     latin = case_when(

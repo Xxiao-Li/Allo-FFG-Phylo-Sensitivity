@@ -7,4 +7,6 @@ plot/plot_test
 .Rapp.history
 data/5_FFG/back_up
 .RDataTmp
+code/0_plot.rmd
+data/2_predicted_sensitivity/*.csv
 
