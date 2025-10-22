@@ -1,5 +1,5 @@
 ---
-title: "Calculate Phylogenetic Signal"
+title: "Calculate Phylogenetic Signal (Pagel's λ)"
 output:
   html_document: 
     toc: true
@@ -17,20 +17,22 @@ editor_options:
   chunk_output_type: console
 ---
 
-
+This notebook calculates phylogenetic signal (Pagels' λ) for each
+chemical using *phytools* and then summaries the signal distribution
+across all chemicals within a chemical group.
 
 ```{r message=FALSE, warning=FALSE}
 rm(list=ls())   
 library(here)
 library(tidyverse)  
 library(ape)
-library(Rphylopars)
-library(patchwork)
 library(phytools)
+library(knitr)
+
 set.seed(1010)
 ```
 
-# 1. Load dataset 
+# 1. Load dataset
 ```{r message=FALSE, warning=FALSE}
 spe_tax_phylo_BM_FFG_sensi_subCAS <- readRDS(here("data/6_combined/spe_tax_phylo_BM_FFG_sensi_subCAS.rds"))
 
@@ -43,12 +45,11 @@ chem_groups <- c("Arthropod_control", "Auxiliary_other",
                  "Fungal_control", "Vertebrate_control",
                  "Plant_control", "Mixed_multitarget")
 
-fits_dir <- here("model_output/phylogenetic_signal")
-dir.create(fits_dir, recursive = TRUE, showWarnings = FALSE)
+out_dir <- here("model_output/phylogenetic_signal")
+dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 ```
 
-
-# 2. Pagel’s λ by chemical (phytools)
+# 2. Pagel’s λ by chemical
 ```{r eval=FALSE}
 build_wide_nomask <- function(dat, chemgroup) {
   wide <- dat %>%
@@ -79,7 +80,7 @@ lambda_one_trait <- function(vec_named, tree) {
          n = length(keep))
 }
 
-compute_and_save_lambda <- function(groups, dat, tree, out_dir, fits_dir) {
+compute_and_save_lambda <- function(groups, dat, tree, out_dir) {
   all <- vector("list", length(groups)); names(all) <- groups
 
   for (g in groups) {
@@ -88,67 +89,49 @@ compute_and_save_lambda <- function(groups, dat, tree, out_dir, fits_dir) {
     if (is.null(wide)) next
     cas_cols <- setdiff(colnames(wide), "species")
 
-    df_g <- purrr::map_dfr(cas_cols, function(cas) {
+    df_g <- map_dfr(cas_cols, function(cas) {
       vec <- setNames(wide[[cas]], wide$species)
       out <- lambda_one_trait(vec, tree)
-      dplyr::mutate(out, chem_group = g, CAS = cas, .before = 1)
+      mutate(out, chem_group = g, CAS = cas, .before = 1)
     }) %>%
-      dplyr::mutate(p_adj_BH_group = p.adjust(p, method = "BH")) %>%  
-      dplyr::arrange(desc(lambda))
+      mutate(p_adj_BH_group = p.adjust(p, method = "BH")) %>%  
+      arrange(desc(lambda))
 
     # save per group
-    readr::write_csv(df_g, file.path(out_dir,  paste0("phytools_lambda_by_CAS_", g, ".csv")))
-    saveRDS(df_g,       file.path(fits_dir,    paste0("phytools_lambda_by_CAS_", g, ".rds")))
+    saveRDS(df_g, file.path(out_dir, paste0("phytools_lambda_by_CAS_", g, ".rds")))
     all[[g]] <- df_g
   }
 
-  all_df <- dplyr::bind_rows(all[!vapply(all, is.null, logical(1))])
+  all_df <- bind_rows(all[!vapply(all, is.null, logical(1))])
   if (nrow(all_df)) {
     all_df <- all_df %>%
-      dplyr::mutate(p_adj_BH_overall = p.adjust(p, method = "BH")) %>%  
-      dplyr::relocate(p_adj_BH_overall, .after = p_adj_BH_group)
+      mutate(p_adj_BH_overall = p.adjust(p, method = "BH")) %>%  
+      relocate(p_adj_BH_overall, .after = p_adj_BH_group)
 
-    readr::write_csv(all_df, file.path(out_dir, "phytools_lambda_by_CAS_ALL.csv"))
-    saveRDS(all_df,       file.path(fits_dir, "phytools_lambda_by_CAS_ALL.rds"))
+    saveRDS(all_df,  file.path(out_dir, "phytools_lambda_by_CAS_ALL.rds"))
   }
   invisible(all_df)
 }
 
-# --- run it -------------------------------------------------------------------
 lambda_results_all <- compute_and_save_lambda(
   groups  = chem_groups,
   dat     = spe_tax_phylo_BM_FFG_sensi_subCAS,
   tree    = phylo_tree,
-  out_dir = out_dir,
-  fits_dir = fits_dir
+  out_dir = out_dir
 )
 ```
-Since it takes time to calculate the phylogenetic signal per chemical, here we directly load the pre-calculated results.
 
-# Summaries of Pagel's λ
+# 3. Summaries of Pagel's λ
+Since it takes a while to calculate the phylogenetic signal per chemical,
+here we directly load the pre-calculated results.
 ```{r}
-# load the output
-# ---- load precomputed results -----------------------------------------------
-# Paths we expect:
-all_path   <- file.path(fits_dir, "phytools_lambda_by_CAS_ALL.rds")
-group_glob <- file.path(fits_dir, "phytools_lambda_by_CAS_*.rds")
-
-if (file.exists(all_path)) {
-  lambda_results_all <- readRDS(all_path)
-} else {
-  rds_files <- Sys.glob(group_glob)
-  stopifnot(length(rds_files) > 0)
-  lambda_results_all <- purrr::map_dfr(rds_files, readRDS)
-}
-
-# Make sure expected columns exist and (re)compute overall BH across ALL chemicals
+# load precomputed results
+all_path   <- file.path(out_dir, "phytools_lambda_by_CAS_ALL.rds")
+lambda_results_all <- readRDS(all_path)
 lambda_results_all <- lambda_results_all %>%
-  mutate(
-    p_adj_BH_group   = if (!"p_adj_BH_group" %in% names(.)) p.adjust(p, method = "BH") else p_adj_BH_group,
-    p_adj_BH_overall = p.adjust(p, method = "BH")
-  )
+  mutate(p_adj_BH_overall = p.adjust(p, method = "BH"))
 
-# ---- summaries by chemical group --------------------------------------------
+# summaries by chemical group
 phylo_signal_sum <- lambda_results_all %>%
   group_by(chem_group) %>%
   summarise(
@@ -160,17 +143,15 @@ phylo_signal_sum <- lambda_results_all %>%
     min_lambda    = min(lambda, na.rm = TRUE),
     max_lambda    = max(lambda, na.rm = TRUE),
     prop_lambda_ge_0.5 = mean(lambda >= 0.5, na.rm = TRUE),
-    prop_lambda_le_0.3 = mean(lambda <= 0.3, na.rm = TRUE),
-    median_n      = median(n, na.rm = TRUE),
-    min_n         = min(n, na.rm = TRUE),
-    max_n         = max(n, na.rm = TRUE),
     sig_within_FDR05  = sum(p_adj_BH_group   < 0.05, na.rm = TRUE),
     sig_overall_FDR05 = sum(p_adj_BH_overall < 0.05, na.rm = TRUE),
     .groups = "drop"
   ) %>%
   arrange(desc(median_lambda))
 
-saveRDS(phylo_signal_sum, file = here(fits_dir, "phylo_signal_sum.rds"))
+saveRDS(phylo_signal_sum, file = here(out_dir, "phylo_signal_sum.rds"))
 ```
 
-
+```{r}
+kable(phylo_signal_sum)
+```
