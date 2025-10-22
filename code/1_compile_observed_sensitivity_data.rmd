@@ -1,0 +1,405 @@
+---
+title: "Compile observed species sensitivity data"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    css: styles.css
+    df_print: kable
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+rm(list=ls())
+library(here)
+library(readr)
+library(readxl)
+library(dplyr)
+library(purrr)
+library(rgbif)
+library(stringr)
+library(knitr)   
+library(kableExtra)
+```
+
+This notebook compile observed species sensitivity data from two
+sources:
+
+-   The `ecotox_mortality_processed` dataset from ADORE database in
+    Schür et al. 2023.
+
+-   Additional non-crustacean invertebrate raw data from Sinclair et al.
+
+    (2024) and Liang et al. (2024).
+
+The goal is to prepare a clean dataset of all collected observed species
+sensitivity for prediction by the downstream machine learning model
+developed in Posthuma et al. (2025).
+
+# 1. ADORE dataset
+
+## Load the ADORE dataset
+
+```{r message=FALSE, warning=FALSE}
+adore <- read_csv(here("data/1_observed_sensitivity/ADORE/ecotox_mortality_processed.csv")) %>%
+  select(
+    species   = tax_gs,
+    CAS       = test_cas,
+    duration  = result_obs_duration_mean,
+    conc      = result_conc1_mean_mol_log,  # unit is log10(mol/L)
+    tax_group, tax_class, tax_order, tax_family, tax_genus
+  ) %>%
+  mutate(latin = species |> str_replace_all("_", " ") |> tolower())
+
+```
+
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# Add kingdom/phylum via GBIF
+lookup_adore <- function(latin, tax_class, tax_order, tax_family, tax_genus) {
+  res <- tryCatch(
+    name_backbone(
+      name   = latin,
+      class  = tax_class,
+      order  = tax_order,
+      family = tax_family,
+      genus  = tax_genus
+    ),
+    error = function(e) NULL
+  )
+  
+  if (!is.null(res)) {
+    tibble(
+      original_name = latin,
+      matched_name  = res$scientificName,
+      kingdom = res$kingdom,
+      phylum  = res$phylum,
+      class   = coalesce(res$class, tax_class),
+      order   = coalesce(res$order, tax_order),
+      family  = coalesce(res$family, tax_family),
+      genus   = coalesce(res$genus, tax_genus),
+      species = res$species
+    )
+  } else {
+    tibble(
+      original_name = latin,
+      matched_name  = NA_character_,
+      kingdom = NA_character_,
+      phylum  = NA_character_,
+      class   = tax_class,
+      order   = tax_order,
+      family  = tax_family,
+      genus   = tax_genus,
+      species = NA_character_
+    )
+  }
+}
+
+adore_lookup <- adore %>%
+  select(latin, tax_class, tax_order, tax_family, tax_genus) %>%
+  distinct()
+
+taxonomy_adore <- pmap_dfr(adore_lookup, lookup_adore)
+
+saveRDS(taxonomy_adore, here("data/1_observed_sensitivity/ADORE/taxonomy_adore.rds"))
+```
+
+```{r}
+taxonomy_adore <- readRDS(here("data/1_observed_sensitivity/ADORE/taxonomy_adore.rds"))
+
+adore <- left_join(adore, taxonomy_adore, by = c("latin" = "original_name"))
+
+# Fix known phylum issues once
+adore <- adore %>%
+  mutate(phylum = if_else(`class` == "Malacostraca", "Arthropoda", phylum)) %>%
+  mutate(phylum = if_else(`class` == "Maxillopoda", "Arthropoda", phylum))
+
+
+```
+
+## Species coverage per chemical
+
+```{r}
+species_per_chem <- adore %>%
+  filter(!is.na(CAS), !is.na(latin)) %>%   
+  distinct(CAS, latin) %>%                 
+  count(CAS, name = "n_species") %>%       
+  arrange(n_species)
+
+kable(species_per_chem)  %>%
+  kable_styling(full_width = FALSE) %>%
+  scroll_box(width = "100%", height = "200px")
+```
+
+## Dataset summary
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+adore_pairs <- adore %>%
+  distinct(CAS, latin)
+
+n_adore_pairs  <- nrow(adore_pairs)
+n_adore_cas    <- n_distinct(adore_pairs$CAS)
+n_adore_latin  <- n_distinct(adore_pairs$latin)
+
+cat(
+  "Unique CAS in ADORE:", n_adore_cas, "\n",
+  "Unique species in ADORE:", n_adore_latin, "\n",
+  "Available CAS–species pairs:", n_adore_pairs, "\n",
+  sep=""
+)
+
+```
+
+# 2. Additional non-crustacean invertebrate species sensitivity dataset
+
+## Load data
+
+```{r}
+inv_folder <- here("data/1_observed_sensitivity/invert_sensitivity_extra")   
+inv_tox_files <- list.files(inv_folder, pattern = "\\.xlsx?$", full.names = TRUE, recursive = FALSE)
+
+read_merge <- function(path) {
+  read_excel(path, sheet = "merge") 
+}
+
+inv_tox_merge <- map_dfr(inv_tox_files, read_merge) %>%
+  rename(CAS = CAS.Number, species = Species.Scientific.Name,
+         conc_raw = Conc.1.Mean..Standardized., duration = Observed.Duration.Mean..Days.) %>%
+  mutate(duration = 24*duration) %>% # to align with ADORE
+  mutate(latin = species |> str_replace_all("_", " ") |> tolower())
+
+```
+
+## Change species sensitivity unit from mg/L to mol/L
+
+```{r message=FALSE, warning=FALSE}
+CAS_MW <- read_csv(here("data/1_observed_sensitivity/invert_sensitivity_extra/cas_molweight.csv"))
+inv_tox_merge <- left_join(inv_tox_merge, CAS_MW, by= "CAS")
+
+inv_tox_merge <- inv_tox_merge %>%
+  mutate(conc = log10(conc_raw/MW/1000))
+
+```
+
+## Add species taxonomy
+
+```{r eval=FALSE, include=FALSE}
+
+# Unique cleaned species names
+inv_species <- inv_tox_merge %>%
+  mutate(latin = latin %>%
+           tolower() %>%
+           str_replace_all("_", " ") %>%
+           str_squish()) %>%
+  distinct(latin)
+
+# Lookup function with genus fallback
+lookup_taxonomy <- function(name) {
+  if (is.na(name) || !nzchar(name)) {
+    return(tibble(latin = name, kingdom = NA, phylum = NA,
+                  class = NA, order = NA, family = NA,
+                  genus = NA, species = NA))
+  }
+
+  # Case 1: genus + sp./spp.
+  if (str_detect(name, "\\bsp\\.?$|\\bspp\\.?$")) {
+    genus_only <- word(name, 1)
+    res <- tryCatch(name_backbone(name = genus_only, rank = "genus"),
+                    error = function(e) NULL)
+    if (is.null(res)) {
+      return(tibble(latin = name, kingdom = NA, phylum = NA,
+                    class = NA, order = NA, family = NA,
+                    genus = genus_only, species = NA))
+    } else {
+      return(tibble(
+        latin   = name,
+        kingdom = res$kingdom %||% NA,
+        phylum  = res$phylum %||% NA,
+        class   = res$class %||% NA,
+        order   = res$order %||% NA,
+        family  = res$family %||% NA,
+        genus   = res$genus %||% genus_only,
+        species = NA
+      ))
+    }
+  }
+
+  # Case 2: everything else (species-level or higher ranks)
+  res <- tryCatch(name_backbone(name = name), error = function(e) NULL)
+  if (is.null(res)) {
+    tibble(latin = name, kingdom = NA, phylum = NA,
+           class = NA, order = NA, family = NA,
+           genus = NA, species = NA)
+  } else {
+    tibble(
+      latin   = name,
+      kingdom = res$kingdom %||% NA,
+      phylum  = res$phylum %||% NA,
+      class   = res$class %||% NA,
+      order   = res$order %||% NA,
+      family  = res$family %||% NA,
+      genus   = res$genus %||% NA,
+      species = res$species %||% NA
+    )
+  }
+}
+
+# Run lookup for all unique names
+taxonomy <- map_dfr(inv_species$latin, lookup_taxonomy)
+```
+
+```{r message=FALSE, warning=FALSE}
+invert_extra_taxonomy <- read_csv(here("data/1_observed_sensitivity/invert_sensitivity_extra/invert_extra_taxonomy.csv"))
+
+inv_tox_merge <- inv_tox_merge %>%
+  left_join(invert_extra_taxonomy, by = "latin") %>%
+   filter(!(is.na(kingdom) & is.na(phylum)))
+```
+
+```{r}
+inv_tox_merge <- inv_tox_merge %>%
+  mutate(
+    latin = case_when(
+      latin == "lithodes antarcticus" ~ "lithodes antarctica",
+      latin == "viviparus bengalensis" ~ "filopaludina bengalensis",
+      latin == "acanthomysis sculpta" ~ "holmesimysis sculpta",
+      latin == "acartia clausi" ~ "acartia clausii",
+      latin == "acartia lillgeborgi" ~ "acartia lilljeborgii",
+      latin == "acheilognathus moriokae" ~ "acheilognathus melanogaster",
+      latin == "achnanthes minutissima" ~ "achnanthidium minutissimum",
+      latin == "nuria danrica" ~ "esomus danrica",
+      latin == "oreochromis mossambicus x urolepis" ~ "oreochromis mossambicus",
+      latin == "oreochromis mossambicus x niloticus" ~ "oreochromis mossambicus", 
+      TRUE ~ latin   
+    )
+  ) %>% distinct()
+```
+
+## Dataset summary
+
+```{r}
+n_unique_species<- inv_tox_merge  %>% filter(!is.na(latin)) %>% distinct(latin) %>% nrow()
+n_unique_cas    <- inv_tox_merge  %>% filter(!is.na(CAS))  %>% distinct(CAS)   %>% nrow()
+n_pairs         <- inv_tox_merge  %>% filter(!is.na(CAS), !is.na(latin)) %>% distinct(CAS, latin) %>% nrow()
+
+cat(
+  "Unique species: ", n_unique_species, "\n",
+  "Unique CAS: ", n_unique_cas, "\n",
+  "Unique CAS–species pairs: ", n_pairs, "\n",
+  sep = ""
+)
+
+```
+
+## Species coverage per chemical
+
+```{r}
+species_per_chem <- inv_tox_merge %>%
+  filter(!is.na(CAS), !is.na(latin)) %>%   # optional: drop missing IDs/names
+  distinct(CAS, latin) %>%                 # unique chemical–species pairs
+  count(CAS, name = "n_species") %>%       # species per chemical
+  arrange(n_species)
+
+kable(species_per_chem)  %>%
+  kable_styling(full_width = FALSE) %>%
+  scroll_box(width = "100%", height = "200px")
+```
+
+# 3. Cross-check between two datasets
+
+```{r}
+normalize_cas <- function(x) {
+  x %>%
+    str_remove_all("[^0-9]") %>%              # keep digits only
+    str_replace("(\\d+)(\\d{2})(\\d$)", "\\1-\\2-\\3") # format as xxx-xx-x
+}
+
+# --- Normalize CAS in both datasets ---
+adore <- adore %>%
+  mutate(CAS_norm = normalize_cas(CAS))
+
+inv_tox_merge <- inv_tox_merge %>%
+  mutate(CAS_norm = normalize_cas(CAS))
+
+# CAS overlap
+cas_overlap <- intersect(adore$CAS_norm, inv_tox_merge$CAS_norm)
+
+# latin overlap
+latin_overlap <- intersect(adore$latin, inv_tox_merge$latin)
+
+# CAS–latin pair overlap
+pairs_adore <- adore %>% distinct(CAS_norm, latin)
+pairs_inv   <- inv_tox_merge %>% distinct(CAS_norm, latin)
+pairs_overlap <- inner_join(pairs_adore, pairs_inv, by = c("CAS_norm", "latin"))
+
+cat(
+  "ADORE unique CAS:", n_distinct(adore$CAS_norm), "\n",
+  "Invertebrate unique CAS:", n_distinct(inv_tox_merge$CAS_norm), "\n",
+  "Overlapping CAS:", length(intersect(adore$CAS_norm, inv_tox_merge$CAS_norm)), "\n\n",
+  "ADORE unique species:", n_distinct(adore$latin), "\n",
+  "Invertebrate unique species:", n_distinct(inv_tox_merge$latin), "\n",
+  "Overlapping species:", length(intersect(adore$latin, inv_tox_merge$latin)), "\n\n",
+  "Overlapping CAS–species pairs:", nrow(pairs_overlap), "\n",
+    sep = ""
+)
+```
+
+# 4. Combine two datasets and summary
+
+```{r}
+tax_cols <- c("latin","kingdom","phylum","class","order","family","genus")
+
+adore_sel <- adore %>%
+  transmute(
+    CAS_raw   = as.character(CAS),
+    CAS_norm  = as.character(CAS_norm),
+    species   = coalesce(species.x, species.y),
+    conc, duration,
+    across(all_of(tax_cols), ~ str_to_lower(as.character(.))),
+    source    = "ADORE"
+  )
+
+inv_sel <- inv_tox_merge %>%
+  transmute(
+    CAS_raw   = as.character(CAS),
+    CAS_norm  = as.character(CAS_norm),
+    species   = as.character(species),
+    conc, duration,
+    across(all_of(tax_cols), ~ str_to_lower(as.character(.))),
+    source    = "Invert_extra"
+  )
+
+combined_observed_sensitivity <- bind_rows(adore_sel, inv_sel)
+
+cat("Combined dataset summary:\n",
+    "  Total rows:", nrow(combined_observed_sensitivity), "\n",
+    "    from ADORE:", sum(combined_observed_sensitivity$source == "ADORE"), "\n",
+    "    from Invert_extra:", sum(combined_observed_sensitivity$source == "Invertebrate"), "\n\n",
+    "  Unique normalized CAS:", n_distinct(combined_observed_sensitivity$CAS_norm), "\n",
+    "  Unique species:", n_distinct(combined_observed_sensitivity$latin), "\n",
+    "  Unique CAS–species pairs:",
+    nrow(combined_observed_sensitivity %>% distinct(CAS_norm, latin)), "\n",
+      sep = ""
+)
+
+```
+
+# 5. Save the combined observed species sensitivity data
+
+```{r}
+# save the whole observed species sensitivity dataset with species info
+saveRDS(combined_observed_sensitivity, file=here("data/1_observed_sensitivity/combined_observed_sensitivity/combined_observed_sensitivity.rds"))
+
+# save the dataset to be used in the machine learning model
+observed_sensitivity <- combined_observed_sensitivity %>%
+  dplyr::select(CAS_norm, latin, conc, duration) %>%
+  rename(CAS = CAS_norm)
+write_csv(observed_sensitivity, file = here("data/1_observed_sensitivity/combined_observed_sensitivity/combined_observed_sensitivity.csv"))
+
+```
