@@ -1,5 +1,5 @@
 ---
-title: "Analysis Bayesian Outputs"
+title: "Bayesian outputs analysis"
 output:
   html_document: 
     toc: true
@@ -30,13 +30,15 @@ library(knitr)
 library(forcats)
 library(patchwork)
 library(scales)
-theme_set(theme_bw())
 
 set.seed(1007)
 ```
 
 This notebook will analyse the outputs of the Bayesian models fitted in
-the previous notebook. Analysis will include: (1) LOO model comparison, (2) phylogenetic ICC calculation.
+the previous notebook.
+
+Analysis will include: (1) LOO model comparison, (2) phylogenetic ICC
+calculation.
 
 ```{r All nedded functions, message=FALSE, warning=FALSE}
 # LOO check
@@ -83,11 +85,6 @@ pick_best_model <- function(loo_tbl) {
   loo_tbl |> arrange(desc(-elpd_diff)) |> slice(1) |> pull(model)
 }
 
-# For kable
-kbl_c <- function(x, caption = NULL) {
-  kable(x, format = "html", digits = 3, caption = caption)
-}
-
 # Compute ICC_phylo from a brms fit
 icc_phylo_brms <- function(fit, other_re_prefixes = c("FG","CAS","latin")) {
   dr <- as_draws_df(fit)
@@ -112,7 +109,6 @@ icc_phylo_brms <- function(fit, other_re_prefixes = c("FG","CAS","latin")) {
 ```
 
 # 1. Load Bayesian model output files
-
 ```{r message=FALSE, warning=FALSE}
 chem_groups <- c("Arthropod_control", "Auxiliary_other",
 "Fungal_control", "Vertebrate_control", "Plant_control", "Mixed_multitarget")
@@ -123,35 +119,26 @@ fits <- list()
 for (g in chem_groups) {
   fits[[g]] <- list()
   for (m in model_ids) {
-    path <- here::here("model_output", paste0("fit_", m, "_", g, ".rds"))
-    if (file.exists(path)) {
-      fits[[g]][[m]] <- readRDS(path)
-    }
+    path <- here("model_output/bayesian_models", paste0("fit_", m, "_", g, ".rds"))
+    fits[[g]][[m]] <- readRDS(path)
   }
 }
 
-#lapply(chem_groups, function(g) lapply(fits[[g]], summary))
 for (g in chem_groups) {
-  cat("\n\n## ", g, "\n\n", sep = "")
+  cat(sprintf("\n\n## %s\n\n", g))
   mods <- fits[[g]]
-  if (is.null(names(mods)) || any(names(mods) == "")) {
-    names(mods) <- paste0("M", seq_along(mods))
-  }
+  names(mods) <- paste0("M", seq_along(mods))
+
   for (nm in names(mods)) {
-    cat("\n### ", nm, " (", g, ")\n\n", sep = "")
-    tab <- summary(mods[[nm]])
-    if (is.data.frame(tab) || is.matrix(tab)) {
-      print(kable(tab, format = "html", digits = 3))
-    } else {
-      print(tab)
-    }
+    cat(sprintf("\n\n### %s (%s)\n\n", nm, g))
+    out <- capture.output(print(summary(mods[[nm]])))
+    cat("```\n", paste(out, collapse = "\n"), "\n```\n")
   }
 }
 
 ```
 
 # 2. LOO check
-
 ```{r eval=FALSE, message=FALSE, warning=FALSE}
 nd <- 1000
 moment_match <- TRUE
@@ -200,21 +187,21 @@ saveRDS(k_diags,     file.path(out_dir, "pareto_diags_all.rds"))
 Print LOO tables and Pareto-k diagnostics
 
 ```{r}
-out_dir <- here::here("model_output", "loo_check")
+out_dir <- here("model_output", "loo_check")
 
 loo_tables <- readRDS(file.path(out_dir, "loo_tables_all.rds"))
 k_diags    <- readRDS(file.path(out_dir, "pareto_diags_all.rds"))
 
 for (g in chem_groups) {
-  kable(loo_tables[[g]], digits = 3,
-                            caption = paste("LOO comparison —", g))
-  kable(k_diags[[g]], digits = 3,
-                            caption = paste("Pareto-k diagnostics —", g))
+  print(loo_tables[[g]])
 }
 
+for (g in chem_groups) {
+  print(k_diags[[g]])
+}
 ```
 
-# 3. Choose the best model from LOO and then compute phylogenetic ICC
+# 3. Choose the best model from LOO and then calculate phylogenetic ICC
 
 We calculate the phylognetic signal
 $ICC=\sigma_{\text{phy}}^{2} / (\sigma_{\text{phy}}^{2} + \sigma_{\text{res}}^{2})$
@@ -253,185 +240,6 @@ saveRDS(winners,      file.path(icc_dir, "icc_winners_by_group.rds"))
 
 ```
 
-```{r eval=FALSE, include=FALSE}
-# Present ICC distribution only:
-# ---- LOAD cached ICC outputs ----
-icc_dir <- here::here("model_output", "ICC_phylo")
-icc_draws_df <- readRDS(file.path(icc_dir, "icc_phylo_draws.rds"))
-icc_summ_df  <- readRDS(file.path(icc_dir, "icc_phylo_summary.rds"))
-winners      <- readRDS(file.path(icc_dir, "icc_winners_by_group.rds"))
-
-kable(icc_summ_df)
-
-# Figure: posterior ICC by chemical group
-icc_plot <- icc_draws_df |>
-  ggplot(aes(x = icc, y = forcats::fct_rev(group))) +
-  tidybayes::stat_slab(aes(thickness = after_stat(pdf)), normalize = "area") +
-  tidybayes::stat_pointinterval(.width = c(0.5, 0.95)) +
-  labs(x = "ICC_phylo",
-       y = "Chemical group") +
-  theme(panel.grid.minor = element_blank())
-
-icc_plot <- icc_draws_df |>
-  ggplot(aes(x = icc, y = forcats::fct_rev(group))) +
-  tidybayes::stat_halfeye(.width = c(0.5, 0.95), normalize = "panels") +
-  labs(x = "Phylogenetic signal ", y = "Chemical group") +
- # coord_cartesian(xlim = c(0, 1)) +
-  theme(panel.grid.minor = element_blank())
-print(icc_plot)
-
-ggsave(filename = file.path(icc_dir, "icc_phylo_plot.png"),
-       plot = icc_plot, width = 7, height = 4, dpi = 300)
-
-```
-
-```{r eval=FALSE, include=FALSE}
-#Present LOO comparisons and ICC together for possible Figure 3:
-# ---- Figure: (A) LOO comparison, (B) ICC by chemical group ----
-out_dir <- here::here("model_output", "loo_check")
-icc_dir <- here::here("model_output", "ICC_phylo")
-
-loo_tables   <- readRDS(file.path(out_dir, "loo_tables_all.rds"))
-k_diags      <- readRDS(file.path(out_dir, "pareto_diags_all.rds"))
-icc_draws_df <- readRDS(file.path(icc_dir, "icc_phylo_draws.rds"))
-
-# ---- Build panel (A): Δ elpd vs best (forest style) ----
-loo_df <- purrr::imap_dfr(loo_tables, ~ dplyr::mutate(.x, group = .y), .id = NULL) |>
-  dplyr::mutate(model = factor(model, levels = sort(unique(model))))
-
-fs <- 14
-
-pA <- ggplot(loo_df, aes(x = elpd_diff, y = model, color = group)) +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_point(size = 3) +
-  geom_errorbarh(aes(xmin = elpd_diff - se_diff, xmax = elpd_diff + se_diff), height = 0) +
-  facet_wrap(~ group, scales = "free_y") +
-  labs(x = expression(Delta ~ "elpd"[loo]), y = "Model") +
-  scale_x_continuous(
-    breaks = scales::breaks_extended(n = 5),
-    labels = scales::label_number(accuracy = 0.1, big.mark = ","),
-    expand = expansion(mult = c(0.02, 0.05))
-  ) +
-  guides(x = guide_axis(check.overlap = TRUE)) +
-  theme_bw(base_size = fs) +
-  theme(
-    panel.grid.minor = element_blank(),
-    legend.position  = "none",
-    axis.text        = element_text(color = "black", size = fs),
-    axis.title       = element_text(color = "black", size = fs),
-    axis.ticks       = element_line(color = "black"),
-    axis.ticks.length = unit(3, "pt"),
-    strip.text.x     = element_text(size = fs),
-    strip.background = element_rect(fill = "grey95", color = NA)
-  )
-
-# ---- Build panel (B): ICC posteriors by group ----
-pB <- ggplot(icc_draws_df, aes(x = icc, y = forcats::fct_rev(group), color = group, fill = group)) +
-  tidybayes::stat_halfeye(.width = c(0.5, 0.95)) +
-  #coord_cartesian(xlim = c(0, 1)) +
-  labs(x = "Phylogenetic signal", y = "") +
-  theme_bw(base_size = fs) +
-  theme(
-    panel.grid.minor = element_blank(),
-    legend.position  = "none",
-    axis.text        = element_text(color = "black", size = fs),
-    axis.title       = element_text(color = "black", size = fs),
-    axis.ticks       = element_line(color = "black")
-  )
-
-# ---- Combine and save ----
-fig_LOO_ICC <- pA + pB +
-  plot_layout(ncol = 2, widths = c(2, 1)) +
-  plot_annotation(tag_levels = "A", tag_prefix = "(", tag_suffix = ")")
-
-print(fig_LOO_ICC)
-
-ggsave(here::here("plots/LOO_ICC.png"),
-       fig_LOO_ICC, width = 13, height = 5, dpi = 300)
-
-```
-
-Present LOO comparisons per observation and ICC together for possible
-Figure 3:
 ```{r}
-k_df <- purrr::imap_dfr(k_diags, ~ dplyr::mutate(.x, group = .y))
-k_sum <- k_df |>
-  dplyr::group_by(group) |>
-  dplyr::summarise(
-    n_group          = dplyr::first(n),
-    max_k_group      = max(max_k, na.rm = TRUE),
-    frac_k_gt_0.5_hi = max(frac_k_gt_0.5, na.rm = TRUE),
-    frac_k_gt_0.7_hi = max(frac_k_gt_0.7, na.rm = TRUE),
-    .groups = "drop"
-  ) |>
-  dplyr::mutate(
-    facet_lab = group
-  )
-
-# ---- (A): Δelpd per observation with k/n annotation
-loo_df <- purrr::imap_dfr(loo_tables, ~ dplyr::mutate(.x, group = .y)) |>
-  dplyr::mutate(model = factor(model, levels = sort(unique(model)))) |>
-  dplyr::left_join(k_sum, by = "group") |>
-  dplyr::mutate(
-    elpd_diff_per_obs = elpd_diff / n_group,
-    se_diff_per_obs   = se_diff   / n_group
-  )
-
-fs <- 16
-pA <- ggplot(loo_df, aes(x = elpd_diff_per_obs, y = model, color = group)) +
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  geom_point(size = 2.8) +
-  geom_errorbarh(aes(xmin = elpd_diff_per_obs - se_diff_per_obs,
-                     xmax = elpd_diff_per_obs + se_diff_per_obs), height = 0) +
-  facet_wrap(~ facet_lab, scales = "free_y") +
-  labs(x = expression(Delta~"elpd"[loo]~"per observation"), y = "") +
-  scale_x_continuous(
-    breaks = scales::breaks_extended(n = 5),
-    labels = scales::label_number(accuracy = 0.01),
-    expand = expansion(mult = c(0.02, 0.05))
-  ) +
-  theme_bw(base_size = fs) +
-  theme(
-    panel.grid.minor = element_blank(),
-    legend.position  = "none",
-    axis.text        = element_text(color = "black", size = fs),
-    axis.title       = element_text(color = "black", size = fs),
-    axis.ticks       = element_line(color = "black"),
-    axis.ticks.length = unit(3, "pt"),
-    strip.text.x     = element_text(size = fs-2, face = "bold"),
-    strip.background = element_rect(fill = "grey95", color = NA)
-  )
-
-# ---- (B): ICC posteriors ----
-icc_order <- icc_draws_df |>
-  dplyr::group_by(group) |>
-  tidybayes::median_qi(icc, .width = 0.5) |>
-  dplyr::arrange(icc) |>
-  dplyr::pull(group)
-
-pB <- ggplot(icc_draws_df, aes(x = pmin(pmax(icc, 0), 1),
-                          y = group,
-                          color = group, fill = group)) +
-  tidybayes::stat_halfeye(.width = c(0.5, 0.95)) +
-  #coord_cartesian(xlim = c(0, 1)) +
-  labs(x = "Phylogenetic signal (ICC)", y = "") +
-  theme_bw(base_size = fs) +
-  theme(
-    panel.grid.minor = element_blank(),
-    legend.position  = "none",
-    axis.text.x        = element_text(color = "black", size = fs),
-    axis.text.y        = element_text(color = "black", size = fs-2, face = "bold"),
-    axis.title       = element_text(color = "black", size = fs),
-    axis.ticks       = element_line(color = "black")
-  )
-
-fig_LOO_ICC <- pA + pB +
-  patchwork::plot_layout(ncol = 2, widths = c(2.5, 1)) 
- # patchwork::plot_annotation(tag_levels = "A", tag_prefix = "(", tag_suffix = ")")
-
-print(fig_LOO_ICC)
-
-ggsave(here("plots/LOO_ICC.png"), fig_LOO_ICC, width = 13, height = 5, dpi = 300)
-ggsave(here("plots/LOO_ICC.pdf"), fig_LOO_ICC, width = 13, height = 5)
-
+kable(icc_summ_df)
 ```
