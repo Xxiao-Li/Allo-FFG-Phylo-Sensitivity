@@ -18,6 +18,7 @@ editor_options:
 
 ```{r setup, message=FALSE, warning=FALSE}
 rm(list=ls())
+
 library(here)
 library(readr)
 library(readxl)
@@ -33,15 +34,16 @@ This notebook compile observed species sensitivity data from two
 sources:
 
 -   The `ecotox_mortality_processed` dataset from ADORE database in
-    Schür et al. 2023.
+    [Schür et al. 2023](https://doi.org/10.1038/s41597-023-02612-2).
 
--   Additional non-crustacean invertebrate raw data from Sinclair et al.
+-   Additional non-crustacean invertebrate raw data from [Sinclair et al
+    (2024)](https://doi.org/10.1111/gcb.17254) and [Liang et al
+    (2024)](https://doi.org/10.1016/j.watres.2023.120854).
 
-    (2024) and Liang et al. (2024).
-
-The goal is to prepare a clean dataset of all collected observed species
-sensitivity for prediction by the downstream machine learning model
-developed in Posthuma et al. (2025).
+This notebook will prepare a clean dataset of all collected observed
+species sensitivity for further prediction by the downstream machine
+learning model developed in [Posthuma et al.
+(2025)](https://pubs.acs.org/action/showCitFormats?doi=10.1021/acs.est.5c01289&ref=pdf).
 
 # 1. ADORE dataset
 
@@ -60,7 +62,7 @@ adore <- read_csv(here("data/1_observed_sensitivity/ADORE/ecotox_mortality_proce
 
 ```
 
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 # Add kingdom/phylum via GBIF
 lookup_adore <- function(latin, tax_class, tax_order, tax_family, tax_genus) {
   res <- tryCatch(
@@ -119,7 +121,6 @@ adore <- left_join(adore, taxonomy_adore, by = c("latin" = "original_name"))
 adore <- adore %>%
   mutate(phylum = if_else(`class` == "Malacostraca", "Arthropoda", phylum)) %>%
   mutate(phylum = if_else(`class` == "Maxillopoda", "Arthropoda", phylum))
-
 
 ```
 
@@ -188,9 +189,7 @@ inv_tox_merge <- inv_tox_merge %>%
 ```
 
 ## Add species taxonomy
-
 ```{r eval=FALSE, include=FALSE}
-
 # Unique cleaned species names
 inv_species <- inv_tox_merge %>%
   mutate(latin = latin %>%
@@ -250,7 +249,6 @@ lookup_taxonomy <- function(name) {
   }
 }
 
-# Run lookup for all unique names
 taxonomy <- map_dfr(inv_species$latin, lookup_taxonomy)
 ```
 
@@ -311,8 +309,7 @@ kable(species_per_chem)  %>%
   scroll_box(width = "100%", height = "200px")
 ```
 
-# 3. Cross-check between two datasets
-
+# 3. Cross-check between ADORE and additional invertebrate data
 ```{r}
 normalize_cas <- function(x) {
   x %>%
@@ -320,7 +317,7 @@ normalize_cas <- function(x) {
     str_replace("(\\d+)(\\d{2})(\\d$)", "\\1-\\2-\\3") # format as xxx-xx-x
 }
 
-# --- Normalize CAS in both datasets ---
+# --- Consistent CAS format in both datasets
 adore <- adore %>%
   mutate(CAS_norm = normalize_cas(CAS))
 
