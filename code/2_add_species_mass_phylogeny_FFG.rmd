@@ -1,5 +1,5 @@
 ---
-title: "Add species mass, phylogeny, and functional groups"
+title: "Add species phylogeny, mass, and functional groups"
 output:
   html_document: 
     toc: true
@@ -16,19 +16,19 @@ editor_options:
     wrap: 72
 ---
 
-This notebook integrates trait information with the predicted
-sensitivity dataset from the machine learning model. Specifically, it:
+This notebook integrates information for species with available observed
+sensitivity data. Specifically, it:
 
--   Builds a phylogenetic tree from the Open Tree of Life
+-   Builds a phylogeny tree from the Open Tree of Life
 
 -   Matches species to body mass data (species level, or genus fallback
     if missing)
 
--   Assigns functional groups (algae resource groups, invertebrate
-    feeding groups, fish trophic guilds)
+-   Assigns functional groups (resource groups for algae, functional
+    feeding groups for invertebrate, trophic guilds for fish)
 
-The output is a combined dataset with species' taxonomy, phylogeny,
-body mass, and functional traits.
+The output is a combined dataset with species' taxonomy, phylogeny, body
+mass, and assigned functional groups.
 
 ```{r setup, message=FALSE, warning=FALSE}
 rm(list=ls())
@@ -105,7 +105,7 @@ spe_tax_clean <- spe_tax_clean %>%
   ))
 ```
 
-Summary: r nrow(spe_tax_clean) species retained.
+Summary:
 
 ```{r}
 length(unique(spe_tax_clean$latin))
@@ -113,7 +113,7 @@ table(spe_tax_clean$group)
 
 ```
 
-# 3. Build phylogeny
+# 3. Build phylogeny tree
 
 We build a phylogeny tree using the Open Tree of Life. We standardize
 branch lengths using Grafen’s method and filter our dataset to only
@@ -211,25 +211,17 @@ kable(match_summary)
 
 ```
 
+Correct species with known body mass errors
 ```{r}
-# check the composition of the species with available body mass
 spe_mass <- final_match %>%
   filter(BM_match_level != "unmatched") 
 
-table(spe_mass$kingdom)
-table(spe_mass$phylum)
-table(spe_mass$group)
-```
-
-Correct species with known body mass errors
-```{r}
 spe_mass <- spe_mass %>%
   mutate(
     mean_mass_g = case_when(
-      str_to_lower(latin) == "nitzschia closterium"      ~ 1.577649e-09, #use genus level mass
+      str_to_lower(latin) == "nitzschia closterium"      ~ 1.58e-09, #use genus level mass
       str_to_lower(latin) == "neanthes arenaceodentata"   ~ 0.0147, #DOI: 10.1002/tox.1021
       str_to_lower(latin) == "lysmata seticaudata"       ~ 0.77, #https://doi.org/10.1007/BF00404744
-      str_to_lower(latin) == "ulva fasciata"              ~ 9.401267e-02, # use ulva lactuca mass
       str_to_lower(latin) == "odontesthes argentinensis"  ~ 92.5, #  10.3856/vol48-issue3-fulltext-2371
       str_to_lower(latin) %in% c("oryzias melastigma",
                                  "oryzias dancena",
@@ -241,15 +233,19 @@ spe_mass <- spe_mass %>%
   )
 ```
 
-remove ulva species with weired large body mass
+Remove Ulva species with weird large body mass
 ```{r}
 length(unique(spe_mass$latin))
-
-spe_mass <- spe_mass |> filter(!grepl("ulva", latin))
-
+spe_mass <- spe_mass |> filter(!grepl("ulva", latin)) # exclude 2 species
 length(unique(spe_mass$latin))
 ```
 
+The composition of the species with available body mass:
+```{r}
+table(spe_mass$kingdom)
+table(spe_mass$phylum)
+table(spe_mass$group)
+```
 
 # 5. Assign functional groups
 
@@ -276,10 +272,10 @@ length(unique(spe_tax_clean_tree_BM$latin))
 ```
 
 ```{r message=FALSE, warning=FALSE}
-algae_FG <- read_csv(here("data/5_FFG/algae_FG_alina.csv"))
+algae_FG <- read_csv(here("data/5_FFG/algae_FG_alina.csv")) %>%
+  mutate(FG_source = "Alina")
 
-invert_vert_FG <- read_csv(here("data/5_FFG/invert_vert_FG.csv"))
-invert_vert_FG <- invert_vert_FG %>%
+invert_vert_FG <- read_csv(here("data/5_FFG/invert_vert_FG.csv")) %>%
   mutate(algae.tax.group = NA_character_)
 
 FG_temp <- bind_rows(algae_FG, invert_vert_FG)
@@ -295,8 +291,10 @@ table(spe_tax_phylo_BM_FFG$FG)
 ```
 
 Algae fine-scale functional groups are merged into broader categories to
-address limited sample sizes. For vertebrate, we combine Detritivore /
-Herbivore as one group. We exclude group Parasitic as just 1 species.
+address limited sample sizes. 
+We exclude group Parasitic as just 1 species.
+For vertebrate, we combine Detritivore /
+Herbivore as one group.
 ```{r}
 spe_tax_phylo_BM_FFG$algae.group.2 <- dplyr::recode(spe_tax_phylo_BM_FFG$algae.tax.group,
   "Blue-green"      = "Cyanobacteria",
@@ -317,12 +315,12 @@ spe_tax_phylo_BM_FFG <- spe_tax_phylo_BM_FFG %>%
 
 ```
 
-Species summary
+Species summary:
 ```{r}
 
 length(unique(spe_tax_phylo_BM_FFG$CAS))
 
-length(unique(spe_tax_phylo_BM_FFG$latin))
+length(unique(spe_tax_phylo_BM_FFG$latin)) #906
 
 table(spe_tax_phylo_BM_FFG$group)
 
@@ -334,11 +332,9 @@ table(spe_tax_phylo_BM_FFG$FG2)
 
 ```
 
-
 # 6. Prune tree
 
-The phylogenetic tree is pruned to include only species present in the
-final combined dataset.
+The phylogenetic tree is pruned to include only species with all available information.
 
 ```{r}
 splist <- unique(spe_tax_phylo_BM_FFG$latin)
@@ -350,7 +346,7 @@ phylo_tree <- keep.tip(tree, intersect(tree$tip.label, splist))
 # 7. Save outputs
 
 ```{r}
-# save the combined data
+# save the combined data for species
 saveRDS(spe_tax_phylo_BM_FFG, file=here("data/6_combined/spe_tax_phylo_BM_FFG.rds"))
 
 # save the tree
