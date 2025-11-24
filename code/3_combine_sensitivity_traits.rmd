@@ -36,6 +36,7 @@ library(knitr)
 library(kableExtra)
 library(tidyverse)
 library(data.table)
+library(stringr)
 
 options(dplyr.summarise.inform = FALSE)
 ```
@@ -195,117 +196,190 @@ spe_tax_phylo_BM_FFG_sensi <- spe_tax_phylo_BM_FFG_sensi %>%
 
 # 4. Read chemical group information and filter to selected chemicals
 
-Filter to selected chemicals based on PPDB chemical pesticide types:
+Filter to selected chemicals based on
+<https://doi.org/10.1038/s41597-023-02904-7> and PPDB chemical pesticide
+types.\
+- Broad chemical groups: Pesticide; Industrial Chemicals; Pharmaceuticals.
+- Sub groups under Pesticide:
 
-```{r message=FALSE, warning=FALSE}
-# chemical groups
-PPDB_type <- read_csv(file=here("data/6_combined/pesticide_type.csv")) %>%
-  filter(! is.na(Pesticide_type)) %>%
-  mutate(Pesticide_type = str_squish(Pesticide_type))
+```{r}
+# Read gathered chemical groups
+chem_groups_source <- read_csv(file=here("data/6_combined/chem_groups.csv")) 
 
-# Long tags
-tags_long <- PPDB_type %>%
-  transmute(ID, CAS,
-            tag = strsplit(Pesticide_type, "\\s*;\\s*")) %>%
-  unnest(tag) %>%
-  mutate(tag_l = str_to_lower(tag))
+convert_ddmmyyyy_to_cas <- function(x) {
+  # keep only entries that look like dd/mm/yyyy
+  if (!str_detect(x, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$")) {
+    return(x)
+  }
+  
+  parts <- str_split(x, "/", simplify = TRUE)
+  day   <- parts[, 1]
+  month <- parts[, 2]
+  year  <- parts[, 3]
+  
+  paste0(year, "-", month, "-", day)
+}
 
-# Lookup: tag -> macro target
-tag2macro <- tribble(
-  ~tag_l,                         ~macro,
-  # 1) Arthropod control
-  "insecticide",                  "Arthropod_control",
-  "acaricide",                    "Arthropod_control",
-  "miticide",                     "Arthropod_control",
-  "larvicide",                    "Arthropod_control",
-  "termiticide",                  "Arthropod_control",
-  "insect growth regulator",      "Arthropod_control",
+chem_groups_source <- chem_groups_source %>%
+  mutate(
+    CAS = if_else(
+      str_detect(CAS, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"),
+      format(as.Date(CAS, format = "%d/%m/%Y"), "%Y-%m-%d"),
+      CAS
+    )
+  )
 
-  # 2) Plant control
-  "herbicide",                    "Plant_control",
-  "plant growth regulator",       "Plant_control",
-  "desiccant",                    "Plant_control",
-  "defoliant",                    "Plant_control",
-  "graminicide",                  "Plant_control",
+chem_groups_source <- chem_groups_source %>%
+  mutate(CAS = str_squish(CAS),
+         broad_group = str_squish(use_group),
+         p_sub_group = str_squish(Pesticide_sub_group)) %>%
+  select(CAS, broad_group, p_sub_group) %>%
+  filter(! is.na(broad_group)) %>%
+  filter(! broad_group == "Metal")
 
-  # 3) Fungal control
-  "fungicide",                    "Fungal_control",
-  "microbiocide",                 "Fungal_control",
+unique(chem_groups_source$broad_group) # "Industrial Chemical" "Pesticide"           "Pharmaceutical" 
 
-  # 4) Nematode control
-  "nematicide",                   "Nematode_control",
+```
 
-  # 5) Mollusc control
-  "molluscicide",                 "Mollusc_control",
-
-  # 6) Vertebrate control
-  "rodenticide",                  "Vertebrate_control",
-  "avicide",                      "Vertebrate_control",
-  "piscicide, lampricide",        "Vertebrate_control",  
-  "piscicide",                    "Vertebrate_control",
-  "lampricide",                   "Vertebrate_control",
-
-  # 7) Veterinary antiparasitic/drug
-  "veterinary substance",         "Veterinary_antiparasitic_drug",
-  "crop antibiotic",              "Veterinary_antiparasitic_drug",
-
-  # 8) Repellent/chemical signals
-  "repellent",                    "Repellent_signals",
-  "semiochemical",                "Repellent_signals",
-  "attractant",                   "Repellent_signals",
-
-  # 9) Fumigant/sterilant
-  "fumigant",                     "Fumigant_soilsterilant",
-  "soil sterilant",               "Fumigant_soilsterilant",
-  "soil sterilent",               "Fumigant_soilsterilant",  
-
-  # 10) Auxiliary/other
-  "metabolite",                   "Auxiliary_other",
-  "other substance",              "Auxiliary_other",
-  "adjuvant",                     "Auxiliary_other"
+Clean and map PPDB pesticide types to final chemical groups
+```{r}
+unique(chem_groups_source$p_sub_group)
+tag_to_group <- c(
+  # Arthropod control
+  "Insecticide"               = "arthropod-control",
+  "Acaricide"                 = "arthropod-control",
+  "Miticide"                  = "arthropod-control",
+  "Larvicide"                 = "arthropod-control",
+  "Termiticide"               = "arthropod-control",
+  "Insect Growth Regulator"   = "arthropod-control",
+  
+  # Plant control
+  "Herbicide"                     = "plant-control",
+  "Plant Growth Regulator"        = "plant-control",
+  "Plant Growth Regulator precursor" = "plant-control",
+  "Desiccant"                     = "plant-control",
+  "Defoliant"                     = "plant-control",
+  "Graminicide"                   = "plant-control",
+  
+  # Microorganism control
+  "Fungicide"       = "microbial-control",
+  "Microbiocide"    = "microbial-control",
+  "Algicide"        = "microbial-control",
+  "bacteria"        = "microbial-control",
+  "bacteria, fungi" = "microbial-control",
+  
+  # Nematode control
+  "Nematicide" = "nematode-control",
+  
+  # Mollusc control
+  "Molluscicide" = "mollusc-control",
+  
+  # Vertebrate control
+  "Rodenticide" = "vertebrate-control",
+  "Avicide"     = "vertebrate-control",
+  "Piscicide"   = "vertebrate-control",
+  "Lampricide"  = "vertebrate-control",
+  
+  # Veterinary antiparasitic / drug
+  "Veterinary substance" = "veterinary-drug",
+  "Crop antibiotic"      = "veterinary-drug",
+  
+  # Repellent / chemical signals
+  "Repellent"     = "repellent-signal",
+  "Semiochemical" = "repellent-signal",
+  "Attractant"    = "repellent-signal",
+  
+  # Fumigant / soil sterilant
+  "Fumigant"       = "fumigant-soil-sterilant",
+  "Soil sterilant" = "fumigant-soil-sterilant",
+  
+  # Auxiliary (only used if no other group present)
+  "Metabolite" = "auxiliary",
+  "Adjuvant"   = "auxiliary"
+  
+  # Note: "Other substance" is intentionally NOT mapped
 )
 
-# Map tags -> macros, summarize per chemical
-macro_per_chem <- tags_long %>%
-  left_join(tag2macro, by = "tag_l") %>%
-  distinct(ID, macro) %>%
-  group_by(ID) %>%
-  summarise(macros = list(na.omit(macro)),
-            n_macro = length(unique(na.omit(macro))),
-            .groups = "drop") %>%
-  rowwise() %>%                                # <-- make list indexing row-local
-  mutate(final_group = case_when(
-    n_macro == 0 ~ "Auxiliary_other",
-    n_macro == 1 ~ macros[[1]],                # now this refers to THIS row’s list
-    TRUE        ~ "Mixed_multitarget"
-  )) %>%
-  ungroup() %>%
-  select(ID, final_group)
+map_subgroup_to_target <- function(x, tag_to_group) {
+  # NA or empty
+  if (is.na(x) || str_squish(x) == "") return(NA_character_)
+  
+  # Split on ";" only (keep "bacteria, fungi" together)
+  tags <- str_split(x, pattern = ";", simplify = FALSE)[[1]]
+  tags <- str_squish(tags)
+  
+  # Drop explicit "Other substance" (ignored by design)
+  tags <- tags[tags != "Other substance"]
+  
+  # Shortcut: original label "Mixed"
+  if (length(tags) == 1 && identical(tags, "Mixed")) {
+    return("mixed-target")
+  }
+  
+  # Map tags to groups; ignore unrecognised tags
+  groups_all <- unique(na.omit(tag_to_group[tags]))
+  
+  # Separate "auxiliary" from true target-control groups
+  main_groups <- setdiff(groups_all, "auxiliary")
+  has_auxiliary <- "auxiliary" %in% groups_all
+  
+  # Decision rules:
+  if (length(main_groups) == 0 && !has_auxiliary) {
+    # No target-control info (e.g. only unknown tags removed as Other substance)
+    return(NA_character_)
+  } else if (length(main_groups) == 0 && has_auxiliary) {
+    # Only auxiliary info (e.g. Metabolite alone)
+    return("auxiliary")
+  } else if (length(main_groups) == 1) {
+    # Single clear target-control group
+    return(main_groups)
+  } else {
+    # Multiple target-control groups
+    return("mixed-target")
+  }
+}
 
+chem_groups_source <- chem_groups_source %>%
+  mutate(
+    # Fix obvious typos first
+    p_sub_group = str_replace_all(p_sub_group, "Insectiicde", "Insecticide"),
+    
+    # Apply mapping function
+    p_target_group = map_chr(p_sub_group, map_subgroup_to_target, tag_to_group = tag_to_group)
+  )
 
-# Attach final_group to your original data
-PPDB_type_group <- PPDB_type %>%
-  left_join(macro_per_chem, by = "ID") %>%
-  filter(! is.na(final_group))
-
-# counts per group
-PPDB_type_group %>% count(final_group, sort = TRUE)
-
-min_n <- 10
-
-keep_groups <- PPDB_type_group %>%
-  count(final_group, name = "n") %>%
-  filter(n >= min_n) %>%
-  pull(final_group)
-
-PPDB_type_group_filtered <- PPDB_type_group %>%
-  filter(final_group %in% keep_groups)
-
-# Check result
-PPDB_type_group_filtered %>% count(final_group, sort = TRUE)
-
-length(unique(PPDB_type_group_filtered$CAS)) #999
+table(chem_groups_source$p_target_group, useNA = "ifany")
 ```
+
+```{r}
+# clean and filter out unknown pesticide types
+keep_pesticide <- chem_groups_source %>%
+  filter(broad_group == "Pesticide") %>%
+  filter(p_target_group %in% c("arthropod-control", "microbial-control", 
+                               "plant-control", "mixed-target")) %>%
+  pull(CAS)
+chem_groups_source <- chem_groups_source %>%
+  filter(broad_group != "Pesticide" | CAS %in% keep_pesticide)
+
+unique(chem_groups_source$broad_group)
+unique(chem_groups_source$p_target_group)
+
+# make a final group list, which are Industrial Chemical, Pharmaceutical, arthropod-control, microorganism-control, plant-control, mixed-target
+chem_groups_source <- chem_groups_source %>% mutate(
+  final_group = case_when(
+    broad_group == "Industrial Chemical" ~ "Industrial_Chemical",
+    broad_group == "Pharmaceutical"       ~ "Pharmaceutical",
+    p_target_group == "arthropod-control" ~ "P_Arthropod_control",
+    p_target_group == "microbial-control" ~ "P_Microbial_control",
+    p_target_group == "plant-control"     ~ "P_Plant_control",
+    p_target_group == "mixed-target"      ~ "P_Mixed_target",
+    TRUE                                 ~ NA_character_
+  ) )
+
+count(chem_groups_source, final_group)
+length(unique(chem_groups_source$CAS))  #1103
+```
+
 
 # 5. Save outputs
 
@@ -320,11 +394,16 @@ saveRDS(spe_tax_phylo_BM_FFG_sensi, file=here("data/6_combined/spe_tax_phylo_BM_
 ## 5.2 Sub-dataset with 906 species and selected 999 chemicals
 
 ```{r}
-# filter the whole dataset to selected chemicals with known pesticide type
+# filter the whole dataset to selected *1103* chemicals
 spe_tax_phylo_BM_FFG_sensi_subCAS <- spe_tax_phylo_BM_FFG_sensi %>%
-  inner_join(PPDB_type_group_filtered %>% select(CAS, Pesticide_type, final_group),
+  inner_join(chem_groups_source %>% select(CAS, final_group),
              by = "CAS") %>%
   rename(chem_group = final_group)
+
+# dataset summary
+length(unique(spe_tax_phylo_BM_FFG_sensi_subCAS$CAS))
+length(unique(spe_tax_phylo_BM_FFG_sensi_subCAS$latin))
+unique(spe_tax_phylo_BM_FFG_sensi_subCAS$chem_group)
 
 saveRDS(spe_tax_phylo_BM_FFG_sensi_subCAS, file=here("data/6_combined/spe_tax_phylo_BM_FFG_sensi_subCAS.rds"))
 
@@ -333,7 +412,7 @@ saveRDS(spe_tax_phylo_BM_FFG_sensi_subCAS, file=here("data/6_combined/spe_tax_ph
 Quick look
 
 ```{r}
-plotdf <- spe_tax_phylo_BM_FFG_sensi_subCAS |> filter(duration == "24")
+plotdf <- spe_tax_phylo_BM_FFG_sensi_subCAS %>% filter(duration == "24")
 trophic_order <- c(
   "Cyanobacteria", "Diatom", "Green algae",  "Other algae",        # producers
   "I_Shredder_A", "I_Filterer_A", "I_Gatherer_A", "I_Predator_A", "I_Herbivore_A",

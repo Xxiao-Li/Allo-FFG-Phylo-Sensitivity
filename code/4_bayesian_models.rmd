@@ -119,7 +119,7 @@ out_dir <- here("model_output", "bayesian_models")
 ```{r eval=FALSE}
 # sensitivity ~ mass + (1 | phylogeny)
 fit_M1 <- brm(
-  log_rel_sensi ~ log_mass_c + (1 | CAS) + (1 | gr(phylo, cov = tree_A)),
+  log_rel_sensi ~ log_mass_c + (1 | gr(phylo, cov = tree_A)),
   data = dat_sub, data2 = list(tree_A = tree_A),
   family = gaussian(), prior = pri,
   backend = "cmdstanr", chains = chain, cores = cor, 
@@ -136,7 +136,7 @@ saveRDS(fit_M1, here(fit_file_name))
 ```{r eval=FALSE}
 # sensitivity ~ mass + FG + (1 | phylogeny)
 fit_M2 <- brm(
-  log_rel_sensi ~ log_mass_c + FG + (1 | CAS) + (1 | gr(phylo, cov = tree_A)),
+  log_rel_sensi ~ log_mass_c + FG + (1 | gr(phylo, cov = tree_A)),
   data = dat_sub, data2 = list(tree_A = tree_A),
   family = gaussian(), prior = pri,
   threads = thr, seed = 1007,
@@ -152,7 +152,7 @@ saveRDS(fit_M2, here(fit_file_name))
 ```{r eval=FALSE}
 # sensitivity ~ mass * FG + (1 | phylogeny)
 fit_M3 <- brm(
-  log_rel_sensi ~ log_mass_c * FG + (1 | CAS) + (1 | gr(phylo, cov = tree_A)),
+  log_rel_sensi ~ log_mass_c * FG + (1 | gr(phylo, cov = tree_A)),
   data = dat_sub, data2 = list(tree_A = tree_A),
   family = gaussian(), prior = pri,
   threads = thr, seed = 1007,
@@ -169,7 +169,7 @@ saveRDS(fit_M3, here(fit_file_name))
 ```{r eval=FALSE}
 # sensitivity ~ mass * FG
 fit_M4 <- brm(
-  log_rel_sensi ~ log_mass_c * FG + (1 | CAS),
+  log_rel_sensi ~ log_mass_c * FG,
   data = dat_sub,
   family = gaussian(), prior = pri2,
   threads = thr, seed = 1007,

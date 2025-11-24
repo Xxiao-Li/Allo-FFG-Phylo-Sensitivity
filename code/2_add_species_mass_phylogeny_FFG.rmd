@@ -59,6 +59,72 @@ spe_tax_uni <- combined_observed_sensitivity %>%
   distinct() 
 ```
 
+```{r}
+# species composisiton in the 1546 species with observed sensitivity data
+library(dplyr)
+library(stringr)
+
+# Normalize and define groups
+algae_phyla <- c(
+  "chlorophyta","charophyta","rhodophyta","ochrophyta",
+  "haptophyta","cryptophyta","cyanobacteria","myzozoa","euglenozoa"
+)
+
+fish_classes <- c("actinopterygii","petromyzonti","elasmobranchii",
+                  "chondrichthyes","myxini","hyperoartia","sarcopterygii")
+
+crustacean_classes <- c("malacostraca","branchiopoda","copepoda",
+                        "ostracoda","maxillopoda","thecostraca","hexanauplia",
+                        "remipedia","cephalocarida")
+
+classified <- spe_tax_uni %>%
+  mutate(across(c(kingdom, phylum, class),
+                ~ tolower(as.character(.x)))) %>%
+  distinct(latin, .keep_all = TRUE) %>%
+  mutate(
+    group = case_when(
+      !is.na(phylum) & phylum %in% algae_phyla           ~ "algae",
+      !is.na(class)  & class  %in% fish_classes          ~ "fish",
+      !is.na(class)  & class  %in% crustacean_classes    ~ "crust inv",
+      TRUE                                               ~ "non-crust inv"
+    )
+  )
+
+sum(classified$group %in% c("algae","fish") & classified$source != "adore")
+
+# Counts + proportions
+counts <- classified %>%
+  count(group, name = "n_species") %>%
+  mutate(prop = n_species / sum(n_species)) %>%
+  arrange(factor(group, levels = c("algae","crust inv","non-crust inv","fish")))
+
+counts
+
+lvl <- counts$group
+plot_df <- counts %>%
+  dplyr::mutate(group = factor(group, levels = lvl))
+
+ggplot(plot_df, aes(x = group, y = prop)) +
+  geom_col() +
+  geom_text(aes(label = paste0(n_species, " (", percent(prop, accuracy = 0.1), ")")),
+            vjust = -0.5, size = 6) +
+  scale_y_continuous(labels = percent_format(), expand = expansion(mult = c(0, 0.12))) +
+  labs(x = NULL, y = "") +
+  theme_void(base_size = 20) +
+  theme(
+    axis.text.x = element_text(angle = 15, hjust = 0.6),  
+    plot.margin = margin(10, 10, 10, 10)                
+  ) +
+  coord_cartesian(clip = "off")  
+
+non_crust_in_adore <- classified %>%
+  filter(tolower(source) == "adore", group == "non-crust inv") %>%
+  select(latin, group, kingdom, phylum, class) %>%
+  arrange(group, phylum, class, latin)
+
+```
+
+
 # 2. Correct species names
 
 Here we:
@@ -352,3 +418,53 @@ saveRDS(spe_tax_phylo_BM_FFG, file=here("data/6_combined/spe_tax_phylo_BM_FFG.rd
 # save the tree
 saveRDS(phylo_tree, file = here("data/6_combined/phylo_tree.rds"))
 ```
+
+
+
+```{r}
+# plot composiiton
+library(dplyr)
+library(ggplot2)
+library(forcats)
+library(scales)
+
+# Define class buckets
+fish_classes <- c("actinopterygii","elasmobranchii","petromyzonti")
+crustacean_classes <- c("malacostraca","branchiopoda","copepoda",
+                        "ostracoda","maxillopoda","thecostraca","hexanauplia","remipedia","cephalocarida")
+
+plot_df <- spe_tax_phylo_BM_FFG %>%
+  mutate(
+    group_base = tolower(group),
+    class = tolower(class),
+    new_group = case_when(
+      group_base == "algae" ~ "algae",
+      group_base == "vertebrate" & !is.na(class) & class %in% fish_classes ~ "fish",
+      group_base == "invertebrate" & !is.na(class) & class %in% crustacean_classes ~ "crust inv",
+      group_base == "invertebrate" ~ "non-crust inv",
+      TRUE ~ "non-crust inv"           # fallback for odd cases/NA
+    )
+  ) %>%
+  distinct(latin, .keep_all = TRUE) %>%      # one row per species
+  count(new_group, name = "n_species") %>%
+  mutate(prop = n_species / sum(n_species)) %>%
+  mutate(new_group = factor(new_group,
+                            levels = c("algae","crust inv","non-crust inv","fish")))
+
+# Plot: proportions with "count (percent)" on bars
+ggplot(plot_df, aes(x = new_group, y = prop)) +
+  geom_col() +
+  geom_text(aes(label = paste0(n_species, " (", percent(prop, accuracy = 0.1), ")")),
+            vjust = -0.5, size = 6) +
+  scale_y_continuous(labels = percent_format(), expand = expansion(mult = c(0, 0.15))) +
+  labs(x = NULL, y = "") +
+  theme_void(base_size = 20) +
+   theme(
+    axis.text.x = element_text(angle = 15, hjust = 0.6),  
+    plot.margin = margin(10, 10, 10, 10)                
+  ) +
+  coord_cartesian(clip = "off") 
+
+
+```
+

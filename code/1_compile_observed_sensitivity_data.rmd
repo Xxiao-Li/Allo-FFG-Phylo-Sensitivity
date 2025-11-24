@@ -157,6 +157,39 @@ cat(
 
 ```
 
+```{r}
+library(dplyr)
+library(ggplot2)
+library(forcats)
+library(scales)
+
+spe_composition <- adore %>%
+  select(species.x, genus, family, class, order, phylum, kingdom, tax_group) %>%
+  rename(species = species.x) %>%
+  distinct() %>%
+  mutate(tax_group = recode(tax_group, "crusta" = "crustacean"))
+
+plot_data <- spe_composition %>%
+  count(tax_group, name = "Freq") %>%
+  mutate(Freq_prop = Freq / sum(Freq)) %>%
+  mutate(tax_group = fct_reorder(tax_group, Freq_prop, .desc = TRUE))
+
+ggplot(plot_data, aes(x = tax_group, y = Freq_prop)) +
+  geom_col() +
+  geom_text(
+    aes(label = paste0(Freq, " (", percent(Freq_prop, 
+                                           accuracy = 0.1), ")")),
+    vjust = -0.6, size = 5) +
+  scale_y_continuous(labels = percent_format(), 
+                     expand = expansion(mult = c(0, 0.12))) +
+  labs(x = "", y = "") +
+  theme_minimal(base_size = 20) 
+
+
+```
+
+
+
 # 2. Additional non-crustacean invertebrate species sensitivity dataset
 
 ## Load data
@@ -189,6 +222,7 @@ inv_tox_merge <- inv_tox_merge %>%
 ```
 
 ## Add species taxonomy
+
 ```{r eval=FALSE, include=FALSE}
 # Unique cleaned species names
 inv_species <- inv_tox_merge %>%
@@ -295,6 +329,18 @@ cat(
 
 ```
 
+```{r}
+spe_composition <- inv_tox_merge %>%
+  select(species, genus, family, class, order, phylum, kingdom) %>%
+  distinct()
+table(spe_composition$phylum)
+kable(spe_composition %>% count(phylum, name = "n_species"))  %>%
+  kable_styling(full_width = FALSE) %>%
+  scroll_box(width = "100%", height = "200px")
+
+```
+
+
 ## Species coverage per chemical
 
 ```{r}
@@ -310,6 +356,7 @@ kable(species_per_chem)  %>%
 ```
 
 # 3. Cross-check between ADORE and additional invertebrate data
+
 ```{r}
 normalize_cas <- function(x) {
   x %>%
@@ -377,7 +424,7 @@ combined_observed_sensitivity <- bind_rows(adore_sel, inv_sel)
 cat("Combined dataset summary:\n",
     "  Total rows:", nrow(combined_observed_sensitivity), "\n",
     "    from ADORE:", sum(combined_observed_sensitivity$source == "ADORE"), "\n",
-    "    from Invert_extra:", sum(combined_observed_sensitivity$source == "Invertebrate"), "\n\n",
+    "    from Invert_extra:", sum(combined_observed_sensitivity$source == "Invert_extra"), "\n\n",
     "  Unique normalized CAS:", n_distinct(combined_observed_sensitivity$CAS_norm), "\n",
     "  Unique species:", n_distinct(combined_observed_sensitivity$latin), "\n",
     "  Unique CAS–species pairs:",
