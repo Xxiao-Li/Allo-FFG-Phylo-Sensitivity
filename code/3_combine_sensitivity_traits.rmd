@@ -1,5 +1,5 @@
 ---
-title: "Combine species taxonomy, phylogeny, body mass, function groups, and machine-learning predicted sensitivity"
+title: "Combine Species Taxonomy, Phylogeny, Body Mass, Function Groups, and Machine-learning Predicted Sensitivity"
 output:
   html_document: 
     toc: true
@@ -17,7 +17,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-This notebook will combine predicted species sensitivity with species
+This script will combine predicted species sensitivity with species
 information (taxonomy, phylogeny, body mass, and functional groups) for
 further analysis.
 
@@ -43,8 +43,6 @@ options(dplyr.summarise.inform = FALSE)
 
 # 1. Read species dataset
 
-Read species's dataset
-
 ```{r}
 spe_tax_phylo_BM_FFG <- readRDS(here("data/6_combined/spe_tax_phylo_BM_FFG.rds")) %>%
     mutate(log_mass = log10(mean_mass_g)) 
@@ -57,7 +55,7 @@ Calculate centered species' body masses:
 spe_tax_phylo_BM_FFG  <- spe_tax_phylo_BM_FFG %>% mutate(log_mass_c = scale(log_mass, center = TRUE, scale = FALSE)[,1])
 ```
 
-# 2. Filter predicted sensitivity dataset
+# 2. Filter predicted sensitivity dataset to avaliable species
 
 ```{r message=FALSE, warning=FALSE}
 # Load the prediction dataset
@@ -115,7 +113,7 @@ spe_tax_phylo_BM_FFG_sensi <- spe_tax_phylo_BM_FFG_sensi %>%
     sensi = 10^predicted,
     CAS = as.factor(CAS),
     duration = as.factor(duration)
-  ) %>% rename(log_sensi = predicted)
+  ) %>% rename(log_sensi = predicted) 
 
 # dataset summary
 length(unique(spe_tax_phylo_BM_FFG_sensi$CAS))
@@ -186,7 +184,7 @@ species relative sensitivity.
 spe_tax_phylo_BM_FFG_sensi <- spe_tax_phylo_BM_FFG_sensi %>%
   group_by(CAS, duration) %>%
   mutate(
-    ref_sensi = sensi[latin == "daphnia magna"],  # D. magna as reference
+    ref_sensi = sensi[latin == "daphnia magna"],  # D. magna as reference species
     rel_sensi = sensi / ref_sensi,
     log_rel_sensi = log10(rel_sensi)
   ) %>%
@@ -198,36 +196,17 @@ spe_tax_phylo_BM_FFG_sensi <- spe_tax_phylo_BM_FFG_sensi %>%
 
 Filter to selected chemicals based on
 <https://doi.org/10.1038/s41597-023-02904-7> and PPDB chemical pesticide
-types.\
+types.
 - Broad chemical groups: Pesticide; Industrial Chemicals; Pharmaceuticals.
 - Sub groups under Pesticide:
+  - Arthropod control
+  - Plant control
+  - Microbial control
+  - Mixed target control
 
 ```{r}
 # Read gathered chemical groups
 chem_groups_source <- read_csv(file=here("data/6_combined/chem_groups.csv")) 
-
-convert_ddmmyyyy_to_cas <- function(x) {
-  # keep only entries that look like dd/mm/yyyy
-  if (!str_detect(x, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$")) {
-    return(x)
-  }
-  
-  parts <- str_split(x, "/", simplify = TRUE)
-  day   <- parts[, 1]
-  month <- parts[, 2]
-  year  <- parts[, 3]
-  
-  paste0(year, "-", month, "-", day)
-}
-
-chem_groups_source <- chem_groups_source %>%
-  mutate(
-    CAS = if_else(
-      str_detect(CAS, "^[0-9]{2}/[0-9]{2}/[0-9]{4}$"),
-      format(as.Date(CAS, format = "%d/%m/%Y"), "%Y-%m-%d"),
-      CAS
-    )
-  )
 
 chem_groups_source <- chem_groups_source %>%
   mutate(CAS = str_squish(CAS),
@@ -237,7 +216,8 @@ chem_groups_source <- chem_groups_source %>%
   filter(! is.na(broad_group)) %>%
   filter(! broad_group == "Metal")
 
-unique(chem_groups_source$broad_group) # "Industrial Chemical" "Pesticide"           "Pharmaceutical" 
+unique(chem_groups_source$broad_group) 
+# "Industrial Chemical" "Pesticide" "Pharmaceutical" 
 
 ```
 
@@ -352,11 +332,10 @@ table(chem_groups_source$p_target_group, useNA = "ifany")
 ```
 
 ```{r}
-# clean and filter out unknown pesticide types
+# clean and filter out unknown pesticide types and keep only selected pesticide types based on number of chemicals
 keep_pesticide <- chem_groups_source %>%
   filter(broad_group == "Pesticide") %>%
-  filter(p_target_group %in% c("arthropod-control", "microbial-control", 
-                               "plant-control", "mixed-target")) %>%
+  filter(p_target_group %in% c("arthropod-control", "microbial-control", "plant-control", "mixed-target")) %>%
   pull(CAS)
 chem_groups_source <- chem_groups_source %>%
   filter(broad_group != "Pesticide" | CAS %in% keep_pesticide)
@@ -391,7 +370,7 @@ saveRDS(spe_tax_phylo_BM_FFG_sensi, file=here("data/6_combined/spe_tax_phylo_BM_
 
 ```
 
-## 5.2 Sub-dataset with 906 species and selected 999 chemicals
+## 5.2 Sub-dataset with 906 species and selected 1103 chemicals
 
 ```{r}
 # filter the whole dataset to selected *1103* chemicals
@@ -401,9 +380,9 @@ spe_tax_phylo_BM_FFG_sensi_subCAS <- spe_tax_phylo_BM_FFG_sensi %>%
   rename(chem_group = final_group)
 
 # dataset summary
-length(unique(spe_tax_phylo_BM_FFG_sensi_subCAS$CAS))
-length(unique(spe_tax_phylo_BM_FFG_sensi_subCAS$latin))
-unique(spe_tax_phylo_BM_FFG_sensi_subCAS$chem_group)
+length(unique(spe_tax_phylo_BM_FFG_sensi_subCAS$CAS)) # should be 1103
+length(unique(spe_tax_phylo_BM_FFG_sensi_subCAS$latin)) #should be 906
+unique(spe_tax_phylo_BM_FFG_sensi_subCAS$chem_group) # 6 chemical groups
 
 saveRDS(spe_tax_phylo_BM_FFG_sensi_subCAS, file=here("data/6_combined/spe_tax_phylo_BM_FFG_sensi_subCAS.rds"))
 
