@@ -216,7 +216,7 @@ inv_tox_merge <- inv_tox_merge %>%
 
 ## Add species taxonomy
 
-```{r eval=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE}
 # Unique cleaned species names
 inv_species <- inv_tox_merge %>%
   mutate(latin = latin %>%
