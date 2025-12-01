@@ -1,5 +1,5 @@
 ---
-title: "Compile observed species sensitivity data"
+title: "Compile Observed Species Sensitivity Data"
 output:
   html_document: 
     toc: true
@@ -20,9 +20,8 @@ editor_options:
 rm(list=ls())
 
 library(here)
-library(readr)
+library(tidyverse)
 library(readxl)
-library(dplyr)
 library(purrr)
 library(rgbif)
 library(stringr)
@@ -30,7 +29,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-This notebook compile observed species sensitivity data from two
+This script compiles observed species sensitivity data from two
 sources:
 
 -   The `ecotox_mortality_processed` dataset from ADORE database in
@@ -40,7 +39,7 @@ sources:
     (2024)](https://doi.org/10.1111/gcb.17254) and [Liang et al
     (2024)](https://doi.org/10.1016/j.watres.2023.120854).
 
-This notebook will prepare a clean dataset of all collected observed
+This file will prepare a clean dataset of all collected observed
 species sensitivity for further prediction by the downstream machine
 learning model developed in [Posthuma et al.
 (2025)](https://pubs.acs.org/action/showCitFormats?doi=10.1021/acs.est.5c01289&ref=pdf).
@@ -62,6 +61,7 @@ adore <- read_csv(here("data/1_observed_sensitivity/ADORE/ecotox_mortality_proce
 
 ```
 
+## Add species taxonomy
 ```{r eval=FALSE, message=FALSE, warning=FALSE}
 # Add kingdom/phylum via GBIF
 lookup_adore <- function(latin, tax_class, tax_order, tax_family, tax_genus) {
@@ -125,7 +125,6 @@ adore <- adore %>%
 ```
 
 ## Species coverage per chemical
-
 ```{r}
 species_per_chem <- adore %>%
   filter(!is.na(CAS), !is.na(latin)) %>%   
@@ -138,8 +137,35 @@ kable(species_per_chem)  %>%
   scroll_box(width = "100%", height = "200px")
 ```
 
-## Dataset summary
+## Species composiiton in the ADORE dataset
 
+```{r}
+spe_composition <- adore %>%
+  select(species.x, genus, family, class, order, phylum, kingdom, tax_group) %>%
+  rename(species = species.x) %>%
+  distinct() %>%
+  mutate(tax_group = recode(tax_group, "crusta" = "crustacean"))
+
+plot_data <- spe_composition %>%
+  count(tax_group, name = "Freq") %>%
+  mutate(Freq_prop = Freq / sum(Freq)) %>%
+  mutate(tax_group = fct_reorder(tax_group, Freq_prop, .desc = TRUE))
+
+p <- ggplot(plot_data, aes(x = tax_group, y = Freq_prop)) +
+  geom_col() +
+  geom_text(
+    aes(label = paste0(Freq, " (", percent(Freq_prop, 
+                                           accuracy = 0.1), ")")),
+    vjust = -0.6, size = 5) +
+  scale_y_continuous(labels = percent_format(), 
+                     expand = expansion(mult = c(0, 0.12))) +
+  labs(x = "", y = "") +
+  theme_minimal(base_size = 20) 
+
+print(p)
+```
+
+## Dataset summary
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 adore_pairs <- adore %>%
   distinct(CAS, latin)
@@ -157,43 +183,10 @@ cat(
 
 ```
 
-```{r}
-library(dplyr)
-library(ggplot2)
-library(forcats)
-library(scales)
-
-spe_composition <- adore %>%
-  select(species.x, genus, family, class, order, phylum, kingdom, tax_group) %>%
-  rename(species = species.x) %>%
-  distinct() %>%
-  mutate(tax_group = recode(tax_group, "crusta" = "crustacean"))
-
-plot_data <- spe_composition %>%
-  count(tax_group, name = "Freq") %>%
-  mutate(Freq_prop = Freq / sum(Freq)) %>%
-  mutate(tax_group = fct_reorder(tax_group, Freq_prop, .desc = TRUE))
-
-ggplot(plot_data, aes(x = tax_group, y = Freq_prop)) +
-  geom_col() +
-  geom_text(
-    aes(label = paste0(Freq, " (", percent(Freq_prop, 
-                                           accuracy = 0.1), ")")),
-    vjust = -0.6, size = 5) +
-  scale_y_continuous(labels = percent_format(), 
-                     expand = expansion(mult = c(0, 0.12))) +
-  labs(x = "", y = "") +
-  theme_minimal(base_size = 20) 
-
-
-```
-
-
 
 # 2. Additional non-crustacean invertebrate species sensitivity dataset
 
 ## Load data
-
 ```{r}
 inv_folder <- here("data/1_observed_sensitivity/invert_sensitivity_extra")   
 inv_tox_files <- list.files(inv_folder, pattern = "\\.xlsx?$", full.names = TRUE, recursive = FALSE)
@@ -205,7 +198,7 @@ read_merge <- function(path) {
 inv_tox_merge <- map_dfr(inv_tox_files, read_merge) %>%
   rename(CAS = CAS.Number, species = Species.Scientific.Name,
          conc_raw = Conc.1.Mean..Standardized., duration = Observed.Duration.Mean..Days.) %>%
-  mutate(duration = 24*duration) %>% # to align with ADORE
+  mutate(duration = 24*duration) %>% # format to align with ADORE
   mutate(latin = species |> str_replace_all("_", " ") |> tolower())
 
 ```
@@ -313,6 +306,18 @@ inv_tox_merge <- inv_tox_merge %>%
   ) %>% distinct()
 ```
 
+## Species composition in the additional invertebrate dataset
+```{r}
+spe_composition <- inv_tox_merge %>%
+  select(species, genus, family, class, order, phylum, kingdom) %>%
+  distinct()
+table(spe_composition$phylum)
+kable(spe_composition %>% count(phylum, name = "n_species"))  %>%
+  kable_styling(full_width = FALSE) %>%
+  scroll_box(width = "100%", height = "200px")
+
+```
+
 ## Dataset summary
 
 ```{r}
@@ -329,25 +334,14 @@ cat(
 
 ```
 
-```{r}
-spe_composition <- inv_tox_merge %>%
-  select(species, genus, family, class, order, phylum, kingdom) %>%
-  distinct()
-table(spe_composition$phylum)
-kable(spe_composition %>% count(phylum, name = "n_species"))  %>%
-  kable_styling(full_width = FALSE) %>%
-  scroll_box(width = "100%", height = "200px")
-
-```
-
 
 ## Species coverage per chemical
 
 ```{r}
 species_per_chem <- inv_tox_merge %>%
-  filter(!is.na(CAS), !is.na(latin)) %>%   # optional: drop missing IDs/names
-  distinct(CAS, latin) %>%                 # unique chemical–species pairs
-  count(CAS, name = "n_species") %>%       # species per chemical
+  filter(!is.na(CAS), !is.na(latin)) %>%   
+  distinct(CAS, latin) %>%                
+  count(CAS, name = "n_species") %>%       
   arrange(n_species)
 
 kable(species_per_chem)  %>%
@@ -438,7 +432,7 @@ cat("Combined dataset summary:\n",
 
 ```{r}
 # save the whole observed species sensitivity dataset with species info
-saveRDS(combined_observed_sensitivity, file=here("data/1_observed_sensitivity/combined_observed_sensitivity/combined_observed_sensitivity.rds"))
+ saveRDS(combined_observed_sensitivity, file=here("data/1_observed_sensitivity/combined_observed_sensitivity/combined_observed_sensitivity.rds"))
 
 # save the dataset to be used in the machine learning model
 observed_sensitivity <- combined_observed_sensitivity %>%
