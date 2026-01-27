@@ -1,10 +1,10 @@
 original_name,matched_name,kingdom,phylum,class,order,family,genus,species
 abramis brama,"Abramis brama (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Abramis,Abramis brama
+nemacheilus botia,"Nemacheilus botia (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Acanthocobitis,Acanthocobitis botia
 acanthocyclops robustus,"Acanthocyclops robustus (Sars G.O., 1863)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Acanthocyclops,Acanthocyclops robustus
 acanthocyclops venustus,"Acanthocyclops venustus (Norman & Scott T., 1906)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Acanthocyclops,Acanthocyclops venustus
 acanthocyclops vernalis,"Acanthocyclops vernalis (Fischer, 1853)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Acanthocyclops,Acanthocyclops vernalis
-acanthocyclops viridis,"Acanthocyclops viridis (Jurine, 1820)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Megacyclops,Megacyclops viridis
-acanthomysis sculpta,"Acanthomysis sculpta (W.M.Tattersall, 1933)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Holmesimysis,Holmesimysis sculpta
+synechogobius hasta,"Synechogobius hastus (Temminck & Schlegel, 1845)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Acanthogobius,Acanthogobius hasta
 acanthopagrus butcheri,"Acanthopagrus butcheri (Munro, 1949)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Acanthopagrus,Acanthopagrus butcheri
 acanthopagrus schlegelii,"Acanthopagrus schlegelii (Bleeker, 1854)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Acanthopagrus,Acanthopagrus schlegelii
 acartia clausi,"Acartia clausi Giesbrecht, 1889",Animalia,Arthropoda,Copepoda,Calanoida,Acartiidae,Acartia,Acartia clausi
@@ -30,6 +30,9 @@ acipenser transmontanus,"Acipenser transmontanus Richardson, 1836",Animalia,Chor
 acrocheilus alutaceus,"Acrocheilus alutaceus Agassiz & Pickering, 1855",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Acrocheilus,Acrocheilus alutaceus
 acrossocheilus paradoxus,"Acrossocheilus paradoxus (Günther, 1868)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Acrossocheilus,Acrossocheilus paradoxus
 afrochiltonia subtenuis,"Afrochiltonia subtenuis Stebbings, 1906",Animalia,Arthropoda,Malacostraca,Amphipoda,Chiltoniidae,Afrochiltonia,Afrochiltonia subtenuis
+diaptomus clavipes,"Diaptomus clavipes Schacht, 1897",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Aglaodiaptomus,Aglaodiaptomus clavipes
+diaptomus forbesi,"Diaptomus forbesi Light, 1938",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Aglaodiaptomus,Aglaodiaptomus forbesi
+diaptomus leptopus,"Diaptomus leptopus Forbes S.A., 1882",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Aglaodiaptomus,Aglaodiaptomus leptopus
 agonus cataphractus,"Agonus cataphractus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Scorpaeniformes,Agonidae,Agonus,Agonus cataphractus
 agosia chrysogaster,"Agosia chrysogaster Girard, 1856",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Agosia,Agosia chrysogaster
 alburnus alburnus,"Alburnus alburnus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Alburnus,Alburnus alburnus
@@ -37,11 +40,11 @@ aldrichetta forsteri,"Aldrichetta forsteri (Valenciennes, 1836)",Animalia,Chorda
 allorchestes compressa,"Allorchestes compressa Dana, 1852",Animalia,Arthropoda,Malacostraca,Amphipoda,Dogielinotidae,Allorchestes,Allorchestes compressa
 alona affinis,"Alona affinis (Leydig, 1860)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Alona,Alona affinis
 alona guttata,"Alona guttata Sars, 1862",Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Alona,Alona guttata
-alona rectangula,"Alona rectangula G.O.Sars, 1862",Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Coronatella,Coronatella rectangula
 alonella sp.,Chydoridae,Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Alonella,NA
 alosa aestivalis,"Alosa aestivalis (Mitchill, 1814)",Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Alosa,Alosa aestivalis
 alosa sapidissima,"Alosa sapidissima (Wilson, 1811)",Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Alosa,Alosa sapidissima
 alpheus malabaricus,"Alpheus malabaricus (Fabricius, 1775)",Animalia,Arthropoda,Malacostraca,Decapoda,Alpheidae,Alpheus,Alpheus malabaricus
+cichlasoma nigrofasciatum,"Cichlasoma nigrofasciatum (Günther, 1867)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Amatitlania,Amatitlania nigrofasciata
 ambassis gymnocephalus,"Ambassis gymnocephalus (Lacepède, 1802)",Animalia,Chordata,Actinopterygii,Perciformes,Ambassidae,Ambassis,Ambassis gymnocephalus
 ambassis sp.,Ambassidae,Animalia,Chordata,Actinopterygii,Perciformes,Ambassidae,Ambassis,NA
 ambloplites rupestris,"Ambloplites rupestris (Rafinesque, 1817)",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Ambloplites,Ambloplites rupestris
@@ -49,53 +52,54 @@ ameiurus melas,"Ameiurus melas (Rafinesque, 1820)",Animalia,Chordata,Actinoptery
 ameiurus natalis,"Ameiurus natalis (Lesueur, 1819)",Animalia,Chordata,Actinopterygii,Siluriformes,Ictaluridae,Ameiurus,Ameiurus natalis
 ameiurus nebulosus,"Ameiurus nebulosus (Lesueur, 1819)",Animalia,Chordata,Actinopterygii,Siluriformes,Ictaluridae,Ameiurus,Ameiurus nebulosus
 americamysis bahia,"Americamysis bahia (Molenock, 1969)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Americamysis,Americamysis bahia
+mysidopsis almyra,"Mysidopsis almyra Bowman, 1964",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Americamysis,Americamysis almyra
+mysidopsis bigelowi,"Mysidopsis bigelowi W.M.Tattersall, 1926",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Americamysis,Americamysis bigelowi
 amia calva,"Amia calva Linnaeus, 1766",Animalia,Chordata,Actinopterygii,Amiiformes,Amiidae,Amia,Amia calva
 ammodytes hexapterus,"Ammodytes hexapterus Pallas, 1814",Animalia,Chordata,Actinopterygii,Perciformes,Ammodytidae,Ammodytes,Ammodytes hexapterus
 amniataba percoides,"Amniataba percoides (Günther, 1864)",Animalia,Chordata,Actinopterygii,Perciformes,Terapontidae,Amniataba,Amniataba percoides
 ampelisca abdita,"Ampelisca abdita Mills, 1964",Animalia,Arthropoda,Malacostraca,Amphipoda,Ampeliscidae,Ampelisca,Ampelisca abdita
 ampelisca araucana,"Ampelisca araucana Gallardo, 1963",Animalia,Arthropoda,Malacostraca,Amphipoda,Ampeliscidae,Ampelisca,Ampelisca araucana
-amphiascus tenuiremis,"Amphiascus tenuiremis (Brady, 1880)",Animalia,Arthropoda,Copepoda,Harpacticoida,Miraciidae,Sarsamphiascus,Sarsamphiascus tenuiremis
 amphibalanus amphitrite,"Amphibalanus amphitrite (Darwin, 1854)",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus amphitrite
+balanus amphitrite,"Balanus amphitrite Darwin, 1854",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus amphitrite
+balanus eburneus,"Balanus eburneus Gould, 1841",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus eburneus
+balanus improvisus,"Balanus improvisus Darwin, 1854",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus improvisus
 amphidinium carterae,"Amphidinium carterae Hulburt, 1957",Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Amphidiniaceae,Amphidinium,Amphidinium carterae
 amphidinium operculatum,"Amphidinium operculatum Claparède & Lachmann, 1859",Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Amphidiniaceae,Amphidinium,Amphidinium operculatum
-amphiprora paludosa,"Amphiprora paludosa W.Smith, 1853",Chromista,Ochrophyta,Bacillariophyceae,Surirellales,Entomoneidaceae,Entomoneis,Entomoneis paludosa
 amphora coffeaeformis,Amphora coffeaeformis,Chromista,Ochrophyta,Bacillariophyceae,Thalassiophysales,Catenulaceae,Amphora,Amphora coffeaeformis
 amphora exigua,"Amphora C.G.Ehrenberg ex F.T.Kützing, 1844",Chromista,Ochrophyta,Bacillariophyceae,Thalassiophysales,Catenulaceae,Amphora,NA
 anabaena azotica,"Anabaena Bory de Saint-Vincent ex Bornet & Flahault, 1886",Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Anabaena,NA
 anabaena circinalis,Anabaena circinalis Rabenhorst,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Anabaena,Anabaena circinalis
-anabaena constricta,Anabaena constricta (Szafer) Geitler,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chroococcaceae,Johanseninema,Johanseninema constrictum
 anabaena cylindrica,Anabaena cylindrica Lemmerm.,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Anabaena,Anabaena cylindrica
-anabaena flosaquae,Anabaena flos-aquae Bréb. ex Bornet & Flahault,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Dolichospermum,Dolichospermum flosaquae
 anabaena inaequalis,Anabaena inaequalis Bornet & Flahault,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Anabaena,Anabaena inaequalis
 anabaena sp.,Nostocaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Anabaena,NA
-anabaena spiroides,Anabaena spiroides Kleb.,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Dolichospermum,Dolichospermum spiroides
 anabaena variabilis,Anabaena variabilis A,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Anabaena,Anabaena variabilis
 anabas scandens,"Anabas scandens (Daldorff, 1797)",Animalia,Chordata,Actinopterygii,Perciformes,Anabantidae,Anabas,Anabas testudineus
 anabas testudineus,"Anabas testudineus (Bloch, 1792)",Animalia,Chordata,Actinopterygii,Perciformes,Anabantidae,Anabas,Anabas testudineus
 anacystis aeruginosa,Anacystis aeruginosa,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Anacystis,Anacystis aeruginosa
-anacystis alpicola,Anacystis,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chroococcaceae,Anacystis,NA
+anacystis alpicola,Anacystis,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Anacystis,anacystis alpicola
 anacystis flosaquae,Anacystis flosaquae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Anacystis,Anacystis flosaquae
-anacystis nidulans,Anacystis nidulans (Richter) Drouet & Daily,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Aphanothece,Aphanothece nidulans
+geitlerinema amphibium,Geitlerinema amphibium (C.Agardh ex Gomont) Anagn.,Bacteria,Cyanobacteria,Cyanophyceae,Pseudanabaenales,Wilmottiaceae,Anagnostidinema,Anagnostidinema amphibium
+aphanothece clathrata,Aphanothece clathrata West & G.S.West,Bacteria,Cyanobacteria,Cyanobacteriia,Synechococcales,Prochlorococcaceae,Anathece,Anathece clathrata
 anguilla anguilla,"Anguilla anguilla (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Anguilliformes,Anguillidae,Anguilla,Anguilla anguilla
 anguilla japonica,"Anguilla japonica Temminck & Schlegel, 1846",Animalia,Chordata,Actinopterygii,Anguilliformes,Anguillidae,Anguilla,Anguilla japonica
 anguilla rostrata,"Anguilla rostrata (Lesueur, 1817)",Animalia,Chordata,Actinopterygii,Anguilliformes,Anguillidae,Anguilla,Anguilla rostrata
 ankistrodesmus falcatus,"Ankistrodesmus falcatus (Corda) Ralfs, 1848",Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Ankistrodesmus,Ankistrodesmus falcatus
-ankistrodesmus sp.,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Ankistrodesmus,NA
+ankistrodesmus sp.,Oocystaceae,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Ankistrodesmus,NA
 anonyx nugax,"Anonyx nugax (Phipps, 1774)",Animalia,Arthropoda,Malacostraca,Amphipoda,Uristidae,Anonyx,Anonyx nugax
-anonyx sp.,Lysianassidae,Animalia,Arthropoda,Malacostraca,Amphipoda,Lysianassidae,Anonyx,NA
+anonyx sp.,Lysianassidae,Animalia,Arthropoda,Malacostraca,Amphipoda,Uristidae,Anonyx,NA
 apareiodon affinis,"Apareiodon affinis (Steindachner, 1879)",Animalia,Chordata,Actinopterygii,Characiformes,Parodontidae,Apareiodon,Apareiodon affinis
 apeltes quadracus,"Apeltes quadracus (Mitchill, 1815)",Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,Apeltes,Apeltes quadracus
 aphanius dispar,"Aphanius dispar (Rüppell, 1829)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Cyprinodontidae,Aphanius,Aphanius dispar
 aphanius fasciatus,"Aphanius fasciatus (Valenciennes, 1821)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Cyprinodontidae,Aphanius,Aphanius fasciatus
 aphanius iberus,"Aphanius iberus (Valenciennes, 1846)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Cyprinodontidae,Aphanius,Aphanius iberus
 aphanizomenon flos-aquae,Aphanizomenon flos-aquae (L.) Ralfs,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Aphanizomenonaceae,Aphanizomenon,Aphanizomenon flosaquae
-aphanothece clathrata,Aphanothece clathrata West & G.S.West,Bacteria,Cyanobacteria,Cyanobacteriia,Synechococcales,Prochlorococcaceae,Anathece,Anathece clathrata
-aplocheilichthys johnstonii,"Aplocheilichthys johnstoni (Günther, 1894)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Poeciliidae,Micropanchax,Micropanchax johnstoni
+anacystis nidulans,Anacystis nidulans (Richter) Drouet & Daily,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Aphanothece,Aphanothece nidulans
 aplocheilus lineatus,"Aplocheilus lineatus (Valenciennes, 1846)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Aplocheilidae,Aplocheilus,Aplocheilus lineatus
 aplocheilus panchax,"Aplocheilus panchax (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Aplocheilidae,Aplocheilus,Aplocheilus panchax
 aplodinotus grunniens,"Aplodinotus grunniens Rafinesque, 1819",Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Aplodinotus,Aplodinotus grunniens
 apocryptes bato,"Apocryptes bato (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Apocryptes,Apocryptes bato
 apocyclops spartinus,"Apocyclops spartinus (Ruber, 1968)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Apocyclops,Apocyclops spartinus
+barbus grypus,"Barbus grypus Heckel, 1843",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Arabibarbus,Arabibarbus grypus
 arapaima gigas,"Arapaima gigas (Schinz, 1822)",Animalia,Chordata,Actinopterygii,Osteoglossiformes,Arapaimidae,Arapaima,Arapaima gigas
 archaeomysis kokuboi,"Archaeomysis kokuboi Ii, 1964",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Archaeomysis,Archaeomysis kokuboi
 archosargus probatocephalus,"Archosargus probatocephalus (Walbaum, 1792)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Archosargus,Archosargus probatocephalus
@@ -107,17 +111,12 @@ artemia salina,"Artemia salina (Linnaeus, 1758)",Animalia,Arthropoda,Branchiopod
 artemia sinica,"Artemia sinica Cai, 1989",Animalia,Arthropoda,Branchiopoda,Anostraca,Artemiidae,Artemia,Artemia sinica
 artemia sp.,Artemiidae,Animalia,Arthropoda,Branchiopoda,Anostraca,Artemiidae,Artemia,NA
 artemia urmiana,"Artemia urmiana Gunther, 1899",Animalia,Arthropoda,Branchiopoda,Anostraca,Artemiidae,Artemia,Artemia urmiana
+spirulina platensis,Spirulina platensis (Gomont) Geitler,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Arthrospira,Arthrospira platensis
 asellus aquaticus,"Asellus aquaticus (Linnaeus, 1758)",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Asellus,Asellus aquaticus
-asellus communis,"Asellus communis Say, 1818",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea communis
 asellus hilgendorfii,"Asellus hilgendorfii Bovallius, 1886",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Asellus,Asellus hilgendorfii
-asellus intermedius,"Asellus intermedius Sket, 1965",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus intermedius
-asellus meridianus,"Asellus meridianus Racovitza, 1919",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus meridianus
-asellus militaris,"Asellus militaris Hay, 1878",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea intermedia
-asellus racovitzai,"Asellus racovitzai Williams, 1970",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea racovitzai
 asellus sp.,Animalia,Animalia,NA,Malacostraca,Isopoda,Asellidae,Asellus,NA
 astacopsis gouldi,"Astacopsis gouldi Clark, 1936",Animalia,Arthropoda,Malacostraca,Decapoda,Parastacidae,Astacopsis,Astacopsis gouldi
 astacus astacus,"Astacus astacus (Linnaeus, 1758)",Animalia,Arthropoda,Malacostraca,Decapoda,Astacidae,Astacus,Astacus astacus
-astacus leptodactylus,"Astacus leptodactylus Eschscholtz, 1823",Animalia,Arthropoda,Malacostraca,Decapoda,Astacidae,Pontastacus,Pontastacus leptodactylus
 asterionella formosa,"Asterionella formosa Hassall, 1850",Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Asterionella,Asterionella formosa
 asterionella japonica,"Asterionella japonica Cleve, 1882",Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Asterionella,Asterionella japonica
 astyanax bimaculatus,"Astyanax bimaculatus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Characiformes,Characidae,Astyanax,Astyanax bimaculatus
@@ -129,34 +128,22 @@ atyaephyra desmarestii,"Atyaephyra desmarestii (Millet, 1831)",Animalia,Arthropo
 aulacoseira ambigua,"Aulacoseira ambigua (Grunow) Simonsen, 1979",Chromista,Ochrophyta,Bacillariophyceae,Aulacoseirales,Aulacoseiraceae,Aulacoseira,Aulacoseira ambigua
 aulacoseira granulata,"Aulacoseira granulata (Ehrenberg) Simonsen, 1979",Chromista,Ochrophyta,Bacillariophyceae,Aulacoseirales,Aulacoseiraceae,Aulacoseira,Aulacoseira granulata
 australoheros facetus,"Australoheros facetus (Jenyns, 1842)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Australoheros,Australoheros facetus
+elminius modestus,"Elminius modestus Darwin, 1854",Animalia,Arthropoda,Maxillopoda,Sessilia,Elminiidae,Austrominius,Austrominius modestus
 austropotamobius fulcisianus,"Austropotamobius fulcisianus (Ninni, 1886)",Animalia,Arthropoda,Malacostraca,Decapoda,Astacidae,Austropotamobius,Austropotamobius fulcisianus
 austropotamobius pallipes,"Austropotamobius pallipes (Lereboullet, 1858)",Animalia,Arthropoda,Malacostraca,Decapoda,Astacidae,Austropotamobius,Austropotamobius pallipes
-balanus albicostatus,"Balanus albicostatus Pilsbry, 1916",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Fistulobalanus,Fistulobalanus albicostatus
-balanus amphitrite,"Balanus amphitrite Darwin, 1854",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus amphitrite
-balanus eburneus,"Balanus eburneus Gould, 1841",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus eburneus
-balanus improvisus,"Balanus improvisus Darwin, 1854",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Amphibalanus,Amphibalanus improvisus
+uca annulipes,"Uca annulipes (H.Milne Edwards, 1837)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Austruca,Austruca annulipes
+uca triangularis,"Uca triangularis (A.Milne-Edwards, 1873)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Austruca,Austruca triangularis
+chlorella protothecoides,Chlorella protothecoides W.Krüger,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Auxenochlorella,Auxenochlorella protothecoides
+chlorella pyrenoidosa,Chlorella pyrenoidosa H.Chick,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Auxenochlorella,Auxenochlorella pyrenoidosa
 barbodes carnaticus,"Barbodes carnaticus (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barbodes,Barbodes carnaticus
 barbonymus gonionotus,"Barbonymus gonionotus (Bleeker, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barbonymus,Barbonymus gonionotus
-barbus anoplus,"Barbus anoplus Weber, 1897",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Enteromius,Enteromius anoplus
-barbus arulius,"Barbus arulius (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Dawkinsia,Dawkinsia arulius
-barbus barbus,"Barbus barbus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barbus,Barbus barbus
-barbus conchonius,"Barbus conchonius (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pethia,Pethia conchonius
-barbus dorsalis,"Barbus dorsalis (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius dorsalis
-barbus filamentosus,"Barbus filamentosa (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Dawkinsia,Dawkinsia filamentosa
-barbus grypus,"Barbus grypus Heckel, 1843",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Arabibarbus,Arabibarbus grypus
-barbus guganio,"Barbus guganio (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pethia,Pethia guganio
-barbus gurneyi,"Barbus gurneyi Günther, 1868",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Enteromius,Enteromius gurneyi
 barbus javanicus,"Barbus javanicus Bleeker, 1855",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barbonymus,Barbonymus gonionotus
-barbus macrops,"Barbus macrops Boulenger, 1911",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Enteromius,Enteromius macrops
-barbus natalensis,"Barbus natalensis Castelnau, 1861",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeobarbus,Labeobarbus natalensis
-barbus sharpeyi,"Barbus sharpeyi Günther, 1874",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Mesopotamichthys,Mesopotamichthys sharpeyi
+barbus barbus,"Barbus barbus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barbus,Barbus barbus
 barbus sp.,Cyprinidae,Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barbus,NA
-barbus stigma,"Barbus stigma (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius stigma
-barbus ticto,"Barbus ticto (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pethia,Pethia ticto
 barilius bendelisis,"Barilius bendelisis (Hamilton, 1807)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barilius,Barilius bendelisis
 barilius vagra,"Barilius vagra (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Barilius,Barilius vagra
-barytelphusa cunicularis,"Barytelphusa cunicularis (Westwood, 1836)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Barytelphusa,Barytelphusa cunicularis
 barytelphusa guerini,"Barytelphusa guerini (H.Milne Edwards, 1853)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Barusa,Barusa guerini
+barytelphusa cunicularis,"Barytelphusa cunicularis (Westwood, 1836)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Barytelphusa,Barytelphusa cunicularis
 bellerochea malleus,"Bellerochea malleus (Brightwell) Van Heurck, 1885",Chromista,Ochrophyta,Bacillariophyceae,Hemiaulales,Bellerocheaceae,Bellerochea,Bellerochea malleus
 bellerochea polymorpha,"Bellerochea polymorpha Hargraves & Guillard, 1974",Chromista,Ochrophyta,Bacillariophyceae,Hemiaulales,Bellerocheaceae,Bellerochea,Bellerochea polymorpha
 betta splendens,"Betta splendens Regan, 1910",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Betta,Betta splendens
@@ -177,25 +164,22 @@ bryocamptus echinatus,"Bryocamptus echinatus (Mrázek, 1893)",Animalia,Arthropod
 bryocamptus minutus,"Bryocamptus minutus (Claus, 1863)",Animalia,Arthropoda,Copepoda,Harpacticoida,Canthocamptidae,Bryocamptus,Bryocamptus minutus
 bryocamptus pygmaeus,"Bryocamptus pygmaeus (Sars G.O., 1863)",Animalia,Arthropoda,Copepoda,Harpacticoida,Canthocamptidae,Bryocamptus,Bryocamptus pygmaeus
 bryocamptus zschokkei,"Bryocamptus zschokkei (Schmeil, 1893)",Animalia,Arthropoda,Copepoda,Harpacticoida,Canthocamptidae,Bryocamptus,Bryocamptus zschokkei
+asellus communis,"Asellus communis Say, 1818",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea communis
+asellus militaris,"Asellus militaris Hay, 1878",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea intermedia
+asellus racovitzai,"Asellus racovitzai Williams, 1970",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea racovitzai
 caecidotea brevicauda,"Caecidotea brevicauda (Forbes, 1876)",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,Caecidotea brevicauda
 caecidotea sp.,Asellidae,Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Caecidotea,NA
 calamoecia lucasi,"Calamoecia lucasi Brady, 1906",Animalia,Arthropoda,Copepoda,Calanoida,Centropagidae,Calamoecia,Calamoecia lucasi
-calanus plumchrus,"Calanus plumchrus Marukawa, 1921",Animalia,Arthropoda,Copepoda,Calanoida,Calanidae,Neocalanus,Neocalanus plumchrus
 caligus rogercresseyi,"Caligus rogercresseyi Boxshall & Bravo, 2000",Animalia,Arthropoda,Copepoda,Siphonostomatoida,Caligidae,Caligus,Caligus rogercresseyi
 callianassa kraussi,"Callianassa krausei Van Straelen, 1925",Animalia,Arthropoda,Malacostraca,Decapoda,Callianassidae,Callianassa,Callianassa krausei
 callinectes amnicola,"Callinectes amnicola (de Rochebrune, 1883)",Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes amnicola
 callinectes sapidus,"Callinectes sapidus Rathbun, 1896",Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes sapidus
 callinectes similis,"Callinectes similis Williams, 1966",Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,Callinectes,Callinectes similis
 cambarus bartonii,"Cambarus bartonii (Fabricius, 1798)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Cambarus,Cambarus bartonii
-cambarus diogenes,"Cambarus diogenes Girard, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Lacunicambarus,Lacunicambarus diogenes
 cambarus robustus,"Cambarus robustus Girard, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Cambarus,Cambarus robustus
 cambarus sp.,Cambaridae,Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Cambarus,NA
 campostoma anomalum,"Campostoma anomalum (Rafinesque, 1820)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Campostoma,Campostoma anomalum
-cancer anthonyi,"Cancer anthonyi Rathbun, 1897",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Metacarcinus,Metacarcinus anthonyi
-cancer gracilis,"Cancer gracilis Dana, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Metacarcinus,Metacarcinus gracilis
 cancer irroratus,"Cancer irroratus Say, 1817",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Cancer,Cancer irroratus
-cancer magister,"Cancer magister Dana, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Metacarcinus,Metacarcinus magister
-cancer oregonensis,"Cancer oregonensis (Rathbun, 1898)",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Glebocarcinus,Cancer oregonensis
 cancer productus,"Cancer productus Randall, 1840",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Cancer,Cancer productus
 candidia barbatus,"Candidia barbata (Regan, 1908)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Candidia,Candidia barbata
 canthocamptus sp.,Canthocamptidae,Animalia,Arthropoda,Copepoda,Harpacticoida,Canthocamptidae,Canthocamptus,NA
@@ -207,7 +191,6 @@ carassius carassius,"Carassius carassius (Linnaeus, 1758)",Animalia,Chordata,Act
 carassius sp.,Cyprinidae,Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Carassius,NA
 carcinus maenas,"Carcinus maenas (Linnaeus, 1758)",Animalia,Arthropoda,Malacostraca,Decapoda,Carcinidae,Carcinus,Carcinus maenas
 caridina africana,"Caridina africana Kingsley, 1883",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Caridina,Caridina africana
-caridina denticulata,"Caridina denticulata (De Haan, 1844)",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Neocaridina,Neocaridina denticulata
 caridina laevis,"Caridina laevis Heller, 1862",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Caridina,Caridina laevis
 caridina nilotica,"Caridina nilotica (P.Roux, 1833)",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Caridina,Caridina nilotica
 caridina rajadhari,"Caridina rajadhari Bouvier, 1918",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Caridina,Caridina rajadhari
@@ -231,16 +214,17 @@ ceriodaphnia reticulata,"Ceriodaphnia reticulata (Jurine, 1820)",Animalia,Arthro
 ceriodaphnia rigaudi,"Ceriodaphnia rigaudi Richard, 1894",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Ceriodaphnia,Ceriodaphnia rigaudi
 ceriodaphnia silvestrii,"Ceriodaphnia silvestrii Daday, 1902",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Ceriodaphnia,Ceriodaphnia silvestrii
 ceriodaphnia sp.,Daphniidae,Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Ceriodaphnia,NA
+chasmichthys dolichognathus,"Chasmichthys dolichognathus (Hilgendorf, 1879)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Chaenogobius,Chaenogobius annularis
 chaetoceros calcitrans,"Chaetoceros calcitrans (Paulsen) Takano, 1968",Chromista,Ochrophyta,Bacillariophyceae,Chaetocerotales,Chaetocerotaceae,Chaetoceros,Chaetoceros tenuissimus
 chaetoceros decipiens,Chaetoceros decipiens Cleve,Chromista,Ochrophyta,Bacillariophyceae,Chaetocerotales,Chaetocerotaceae,Chaetoceros,Chaetoceros decipiens
 chaetoceros didymus,Chaetoceros didymus Ehrenberg,Chromista,Ochrophyta,Bacillariophyceae,Chaetocerotales,Chaetocerotaceae,Chaetoceros,Chaetoceros didymus
 chaetoceros gracilis,"Chaetoceros gracilis Pantocsek, 1892",Chromista,Ochrophyta,Bacillariophyceae,Chaetocerotales,Chaetocerotaceae,Chaetoceros,Chaetoceros gracilis
 chaetoceros sp.,Chaetocerotaceae,Chromista,Ochrophyta,Bacillariophyceae,Chaetocerotales,Chaetocerotaceae,Chaetoceros,NA
-chaetogammarus marinus,"Chaetogammarus marinus (Leach, 1816)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Marinogammarus,Marinogammarus marinus
 channa marulius,"Channa marulius (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Channidae,Channa,Channa marulius
 channa orientalis,"Channa orientalis Bloch & Schneider, 1801",Animalia,Chordata,Actinopterygii,Perciformes,Channidae,Channa,Channa orientalis
 channa punctata,"Channa punctata (Bloch, 1793)",Animalia,Chordata,Actinopterygii,Perciformes,Channidae,Channa,Channa punctata
 channa striata,"Channa striata (Bloch, 1793)",Animalia,Chordata,Actinopterygii,Perciformes,Channidae,Channa,Channa striata
+ophiocephalus punctatus,"Ophiocephalus punctatus Bloch, 1793",Animalia,Chordata,Actinopterygii,Perciformes,Channidae,Channa,Channa punctata
 chanodichthys erythropterus,"Chanodichthys erythropterus (Basilewsky, 1855)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Chanodichthys,Chanodichthys erythropterus
 chanos chanos,"Chanos chanos (Forsskål, 1775)",Animalia,Chordata,Actinopterygii,Gonorynchiformes,Chanidae,Chanos,Chanos chanos
 chapalichthys pardalis,"Chapalichthys pardalis Álvarez, 1963",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Goodeidae,Chapalichthys,Chapalichthys pardalis
@@ -248,10 +232,11 @@ chara canescens,Chara canescens Loisel.,Plantae,Charophyta,Charophyceae,Charales
 chara globularis,Chara globularis Thuill.,Plantae,Charophyta,Charophyceae,Charales,Characeae,Chara,Chara globularis
 charybdis feriatus,"Charybdis feriata (Linnaeus, 1758)",Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,Charybdis,Charybdis feriata
 charybdis japonica,"Charybdis japonica (A.Milne-Edwards, 1861)",Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,Charybdis,Charybdis japonica
-chasmagnathus granulata,"Chasmagnathus granulatus Dana, 1851",Animalia,Arthropoda,Malacostraca,Decapoda,Varunidae,Neohelice,Neohelice granulata
-chasmichthys dolichognathus,"Chasmichthys dolichognathus (Hilgendorf, 1879)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Chaenogobius,Chaenogobius annularis
 chela cachius,"Chela cachius (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Chela,Chela cachius
 chelon labrosus,"Chelon labrosus (Risso, 1827)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon labrosus
+liza parsia,"Liza parsia (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon parsia
+liza ramado,"Liza ramado (Risso, 1827)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon ramada
+mugil auratus,"Mugil auratus Risso, 1810",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon auratus
 chelura terebrans,"Chelura terebrans Philippi, 1839",Animalia,Arthropoda,Malacostraca,Amphipoda,Cheluridae,Chelura,Chelura terebrans
 cherax destructor,"Cherax destructor Clark, 1936",Animalia,Arthropoda,Malacostraca,Decapoda,Parastacidae,Cherax,Cherax destructor
 cherax quadricarinatus,"Cherax quadricarinatus (von Martens, 1868)",Animalia,Arthropoda,Malacostraca,Decapoda,Parastacidae,Cherax,Cherax quadricarinatus
@@ -266,40 +251,35 @@ chlamydomonas intermedia,Chlamydomonas intermedia Chodat,Plantae,Chlorophyta,Chl
 chlamydomonas moewusii,Chlamydomonas moewusii Gerloff,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Chlamydomonas,Chlamydomonas moewusii
 chlamydomonas noctigama,"Chlamydomonas noctigama Korschikov, 1927",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Chlamydomonas,Chlamydomonas noctigama
 chlamydomonas reinhardtii,Chlamydomonas reinhardtii P.A.Dang.,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Chlamydomonas,Chlamydomonas reinhardtii
-chlamydomonas segnis,"Chlamydomonas segnis Ettl, 1965",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Lobochlamys,Lobochlamys segnis
 chlamydomonas snowiae,Chlamydomonas snowiae Printz,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Chlamydomonas,Chlamydomonas snowiae
 chlamydomonas sp.,Chlamydomonadaceae,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Chlamydomonas,NA
 chlamydotheca arcuata,"Chlamydotheca arcuata (Sars, 1901)",Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Chlamydotheca,Chlamydotheca arcuata
-chlorella autotrophica,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chlorella,NA
-chlorella ellipsoidea,Chlorella ellipsoidea Gerneck,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium ellipsoideum
+chlorella autotrophica,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,NA
 chlorella emersonii,Chlorella emersonii Shihira & Krauss,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,Chlorella emersonii
-chlorella fusca,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chlorella,NA
-chlorella marina,Chlorella marina Butcher,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium saccharophilum
-chlorella ovalis,Chlorella ovalis Butcher,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium saccharophilum
-chlorella protothecoides,Chlorella protothecoides W.Krüger,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Auxenochlorella,Auxenochlorella protothecoides
-chlorella pyrenoidosa,Chlorella pyrenoidosa H.Chick,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Auxenochlorella,Auxenochlorella pyrenoidosa
-chlorella saccharophila,Chlorella saccharophila (W.Krüger) Mig.,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium saccharophilum
+chlorella fusca,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,NA
 chlorella salina,"Chlorella salina Kufferath, 1919",Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,Chlorella salina
 chlorella sorokiniana,"Chlorella sorokiniana Shihira & Krauss, 1965",Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,Chlorella sorokiniana
-chlorella sp.,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chlorella,NA
+chlorella sp.,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,NA
 chlorella vulgaris,Chlorella vulgaris Beij.,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,Chlorella vulgaris
-chlorella zofingiensis,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chlorella,NA
+chlorella zofingiensis,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,NA
+dictyosphaerium chlorelloides,Dictyosphaerium chlorelloides (Nauman) Komárek & Perman,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,Chlorella chlorelloides
 chlorococcum hypnosporum,Chlorococcum hypnosporum Starr,Plantae,Chlorophyta,Chlorophyceae,Chlamydomonadales,Chlorococcaceae,Chlorococcum,Chlorococcum hypnosporum
 chlorococcum sp.,Chlorococcaceae,Plantae,Chlorophyta,Chlorophyceae,Chlamydomonadales,Chlorococcaceae,Chlorococcum,NA
+chlorella ellipsoidea,Chlorella ellipsoidea Gerneck,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium ellipsoideum
+chlorella marina,Chlorella marina Butcher,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium saccharophilum
+chlorella ovalis,Chlorella ovalis Butcher,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium saccharophilum
+chlorella saccharophila,Chlorella saccharophila (W.Krüger) Mig.,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Chloroidium,Chloroidium saccharophilum
 chrissia halyi,"Chrissia Hartmann, 1957",Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Chrissia,NA
 chromis viridis,"Chromis viridis (Cuvier, 1830)",Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis viridis
 chroococcus minor,Chroococcus minor (Kütz.) Nägeli,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Chroococcus,Chroococcus minor
 chroomonas sp.,Cryptomonadaceae,Chromista,Cryptophyta,Cryptophyceae,Cryptomonadales,Cryptomonadaceae,Chroomonas,NA
+phoxinus eos,"Phoxinus eos (Cope, 1861)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Chrosomus,Chrosomus eos
 chrysichthys longidorsalis,"Chrysichthys longidorsalis Risch & Thys van den Audenaerde, 1981",Animalia,Chordata,Actinopterygii,Siluriformes,Claroteidae,Chrysichthys,Chrysichthys longidorsalis
 chrysiptera cyanea,"Chrysiptera cyanea (Quoy & Gaimard, 1825)",Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chrysiptera,Chrysiptera cyanea
-chrysophrys major,"Chrysophrys major Temminck & Schlegel, 1843",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Pagrus,Pagrus major
 chydorus ovalis,"Chydorus ovalis Kurz, 1875",Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Chydorus,Chydorus ovalis
 chydorus sp.,Chydoridae,Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Chydorus,NA
 chydorus sphaericus,"Chydorus sphaericus (O.F.Müller, 1776)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Chydorus,Chydorus sphaericus
 cichlasoma bimaculatum,"Cichlasoma bimaculatum (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Cichlasoma,Cichlasoma bimaculatum
-cichlasoma managuense,"Cichlasoma managuense (Günther, 1867)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Parachromis,Parachromis managuensis
-cichlasoma nigrofasciatum,"Cichlasoma nigrofasciatum (Günther, 1867)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Amatitlania,Amatitlania nigrofasciata
-cichlasoma urophthalmus,"Cichlasoma urophthalmus (Günther, 1862)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Mayaheros,Mayaheros urophthalmus
 cirrhinus molitorella,"Cirrhinus molitorella (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cirrhinus,Cirrhinus molitorella
 cirrhinus mrigala,"Cirrhinus mrigala (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cirrhinus,Cirrhinus mrigala
 citharichthys stigmaeus,"Citharichthys stigmaeus Jordan & Gilbert, 1882",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Paralichthyidae,Citharichthys,Citharichthys stigmaeus
@@ -316,12 +296,14 @@ closterium lunula,Closterium lunula Ralfs,Plantae,Charophyta,Zygnematophyceae,Zy
 clupea harengus,"Clupea harengus Linnaeus, 1758",Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Clupea,Clupea harengus
 clupea pallasii,"Clupea pallasii Valenciennes, 1847",Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Clupea,Clupea pallasii
 cnesterodon decemmaculatus,"Cnesterodon decemmaculatus (Jenyns, 1842)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Poeciliidae,Cnesterodon,Cnesterodon decemmaculatus
-coccolithus huxleyi,Coccolithus huxleyi (Lohmann) Kamptner et al.,Chromista,Haptophyta,Prymnesiophyceae,Isochrysidales,Noelaerhabdaceae,Emiliania,Emiliania huxleyi
 cochlodinium polykrikoides,Cochlodinium polykrikoides Margalef,Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Gymnodiniaceae,Cochlodinium,Cochlodinium polykrikoides
 coelastrum microporum,Coelastrum microporum Nägeli,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Coelastrum,Coelastrum microporum
-colisa fasciata,"Colisa fasciata (Bloch & Schneider, 1801)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Trichogaster,Trichogaster fasciata
-colisa lalia,"Colisa lalia (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Trichogaster,Trichogaster lalius
 colossoma macropomum,"Colossoma macropomum (Cuvier, 1816)",Animalia,Chordata,Actinopterygii,Characiformes,Serrasalmidae,Colossoma,Colossoma macropomum
+thalassiosira weissflogii,"Thalassiosira weissflogii (Grunow) G.Fryxell & Hasle, 1977",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Thalassiosiraceae,Conticribra,Conticribra weissflogii
+tilapia guineensis,"Tilapia guineensis (Bleeker, 1863)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon guineensis
+tilapia melanopleura,"Tilapia melanopleura Duméril, 1861",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon zillii
+tilapia rendalli,"Tilapia rendalli (Boulenger, 1897)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon rendalli
+tilapia zillii,"Tilapia zillei (Gervais, 1848)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon zillii
 coregonus albula,"Coregonus albula (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Coregonus,Coregonus albula
 coregonus clupeaformis,"Coregonus clupeaformis (Mitchill, 1818)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Coregonus,Coregonus clupeaformis
 coregonus fera,"Coregonus fera Jurine, 1825",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Coregonus,Coregonus fera
@@ -329,8 +311,7 @@ coregonus hoyi,"Coregonus hoyi (Milner, 1874)",Animalia,Chordata,Actinopterygii,
 coregonus lavaretus,"Coregonus lavaretus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Coregonus,Coregonus lavaretus
 coregonus muksun,"Coregonus muksun (Pallas, 1814)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Coregonus,Coregonus muksun
 coregonus peled,"Coregonus peled (Gmelin, 1789)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Coregonus,Coregonus peled
-corophium acherusicum,"Corophium acherusicum A.Costa, 1853",Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Monocorophium,Monocorophium acherusicum
-corophium insidiosum,"Corophium insidiosum Crawford, 1937",Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Monocorophium,Monocorophium insidiosum
+alona rectangula,"Alona rectangula G.O.Sars, 1862",Animalia,Arthropoda,Branchiopoda,Diplostraca,Chydoridae,Coronatella,Coronatella rectangula
 corophium orientale,"Corophium orientale Schellenberg, 1928",Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Corophium,Corophium orientale
 corophium sp.,Corophiidae,Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Corophium,NA
 corophium volutator,"Corophium volutator (Pallas, 1766)",Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Corophium,Corophium volutator
@@ -347,7 +328,6 @@ crangonyx pseudogracilis,"Crangonyx pseudogracilis Bousfield, 1958",Animalia,Art
 crangonyx richmondensis,"Crangonyx richmondensis Ellis, 1941",Animalia,Arthropoda,Malacostraca,Amphipoda,Crangonyctidae,Crangonyx,Crangonyx richmondensis
 craterocephalus marjoriae,"Craterocephalus marjoriae Whitley, 1948",Animalia,Chordata,Actinopterygii,Atheriniformes,Atherinidae,Craterocephalus,Craterocephalus marjoriae
 craterocephalus stercusmuscarum,"Craterocephalus stercusmuscarum (Günther, 1867)",Animalia,Chordata,Actinopterygii,Atheriniformes,Atherinidae,Craterocephalus,Craterocephalus stercusmuscarum
-craticula accomoda,"Craticula accomoda (Hustedt) D.G.Mann, 1990",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula accommoda
 cryptomonas ozolini,Cryptomonas ozolini Skuja,Chromista,Cryptophyta,Cryptophyceae,Cryptomonadales,Cryptomonadaceae,Cryptomonas,Cryptomonas pyrenoidifera
 cryptomonas sp.,Cryptomonadaceae,Chromista,Cryptophyta,Cryptophyceae,Cryptomonadales,Cryptomonadaceae,Cryptomonas,NA
 cryptomonas tetrapyrenoidosa,Cryptomonas tetrapyrenoidosa Skuja,Chromista,Cryptophyta,Cryptophyceae,Cryptomonadales,Cryptomonadaceae,Cryptomonas,Cryptomonas tetrapyrenoidosa
@@ -357,7 +337,7 @@ cyanobium sp.,Synechococcales,Bacteria,Cyanobacteria,Cyanobacteriia,Synechococca
 cyclaspis usitata,"Cyclaspis usitata Hale, 1932",Animalia,Arthropoda,Malacostraca,Cumacea,Bodotriidae,Cyclaspis,Cyclaspis usitata
 cyclocypris sp.,Cyprididae,Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Cyclocypris,NA
 cyclops abyssorum,"Cyclops abyssorum Sars G.O., 1863",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Cyclops,Cyclops abyssorum
-cyclops sp.,Animalia,Animalia,NA,Maxillopoda,Cyclopoida,Cyclopidae,Cyclops,NA
+cyclops sp.,Animalia,Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Cyclops,NA
 cyclops strenuus,"Cyclops strenuus Fischer, 1851",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Cyclops,Cyclops strenuus
 cyclops varicans,"Cyclops varicans Sars G.O., 1863",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Cyclops,Cyclops varicans
 cyclops viridis,"Cyclops viridis Jurine, 1820",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Cyclops,Cyclops viridis
@@ -376,6 +356,7 @@ cypridopsis vidua,Cypridopsis vidua (O.F.Muller),Animalia,Arthropoda,Ostracoda,P
 cyprinella leedsi,"Cyprinella leedsi (Fowler, 1942)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinella,Cyprinella leedsi
 cyprinella lutrensis,"Cyprinella lutrensis (Baird & Girard, 1853)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinella,Cyprinella lutrensis
 cyprinella trichroistia,"Cyprinella trichroistia (Jordan & Gilbert, 1878)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinella,Cyprinella trichroistia
+erimonax monachus,"Erimonax monachus (Cope, 1868)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinella,Cyprinella monacha
 cyprinion watsoni,"Cyprinion watsoni (Day, 1872)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinion,Cyprinion watsoni
 cyprinodon bovinus,"Cyprinodon bovinus Baird & Girard, 1853",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Cyprinodontidae,Cyprinodon,Cyprinodon bovinus
 cyprinodon dearborni,"Cyprinodon dearborni Meek, 1909",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Cyprinodontidae,Cyprinodon,Cyprinodon dearborni
@@ -385,8 +366,6 @@ cyprinotus carolinensis,"Cyprinotus carolinensis Ferguson, 1967",Animalia,Arthro
 cyprinus carpio,"Cyprinus carpio Linnaeus, 1758",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinus,Cyprinus carpio
 cypris sp.,Cyprididae,Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Cypris,NA
 cypris subglobosa,"Cypris subglobosa Sowerby, 1840",Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Cypris,Cypris subglobosa
-danio devario,"Danio devario (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Devario,Devario devario
-danio malabaricus,"Danio malabaricus (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Devario,Devario malabaricus
 danio rerio,"Danio rerio (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Danio,Danio rerio
 danio sp.,Cyprinidae,Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Danio,NA
 daphnia ambigua,"Daphnia ambigua Scourfield, 1947",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Daphnia,Daphnia ambigua
@@ -408,27 +387,32 @@ daphnia similis,"Daphnia similis Claus, 1876",Animalia,Arthropoda,Branchiopoda,D
 daphnia similoides,"Daphnia similoides Hudec, 1991",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Daphnia,Daphnia similoides
 daphnia sp.,Daphniidae,Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Daphnia,NA
 daphnia spinulata,"Daphnia spinulata Birabén, 1917",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Daphnia,Daphnia spinulata
+barbus arulius,"Barbus arulius (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Dawkinsia,Dawkinsia arulius
+barbus filamentosus,"Barbus filamentosa (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Dawkinsia,Dawkinsia filamentosa
 dendrocephalus brasiliensis,"Dendrocephalus brasiliensis Pesta, 1921",Animalia,Arthropoda,Branchiopoda,Anostraca,Thamnocephalidae,Dendrocephalus,Dendrocephalus brasiliensis
 desmarestia menziesii,"Desmarestia menziesii J.Agardh, 1848",Chromista,Ochrophyta,Phaeophyceae,Desmarestiales,Desmarestiaceae,Desmarestia,Desmarestia menziesii
 desmodesmus subspicatus,Desmodesmus subspicatus (Chodat) E.Hegewald & Ant.Schmidt,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Desmodesmus,Desmodesmus subspicatus
-detonula confervacea,"Detonula confervacea (Cleve) Gran, 1896",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Lauderiaceae,Lauderia,Lauderia confervacea
+scenedesmus abundans,Scenedesmus abundans (Kirchn.) Chodat,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Desmodesmus,Desmodesmus abundans
+scenedesmus pannonicus,Scenedesmus pannonicus Hortob.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Desmodesmus,Desmodesmus pannonicus
+danio devario,"Danio devario (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Devario,Devario devario
+danio malabaricus,"Danio malabaricus (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Devario,Devario malabaricus
+pavlova lutheri,Pavlova lutheri (Droop) J.C.Green,Chromista,Haptophyta,Pavlovophyceae,Pavlovales,Pavlovaceae,Diacronema,Diacronema lutheri
 diacyclops bicuspidatus,"Diacyclops bicuspidatus (Claus, 1857)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Diacyclops,Diacyclops bicuspidatus
 diacyclops sp.,Cyclopidae,Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Diacyclops,NA
 diacyclops thomasi,"Diacyclops thomasi (Forbes S.A., 1882)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Diacyclops,Diacyclops thomasi
 diacypris compacta,"Diacypris compacta (Herbst, 1958)",Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Diacypris,Diacypris compacta
 diaphanosoma brachyurum,"Diaphanosoma brachyurum (Liévin, 1848)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Sididae,Diaphanosoma,Diaphanosoma brachyurum
 diaphanosoma excisum,"Diaphanosoma excisum Sars, 1885",Animalia,Arthropoda,Branchiopoda,Diplostraca,Sididae,Diaphanosoma,Diaphanosoma excisum
-diaptomus clavipes,"Diaptomus clavipes Schacht, 1897",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Aglaodiaptomus,Aglaodiaptomus clavipes
-diaptomus forbesi,"Diaptomus forbesi Light, 1938",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Aglaodiaptomus,Aglaodiaptomus forbesi
 diaptomus gracilis,"Diaptomus gracilis Sars G.O., 1863",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Diaptomus,Diaptomus gracilis
-diaptomus leptopus,"Diaptomus leptopus Forbes S.A., 1882",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Aglaodiaptomus,Aglaodiaptomus leptopus
 diaptomus sp.,Diaptomidae,Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Diaptomus,NA
 dicentrarchus labrax,"Dicentrarchus labrax (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Moronidae,Dicentrarchus,Dicentrarchus labrax
-dictyosphaerium chlorelloides,Dictyosphaerium chlorelloides (Nauman) Komárek & Perman,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Chlorella,Chlorella chlorelloides
 diogenes pugilator,"Diogenes pugilator (Roux, 1828)",Animalia,Arthropoda,Malacostraca,Decapoda,Diogenidae,Diogenes,Diogenes pugilator
 diplodus cervinus,"Diplodus cervinus (Lowe, 1838)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Diplodus,Diplodus cervinus
 diplodus sargus,"Diplodus sargus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Diplodus,Diplodus sargus
-diporeia sp.,Haustoriidae,Animalia,Arthropoda,Malacostraca,Amphipoda,Haustoriidae,Diporeia,NA
+diporeia sp.,Haustoriidae,Animalia,Arthropoda,Malacostraca,Amphipoda,Pontoporeiidae,Diporeia,NA
+pontoporeia hoyi,"Pontoporeia hoyi S.I.Smith, 1874",Animalia,Arthropoda,Malacostraca,Amphipoda,Pontoporeiidae,Diporeia,Diporeia hoyi
+anabaena flosaquae,Anabaena flos-aquae Bréb. ex Bornet & Flahault,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Dolichospermum,Dolichospermum flosaquae
+anabaena spiroides,Anabaena spiroides Kleb.,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Dolichospermum,Dolichospermum spiroides
 dunaliella bioculata,"Dunaliella Teodoresco, 1905",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Dunaliellaceae,Dunaliella,NA
 dunaliella minuta,"Dunaliella Teodoresco, 1905",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Dunaliellaceae,Dunaliella,NA
 dunaliella primolecta,"Dunaliella primolecta Butcher, 1959",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Dunaliellaceae,Dunaliella,Dunaliella primolecta
@@ -436,33 +420,35 @@ dunaliella salina,"Dunaliella salina (Dunal) Teodoresco, 1905",Plantae,Chlorophy
 dunaliella sp.,Dunaliellaceae,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Dunaliellaceae,Dunaliella,NA
 dunaliella tertiolecta,"Dunaliella tertiolecta Butcher, 1959",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Dunaliellaceae,Dunaliella,Dunaliella tertiolecta
 dunaliella viridis,Dunaliella viridis Teodoresco,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Dunaliellaceae,Dunaliella,Dunaliella viridis
-echinisca triserialis,"Echinisca Liévin, 1848",Animalia,Arthropoda,Branchiopoda,Diplostraca,Macrothricidae,Macrothrix,NA
+neopanope texana,"Neopanope texana (Stimpson, 1859)",Animalia,Arthropoda,Malacostraca,Decapoda,Panopeidae,Dyspanopeus,Dyspanopeus texanus
 echinogammarus berilloni,"Echinogammarus berilloni (Catta, 1878)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Echinogammarus,Echinogammarus berilloni
 echinogammarus echinosetosus,"Echinogammarus echinosetosus Pinkster, 1973",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Echinogammarus,Echinogammarus echinosetosus
 echinogammarus finmarchicus,"Echinogammarus finmarchicus (Dahl, 1938)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Echinogammarus,Echinogammarus finmarchicus
 echinogammarus meridionalis,"Echinogammarus meridionalis Pinkster, 1973",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Echinogammarus,Echinogammarus meridionalis
-echinogammarus olivii,"Echinogammarus olivii (H.Milne Edwards, 1830)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Pectenogammarus,Pectenogammarus olivii
-echinogammarus tibaldii,"Echinogammarus tibaldii Pinkster & Stock, 1970",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Pectenogammarus,Pectenogammarus tibaldii
 eisenia bicyclis,"Eisenia J.E.Areschoug, 1876",Chromista,Ochrophyta,Phaeophyceae,Laminariales,Lessoniaceae,Eisenia,NA
 elasmopus bampo,"Elasmopus bampo J.L.Barnard, 1979",Animalia,Arthropoda,Malacostraca,Amphipoda,Maeridae,Elasmopus,Elasmopus bampo
 elasmopus pectenicrus,"Elasmopus pectenicrus (Spence Bate, 1862)",Animalia,Arthropoda,Malacostraca,Amphipoda,Maeridae,Elasmopus,Elasmopus pectenicrus
 elasmopus rapax,"Elasmopus rapax A.Costa, 1853",Animalia,Arthropoda,Malacostraca,Amphipoda,Maeridae,Elasmopus,Elasmopus rapax
-elminius modestus,"Elminius modestus Darwin, 1854",Animalia,Arthropoda,Maxillopoda,Sessilia,Elminiidae,Austrominius,Austrominius modestus
+liza vaigiensis,"Liza vaigiensis (Quoy & Gaimard, 1825)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Ellochelon,Ellochelon vaigiensis
 emerita analoga,"Emerita analoga (Stimpson, 1857)",Animalia,Arthropoda,Malacostraca,Decapoda,Hippidae,Emerita,Emerita analoga
 emerita brasiliensis,"Emerita brasiliensis Schmitt, 1935",Animalia,Arthropoda,Malacostraca,Decapoda,Hippidae,Emerita,Emerita brasiliensis
+coccolithus huxleyi,Coccolithus huxleyi (Lohmann) Kamptner et al.,Chromista,Haptophyta,Prymnesiophyceae,Isochrysidales,Noelaerhabdaceae,Emiliania,Emiliania huxleyi
 encyonema gracile,"Encyonema gracile Rabenhorst, 1853",Chromista,Ochrophyta,Bacillariophyceae,Cymbellales,Cymbellaceae,Encyonema,Encyonema gracile
 encyonema silesiacum,Encyonema silesiacum Round et al.,Chromista,Ochrophyta,Bacillariophyceae,Cymbellales,Cymbellaceae,Encyonema,Encyonema silesiacum
 engraulis japonicus,"Engraulis japonicus Temminck & Schlegel, 1846",Animalia,Chordata,Actinopterygii,Clupeiformes,Engraulidae,Engraulis,Engraulis japonicus
 engraulis mordax,"Engraulis mordax Girard, 1854",Animalia,Chordata,Actinopterygii,Clupeiformes,Engraulidae,Engraulis,Engraulis mordax
 enneacanthus gloriosus,"Enneacanthus gloriosus (Holbrook, 1855)",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Enneacanthus,Enneacanthus gloriosus
-enteromorpha intestinalis,Enteromorpha intestinalis (L.) Link,Plantae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,Ulva,Ulva intestinalis
+barbus anoplus,"Barbus anoplus Weber, 1897",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Enteromius,Enteromius anoplus
+barbus gurneyi,"Barbus gurneyi Günther, 1868",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Enteromius,Enteromius gurneyi
+barbus macrops,"Barbus macrops Boulenger, 1911",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Enteromius,Enteromius macrops
+amphiprora paludosa,"Amphiprora paludosa W.Smith, 1853",Chromista,Ochrophyta,Bacillariophyceae,Surirellales,Entomoneidaceae,Entomoneis,Entomoneis paludosa
 entomoneis punctulata,"Entomoneis punctulata (Grunow) K.Osada & H.Kobayasi, 1990",Chromista,Ochrophyta,Bacillariophyceae,Surirellales,Entomoneidaceae,Entomoneis,Entomoneis punctulata
+lampetra tridentata,"Lampetra tridentata (Richardson, 1836)",Animalia,Chordata,Petromyzonti,Petromyzontiformes,Petromyzontidae,Entosphenus,Entosphenus tridentatus
 eohaustorius estuarius,"Eohaustorius estuarius Bosworth, 1973",Animalia,Arthropoda,Malacostraca,Amphipoda,Haustoriidae,Eohaustorius,Eohaustorius estuarius
-eolimna minima,"Eolimna minima (Grunow) Lange-Bertalot & W.Schiller, 1997",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Sellaphoraceae,Sellaphora,Sellaphora nigri
 epinephelus adscensionis,"Epinephelus adscensionis (Osbeck, 1765)",Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus adscensionis
-erimonax monachus,"Erimonax monachus (Cope, 1868)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Cyprinella,Cyprinella monacha
 eriocheir sinensis,"Eriocheir sinensis H.Milne Edwards, 1853",Animalia,Arthropoda,Malacostraca,Decapoda,Varunidae,Eriocheir,Eriocheir sinensis
 esomus danricus,"Esomus danrica (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Esomus,Esomus danrica
+nuria danrica,"Nuria danrica (Hamiton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Esomus,Esomus danrica
 esox lucius,"Esox lucius Linnaeus, 1758",Animalia,Chordata,Actinopterygii,Esociformes,Esocidae,Esox,Esox lucius
 esox masquinongy,"Esox masquinongy Mitchill, 1824",Animalia,Chordata,Actinopterygii,Esociformes,Esocidae,Esox,Esox masquinongy
 etheostoma caeruleum,"Etheostoma caeruleum Storer, 1845",Animalia,Chordata,Actinopterygii,Perciformes,Percidae,Etheostoma,Etheostoma caeruleum
@@ -474,7 +460,7 @@ etheostoma rubrum,"Etheostoma rubrum Raney & Suttkus, 1966",Animalia,Chordata,Ac
 etheostoma spectabile,"Etheostoma spectabile (Agassiz, 1854)",Animalia,Chordata,Actinopterygii,Perciformes,Percidae,Etheostoma,Etheostoma spectabile
 etroplus maculatus,"Etroplus maculatus (Bloch, 1795)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Etroplus,Etroplus maculatus
 etroplus suratensis,"Etroplus suratensis (Bloch, 1790)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Etroplus,Etroplus suratensis
-eualus sp.,Hippolytidae,Animalia,Arthropoda,Malacostraca,Decapoda,Hippolytidae,Eualus,NA
+eualus sp.,Hippolytidae,Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Eualus,NA
 eualus suckleyi,"Eualus suckleyi (Stimpson, 1864)",Animalia,Arthropoda,Malacostraca,Decapoda,Thoridae,Eualus,Eualus suckleyi
 eucalanus elongatus,"Eucalanus elongatus (Dana, 1848)",Animalia,Arthropoda,Copepoda,Calanoida,Eucalanidae,Eucalanus,Eucalanus elongatus
 eucalanus sp.,Eucalanidae,Animalia,Arthropoda,Copepoda,Calanoida,Eucalanidae,Eucalanus,NA
@@ -484,18 +470,21 @@ eudiaptomus gracilis,"Eudiaptomus gracilis (Sars G.O., 1863)",Animalia,Arthropod
 eudiaptomus padanus,"Eudiaptomus padanus (Burckhardt, 1900)",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Eudiaptomus,Eudiaptomus padanus
 eudorina sp.,Volvocaceae,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Volvocaceae,Eudorina,NA
 euglena gracilis,Euglena gracilis G.A.Klebs,Protozoa,Euglenozoa,Euglenoidea,Euglenida,Euglenaceae,Euglena,Euglena gracilis
-eulimnogammarus toletanus,"Eulimnogammarus toletanus Pinkster & Stock, 1970",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Iberogammarus,Iberogammarus toletanus
 eunotia sudetica,"Eunotia sudetica Otto Müller, 1898",Chromista,Ochrophyta,Bacillariophyceae,Eunotiales,Eunotiaceae,Eunotia,Eunotia sudetica
 euphausia pacifica,"Euphausia pacifica Hansen, 1911",Animalia,Arthropoda,Malacostraca,Euphausiacea,Euphausiidae,Euphausia,Euphausia pacifica
 eurypanopeus depressus,"Eurypanopeus depressus (SI Smith, 1869)",Animalia,Arthropoda,Malacostraca,Decapoda,Panopeidae,Eurypanopeus,Eurypanopeus depressus
 eurytemora affinis,"Eurytemora affinis (Poppe, 1880)",Animalia,Arthropoda,Copepoda,Calanoida,Temoridae,Eurytemora,Eurytemora affinis
 exosphaeroma gigas,"Exosphaeroma gigas (Leach, 1818)",Animalia,Arthropoda,Malacostraca,Isopoda,Sphaeromatidae,Exosphaeroma,Exosphaeroma gigas
 fabaeformiscandona wegelini,"Fabaeformiscandona wegelini (Petkovski, 1962)",Animalia,Arthropoda,Ostracoda,Podocopida,Candonidae,Fabaeformiscandona,Fabaeformiscandona wegelini
-farfantepenaeus duorarum,"Farfantepenaeus duorarum (Burkenroad, 1939)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus duorarum
-farfantepenaeus paulensis,"Farfantepenaeus paulensis (Pérez Farfante, 1967)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus paulensis
-fenneropenaeus penicillatus,"Fenneropenaeus penicillatus (Alcock, 1905)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus penicillatus
+orconectes immunis,"Orconectes immunis (Hagen, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius immunis
+orconectes limosus,"Orconectes limosus (Rafinesque, 1817)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius limosus
+orconectes nais,"Orconectes nais (Faxon, 1885)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius nais
+orconectes neglectus,"Orconectes neglectus (Faxon, 1885)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius neglectus
+orconectes propinquus,"Orconectes propinquus (Girard, 1852)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius propinquus
+orconectes rusticus,"Orconectes rusticus (Girard, 1852)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius rusticus
+orconectes virilis,"Orconectes virilis (Hagen, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius virilis
 fibrocapsa japonica,"Fibrocapsa japonica Toriumi & Takano, 1973",Chromista,Ochrophyta,Raphidophyceae,Chattonellales,Chattonellaceae,Fibrocapsa,Fibrocapsa japonica
-fistulifera saprophila,"Fistulifera saprophila (Lange-Bertalot & Bonik) Lange-Bertalot, 1997",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula saprophila
+balanus albicostatus,"Balanus albicostatus Pilsbry, 1916",Animalia,Arthropoda,Maxillopoda,Sessilia,Balanidae,Fistulobalanus,Fistulobalanus albicostatus
 fragilaria capucina,"Fragilaria capucina (Grunow) Lange-Bertalot, 1993",Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Fragilaria,Fragilaria capucina
 fragilaria crotonensis,"Fragilaria crotonensis Kitton, 1869",Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Fragilaria,Fragilaria crotonensis
 fundulus diaphanus,"Fundulus diaphanus (Lesueur, 1817)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Fundulidae,Fundulus,Fundulus diaphanus
@@ -536,13 +525,15 @@ gammarus tigrinus,"Gammarus tigrinus Sexton, 1939",Animalia,Arthropoda,Malacostr
 garra gotyla,"Garra gotyla (Gray, 1830)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Garra,Garra gotyla
 garra mullya,"Garra mullya (Sykes, 1839)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Garra,Garra mullya
 gasterosteus aculeatus,"Gasterosteus aculeatus Linnaeus, 1758",Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,Gasterosteus,Gasterosteus aculeatus
-geitlerinema amphibium,Geitlerinema amphibium (C.Agardh ex Gomont) Anagn.,Bacteria,Cyanobacteria,Cyanophyceae,Pseudanabaenales,Wilmottiaceae,Anagnostidinema,Anagnostidinema amphibium
+uca marionis,"Uca marionis (Desmarest, 1823)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Gelasimus,Gelasimus vocans
 geophagus brasiliensis,"Geophagus brasiliensis (Quoy & Gaimard, 1824)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Geophagus,Geophagus brasiliensis
 gibelion catla,"Gibelion catla (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Gibelion,Gibelion catla
 gila cypha,"Gila cypha Miller, 1946",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Gila,Gila cypha
 gila elegans,"Gila elegans Baird & Girard, 1853",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Gila,Gila elegans
 gillichthys mirabilis,"Gillichthys mirabilis Cooper, 1864",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Gillichthys,Gillichthys mirabilis
 girella punctata,"Girella punctata Gray, 1835",Animalia,Chordata,Actinopterygii,Perciformes,Kyphosidae,Girella,Girella punctata
+cancer oregonensis,"Cancer oregonensis (Rathbun, 1898)",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Glebocarcinus,Cancer oregonensis
+ulothrix subconstricta,Ulothrix subconstricta G.S.West,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Gloeotila,Gloeotila subconstricta
 gobio gobio,"Gobio gobio (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Gobio,Gobio gobio
 gobiocypris rarus,"Gobiocypris rarus Ye & Fu, 1983",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Gobiocypris,Gobiocypris rarus
 gobiosoma bosc,"Gobiosoma bosc (Lacepède, 1800)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Gobiosoma,Gobiosoma bosc
@@ -551,13 +542,14 @@ gomphonema gracile,"Gomphonema gracile Ehrenberg, 1838",Chromista,Ochrophyta,Bac
 gomphonema parvulum,"Gomphonema parvulum (Kützing) Kützing, 1849",Chromista,Ochrophyta,Bacillariophyceae,Cymbellales,Gomphonemataceae,Gomphonema,Gomphonema parvulum
 gomphonema sp.,Gomphonemataceae,Chromista,Ochrophyta,Bacillariophyceae,Cymbellales,Gomphonemataceae,Gomphonema,NA
 gonium sp.,Volvocaceae,Plantae,Chlorophyta,Chlorophyceae,Volvocales,Volvocaceae,Gonium,NA
-gonyaulax polyedra,Gonyaulax polyedra F.Stein,Chromista,Myzozoa,Dinophyceae,Gonyaulacales,Gonyaulacaceae,Lingulodinium,Lingulodinium polyedra
 goodea atripinnis,"Goodea atripinnis Jordan, 1880",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Goodeidae,Goodea,Goodea atripinnis
 gracilaria tenuistipitata,"Gracilaria tenuistipitata C.F.Chang & B.M.Xia, 1976",Plantae,Rhodophyta,Florideophyceae,Gracilariales,Gracilariaceae,Gracilaria,Gracilaria tenuistipitata
 grandidierella japonica,"Grandidierella japonica Stephensen, 1938",Animalia,Arthropoda,Malacostraca,Amphipoda,Aoridae,Grandidierella,Grandidierella japonica
+sesarma huzardi,"Sesarma huzardi (Desmarest, 1825)",Animalia,Arthropoda,Malacostraca,Decapoda,Sesarmidae,Guinearma,Guinearma huzardi
 gymnocephalus cernuus,"Gymnocephalus cernuus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Percidae,Gymnocephalus,Gymnocephalus cernua
 gymnocorymbus ternetzi,"Gymnocorymbus ternetzi (Boulenger, 1895)",Animalia,Chordata,Actinopterygii,Characiformes,Characidae,Gymnocorymbus,Gymnocorymbus ternetzi
 gymnodinium splendens,"Gymnodinium splendens Lebour, 1925",Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Gymnodiniaceae,Gymnodinium,Gymnodinium sanguineum
+pyrocystis lunula,"Pyrocystis lunula Schütt, 1896",Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Gymnodiniaceae,Gymnodinium,Gymnodinium lunula
 heliodiaptomus viduus,"Heliodiaptomus viduus (Gurney, 1916)",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Heliodiaptomus,Heliodiaptomus viduus
 heloecius cordiformis,"Heloecius cordiformis (H.Milne Edwards, 1837)",Animalia,Arthropoda,Malacostraca,Decapoda,Heloeciidae,Heloecius,Heloecius cordiformis
 hemigrammus erythrozonus,"Hemigrammus erythrozonus Durbin, 1909",Animalia,Chordata,Actinopterygii,Characiformes,Characidae,Hemigrammus,Hemigrammus erythrozonus
@@ -573,6 +565,7 @@ heteromycteris capensis,"Heteromycteris capensis Kaup, 1858",Animalia,Chordata,A
 heteromysis formosa,"Heteromysis formosa S.I.Smith, 1873",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Heteromysis,Heteromysis formosa
 heteropanope sp.,Pilumnidae,Animalia,Arthropoda,Malacostraca,Decapoda,Pilumnidae,Heteropanope,NA
 heteropneustes fossilis,"Heteropneustes fossilis (Bloch, 1794)",Animalia,Chordata,Actinopterygii,Siluriformes,Heteropneustidae,Heteropneustes,Heteropneustes fossilis
+acanthomysis sculpta,"Acanthomysis sculpta (W.M.Tattersall, 1933)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Holmesimysis,Holmesimysis sculpta
 holmesimysis costata,"Holmesimysis costata (Holmes, 1900)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Holmesimysis,Holmesimysis costata
 homarus americanus,"Homarus americanus H.Milne Edwards, 1837",Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Homarus,Homarus americanus
 homarus gammarus,"Homarus gammarus (Linnaeus, 1758)",Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Homarus,Homarus gammarus
@@ -593,6 +586,8 @@ hypomesus transpacificus,"Hypomesus transpacificus McAllister, 1963",Animalia,Ch
 hypophthalmichthys molitrix,"Hypophthalmichthys molitrix (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Hypophthalmichthys,Hypophthalmichthys molitrix
 hypophthalmichthys nobilis,"Hypophthalmichthys nobilis (Richardson, 1845)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Hypophthalmichthys,Hypophthalmichthys nobilis
 hypostomus plecostomus,"Hypostomus plecostomus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Siluriformes,Loricariidae,Hypostomus,Hypostomus plecostomus
+plecostomus commersoni,"Plecostomus commersonii (Valenciennes, 1836)",Animalia,Chordata,Actinopterygii,Siluriformes,Loricariidae,Hypostomus,Hypostomus commersoni
+eulimnogammarus toletanus,"Eulimnogammarus toletanus Pinkster & Stock, 1970",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Iberogammarus,Iberogammarus toletanus
 ictalurus furcatus,"Ictalurus furcatus (Valenciennes, 1840)",Animalia,Chordata,Actinopterygii,Siluriformes,Ictaluridae,Ictalurus,Ictalurus furcatus
 ictalurus punctatus,"Ictalurus punctatus (Rafinesque, 1818)",Animalia,Chordata,Actinopterygii,Siluriformes,Ictaluridae,Ictalurus,Ictalurus punctatus
 ictalurus sp.,Ictaluridae,Animalia,Chordata,Actinopterygii,Siluriformes,Ictaluridae,Ictalurus,NA
@@ -604,9 +599,12 @@ isochrysis galbana,Isochrysis galbana Parke,Chromista,Haptophyta,Prymnesiophycea
 isochrysis sp.,Isochrysidaceae,Chromista,Haptophyta,Prymnesiophyceae,Isochrysidales,Isochrysidaceae,Isochrysis,NA
 jaeropsis sp.,Jaeropsididae,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Jaeropsis,NA
 jenynsia multidentata,"Jenynsia multidentata (Jenyns, 1842)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Anablepidae,Jenynsia,Jenynsia multidentata
+anabaena constricta,Anabaena constricta (Szafer) Geitler,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chroococcaceae,Johanseninema,Johanseninema constrictum
 jordanella floridae,"Jordanella floridae Goode & Bean, 1879",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Cyprinodontidae,Jordanella,Jordanella floridae
+phormidium formosum,Phormidium formosum (Bory ex Gomont) Anagn. & Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Kamptonema,Kamptonema formosum
 karenia brevis,"Karenia brevis (C.C.Davis) G.Hansen & Ø.Moestrup, 2000",Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Brachidiniaceae,Karenia,Karenia brevis
 kirchneriella aperta,Kirchneriella aperta Teiling,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Kirchneriella,Kirchneriella aperta
+rivulus marmoratus,"Rivulus marmoratus Poey, 1880",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Rivulidae,Kryptolebias,Kryptolebias marmoratus
 kuhlia sandvicensis,"Kuhlia sandvicensis (Steindachner, 1876)",Animalia,Chordata,Actinopterygii,Perciformes,Kuhliidae,Kuhlia,Kuhlia sandvicensis
 labeo bata,"Labeo bata (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeo,Labeo bata
 labeo boga,"Labeo boga (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeo,Labeo boga
@@ -614,11 +612,13 @@ labeo calbasu,"Labeo calbasu (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,
 labeo fimbriatus,"Labeo fimbriatus (Bloch, 1795)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeo,Labeo fimbriatus
 labeo niloticus,"Labeo niloticus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeo,Labeo niloticus
 labeo rohita,"Labeo rohita (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeo,Labeo rohita
+barbus natalensis,"Barbus natalensis Castelnau, 1861",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Labeobarbus,Labeobarbus natalensis
 labidocera scotti,"Labidocera scotti Giesbrecht, 1897",Animalia,Arthropoda,Copepoda,Calanoida,Pontellidae,Labidocera,Labidocera scotti
+cambarus diogenes,"Cambarus diogenes Girard, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Lacunicambarus,Lacunicambarus diogenes
 lagodon rhomboides,"Lagodon rhomboides (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Lagodon,Lagodon rhomboides
-lampetra tridentata,"Lampetra tridentata (Richardson, 1836)",Animalia,Chordata,Petromyzonti,Petromyzontiformes,Petromyzontidae,Entosphenus,Entosphenus tridentatus
 lates calcarifer,"Lates calcarifer (Bloch, 1790)",Animalia,Chordata,Actinopterygii,Perciformes,Latidae,Lates,Lates calcarifer
 latreutes fucorum,"Latreutes fucorum (J.C.Fabricius, 1798)",Animalia,Arthropoda,Malacostraca,Decapoda,Hippolytidae,Latreutes,Latreutes fucorum
+detonula confervacea,"Detonula confervacea (Cleve) Gran, 1896",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Lauderiaceae,Lauderia,Lauderia confervacea
 leander tenuicornis,"Leander tenuicornis (Say, 1818)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Leander,Leander tenuicornis
 leiostomus xanthurus,"Leiostomus xanthurus Lacepède, 1802",Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Leiostomus,Leiostomus xanthurus
 lepeophtheirus salmonis,"Lepeophtheirus salmonis (Krøyer, 1837)",Animalia,Arthropoda,Copepoda,Siphonostomatoida,Caligidae,Lepeophtheirus,Lepeophtheirus salmonis
@@ -637,16 +637,19 @@ leptodora kindtii,"Leptodora kindti (Focke, 1844)",Animalia,Arthropoda,Branchiop
 leptolyngbya sp.,Oscillatoriaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Oscillatoriaceae,Leptolyngbya,NA
 leptomysis lingvura,"Leptomysis lingvura (G.O.Sars, 1866)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Leptomysis,Leptomysis lingvura
 leptomysis mediterranea,"Leptomysis mediterranea G.O.Sars, 1877",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Leptomysis,Leptomysis mediterranea
+uca pugilator,"Uca pugilator (Bosc, 1801)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Leptuca,Leptuca pugilator
+uca uruguayensis,"Uca uruguayensis Nobili, 1901",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Leptuca,Leptuca uruguayensis
 leucaspius delineatus,"Leucaspius delineatus (Heckel, 1843)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Leucaspius,Leucaspius delineatus
-leuciscus cephalus,"Leuciscus cephalus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Squalius,Squalius cephalus
 leuciscus idus,"Leuciscus idus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Leuciscus,Leuciscus idus
 leuciscus leuciscus,"Leuciscus leuciscus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Leuciscus,Leuciscus leuciscus
 leuresthes tenuis,"Leuresthes tenuis (Ayres, 1860)",Animalia,Chordata,Actinopterygii,Atheriniformes,Atherinopsidae,Leuresthes,Leuresthes tenuis
 limanda limanda,"Limanda limanda (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Limanda,Limanda limanda
 limanda punctatissima,"Limanda punctatissima (Steindachner, 1879)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Limanda,Limanda punctatissima
+pleuronectes ferrugineus,"Pleuronectes ferruginea (Storer, 1839)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Limanda,Limanda ferruginea
 limnoria lignorum,"Limnoria lignorum (Rathke, 1799)",Animalia,Arthropoda,Malacostraca,Isopoda,Limnoriidae,Limnoria,Limnoria lignorum
 limnoria tripunctata,"Limnoria tripunctata Menzies, 1951",Animalia,Arthropoda,Malacostraca,Isopoda,Limnoriidae,Limnoria,Limnoria tripunctata
 limulus polyphemus,"Limulus polyphemus (Linnaeus, 1758)",Animalia,Arthropoda,Merostomata,Xiphosurida,Limulidae,Limulus,Limulus polyphemus
+gonyaulax polyedra,Gonyaulax polyedra F.Stein,Chromista,Myzozoa,Dinophyceae,Gonyaulacales,Gonyaulacaceae,Lingulodinium,Lingulodinium polyedra
 lingulodinium polyedrum,Lingulodinium polyedra (F.Stein) J.D.Dodge,Chromista,Myzozoa,Dinophyceae,Gonyaulacales,Gonyaulacaceae,Lingulodinium,Lingulodinium polyedra
 lipophrys pholis,"Lipophrys pholis (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Blenniidae,Lipophrys,Lipophrys pholis
 lirceus alabamae,"Lirceus alabamae Hubricht & Mackin, 1949",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Lirceus,Lirceus alabamae
@@ -654,14 +657,10 @@ lirceus fontinalis,"Lirceus fontinalis Rafinesque, 1820",Animalia,Arthropoda,Mal
 lithodes antarcticus,"Lithodes antarctica Hombron & Jacquinot, 1842",Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,Lithodes,Lithodes santolla
 lithodes santolla,"Lithodes santolla (Molina, 1782)",Animalia,Arthropoda,Malacostraca,Decapoda,Lithodidae,Lithodes,Lithodes santolla
 lithognathus mormyrus,"Lithognathus mormyrus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Lithognathus,Lithognathus mormyrus
-litopenaeus schmitti,"Litopenaeus schmitti (Burkenroad, 1936)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus schmitti
-litopenaeus stylirostris,"Litopenaeus stylirostris (Stimpson, 1874)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus stylirostris
-litopenaeus vannamei,"Litopenaeus vannamei (Boone, 1931)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus vannamei
-liza macrolepis,"Liza macrolepis (Smith, 1846)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Planiliza,Planiliza macrolepis
-liza parsia,"Liza parsia (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon parsia
-liza ramado,"Liza ramado (Risso, 1827)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon ramada
-liza vaigiensis,"Liza vaigiensis (Quoy & Gaimard, 1825)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Ellochelon,Ellochelon vaigiensis
+mugil carinatus,"Mugil carinatus Valenciennes, 1836",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Liza,Liza carinata
+chlamydomonas segnis,"Chlamydomonas segnis Ettl, 1965",Plantae,Chlorophyta,Chlorophyceae,Volvocales,Chlamydomonadaceae,Lobochlamys,Lobochlamys segnis
 lophiosilurus alexandri,"Lophiosilurus alexandri Steindachner, 1876",Animalia,Chordata,Actinopterygii,Siluriformes,Pseudopimelodidae,Lophiosilurus,Lophiosilurus alexandri
+sergestes lucens,"Sergestes lucens Hansen, 1922",Animalia,Arthropoda,Malacostraca,Decapoda,Sergestidae,Lucensosergia,Lucensosergia lucens
 lucifer sp.,"? lucifer Eichwald, 1871",Animalia,Arthropoda,Malacostraca,Decapoda,Luciferidae,Lucifer,Lucifer typus
 lutjanus argentimaculatus,"Lutjanus argentimaculatus (Forsskål, 1775)",Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus argentimaculatus
 luxilus chrysocephalus,"Luxilus chrysocephalus Rafinesque, 1820",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Luxilus,Luxilus chrysocephalus
@@ -689,16 +688,20 @@ macrobrachium rosenbergii,"Macrobrachium rosenbergii (De Man, 1879)",Animalia,Ar
 macrobrachium rude,"Macrobrachium rude (Heller, 1862)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Macrobrachium,Macrobrachium rude
 macrobrachium sp.,Palaemonidae,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Macrobrachium,NA
 macrobrachium superbum,"Macrobrachium superbum (Heller, 1862)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Macrobrachium,Macrobrachium superbum
+palaemon japonicus,"Palaemon japonicus De Haan, 1849",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Macrobrachium,Macrobrachium japonicum
 macrocystis pyrifera,Macrocystis pyrifera (L.) C.Agardh,Chromista,Ochrophyta,Phaeophyceae,Laminariales,Laminariaceae,Macrocystis,Macrocystis pyrifera
 macrognathus aculeatus,"Macrognathus aculeatus (Bloch, 1786)",Animalia,Chordata,Actinopterygii,Synbranchiformes,Mastacembelidae,Macrognathus,Macrognathus aculeatus
 macrophthalmus erato,"Macrophthalmus erato De Man, 1887",Animalia,Arthropoda,Malacostraca,Decapoda,Macrophthalmidae,Macrophthalmus,Macrophthalmus erato
 macropodus opercularis,"Macropodus opercularis (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Macropodus,Macropodus opercularis
+echinisca triserialis,"Echinisca Liévin, 1848",Animalia,Arthropoda,Branchiopoda,Diplostraca,Macrothricidae,Macrothrix,NA
 macrothrix flabelligera,"Macrothrix flabelligera Smirvov, 1992",Animalia,Arthropoda,Branchiopoda,Diplostraca,Macrothricidae,Macrothrix,Macrothrix flabelligera
 macrothrix sp.,Macrothricidae,Animalia,Arthropoda,Branchiopoda,Diplostraca,Macrothricidae,Macrothrix,NA
+otocinclus affinis,"Otocinclus affinis Steindachner, 1877",Animalia,Chordata,Actinopterygii,Siluriformes,Loricariidae,Macrotocinclus,Macrotocinclus affinis
 maja squinado,"Maja squinado (Herbst, 1788)",Animalia,Arthropoda,Malacostraca,Decapoda,Majidae,Maja,Maja squinado
+chaetogammarus marinus,"Chaetogammarus marinus (Leach, 1816)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Marinogammarus,Marinogammarus marinus
 marinogammarus obtusatus,"Marinogammarus obtusatus (Dahl, 1938)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Marinogammarus,Marinogammarus obtusatus
-marsupenaeus japonicus,"Marsupenaeus japonicus (Spence Bate, 1888)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus japonicus
-mayamaea fossalis,"Mayamaea fossalis (Krasske) Lange-Bertalot, 1997",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula fossalis
+cichlasoma urophthalmus,"Cichlasoma urophthalmus (Günther, 1862)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Mayaheros,Mayaheros urophthalmus
+acanthocyclops viridis,"Acanthocyclops viridis (Jurine, 1820)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Megacyclops,Megacyclops viridis
 megacyclops viridis,"Megacyclops viridis (Jurine, 1820)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Megacyclops,Megacyclops viridis
 megarasbora elanga,"Megarasbora elanga (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Megarasbora,Megarasbora elanga
 melanogrammus aeglefinus,"Melanogrammus aeglefinus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Gadiformes,Gadidae,Melanogrammus,Melanogrammus aeglefinus
@@ -714,12 +717,15 @@ menidia peninsulae,"Menidia peninsulae (Goode & Bean, 1879)",Animalia,Chordata,A
 menippe mercenaria,"Menippe mercenaria (Say, 1818)",Animalia,Arthropoda,Malacostraca,Decapoda,Menippidae,Menippe,Menippe mercenaria
 merismopedia tenuissima,Merismopedia tenuissima Lemmerm.,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chamaesiphonaceae,Merismopedia,Merismopedia tenuissima
 mesocyclops aspericornis,"Mesocyclops aspericornis (Daday, 1906)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Mesocyclops,Mesocyclops aspericornis
-mesocyclops hyalinus,"Mesocyclops hyalinus (Rehberg, 1880)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Thermocyclops,Thermocyclops hyalinus
 mesocyclops leuckarti,"Mesocyclops leuckarti (Claus, 1857)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Mesocyclops,Mesocyclops leuckarti
 mesocyclops longisetus,"Mesocyclops longisetus (Thiébaud, 1912)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Mesocyclops,Mesocyclops longisetus
 mesocyclops pehpeiensis,"Mesocyclops pehpeiensis Hu, 1943",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Mesocyclops,Mesocyclops pehpeiensis
 mesocyclops sp.,Cyclopidae,Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Mesocyclops,NA
+barbus sharpeyi,"Barbus sharpeyi Günther, 1874",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Mesopotamichthys,Mesopotamichthys sharpeyi
 mesopotamichthys sharpeyi,"Mesopotamichthys sharpeyi (Günther, 1874)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Mesopotamichthys,Mesopotamichthys sharpeyi
+cancer anthonyi,"Cancer anthonyi Rathbun, 1897",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Metacarcinus,Metacarcinus anthonyi
+cancer gracilis,"Cancer gracilis Dana, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Metacarcinus,Metacarcinus gracilis
+cancer magister,"Cancer magister Dana, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Metacarcinus,Metacarcinus magister
 metamysidopsis elongata,"Metamysidopsis elongata (Holmes, 1900)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Metamysidopsis,Metamysidopsis elongata
 metamysidopsis insularis,"Metamysidopsis insularis Brattegard, 1970",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Metamysidopsis,Metamysidopsis insularis
 metapenaeus dobsoni,"Metapenaeus dobsoni (Miers, 1878)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Metapenaeus,Metapenaeus dobsoni
@@ -731,19 +737,22 @@ metridia pacifica,"Metridia pacifica Brodsky, 1950",Animalia,Arthropoda,Copepoda
 metynnis orinocensis,"Metynnis orinocensis (Steindachner, 1908)",Animalia,Chordata,Actinopterygii,Characiformes,Serrasalmidae,Metynnis,Metynnis orinocensis
 micractinium pusillum,"Micractinium pusillum Fresen., 1858",Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Micractinium,Micractinium pusillum
 microcystis aeruginosa,Microcystis aeruginosa H,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Microcystis,Microcystis aeruginosa
-microcystis flosaquae,Chroococcaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chroococcaceae,Microcystis,NA
+microcystis flosaquae,Chroococcaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Microcystis,NA
 microcystis novacekii,Microcystis novacekii (Komárek) Compère,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Microcystis,Microcystis novacekii
 microcystis pulverea,Microcystis pulverea (H.C.Wood) Forti,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Microcystis,Microcystis pulverea
-microcystis sp.,Chroococcaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chroococcaceae,Microcystis,NA
+microcystis sp.,Chroococcaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Microcystis,NA
 microcystis wesenbergii,Microcystis wesenbergii (Komárek) Komárek ex Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcystaceae,Microcystis,Microcystis wesenbergii
 microdeutopus gryllotalpa,"Microdeutopus gryllotalpa A.Costa, 1853",Animalia,Arthropoda,Malacostraca,Amphipoda,Aoridae,Microdeutopus,Microdeutopus gryllotalpa
 micrometrus minimus,"Micrometrus minimus (Gibbons, 1854)",Animalia,Chordata,Actinopterygii,Perciformes,Embiotocidae,Micrometrus,Micrometrus minimus
+aplocheilichthys johnstonii,"Aplocheilichthys johnstoni (Günther, 1894)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Poeciliidae,Micropanchax,Micropanchax johnstoni
 micropogonias undulatus,"Micropogonias undulatus (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Micropogonias,Micropogonias undulatus
 micropterus dolomieu,"Micropterus dolomieu Lacepède, 1802",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Micropterus,Micropterus dolomieu
 micropterus salmoides,"Micropterus salmoides (Lacepède, 1802)",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Micropterus,Micropterus salmoides
-micropterus sp.,"? micropterus Newberry, 1888",Animalia,Chordata,Actinopterygii,Perciformes,Semionotidae,Micropterus,NA
+micropterus sp.,"? micropterus Newberry, 1888",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Micropterus,NA
 micropterus treculii,"Micropterus treculii (Vaillant & Bocourt, 1874)",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Micropterus,Micropterus treculii
 mictyris longicarpus,"Mictyris longicarpus Latreille, 1806",Animalia,Arthropoda,Malacostraca,Decapoda,Mictyridae,Mictyris,Mictyris longicarpus
+uca pugnax,"Uca pugnax (Smith, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Minuca,Minuca pugnax
+uca rapax,"Uca rapax (Smith, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Minuca,Minuca rapax
 misgurnus anguillicaudatus,"Misgurnus anguillicaudatus (Cantor, 1842)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cobitidae,Misgurnus,Misgurnus anguillicaudatus
 mogurnda mogurnda,"Mogurnda mogurnda (Richardson, 1844)",Animalia,Chordata,Actinopterygii,Perciformes,Eleotridae,Mogurnda,Mogurnda mogurnda
 moina australiensis,"Moina australiensis Sars, 1896",Animalia,Arthropoda,Branchiopoda,Diplostraca,Moinidae,Moina,Moina australiensis
@@ -755,25 +764,23 @@ moina micrura,"Moina micrura Kurz, 1875",Animalia,Arthropoda,Branchiopoda,Diplos
 moina mongolica,"Moina mongolica Daday, 1901",Animalia,Arthropoda,Branchiopoda,Diplostraca,Moinidae,Moina,Moina mongolica
 moina sp.,Moinidae,Animalia,Arthropoda,Branchiopoda,Diplostraca,Moinidae,Moina,NA
 moinodaphnia macleayi,"Moinodaphnia macleayi (King, 1853)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Moinidae,Moinodaphnia,Moinodaphnia macleayi
-monacanthus hispidus,"Monacanthus hispidus (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Tetraodontiformes,Monacanthidae,Stephanolepis,Stephanolepis hispidus
 monochrysis sp.,Chromulinaceae,Chromista,Ochrophyta,Chrysophyceae,Ochromonadales,Chromulinaceae,Monochrysis,NA
+corophium acherusicum,"Corophium acherusicum A.Costa, 1853",Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Monocorophium,Monocorophium acherusicum
+corophium insidiosum,"Corophium insidiosum Crawford, 1937",Animalia,Arthropoda,Malacostraca,Amphipoda,Corophiidae,Monocorophium,Monocorophium insidiosum
 monopterus albus,"Monopterus albus (Zuiew, 1793)",Animalia,Chordata,Actinopterygii,Synbranchiformes,Synbranchidae,Monopterus,Monopterus albus
 monoraphidium griffithii,Monoraphidium griffithii (Berk.) Komárk.-Legn.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Monoraphidium,Monoraphidium griffithii
 monoraphidium minutum,Monoraphidium minutum (Nägeli) Komárk.-Legn.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Monoraphidium,Monoraphidium minutum
-monoraphidium sp.,Oocystaceae,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Monoraphidium,NA
+monoraphidium sp.,Oocystaceae,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Monoraphidium,NA
+selenastrum capricornutum,Selenastrum capricornutum Printz,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Monoraphidium,Monoraphidium capricornutum
 morone americana,"Morone americana (Gmelin, 1789)",Animalia,Chordata,Actinopterygii,Perciformes,Moronidae,Morone,Morone americana
 morone saxatilis,"Morone saxatilis (Walbaum, 1792)",Animalia,Chordata,Actinopterygii,Perciformes,Moronidae,Morone,Morone saxatilis
 morone sp.,Moronidae,Animalia,Chordata,Actinopterygii,Perciformes,Moronidae,Morone,NA
-mugil auratus,"Mugil auratus Risso, 1810",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Chelon,Chelon auratus
-mugil carinatus,"Mugil carinatus Valenciennes, 1836",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Liza,Liza carinata
 mugil cephalus,"Mugil cephalus Linnaeus, 1758",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Mugil,Mugil cephalus
 mugil curema,"Mugil curema Valenciennes, 1836",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Mugil,Mugil curema
 mugil liza,"Mugil liza Valenciennes, 1836",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Mugil,Mugil liza
 mugil saliens,"Mugil saliens Larrañaga, 1923",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Mugil,Mugil saliens
 mugil sp.,Mugilidae,Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Mugil,NA
 mylopharyngodon piceus,"Mylopharyngodon piceus (Richardson, 1846)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Mylopharyngodon,Mylopharyngodon piceus
-mysidopsis almyra,"Mysidopsis almyra Bowman, 1964",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Americamysis,Americamysis almyra
-mysidopsis bigelowi,"Mysidopsis bigelowi W.M.Tattersall, 1926",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Americamysis,Americamysis bigelowi
 mysidopsis juniae,"Mysidopsis juniae Silva, 1979",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Mysidopsis,Mysidopsis juniae
 mysis relicta,"Mysis relicta Lovén, 1862",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Mysis,Mysis relicta
 mystus bleekeri,"Mystus bleekeri (Day, 1877)",Animalia,Chordata,Actinopterygii,Siluriformes,Bagridae,Mystus,Mystus bleekeri
@@ -782,30 +789,32 @@ mystus gulio,"Mystus gulio (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Si
 mystus keletius,"Mystus keletius (Valenciennes, 1840)",Animalia,Chordata,Actinopterygii,Siluriformes,Bagridae,Mystus,Mystus keletius
 mystus tengara,"Mystus tengara (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Siluriformes,Bagridae,Mystus,Mystus tengara
 mystus vittatus,"Mystus vittatus (Bloch, 1794)",Animalia,Chordata,Actinopterygii,Siluriformes,Bagridae,Mystus,Mystus vittatus
-nannochloris atomus,"Nannochloris atomus Butcher, 1952",Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Oocystaceae,Picochlorum,Picochlorum atomus
 nannochloropsis gaditana,"Nannochloropsis D.J.Hibberd, 1981",Chromista,Ochrophyta,Eustigmatophyceae,Eustigmatales,Monodopsidaceae,Nannochloropsis,NA
 nannochloropsis oculata,"Nannochloropsis oculata (Droop) Hibberd, 1981",Chromista,Ochrophyta,Eustigmatophyceae,Eustigmatales,Monodopsidaceae,Nannochloropsis,Nannochloropsis oculata
 nannostomus unifasciatus,"Nannostomus unifasciatus Steindachner, 1876",Animalia,Chordata,Actinopterygii,Characiformes,Lebiasinidae,Nannostomus,Nannostomus unifasciatus
 nanosesarma sp.,Grapsidae,Animalia,Arthropoda,Malacostraca,Decapoda,Grapsidae,Nanosesarma,NA
+craticula accomoda,"Craticula accomoda (Hustedt) D.G.Mann, 1990",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula accommoda
+fistulifera saprophila,"Fistulifera saprophila (Lange-Bertalot & Bonik) Lange-Bertalot, 1997",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula saprophila
+mayamaea fossalis,"Mayamaea fossalis (Krasske) Lange-Bertalot, 1997",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula fossalis
 navicula forcipata,Navicula forcipata,Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula forcipata
 navicula incerta,"Navicula incerta Ehrenberg, 1837",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula incerta
 navicula pelliculosa,Navicula pelliculosa (Kützing) Hilse,Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula pelliculosa
 navicula salinarum,Navicula salinarum Grunow,Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula salinarum
 navicula seminulum,"Navicula seminulum Ehrenberg, 1842",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula seminulum
 navicula sp.,Navicula sp.,Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Naviculaceae,Navicula,Navicula sp.
-nemacheilus angorae,"Nemacheilus angorae Steindachner, 1897",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Oxynoemacheilus,Oxynoemacheilus angorae
-nemacheilus botia,"Nemacheilus botia (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Acanthocobitis,Acanthocobitis botia
 nematalosa erebi,"Nematalosa erebi (Günther, 1868)",Animalia,Chordata,Actinopterygii,Clupeiformes,Clupeidae,Nematalosa,Nematalosa erebi
+calanus plumchrus,"Calanus plumchrus Marukawa, 1921",Animalia,Arthropoda,Copepoda,Calanoida,Calanidae,Neocalanus,Neocalanus plumchrus
+caridina denticulata,"Caridina denticulata (De Haan, 1844)",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Neocaridina,Neocaridina denticulata
 neocaridina denticulata,"Neocaridina denticulata (De Haan, 1844)",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Neocaridina,Neocaridina denticulata
 neocaridina heteropoda,"Neocaridina heteropoda Kubo, 1938",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Neocaridina,Neocaridina heteropoda
 neocaridina sp.,Atyidae,Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Neocaridina,NA
 neochloris sp.,Chlorococcaceae,Plantae,Chlorophyta,Chlorophyceae,Chlamydomonadales,Chlorococcaceae,Neochloris,NA
+chasmagnathus granulata,"Chasmagnathus granulatus Dana, 1851",Animalia,Arthropoda,Malacostraca,Decapoda,Varunidae,Neohelice,Neohelice granulata
 neomysis americana,"Neomysis americana (S.I.Smith, 1873)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Neomysis,Neomysis americana
 neomysis awatschensis,"Neomysis awatschensis (Brandt, 1851)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Neomysis,Neomysis awatschensis
 neomysis integer,"Neomysis integer (Leach, 1815)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Neomysis,Neomysis integer
 neomysis mercedis,"Neomysis mercedis Holmes, 1897",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Neomysis,Neomysis mercedis
 neomysis sp.,Mysidae,Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Neomysis,NA
-neopanope texana,"Neopanope texana (Stimpson, 1859)",Animalia,Arthropoda,Malacostraca,Decapoda,Panopeidae,Dyspanopeus,Dyspanopeus texanus
 neotrypaea californiensis,"Neotrypaea californiensis (Dana, 1854)",Animalia,Arthropoda,Malacostraca,Decapoda,Callianassidae,Neotrypaea,Neotrypaea californiensis
 nephrocytium lunatum,Nephrocytium lunatum West,Plantae,Chlorophyta,Trebouxiophyceae,Oocystales,Oocystaceae,Nephrocytium,Nephrocytium lunatum
 nephroselmis pyriformis,Nephroselmis pyriformis (N.Carter) Ettl,Plantae,Chlorophyta,Nephroselmidophyceae,Nephroselmidales,Nephroselmidaceae,Nephroselmis,Nephroselmis pyriformis
@@ -824,8 +833,6 @@ nitzschia paleacea,"Nitzschia paleacea Grunow, 1881",Chromista,Ochrophyta,Bacill
 nitzschia pungens,"Nitzschia pungens Grunow ex Cleve, 1897",Chromista,Ochrophyta,Bacillariophyceae,Bacillariales,Bacillariaceae,Nitzschia,Nitzschia pungens
 nitzschia sigma,"Nitzschia sigma (Kützing) W.Smith, 1853",Chromista,Ochrophyta,Bacillariophyceae,Bacillariales,Bacillariaceae,Nitzschia,Nitzschia sigma
 nitzschia sp.,Bacillariaceae,Chromista,Ochrophyta,Bacillariophyceae,Bacillariales,Bacillariaceae,Nitzschia,NA
-noemacheilus denisonii,"Noemacheilus denisonii (Day, 1867)",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Schistura,Schistura denisoni
-noemacheilus montanus,"Noemacheilus montanus (McClelland, 1838)",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Paraschistura,Paraschistura montana
 nostoc commune,Nostoc commune Vaucher ex Bornet & Flahault,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Nostoc,Nostoc commune
 nostoc entophytum,Nostoc entophytum Bornet & Flahault,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Nostoc,Nostoc paludosum
 nostoc muscorum,Nostoc muscorum C.Agardh ex Bornet & Flahault,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Nostoc,Nostoc muscorum
@@ -844,7 +851,6 @@ notropis ludibundis,"Notropis ludibundus (Girard, 1856)",Animalia,Chordata,Actin
 notropis mekistocholas,"Notropis mekistocholas Snelson, 1971",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Notropis,Notropis mekistocholas
 notropis stramineus,"Notropis stramineus (Cope, 1865)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Notropis,Notropis stramineus
 notropis topeka,"Notropis topeka (Gilbert, 1884)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Notropis,Notropis topeka
-nuria danrica,"Nuria danrica (Hamiton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Esomus,Esomus danrica
 ochromonas danica,Ochromonas danica E.G.Pringsh.,Chromista,Ochrophyta,Chrysophyceae,Ochromonadales,Ochromonadaceae,Ochromonas,Ochromonas danica
 odontamblyopus rubicundus,"Odontamblyopus rubicundus (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Odontamblyopus,Odontamblyopus rubicundus
 odontesthes argentinensis,"Odontesthes argentinensis (Valenciennes, 1835)",Animalia,Chordata,Actinopterygii,Atheriniformes,Atherinopsidae,Odontesthes,Odontesthes argentinensis
@@ -866,41 +872,34 @@ oncorhynchus tshawytscha,"Oncorhynchus tshawytscha (Walbaum, 1792)",Animalia,Cho
 onisimus litoralis,"Onisimus litoralis (Krøyer, 1845)",Animalia,Arthropoda,Malacostraca,Amphipoda,Uristidae,Onisimus,Onisimus litoralis
 onychostoma barbata,"Onychostoma barbatum (Linnaeus, 1931)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Onychostoma,Onychostoma barbatum
 oophila sp.,Chlorococcaceae,Plantae,Chlorophyta,Chlorophyceae,Chlamydomonadales,Chlorococcaceae,Oophila,NA
-ophiocephalus punctatus,"Ophiocephalus punctatus Bloch, 1793",Animalia,Chordata,Actinopterygii,Perciformes,Channidae,Channa,Channa punctata
 oplegnathus fasciatus,"Oplegnathus fasciatus (Temminck & Schlegel, 1844)",Animalia,Chordata,Actinopterygii,Perciformes,Oplegnathidae,Oplegnathus,Oplegnathus fasciatus
 opsanus beta,"Opsanus beta (Goode & Bean, 1880)",Animalia,Chordata,Actinopterygii,Batrachoidiformes,Batrachoididae,Opsanus,Opsanus beta
 opsopoeodus emiliae,"Opsopoeodus emiliae Hay, 1881",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Opsopoeodus,Opsopoeodus emiliae
 orchomenella pinguis,"Orchomenella pinguis (Boeck, 1861)",Animalia,Arthropoda,Malacostraca,Amphipoda,Tryphosidae,Orchomenella,Orchomenella pinguis
-orconectes immunis,"Orconectes immunis (Hagen, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius immunis
-orconectes limosus,"Orconectes limosus (Rafinesque, 1817)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius limosus
-orconectes nais,"Orconectes nais (Faxon, 1885)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius nais
-orconectes neglectus,"Orconectes neglectus (Faxon, 1885)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius neglectus
-orconectes propinquus,"Orconectes propinquus (Girard, 1852)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius propinquus
-orconectes rusticus,"Orconectes rusticus (Girard, 1852)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius rusticus
-orconectes virilis,"Orconectes virilis (Hagen, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Cambaridae,Faxonius,Faxonius virilis
 oreochromis mossambicus,"Oreochromis mossambicus (Peters, 1852)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,Oreochromis mossambicus
 oreochromis mossambicus x niloticus,"Oreochromis Günther, 1889",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,oreochromis mossambicus
 oreochromis mossambicus x urolepis,"Oreochromis Günther, 1889",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,NA
 oreochromis niloticus,"Oreochromis niloticus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,Oreochromis niloticus
 oreochromis sp.,Cichlidae,Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,NA
+tilapia aurea,"Tilapia aurea (Steindachner, 1864)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,Oreochromis aureus
+tilapia hornorum,"Tilapia hornorum Trewavas, 1966",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,Oreochromis urolepis
 oryzias dancena,"Oryzias dancena (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Beloniformes,Adrianichthyidae,Oryzias,Oryzias dancena
 oryzias latipes,"Oryzias latipes (Temminck & Schlegel, 1846)",Animalia,Chordata,Actinopterygii,Beloniformes,Adrianichthyidae,Oryzias,Oryzias latipes
 oryzias melastigma,"Oryzias melastigma (McClelland, 1839)",Animalia,Chordata,Actinopterygii,Beloniformes,Adrianichthyidae,Oryzias,Oryzias melastigma
 oryzias sinensis,"Oryzias sinensis Chen, Uwa & Chu, 1989",Animalia,Chordata,Actinopterygii,Beloniformes,Adrianichthyidae,Oryzias,Oryzias sinensis
-oscillatoria agardhii,Oscillatoria agardhii Gomont,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Planktothrix,Planktothrix agardhii
 oscillatoria sp.,Oscillatoriaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Oscillatoriaceae,Oscillatoria,NA
 osmerus mordax,"Osmerus mordax (Mitchill, 1814)",Animalia,Chordata,Actinopterygii,Osmeriformes,Osmeridae,Osmerus,Osmerus mordax
-otocinclus affinis,"Otocinclus affinis Steindachner, 1877",Animalia,Chordata,Actinopterygii,Siluriformes,Loricariidae,Macrotocinclus,Macrotocinclus affinis
-oziotelphusa senex,"Oziotelphusa senex (Fabricius, 1798)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Spiralothelphusa,Spiralothelphusa senex
+valamugil engeli,"Valamugil engeli (Bleeker, 1858)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Osteomugil,Osteomugil engeli
+nemacheilus angorae,"Nemacheilus angorae Steindachner, 1897",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Oxynoemacheilus,Oxynoemacheilus angorae
 ozius rugulosus,"Ozius rugulosus Stimpson, 1858",Animalia,Arthropoda,Malacostraca,Decapoda,Oziidae,Ozius,Ozius rugulosus
 pachygrapsus crassipes,"Pachygrapsus crassipes Randall, 1840",Animalia,Arthropoda,Malacostraca,Decapoda,Grapsidae,Pachygrapsus,Pachygrapsus crassipes
 pacifastacus leniusculus,"Pacifastacus leniusculus (Dana, 1852)",Animalia,Arthropoda,Malacostraca,Decapoda,Astacidae,Pacifastacus,Pacifastacus leniusculus
+chrysophrys major,"Chrysophrys major Temminck & Schlegel, 1843",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Pagrus,Pagrus major
 pagrus major,"Pagrus major (Temminck & Schlegel, 1843)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Pagrus,Pagrus major
 pagurus bernhardus,"Pagurus bernhardus (Linnaeus, 1758)",Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus,Pagurus bernhardus
 pagurus longicarpus,"Pagurus longicarpus Say, 1817",Animalia,Arthropoda,Malacostraca,Decapoda,Paguridae,Pagurus,Pagurus longicarpus
 palaemon adspersus,"Palaemon adspersus Rathke, 1837",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon adspersus
 palaemon elegans,"Palaemon elegans Rathke, 1837",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon elegans
-palaemon japonicus,"Palaemon japonicus De Haan, 1849",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Macrobrachium,Macrobrachium japonicum
 palaemon macrodactylus,"Palaemon macrodactylus M.J.Rathbun, 1902",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon macrodactylus
 palaemon northropi,"Palaemon northropi (Rankin, 1898)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon northropi
 palaemon paucidens,"Palaemon paucidens De Haan, 1844",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon paucidens
@@ -911,9 +910,9 @@ palaemonetes argentinus,"Palaemonetes argentinus Nobili, 1901",Animalia,Arthropo
 palaemonetes kadiakensis,"Palaemonetes kadiakensis M.J.Rathbun, 1902",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon kadiakensis
 palaemonetes paludosus,"Palaemonetes paludosus (Gibbes, 1850)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon paludosus
 palaemonetes pugio,"Palaemonetes pugio Holthuis, 1949",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon pugio
-palaemonetes sp.,Palaemonidae,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemonetes,NA
 palaemonetes varians,"Palaemonetes varians (Leach, 1813)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon varians
 palaemonetes vulgaris,"Palaemonetes vulgaris (Say, 1818)",Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon vulgaris
+palaemonetes sp.,Palaemonidae,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemonetes,NA
 pandalus danae,"Pandalus danae Stimpson, 1857",Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus,Pandalus danae
 pandalus goniurus,"Pandalus goniurus Stimpson, 1860",Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus,Pandalus goniurus
 pandalus montagui,"Pandalus montagui Leach, 1814",Animalia,Arthropoda,Malacostraca,Decapoda,Pandalidae,Pandalus,Pandalus montagui
@@ -927,6 +926,7 @@ paracalanus parvus,"Paracalanus parvus (Claus, 1863)",Animalia,Arthropoda,Copepo
 paracerceis sculpta,"Paracerceis sculpta (Holmes, 1904)",Animalia,Arthropoda,Malacostraca,Isopoda,Sphaeromatidae,Paracerceis,Paracerceis sculpta
 paracheirodon axelrodi,"Paracheirodon axelrodi (Schultz, 1956)",Animalia,Chordata,Actinopterygii,Characiformes,Characidae,Paracheirodon,Paracheirodon axelrodi
 parachlorella kessleri,"Parachlorella kessleri (Fott & Nováková) Krienitz, E.H.Hegewald, Hepperle, V.Huss, T.Rohr & M.Wolf, 2004",Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Parachlorella,Parachlorella kessleri
+cichlasoma managuense,"Cichlasoma managuense (Günther, 1867)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Parachromis,Parachromis managuensis
 parachromis dovii,"Parachromis dovii (Günther, 1864)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Parachromis,Parachromis dovii
 paracyclopina nana,"Paracyclopina nana Smirnov, 1935",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopettidae,Paracyclopina,Paracyclopina nana
 paracyclops fimbriatus,"Paracyclops fimbriatus (Fischer, 1853)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Paracyclops,Paracyclops fimbriatus
@@ -935,25 +935,30 @@ paragrapsus quadridentatus,"Paragrapsus quadridentatus (H.Milne Edwards, 1837)",
 paralichthys dentatus,"Paralichthys dentatus (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Paralichthyidae,Paralichthys,Paralichthys dentatus
 paralichthys olivaceus,"Paralichthys olivaceus (Temminck & Schlegel, 1846)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Paralichthyidae,Paralichthys,Paralichthys olivaceus
 paralichthys orbignyanus,"Paralichthys orbignyanus (Valenciennes, 1839)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Paralichthyidae,Paralichthys,Paralichthys orbignyanus
+pseudambassis ranga,"Pseudambassis ranga (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Ambassidae,Parambassis,Parambassis ranga
 paramelita nigroculus,"Paramelita nigroculus (K.H.Barnard, 1916)",Animalia,Arthropoda,Malacostraca,Amphipoda,Paramelitidae,Paramelita,Paramelita nigroculus
 parapristipoma trilineatum,"Parapristipoma trilineatum (Thunberg, 1793)",Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Parapristipoma,Parapristipoma trilineatum
+noemacheilus montanus,"Noemacheilus montanus (McClelland, 1838)",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Paraschistura,Paraschistura montana
 parastenocaris germanica,"Parastenocaris germanica Kiefer, 1936",Animalia,Arthropoda,Copepoda,Harpacticoida,Parastenocarididae,Parastenocaris,Parastenocaris germanica
-paratelphusa hydrodromus,"Paratelphusa hydrodromous (Herbst, 1794)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Spiralothelphusa,Spiralothelphusa hydrodroma
 paratelphusa jacquemontii,"Paratelphusa H.Milne Edwards, 1853",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Parathelphusa,NA
 paratelphusa masoniana,"Paratelphusa H.Milne Edwards, 1853",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Parathelphusa,NA
-paratelphusa spinigera,"Paratelphusa spinigera (Wood-Mason, 1871)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Sartoriana,Sartoriana spinigera
 paratya australiensis,"Paratya australiensis Kemp, 1917",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Paratya,Paratya australiensis
 paratya compressa,"Paratya compressa (De Haan, 1844)",Animalia,Arthropoda,Malacostraca,Decapoda,Atyidae,Paratya,Paratya compressa
 parophrys vetulus,"Parophrys vetulus Girard, 1854",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Parophrys,Parophrys vetulus
 parvocalanus crassirostris,"Parvocalanus crassirostris (Dahl F., 1894)",Animalia,Arthropoda,Copepoda,Calanoida,Paracalanidae,Parvocalanus,Parvocalanus crassirostris
 pavlova gyrans,"Pavlova gyrans Butcher, 1952",Chromista,Haptophyta,Pavlovophyceae,Pavlovales,Pavlovaceae,Pavlova,Pavlova gyrans
-pavlova lutheri,Pavlova lutheri (Droop) J.C.Green,Chromista,Haptophyta,Pavlovophyceae,Pavlovales,Pavlovaceae,Diacronema,Diacronema lutheri
-pavlova sp.,Ochromonadaceae,Chromista,Ochrophyta,Chrysophyceae,Ochromonadales,Ochromonadaceae,Pavlova,NA
-pediastrum boryanum,Pediastrum boryanum (Turpin) Menegh.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Hydrodictyaceae,Pseudopediastrum,Pseudopediastrum boryanum
+pavlova sp.,Ochromonadaceae,Chromista,Haptophyta,Pavlovophyceae,Pavlovales,Pavlovaceae,Pavlova,NA
+echinogammarus olivii,"Echinogammarus olivii (H.Milne Edwards, 1830)",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Pectenogammarus,Pectenogammarus olivii
+echinogammarus tibaldii,"Echinogammarus tibaldii Pinkster & Stock, 1970",Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Pectenogammarus,Pectenogammarus tibaldii
 pediastrum duplex,Pediastrum duplex Meyen,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Hydrodictyaceae,Pediastrum,Pediastrum duplex
-pediastrum tetras,Pediastrum tetras (Ehrenb.) Ralfs,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Hydrodictyaceae,Stauridium,Stauridium tetras
 pelsartia humeralis,"Pelsartia humeralis (Ogilby, 1899)",Animalia,Chordata,Actinopterygii,Perciformes,Terapontidae,Pelsartia,Pelsartia humeralis
-pelteobagrus fulvidraco,"Pelteobagrus fulvidraco (Richardson, 1846)",Animalia,Chordata,Actinopterygii,Siluriformes,Bagridae,Tachysurus,Tachysurus fulvidraco
+farfantepenaeus duorarum,"Farfantepenaeus duorarum (Burkenroad, 1939)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus duorarum
+farfantepenaeus paulensis,"Farfantepenaeus paulensis (Pérez Farfante, 1967)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus paulensis
+fenneropenaeus penicillatus,"Fenneropenaeus penicillatus (Alcock, 1905)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus penicillatus
+litopenaeus schmitti,"Litopenaeus schmitti (Burkenroad, 1936)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus schmitti
+litopenaeus stylirostris,"Litopenaeus stylirostris (Stimpson, 1874)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus stylirostris
+litopenaeus vannamei,"Litopenaeus vannamei (Boone, 1931)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus vannamei
+marsupenaeus japonicus,"Marsupenaeus japonicus (Spence Bate, 1888)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus japonicus
 penaeus aztecus,"Penaeus aztecus Ives, 1891",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus aztecus
 penaeus chinensis,"Penaeus chinensis (Osbeck, 1765)",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus chinensis
 penaeus indicus,"Penaeus indicus H.Milne Edwards, 1837",Animalia,Arthropoda,Malacostraca,Decapoda,Penaeidae,Penaeus,Penaeus indicus
@@ -972,31 +977,30 @@ perca fluviatilis,"Perca fluviatilis Linnaeus, 1758",Animalia,Chordata,Actinopte
 perca sp.,Percidae,Animalia,Chordata,Actinopterygii,Perciformes,Percidae,Perca,NA
 periophthalmus dipus,"Periophthalmus dipus Bleeker, 1854",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Periophthalmus,Periophthalmus argentilineatus
 periophthalmus waltoni,"Periophthalmus waltoni Koumans, 1941",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Periophthalmus,Periophthalmus waltoni
+barbus conchonius,"Barbus conchonius (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pethia,Pethia conchonius
+barbus guganio,"Barbus guganio (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pethia,Pethia guganio
+barbus ticto,"Barbus ticto (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pethia,Pethia ticto
 petrolisthes armatus,"Petrolisthes armatus (Gibbes, 1850)",Animalia,Arthropoda,Malacostraca,Decapoda,Porcellanidae,Petrolisthes,Petrolisthes armatus
 petromyzon marinus,"Petromyzon marinus Linnaeus, 1758",Animalia,Chordata,Petromyzonti,Petromyzontiformes,Petromyzontidae,Petromyzon,Petromyzon marinus
 phaeodactylum tricornutum,"Phaeodactylum tricornutum Bohlin, 1897",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Phaeodactylaceae,Phaeodactylum,Phaeodactylum tricornutum
 phalloceros caudimaculatus,"Phalloceros caudimaculatus (Hensel, 1868)",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Poeciliidae,Phalloceros,Phalloceros caudimaculatus
-phormidium formosum,Phormidium formosum (Bory ex Gomont) Anagn. & Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Kamptonema,Kamptonema formosum
-phormidium mucicola,Phormidium mucicola Naumann & Hub.-Pest.,Bacteria,Cyanobacteria,Cyanobacteriia,Pseudanabaenales,Pseudanabaenaceae,Pseudanabaena,Pseudanabaena mucicola
-phoxinus eos,"Phoxinus eos (Cope, 1861)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Chrosomus,Chrosomus eos
 phoxinus phoxinus,"Phoxinus phoxinus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Phoxinus,Phoxinus phoxinus
 phyllodiaptomus annae,"Phyllodiaptomus annae (Apstein, 1907)",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Phyllodiaptomus,Phyllodiaptomus annae
 piaractus brachypomus,"Piaractus brachypomus (Cuvier, 1818)",Animalia,Chordata,Actinopterygii,Characiformes,Serrasalmidae,Piaractus,Piaractus brachypomus
 piaractus mesopotamicus,"Piaractus mesopotamicus (Holmberg, 1887)",Animalia,Chordata,Actinopterygii,Characiformes,Serrasalmidae,Piaractus,Piaractus mesopotamicus
+nannochloris atomus,"Nannochloris atomus Butcher, 1952",Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Oocystaceae,Picochlorum,Picochlorum atomus
 pimephales notatus,"Pimephales notatus (Rafinesque, 1820)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pimephales,Pimephales notatus
 pimephales promelas,"Pimephales promelas Rafinesque, 1820",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pimephales,Pimephales promelas
 pithophora sp.,Cladophoraceae,Plantae,Chlorophyta,Ulvophyceae,Cladophorales,Cladophoraceae,Pithophora,NA
 plagiognathops microlepis,"Plagiognathops microlepis (Bleeker, 1871)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Plagiognathops,Plagiognathops microlepis
+liza macrolepis,"Liza macrolepis (Smith, 1846)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Planiliza,Planiliza macrolepis
+oscillatoria agardhii,Oscillatoria agardhii Gomont,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Planktothrix,Planktothrix agardhii
 planktothrix rubescens,Planktothrix rubescens (DC. ex Gomont) Anagn. & Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Planktothrix,Planktothrix rubescens
 platichthys flesus,"Platichthys flesus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Platichthys,Platichthys flesus
 platichthys stellatus,"Platichthys stellatus (Pallas, 1787)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Platichthys,Platichthys stellatus
 platygobio gracilis,"Platygobio gracilis (Richardson, 1836)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Platygobio,Platygobio gracilis
 platymonas sp.,Platymonadaceae,Plantae,Chlorophyta,Prasinophyceae,Chlorodendrales,Chlorodendraceae,Platymonas,NA
-platymonas subcordiformis,Platymonas subcordiformis,Plantae,Chlorophyta,Prasinophyceae,Chlorodendrales,Chlorodendraceae,Tetraselmis,Platymonas subcordiformis
 plecoglossus altivelis,"Plecoglossus altivelis (Temminck & Schlegel, 1846)",Animalia,Chordata,Actinopterygii,Osmeriformes,Plecoglossidae,Plecoglossus,Plecoglossus altivelis
-plecostomus commersoni,"Plecostomus commersonii (Valenciennes, 1836)",Animalia,Chordata,Actinopterygii,Siluriformes,Loricariidae,Hypostomus,Hypostomus commersoni
-pleuronectes americanus,"Pleuronectes americanus Walbaum, 1792",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Pseudopleuronectes,Pseudopleuronectes americanus
-pleuronectes ferrugineus,"Pleuronectes ferruginea (Storer, 1839)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Limanda,Limanda ferruginea
 pleuronectes platessa,"Pleuronectes platessa Linnaeus, 1758",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Pleuronectes,Pleuronectes platessa
 plotosus anguillaris,"Plotosus anguillaris (Bloch, 1794)",Animalia,Chordata,Actinopterygii,Siluriformes,Plotosidae,Plotosus,Plotosus lineatus
 podocerus fulanus,"Podocerus fulanus J.L.Barnard, 1962",Animalia,Arthropoda,Malacostraca,Amphipoda,Podoceridae,Podocerus,Podocerus fulanus
@@ -1009,13 +1013,12 @@ poeciliopsis occidentalis,"Poeciliopsis occidentalis (Baird & Girard, 1853)",Ani
 pogonichthys macrolepidotus,"Pogonichthys macrolepidotus (Ayres, 1854)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pogonichthys,Pogonichthys macrolepidotus
 pollimyrus isidori,"Pollimyrus isidori (Valenciennes, 1847)",Animalia,Chordata,Actinopterygii,Osteoglossiformes,Mormyridae,Pollimyrus,Pollimyrus isidori
 polyodon spathula,"Polyodon spathula (Walbaum, 1792)",Animalia,Chordata,Actinopterygii,Acipenseriformes,Polyodontidae,Polyodon,Polyodon spathula
-pomacentrus leucostictus,"Pomacentrus leucostictus Müller & Troschel, 1848",Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes leucostictus
 pomatoschistus microps,"Pomatoschistus microps (Krøyer, 1838)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Pomatoschistus,Pomatoschistus microps
 pomatoschistus minutus,"Pomatoschistus minutus (Pallas, 1770)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Pomatoschistus,Pomatoschistus minutus
 pomoxis annularis,"Pomoxis annularis Rafinesque, 1818",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Pomoxis,Pomoxis annularis
 pomoxis nigromaculatus,"Pomoxis nigromaculatus (Lesueur, 1829)",Animalia,Chordata,Actinopterygii,Perciformes,Centrarchidae,Pomoxis,Pomoxis nigromaculatus
+astacus leptodactylus,"Astacus leptodactylus Eschscholtz, 1823",Animalia,Arthropoda,Malacostraca,Decapoda,Astacidae,Pontastacus,Pontastacus leptodactylus
 pontogeneia sp.,Eusiridae,Animalia,Arthropoda,Malacostraca,Amphipoda,Eusiridae,Pontogeneia,NA
-pontoporeia hoyi,"Pontoporeia hoyi S.I.Smith, 1874",Animalia,Arthropoda,Malacostraca,Amphipoda,Pontoporeiidae,Diporeia,Diporeia hoyi
 pontoporeia sp.,Haustoriidae,Animalia,Arthropoda,Malacostraca,Amphipoda,Haustoriidae,Pontoporeia,NA
 porphyridium aerugineum,Porphyridium aerugineum Geitler,Plantae,Rhodophyta,Porphyridiophyceae,Porphyridiales,Porphyridiaceae,Porphyridium,Porphyridium aerugineum
 porphyridium cruentum,Porphyridium cruentum (Gray) Nägeli,Plantae,Rhodophyta,Porphyridiophyceae,Porphyridiales,Porphyridiaceae,Porphyridium,Porphyridium purpureum
@@ -1025,6 +1028,8 @@ portunus trituberculatus,"Portunus trituberculatus (Miers, 1876)",Animalia,Arthr
 potamonautes sp.,Potamonautidae,Animalia,Arthropoda,Malacostraca,Decapoda,Potamonautidae,Potamonautes,NA
 praunus flexuosus,"Praunus flexuosus (O.F.Müller, 1776)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Praunus,Praunus flexuosus
 priopidichthys sp.,Ambassidae,Animalia,Chordata,Actinopterygii,Perciformes,Ambassidae,Priopidichthys,NA
+asellus intermedius,"Asellus intermedius Sket, 1965",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus intermedius
+asellus meridianus,"Asellus meridianus Racovitza, 1919",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus meridianus
 proasellus assaforensis,Proasellus assaforensis,Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus assaforensis
 proasellus coxalis,"Proasellus coxalis (Dollfus, 1892)",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus coxalis
 proasellus lusitanicus,"Proasellus lusitanicus (Frade, 1938)",Animalia,Arthropoda,Malacostraca,Isopoda,Asellidae,Proasellus,Proasellus lusitanicus
@@ -1038,11 +1043,10 @@ prochilodus lineatus,"Prochilodus lineatus (Valenciennes, 1837)",Animalia,Chorda
 prochilodus scrofa,"Prochilodus scrofa Steindachner, 1881",Animalia,Chordata,Actinopterygii,Characiformes,Prochilodontidae,Prochilodus,Prochilodus lineatus
 prorocentrum minimum,Prorocentrum minimum (Pavill.) J.Schiller,Chromista,Myzozoa,Dinophyceae,Prorocentrales,Prorocentraceae,Prorocentrum,Prorocentrum cordatum
 prosopium williamsoni,"Prosopium williamsoni (Girard, 1856)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Prosopium,Prosopium williamsoni
-psetta maxima,"Psetta maxima (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Scophthalmus,Scophthalmus maximus
-pseudambassis ranga,"Pseudambassis ranga (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Ambassidae,Parambassis,Parambassis ranga
+phormidium mucicola,Phormidium mucicola Naumann & Hub.-Pest.,Bacteria,Cyanobacteria,Cyanobacteriia,Pseudanabaenales,Pseudanabaenaceae,Pseudanabaena,Pseudanabaena mucicola
 pseudanabaena galeata,Pseudanabaena galeata Böcher,Bacteria,Cyanobacteria,Cyanobacteriia,Pseudanabaenales,Pseudanabaenaceae,Pseudanabaena,Pseudanabaena galeata
 pseudanabaena mucicola,Pseudanabaena mucicola (Naumann & Hub.-Pest.) Schwabe,Bacteria,Cyanobacteria,Cyanobacteriia,Pseudanabaenales,Pseudanabaenaceae,Pseudanabaena,Pseudanabaena mucicola
-pseudanabaena sp.,Nostocaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Nostocaceae,Pseudanabaena,NA
+pseudanabaena sp.,Nostocaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Pseudanabaenales,Pseudanabaenaceae,Pseudanabaena,NA
 pseudaphritis urvillii,"Pseudaphritis urvillii (Valenciennes, 1832)",Animalia,Chordata,Actinopterygii,Perciformes,Pseudaphritidae,Pseudaphritis,Pseudaphritis urvillii
 pseudocalanus elongatus,"Pseudocalanus elongatus (Brady, 1865)",Animalia,Arthropoda,Copepoda,Calanoida,Clausocalanidae,Pseudocalanus,Pseudocalanus elongatus
 pseudocandona sp.,Candonidae,Animalia,Arthropoda,Ostracoda,Podocopida,Candonidae,Pseudocandona,NA
@@ -1051,6 +1055,8 @@ pseudodiaptomus coronatus,"Pseudodiaptomus coronatus Williams, 1906",Animalia,Ar
 pseudodiaptomus forbesi,"Pseudodiaptomus forbesi (Poppe & Richard, 1890)",Animalia,Arthropoda,Copepoda,Calanoida,Pseudodiaptomidae,Pseudodiaptomus,Pseudodiaptomus forbesi
 pseudodiaptomus inopinus,"Pseudodiaptomus inopinus Burckhardt, 1913",Animalia,Arthropoda,Copepoda,Calanoida,Pseudodiaptomidae,Pseudodiaptomus,Pseudodiaptomus inopinus
 pseudomugil signifer,"Pseudomugil signifer Kner, 1866",Animalia,Chordata,Actinopterygii,Atheriniformes,Pseudomugilidae,Pseudomugil,Pseudomugil signifer
+pediastrum boryanum,Pediastrum boryanum (Turpin) Menegh.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Hydrodictyaceae,Pseudopediastrum,Pseudopediastrum boryanum
+pleuronectes americanus,"Pleuronectes americanus Walbaum, 1792",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Pseudopleuronectes,Pseudopleuronectes americanus
 pseudopleuronectes yokohamae,"Pseudopleuronectes yokohamae (Günther, 1877)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Pleuronectidae,Pseudopleuronectes,Pseudopleuronectes yokohamae
 pseudorasbora parva,"Pseudorasbora parva (Temminck & Schlegel, 1846)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Pseudorasbora,Pseudorasbora parva
 pseudosida ramosa,"Pseudosida ramosa (Daday, 1904)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Sididae,Pseudosida,Pseudosida ramosa
@@ -1060,22 +1066,21 @@ ptychocheilus lucius,"Ptychocheilus lucius Girard, 1856",Animalia,Chordata,Actin
 ptychocheilus oregonensis,"Ptychocheilus oregonensis (Richardson, 1836)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Ptychocheilus,Ptychocheilus oregonensis
 pungitius pungitius,"Pungitius pungitius (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Gasterosteiformes,Gasterosteidae,Pungitius,Pungitius pungitius
 puntigrus tetrazona,"Puntigrus tetrazona (Bleeker, 1855)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntigrus,Puntigrus tetrazona
+puntius tetrazona,"Puntius tetrazona (Bleeker, 1855)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntigrus,Puntigrus tetrazona
+barbus dorsalis,"Barbus dorsalis (Jerdon, 1849)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius dorsalis
+barbus stigma,"Barbus stigma (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius stigma
 puntius chola,"Puntius chola (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius chola
 puntius parrah,"Puntius parrah Day, 1865",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius parrah
-puntius sarana,"Puntius sarana (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Systomus,Systomus sarana
 puntius sophore,"Puntius sophore (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius sophore
 puntius stigma,"Puntius stigma (Valenciennes, 1844)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntius,Puntius stigma
-puntius tetrazona,"Puntius tetrazona (Bleeker, 1855)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Puntigrus,Puntigrus tetrazona
 pylodictis olivaris,"Pylodictis olivaris (Rafinesque, 1818)",Animalia,Chordata,Actinopterygii,Siluriformes,Ictaluridae,Pylodictis,Pylodictis olivaris
 pyramimonas sp.,Polyblepharidaceae,Plantae,Chlorophyta,Prasinophyceae,Pyramimonadales,Polyblepharidaceae,Pyramimonas,NA
-pyrocystis lunula,"Pyrocystis lunula Schütt, 1896",Chromista,Myzozoa,Dinophyceae,Gymnodiniales,Gymnodiniaceae,Gymnodinium,Gymnodinium lunula
 pyrocystis noctiluca,Pyrocystis noctiluca J.Murray ex Haeckel,Chromista,Myzozoa,Dinophyceae,Pyrocystales,Pyrocystaceae,Pyrocystis,Pyrocystis noctiluca
 pyropia yezoensis,"Pyropia yezoensis (Ueda) M.S.Hwang & H.G.Choi, 2011",Plantae,Rhodophyta,Bangiophyceae,Bangiales,Bangiaceae,Pyropia,Pyropia yezoensis
 quinquelaophonte sp.,Laophontidae,Animalia,Arthropoda,Copepoda,Harpacticoida,Laophontidae,Quinquelaophonte,NA
 rachycentron canadum,"Rachycentron canadum (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Perciformes,Rachycentridae,Rachycentron,Rachycentron canadum
 raphidocelis subcapitata,Raphidocelis subcapitata (Korshikov) Nygaard et al.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Raphidocelis,Raphidocelis subcapitata
 rasbora daniconius,"Rasbora daniconius (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rasbora,Rasbora daniconius
-rasbora heteromorpha,"Rasbora heteromorpha Duncker, 1904",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Trigonostigma,Trigonostigma heteromorpha
 rasbora neilgherriensis,"Rasbora neilgherriensis Day, 1867",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rasbora,Rasbora daniconius
 rasbora sumatrana,"Rasbora sumatrana (Bleeker, 1852)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rasbora,Rasbora sumatrana
 rasbora trilineata,"Rasbora trilineata Steindachner, 1870",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rasbora,Rasbora trilineata
@@ -1091,8 +1096,8 @@ rhodeus sericeus,"Rhodeus sericeus (Pallas, 1776)",Animalia,Chordata,Actinoptery
 rhodomonas baltica,Rhodomonas baltica Karsten,Chromista,Cryptophyta,Cryptophyceae,Pyrenomonadales,Pyrenomonadaceae,Rhodomonas,Rhodomonas baltica
 rhodomonas salina,Rhodomonas salina (Wislouch) D.R.A.Hill & Wetherbee,Chromista,Cryptophyta,Cryptophyceae,Pyrenomonadales,Pyrenomonadaceae,Rhodomonas,Rhodomonas salina
 richardsonius balteatus,"Richardsonius balteatus (Richardson, 1836)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Richardsonius,Richardsonius balteatus
-rivulus marmoratus,"Rivulus marmoratus Poey, 1880",Animalia,Chordata,Actinopterygii,Cyprinodontiformes,Rivulidae,Kryptolebias,Kryptolebias marmoratus
 robertsonia propinqua,"Robertsonia propinqua (Scott T., 1894)",Animalia,Arthropoda,Copepoda,Harpacticoida,Miraciidae,Robertsonia,Robertsonia propinqua
+synechococcus leopoliensis,Synechococcus leopoliensis (Racib.) Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Phormidesmiales,Phormidesmiaceae,Romeria,Romeria leopoliensis
 rutilus caspicus,"Rutilus caspicus (Yakovlev, 1870)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rutilus,Rutilus caspicus
 rutilus kutum,"Rutilus kutum (Kamensky, 1901)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rutilus,Rutilus kutum
 rutilus rutilus,"Rutilus rutilus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Rutilus,Rutilus rutilus
@@ -1108,31 +1113,30 @@ sander canadensis,"Sander canadensis (Griffith & Smith, 1834)",Animalia,Chordata
 sander lucioperca,"Sander lucioperca (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Percidae,Sander,Sander lucioperca
 sander vitreus,"Sander vitreus (Mitchill, 1818)",Animalia,Chordata,Actinopterygii,Perciformes,Percidae,Sander,Sander vitreus
 sarotherodon galilaeus,"Sarotherodon galilaeus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Sarotherodon,Sarotherodon galilaeus
+tilapia galilaea,"Tilapia galilaea (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Sarotherodon,Sarotherodon galilaeus
+amphiascus tenuiremis,"Amphiascus tenuiremis (Brady, 1880)",Animalia,Arthropoda,Copepoda,Harpacticoida,Miraciidae,Sarsamphiascus,Sarsamphiascus tenuiremis
+paratelphusa spinigera,"Paratelphusa spinigera (Wood-Mason, 1871)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Sartoriana,Sartoriana spinigera
 scaphirhynchus platorynchus,"Scaphirhynchus platorynchus (Rafinesque, 1820)",Animalia,Chordata,Actinopterygii,Acipenseriformes,Acipenseridae,Scaphirhynchus,Scaphirhynchus platorynchus
 scapholeberis kingi,"Scapholeberis kingii Sars, 1888",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Scapholeberis,Scapholeberis kingii
 scardinius erythrophthalmus,"Scardinius erythrophthalmus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Scardinius,Scardinius erythrophthalmus
-scenedesmus abundans,Scenedesmus abundans (Kirchn.) Chodat,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Desmodesmus,Desmodesmus abundans
-scenedesmus acuminatus,Scenedesmus acuminatus (Lagerh.) Chodat,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Tetradesmus,Tetradesmus lagerheimii
 scenedesmus acutus,Scenedesmus acutus Lagh.Chodat,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Scenedesmus,Scenedesmus acutus
-scenedesmus dimorphus,"Tetradesmus G.M.Smith, 1913",Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Tetradesmus,NA
-scenedesmus pannonicus,Scenedesmus pannonicus Hortob.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Desmodesmus,Desmodesmus pannonicus
 scenedesmus quadricauda,Scenedesmus quadricauda (Turpin) Bréb.,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Scenedesmus,Scenedesmus quadricauda
 scenedesmus sp.,Scenedesmaceae,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Scenedesmus,NA
 schilbe mystus,"Schilbe mystus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Siluriformes,Schilbeidae,Schilbe,Schilbe mystus
+noemacheilus denisonii,"Noemacheilus denisonii (Day, 1867)",Animalia,Chordata,Actinopterygii,Cypriniformes,Nemacheilidae,Schistura,Schistura denisoni
 sciaenops ocellatus,"Sciaenops ocellatus (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Sciaenops,Sciaenops ocellatus
+psetta maxima,"Psetta maxima (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Scophthalmidae,Scophthalmus,Scophthalmus maximus
 scorpaena guttata,"Scorpaena guttata Girard, 1854",Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena guttata
 scorpaenichthys marmoratus,"Scorpaenichthys marmoratus (Ayres, 1854)",Animalia,Chordata,Actinopterygii,Scorpaeniformes,Cottidae,Scorpaenichthys,Scorpaenichthys marmoratus
 scutellidium sp.,Tisbidae,Animalia,Arthropoda,Copepoda,Harpacticoida,Tisbidae,Scutellidium,NA
 scyliorhinus canicula,"Scyliorhinus canicula (Linnaeus, 1758)",Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Scyliorhinidae,Scyliorhinus,Scyliorhinus canicula
 scylla serrata,"Scylla serrata (Forskål, 1775)",Animalia,Arthropoda,Malacostraca,Decapoda,Portunidae,Scylla,Scylla serrata
 sebastes schlegelii,"Sebastes schlegelii Hilgendorf, 1880",Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes,Sebastes schlegelii
-selenastrum capricornutum,Selenastrum capricornutum Printz,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Monoraphidium,Monoraphidium capricornutum
 selenastrum sp.,Selenastraceae,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Selenastraceae,Selenastrum,NA
+eolimna minima,"Eolimna minima (Grunow) Lange-Bertalot & W.Schiller, 1997",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Sellaphoraceae,Sellaphora,Sellaphora nigri
 sellaphora minima,"Sellaphora minima (Grunow) , 1990",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Sellaphoraceae,Sellaphora,Sellaphora nigri
 semotilus atromaculatus,"Semotilus atromaculatus (Mitchill, 1818)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Semotilus,Semotilus atromaculatus
-sergestes lucens,"Sergestes lucens Hansen, 1922",Animalia,Arthropoda,Malacostraca,Decapoda,Sergestidae,Lucensosergia,Lucensosergia lucens
 seriola quinqueradiata,"Seriola quinqueradiata Temminck & Schlegel, 1845",Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Seriola,Seriola quinqueradiata
-sesarma huzardi,"Sesarma huzardi (Desmarest, 1825)",Animalia,Arthropoda,Malacostraca,Decapoda,Sesarmidae,Guinearma,Guinearma huzardi
 sida crystallina,"Sida crystallina (O.F.Müller, 1776)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Sididae,Sida,Sida crystallina
 siganus fuscescens,"Siganus fuscescens (Houttuyn, 1782)",Animalia,Chordata,Actinopterygii,Perciformes,Siganidae,Siganus,Siganus fuscescens
 sillago japonica,"Sillago japonica Temminck & Schlegel, 1843",Animalia,Chordata,Actinopterygii,Perciformes,Sillaginidae,Sillago,Sillago japonica
@@ -1140,7 +1144,7 @@ silurus glanis,"Silurus glanis Linnaeus, 1758",Animalia,Chordata,Actinopterygii,
 simocephalus elizabethae,"Simocephalus elizabethae (King, 1853)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Simocephalus,Simocephalus elizabethae
 simocephalus mixtus,"Simocephalus mixtus Sars, 1903",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Simocephalus,Simocephalus mixtus
 simocephalus serrulatus,"Simocephalus serrulatus (Koch, 1841)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Simocephalus,Simocephalus serrulatus
-simocephalus sp.,"? simocephalus Weithofer, 1888",Animalia,Chordata,Branchiopoda,Diplostraca,Kannemeyeriidae,Simocephalus,NA
+simocephalus sp.,"? simocephalus Weithofer, 1888",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Simocephalus,NA
 simocephalus vetulus,"Simocephalus vetulus (O.F.Müller, 1776)",Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Simocephalus,Simocephalus vetulus
 sinelobus stanfordi,"Sinelobus stanfordi (Richardson, 1901)",Animalia,Arthropoda,Malacostraca,Tanaidacea,Tanaididae,Sinelobus,Sinelobus stanfordi
 siriella armata,"Siriella armata (H.Milne Edwards, 1837)",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Siriella,Siriella armata
@@ -1156,18 +1160,23 @@ sphaeroma serratum,"Sphaeroma serratum (J.C.Fabricius, 1787)",Animalia,Arthropod
 sphoeroides annulatus,"Sphoeroides annulatus (Jenyns, 1842)",Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides annulatus
 sphoeroides maculatus,"Sphoeroides maculatus (Bloch & Schneider, 1801)",Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides maculatus
 spicodiaptomus chelospinus,"Spicodiaptomus chelospinus Rajendran, 1973",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Spicodiaptomus,Spicodiaptomus chelospinus
+oziotelphusa senex,"Oziotelphusa senex (Fabricius, 1798)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Spiralothelphusa,Spiralothelphusa senex
+paratelphusa hydrodromus,"Paratelphusa hydrodromous (Herbst, 1794)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Spiralothelphusa,Spiralothelphusa hydrodroma
 spiralothelphusa hydrodroma,"Spiralothelphusa hydrodroma (Herbst, 1794)",Animalia,Arthropoda,Malacostraca,Decapoda,Gecarcinucidae,Spiralothelphusa,Spiralothelphusa hydrodroma
-spirulina platensis,Spirulina platensis (Gomont) Geitler,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Microcoleaceae,Arthrospira,Arthrospira platensis
+leuciscus cephalus,"Leuciscus cephalus (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Squalius,Squalius cephalus
 squalus acanthias,"Squalus acanthias Linnaeus, 1758",Animalia,Chordata,Elasmobranchii,Squaliformes,Squalidae,Squalus,Squalus acanthias
 staurastrum chaetoceras,Staurastrum chaetoceras (Schröd.) G.M.Sm.,Plantae,Charophyta,Conjugatophyceae,Desmidiales,Desmidiaceae,Staurastrum,Staurastrum chaetoceras
 staurastrum manfeldtii,Staurastrum manfeldtii Delponte,Plantae,Charophyta,Conjugatophyceae,Desmidiales,Desmidiaceae,Staurastrum,Staurastrum manfeldtii
 staurastrum sebaldi,Staurastrum sebaldi Reinsch,Plantae,Charophyta,Conjugatophyceae,Desmidiales,Desmidiaceae,Staurastrum,Staurastrum sebaldi
-staurastrum sp.,Desmidiaceae,Plantae,Charophyta,Zygnematophyceae,Zygnematales,Desmidiaceae,Staurastrum,NA
+staurastrum sp.,Desmidiaceae,Plantae,Charophyta,Conjugatophyceae,Desmidiales,Desmidiaceae,Staurastrum,NA
+pediastrum tetras,Pediastrum tetras (Ehrenb.) Ralfs,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Hydrodictyaceae,Stauridium,Stauridium tetras
 stauroneis amphoroides,"Stauroneis amphoroides Grunow, 1875",Chromista,Ochrophyta,Bacillariophyceae,Naviculales,Stauroneidaceae,Stauroneis,Stauroneis amphoroides
+pomacentrus leucostictus,"Pomacentrus leucostictus Müller & Troschel, 1848",Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes leucostictus
 stenocypris major,"Stenocypris major (Baird, 1859)",Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Stenocypris,Stenocypris major
 stenocypris malcolmsoni,"Stenocypris malcolmsoni Brady, 1886",Animalia,Arthropoda,Ostracoda,Podocopida,Cyprididae,Stenocypris,Stenocypris malcolmsoni
 stenotomus chrysops,"Stenotomus chrysops (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Perciformes,Sparidae,Stenotomus,Stenotomus chrysops
 stephanodiscus hantzschii,"Stephanodiscus hantzschii Grunow, 1880",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Stephanodiscaceae,Stephanodiscus,Stephanodiscus hantzschii
+monacanthus hispidus,"Monacanthus hispidus (Linnaeus, 1766)",Animalia,Chordata,Actinopterygii,Tetraodontiformes,Monacanthidae,Stephanolepis,Stephanolepis hispidus
 stichococcus bacillaris,Stichococcus bacillaris Nägeli,Plantae,Chlorophyta,Trebouxiophyceae,Prasiolales,Prasiolaceae,Stichococcus,Stichococcus bacillaris
 stigeoclonium tenue,Stigeoclonium tenue (C.Agardh) Kütz.,Plantae,Chlorophyta,Chlorophyceae,Chaetophorales,Chaetophoraceae,Stigeoclonium,Stigeoclonium tenue
 streptocephalus dichotomus,"Streptocephalus dichotomus Baird, 1860",Animalia,Arthropoda,Branchiopoda,Anostraca,Streptocephalidae,Streptocephalus,Streptocephalus dichotomus
@@ -1180,13 +1189,14 @@ streptocephalus torvicornis,"Streptocephalus torvicornis (Waga, 1842)",Animalia,
 subeucalanus pileatus,"Subeucalanus pileatus (Giesbrecht, 1888)",Animalia,Arthropoda,Copepoda,Calanoida,Subeucalanidae,Subeucalanus,Subeucalanus pileatus
 synaptura kleini,"Synaptura kleinii (Risso, 1827)",Animalia,Chordata,Actinopterygii,Pleuronectiformes,Soleidae,Synapturichthys,Synapturichthys kleinii
 synechococcus elongatus,Synechococcus elongatus A,Bacteria,Cyanobacteria,Cyanobacteriia,Synechococcales,Synechococcaceae,Synechococcus,Synechococcus elongatus
-synechococcus leopoliensis,Synechococcus leopoliensis (Racib.) Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Phormidesmiales,Phormidesmiaceae,Romeria,Romeria leopoliensis
 synechococcus nidulans,Synechococcus nidulans (Pringsh.) Komárek,Bacteria,Cyanobacteria,Cyanobacteriia,Synechococcales,Synechococcaceae,Synechococcus,Synechococcus nidulans
 synechococcus sp.,Chroococcaceae,Bacteria,Cyanobacteria,Cyanobacteriia,Cyanobacteriales,Chroococcaceae,Synechococcus,NA
-synechogobius hasta,"Synechogobius hastus (Temminck & Schlegel, 1845)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Acanthogobius,Acanthogobius hasta
 synedra rumpens,Synedra rumpens H.H.Chase,Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Synedra,Synedra rumpens
+ulnaria ulna,"Ulnaria ulna (Nitzsch) P.Compère, 2001",Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Synedra,Synedra ulna
 syngnathus fuscus,"Syngnathus fuscus Storer, 1839",Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Syngnathus,Syngnathus fuscus
 synodontis sp.,Mochokidae,Animalia,Chordata,Actinopterygii,Siluriformes,Mochokidae,Synodontis,NA
+puntius sarana,"Puntius sarana (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Systomus,Systomus sarana
+pelteobagrus fulvidraco,"Pelteobagrus fulvidraco (Richardson, 1846)",Animalia,Chordata,Actinopterygii,Siluriformes,Bagridae,Tachysurus,Tachysurus fulvidraco
 talitrus saltator,"Talitrus saltator (Montagu, 1808)",Animalia,Arthropoda,Malacostraca,Amphipoda,Talitridae,Talitrus,Talitrus saltator
 tanichthys albonubes,"Tanichthys albonubes Linnaeus, 1932",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Tanichthys,Tanichthys albonubes
 tautogolabrus adspersus,"Tautogolabrus adspersus (Walbaum, 1792)",Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Tautogolabrus,Tautogolabrus adspersus
@@ -1194,6 +1204,9 @@ temora longicornis,"Temora longicornis (Müller O.F., 1785)",Animalia,Arthropoda
 temora stylifera,"Temora stylifera (Dana, 1849)",Animalia,Arthropoda,Copepoda,Calanoida,Temoridae,Temora,Temora stylifera
 tenagomysis novaezealandiae,"Tenagomysis novaezealandiae Thomson, 1900",Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Tenagomysis,Tenagomysis novaezealandiae
 terapon jarbua,"Terapon jarbua (Forsskål, 1775)",Animalia,Chordata,Actinopterygii,Perciformes,Terapontidae,Terapon,Terapon jarbua
+scenedesmus acuminatus,Scenedesmus acuminatus (Lagerh.) Chodat,Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Tetradesmus,Tetradesmus lagerheimii
+scenedesmus dimorphus,"Tetradesmus G.M.Smith, 1913",Plantae,Chlorophyta,Chlorophyceae,Sphaeropleales,Scenedesmaceae,Tetradesmus,NA
+platymonas subcordiformis,Platymonas subcordiformis,Plantae,Chlorophyta,Prasinophyceae,Chlorodendrales,Chlorodendraceae,Tetraselmis,Platymonas subcordiformis
 tetraselmis chuii,"Tetraselmis chuii Butcher, 1959",Plantae,Chlorophyta,Prasinophyceae,Chlorodendrales,Chlorodendraceae,Tetraselmis,Tetraselmis chuii
 tetraselmis gracilis,Tetraselmis gracilis (Kylin) Butcher,Plantae,Chlorophyta,Prasinophyceae,Chlorodendrales,Chlorodendraceae,Tetraselmis,Tetraselmis gracilis
 tetraselmis sp.,Chlorodendraceae,Plantae,Chlorophyta,Prasinophyceae,Chlorodendrales,Chlorodendraceae,Tetraselmis,NA
@@ -1202,10 +1215,10 @@ tetraselmis tetrathele,Tetraselmis tetrathele (G.S.West) Butcher,Plantae,Chlorop
 thalassiosira nordenskioeldii,"Thalassiosira nordenskioeldii Cleve, 1873",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Thalassiosiraceae,Thalassiosira,Thalassiosira nordenskioeldii
 thalassiosira pseudonana,"Thalassiosira pseudonana Hasle & Heimdal, 1970",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Thalassiosiraceae,Thalassiosira,Thalassiosira pseudonana
 thalassiosira rotula,"Thalassiosira rotula Meunier, 1910",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Thalassiosiraceae,Thalassiosira,Thalassiosira rotula
-thalassiosira weissflogii,"Thalassiosira weissflogii (Grunow) G.Fryxell & Hasle, 1977",Chromista,Ochrophyta,Bacillariophyceae,Thalassiosirales,Thalassiosiraceae,Conticribra,Conticribra weissflogii
 thalassoma bifasciatum,"Thalassoma bifasciatum (Bloch, 1791)",Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Thalassoma,Thalassoma bifasciatum
 thalassoma pavo,"Thalassoma pavo (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Thalassoma,Thalassoma pavo
 thamnocephalus platyurus,"Thamnocephalus platyurus Packard, 1877",Animalia,Arthropoda,Branchiopoda,Anostraca,Thamnocephalidae,Thamnocephalus,Thamnocephalus platyurus
+mesocyclops hyalinus,"Mesocyclops hyalinus (Rehberg, 1880)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Thermocyclops,Thermocyclops hyalinus
 thermocyclops oblongatus,"Thermocyclops oblongatus (Sars G.O., 1927)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Thermocyclops,Thermocyclops oblongatus
 thymallus arcticus,"Thymallus arcticus (Pallas, 1776)",Animalia,Chordata,Actinopterygii,Salmoniformes,Salmonidae,Thymallus,Thymallus arcticus
 tiburonella viscana,"Tiburonella viscana (J.L.Barnard, 1964)",Animalia,Arthropoda,Malacostraca,Amphipoda,Platyischnopidae,Tiburonella,Tiburonella viscana
@@ -1213,16 +1226,9 @@ tigriopus brevicornis,"Tigriopus brevicornis (Müller O.F., 1776)",Animalia,Arth
 tigriopus californicus,"Tigriopus californicus (Baker, 1912)",Animalia,Arthropoda,Copepoda,Harpacticoida,Harpacticidae,Tigriopus,Tigriopus californicus
 tigriopus fulvus,"Tigriopus fulvus (Fischer, 1860)",Animalia,Arthropoda,Copepoda,Harpacticoida,Harpacticidae,Tigriopus,Tigriopus fulvus
 tigriopus japonicus,"Tigriopus japonicus Mori, 1938",Animalia,Arthropoda,Copepoda,Harpacticoida,Harpacticidae,Tigriopus,Tigriopus japonicus
-tilapia aurea,"Tilapia aurea (Steindachner, 1864)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,Oreochromis aureus
-tilapia galilaea,"Tilapia galilaea (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Sarotherodon,Sarotherodon galilaeus
-tilapia guineensis,"Tilapia guineensis (Bleeker, 1863)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon guineensis
-tilapia hornorum,"Tilapia hornorum Trewavas, 1966",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Oreochromis,Oreochromis urolepis
-tilapia melanopleura,"Tilapia melanopleura Duméril, 1861",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon zillii
-tilapia rendalli,"Tilapia rendalli (Boulenger, 1897)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon rendalli
 tilapia sp.,Cichlidae,Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Tilapia,NA
 tilapia sparrmanii,"Tilapia sparrmanii Smith, 1840",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Tilapia,Tilapia sparrmanii
 tilapia spilurus,Tilapia spilurus,Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Tilapia,Tilapia spilurus
-tilapia zillii,"Tilapia zillei (Gervais, 1848)",Animalia,Chordata,Actinopterygii,Perciformes,Cichlidae,Coptodon,Coptodon zillii
 tinca tinca,"Tinca tinca (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Tinca,Tinca tinca
 tisbe battagliai,"Tisbe battagliai Volkmann-Rocco, 1972",Animalia,Arthropoda,Copepoda,Harpacticoida,Tisbidae,Tisbe,Tisbe battagliai
 tisbe holothuriae,"Tisbe holothuriae Humes, 1957",Animalia,Arthropoda,Copepoda,Harpacticoida,Tisbidae,Tisbe,Tisbe holothuriae
@@ -1234,29 +1240,23 @@ trachinotus carolinus,"Trachinotus carolinus (Linnaeus, 1766)",Animalia,Chordata
 trachurus japonicus,"Trachurus japonicus (Temminck & Schlegel, 1844)",Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Trachurus,Trachurus japonicus
 tribolodon hakonensis,"Tribolodon hakonensis (Günther, 1877)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Tribolodon,Tribolodon hakonensis
 trichodactylus borellianus,"Trichodactylus borellianus Nobili, 1896",Animalia,Arthropoda,Malacostraca,Decapoda,Trichodactylidae,Trichodactylus,Trichodactylus borellianus
+colisa fasciata,"Colisa fasciata (Bloch & Schneider, 1801)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Trichogaster,Trichogaster fasciata
+colisa lalia,"Colisa lalia (Hamilton, 1822)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Trichogaster,Trichogaster lalius
 trichogaster pectoralis,"Trichogaster pectoralis (Regan, 1910)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Trichopodus,Trichopodus pectoralis
 trichogaster trichopterus,"Trichogaster trichopterus (Pallas, 1770)",Animalia,Chordata,Actinopterygii,Perciformes,Osphronemidae,Trichopodus,Trichopodus trichopterus
 tridentiger trigonocephalus,"Tridentiger trigonocephalus (Gill, 1859)",Animalia,Chordata,Actinopterygii,Perciformes,Gobiidae,Tridentiger,Tridentiger trigonocephalus
+rasbora heteromorpha,"Rasbora heteromorpha Duncker, 1904",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Trigonostigma,Trigonostigma heteromorpha
 triops longicaudatus,"Triops longicaudatus (LeConte, 1846)",Animalia,Arthropoda,Branchiopoda,Notostraca,Triopsidae,Triops,Triops longicaudatus
 tropocyclops prasinus,"Tropocyclops prasinus (Fischer, 1860)",Animalia,Arthropoda,Copepoda,Cyclopoida,Cyclopidae,Tropocyclops,Tropocyclops prasinus
 trypaea australiensis,"Trypaea australiensis Dana, 1852",Animalia,Arthropoda,Malacostraca,Decapoda,Callianassidae,Trypaea,Trypaea australiensis
 tumeodiaptomus diabolicus,"Tumeodiaptomus diabolicus (Brehm, 1935)",Animalia,Arthropoda,Copepoda,Calanoida,Diaptomidae,Tumeodiaptomus,Tumeodiaptomus diabolicus
-uca annulipes,"Uca annulipes (H.Milne Edwards, 1837)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Austruca,Austruca annulipes
-uca marionis,"Uca marionis (Desmarest, 1823)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Gelasimus,Gelasimus vocans
-uca pugilator,"Uca pugilator (Bosc, 1801)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Leptuca,Leptuca pugilator
-uca pugnax,"Uca pugnax (Smith, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Minuca,Minuca pugnax
-uca rapax,"Uca rapax (Smith, 1870)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Minuca,Minuca rapax
-uca triangularis,"Uca triangularis (A.Milne-Edwards, 1873)",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Austruca,Austruca triangularis
-uca uruguayensis,"Uca uruguayensis Nobili, 1901",Animalia,Arthropoda,Malacostraca,Decapoda,Ocypodidae,Leptuca,Leptuca uruguayensis
-ulnaria ulna,"Ulnaria ulna (Nitzsch) P.Compère, 2001",Chromista,Ochrophyta,Bacillariophyceae,Fragilariales,Fragilariaceae,Synedra,Synedra ulna
 ulothrix fimbriata,Ulothrix fimbriata Bold,Plantae,Chlorophyta,Ulvophyceae,Ulotrichales,Ulotrichaceae,Ulothrix,Ulothrix fimbriata
-ulothrix subconstricta,Ulothrix subconstricta G.S.West,Plantae,Chlorophyta,Trebouxiophyceae,Chlorellales,Chlorellaceae,Gloeotila,Gloeotila subconstricta
+enteromorpha intestinalis,Enteromorpha intestinalis (L.) Link,Plantae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,Ulva,Ulva intestinalis
 ulva fasciata,"Ulva Linnaeus, 1753",Plantae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,Ulva,NA
 ulva lactuca,Ulva lactuca L.,Plantae,Chlorophyta,Ulvophyceae,Ulvales,Ulvaceae,Ulva,Ulva lactuca
 umbra pygmaea,"Umbra pygmaea (DeKay, 1842)",Animalia,Chordata,Actinopterygii,Esociformes,Umbridae,Umbra,Umbra pygmaea
 undinula vulgaris,"Undinula vulgaris (Dana, 1849)",Animalia,Arthropoda,Copepoda,Calanoida,Calanidae,Undinula,Undinula vulgaris
 upogebia pugettensis,"Upogebia pugettensis (Dana, 1852)",Animalia,Arthropoda,Malacostraca,Decapoda,Upogebiidae,Upogebia,Upogebia pugettensis
-valamugil engeli,"Valamugil engeli (Bleeker, 1858)",Animalia,Chordata,Actinopterygii,Mugiliformes,Mugilidae,Osteomugil,Osteomugil engeli
 varuna litterata,"Varuna litterata (Fabricius, 1798)",Animalia,Arthropoda,Malacostraca,Decapoda,Varunidae,Varuna,Varuna litterata
 vimba vimba,"Vimba vimba (Linnaeus, 1758)",Animalia,Chordata,Actinopterygii,Cypriniformes,Cyprinidae,Vimba,Vimba vimba
 wallago attu,"Wallago attu (Bloch & Schneider, 1801)",Animalia,Chordata,Actinopterygii,Siluriformes,Siluridae,Wallago,Wallago attu

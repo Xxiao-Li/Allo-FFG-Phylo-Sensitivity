@@ -1,28 +1,7 @@
 latin,kingdom,phylum,class,order,family,genus,scientific name
-aeolosoma headleyi,Animalia,Annelida,Polychaeta,NA,Aeolosomatidae,Aeolosoma,Aeolosoma headleyi
-arenicola marina,Animalia,Annelida,Polychaeta,NA,Arenicolidae,Arenicola,Arenicola marina
-branchiura sowerbyi,Animalia,Annelida,Clitellata,Tubificida,Naididae,Branchiura,Branchiura sowerbyi
-dinophilus gyrociliatus,Animalia,Annelida,Polychaeta,Eunicida,Dinophilidae,Dimorphilus,Dimorphilus gyrociliatus
-erpobdella octoculata,Animalia,Annelida,Clitellata,Arhynchobdellida,Erpobdellidae,Erpobdella,Erpobdella octoculata
-heteromastus filiformis,Animalia,Annelida,Polychaeta,NA,Capitellidae,Heteromastus,Heteromastus filiformis
-laeonereis acuta,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,Laeonereis,Laeonereis acuta
-limnodrilus hoffmeisteri,Animalia,Annelida,Clitellata,Tubificida,Naididae,Limnodrilus,Limnodrilus hoffmeisteri
-lumbriculus variegatus,Animalia,Annelida,Clitellata,Lumbriculida,Lumbriculidae,Lumbriculus,Lumbriculus variegatus
-monopylephorus rubroniveus,Animalia,Annelida,Clitellata,Tubificida,Naididae,Monopylephorus,Monopylephorus rubroniveus
-nais elinguis,Animalia,Annelida,Clitellata,Tubificida,Naididae,Nais,Nais elinguis
-neanthes arenaceodentata,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,Neanthes,Neanthes arenaceodentata
-nephelopsis obscura,Animalia,Annelida,Clitellata,Arhynchobdellida,Erpobdellidae,Nephelopsis,Nephelopsis obscura
-nereis virens,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,Alitta,NA
-ophryotrocha diadema,Animalia,Annelida,Polychaeta,Eunicida,Dorvilleidae,Ophryotrocha,Ophryotrocha diadema
-peloscolex ferox,Animalia,Annelida,Clitellata,Tubificida,Naididae,Spirosperma,Spirosperma ferox
-pristina leidyi,Animalia,Annelida,Clitellata,Tubificida,Naididae,Pristina,Pristina leidyi
-quistadrilus multisetosus,Animalia,Annelida,Clitellata,Tubificida,Naididae,Quistadrilus,Quistadrilus multisetosus
-rhyacodrilus montanus,Animalia,Annelida,Clitellata,Tubificida,Naididae,Rhyacodrilus,Rhyacodrilus montana
-spirosperma nikolskyi,Animalia,Annelida,Clitellata,Tubificida,Naididae,Embolocephalus,Embolocephalus nikolskyi
-stylodrilus heringianus,Animalia,Annelida,Clitellata,Lumbriculida,Lumbriculidae,Stylodrilus,Stylodrilus heringianus
-tubifex tubifex,Animalia,Annelida,Clitellata,Tubificida,Naididae,Tubifex,Tubifex tubifex
-varichaeta pacifica,Animalia,Annelida,Clitellata,Tubificida,Naididae,Varichaetadrilus,Varichaetadrilus pacificus
+acrobeloides buetschlii,Animalia,Nematoda,Chromadorea,Rhabditida,Cephalobidae,Acrobeloides,Acrobeloides buetschlii
 acroneuria lycorias,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,Acroneuria,Acroneuria lycorias
+acroneuria sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,acroneuria,NA
 adenophlebia auriculata,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Adenophlebia,Adenophlebia auriculata
 aedes aegypti,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Aedes,Aedes aegypti
 aedes albopictus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Aedes,Aedes albopictus
@@ -33,11 +12,19 @@ aedes stimulans,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Aedes,Aedes stimul
 aedes taeniorhynchus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Aedes,Aedes taeniorhynchus
 aedes trivittatus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Aedes,Aedes trivittatus
 aedes vexans,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Aedes,Aedes vexans
+aeolosoma headleyi,Animalia,Annelida,Polychaeta,NA,Aeolosomatidae,Aeolosoma,Aeolosoma headleyi
+agnetina sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,agnetina,NA
+alasmidonta heterodon,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Alasmidonta,Alasmidonta heterodon
+nereis virens,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,Alitta,NA
 americamysis bahia,Animalia,Arthropoda,Malacostraca,Mysida,Mysidae,Americamysis,Americamysis bahia
+amnicola sp.,Animalia,Mollusca,Gastropoda,Littorinimorpha,Amnicolidae,amnicola,NA
+amnicola limosa,Animalia,Mollusca,Gastropoda,Littorinimorpha,Amnicolidae,Amnicola,Amnicola limosus
 ampelisca abdita,Animalia,Arthropoda,Malacostraca,Amphipoda,Ampeliscidae,Ampelisca,Ampelisca abdita
 anax imperator,Animalia,Arthropoda,Insecta,Odonata,Aeshnidae,Anax,Anax imperator
+anculosa sp.,Animalia,Mollusca,Gastropoda,Littorinimorpha,Lithoglyphidae,Anculosa,NA
 anisops bouvieri,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,Anisops,Anisops bouvieri
 anisops sardeus,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,Anisops,Anisops sardeus
+anodonta sp.,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,anodonta,NA
 anopheles albimanus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anopheles,Anopheles albimanus
 anopheles culicifacies,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anopheles,Anopheles culicifacies
 anopheles freeborni,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anopheles,Anopheles freeborni
@@ -47,17 +34,38 @@ anopheles quadrimaculatus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anophele
 anopheles sinensis,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anopheles,Anopheles sinensis
 anopheles stephensi,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anopheles,Anopheles stephensi
 anopheles vagus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Anopheles,Anopheles vagus
+aphelenchus avenae,Animalia,Nematoda,Chromadorea,Rhabditida,Aphelenchidae,Aphelenchus,Aphelenchus avenae
+aplexa hypnorum,Animalia,Mollusca,Gastropoda,NA,Physidae,Aplexa,Aplexa hypnorum
+aporcelaimellus obtusicaudatus,Animalia,Nematoda,NA,Dorylaimida,Aporcelaimidae,Aporcelaimellus,Aporcelaimellus obtusicaudatus
 arctopsyche grandis,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,Arctopsyche,Arctopsyche grandis
+arenicola marina,Animalia,Annelida,Polychaeta,NA,Arenicolidae,Arenicola,Arenicola marina
+argia sp.,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,argia,NA
 atalophlebia australis,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Atalophlebia,Atalophlebia australis
+atalophlebia sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,atalophlebia,NA
 atherix variegata,Animalia,Arthropoda,Insecta,Diptera,Athericidae,Atherix,Atherix variegata
 baetis harrisoni,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,Baetis,Baetis harrisoni
 baetis rhodani,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,Baetis,Baetis rhodani
 baetis tricaudatus,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,Baetis,Baetis tricaudatus
+baetis sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,baetis,NA
+belostoma sp.,Animalia,Arthropoda,Insecta,Hemiptera,Belostomatidae,belostoma,NA
 berosus styliferus,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,Berosus,Berosus stylifer
+biomphalaria alexandrina,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Biomphalaria,Biomphalaria alexandrina
+biomphalaria glabrata,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Biomphalaria,Biomphalaria glabrata
+biomphalaria havanensis,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Biomphalaria,Biomphalaria havanensis
+branchiura sowerbyi,Animalia,Annelida,Clitellata,Tubificida,Naididae,Branchiura,Branchiura sowerbyi
+brotia sp.,Animalia,Mollusca,Gastropoda,NA,Pachychilidae,brotia,NA
+bulinus truncatus,Animalia,Mollusca,Gastropoda,NA,Bulinidae,Bulinus,Bulinus truncatus
+burnupia stenochorias,Animalia,Mollusca,Gastropoda,NA,Burnupiidae,Burnupia,Burnupia stenochorias
+caenorhabditis elegans,Animalia,Nematoda,Chromadorea,Rhabditida,Rhabditidae,Caenorhabditis,Caenorhabditis elegans
 callibaetis skokianus,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,Callibaetis,Callibaetis skokiana
+villosa iris,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Cambarunio,Cambarunio iris
+cephalobus persegnis,Animalia,Nematoda,Chromadorea,Rhabditida,Cephalobidae,Cephalobus,Cephalobus persegnis
 ceriodaphnia dubia,Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Ceriodaphnia,Ceriodaphnia dubia
 chaoborus obscuripes,Animalia,Arthropoda,Insecta,Diptera,Chaoboridae,Chaoborus,Chaoborus obscuripes
+chaoborus sp.,Animalia,Arthropoda,Insecta,Diptera,Chaoboridae,chaoborus,NA
+chauliodes sp.,Animalia,Arthropoda,Insecta,Megaloptera,Corydalidae,chauliodes,NA
 cheumatopsyche brevilineata,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,Cheumatopsyche,Cheumatopsyche brevilineata
+cheumatopsyche sp.,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,cheumatopsyche,NA
 chironomus crassicaudatus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,Chironomus crassicaudatus
 chironomus decorus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,Chironomus decorus
 chironomus dilutus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,Chironomus dilutus
@@ -67,8 +75,13 @@ chironomus plumosus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,
 chironomus riparius,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,Chironomus riparius
 chironomus tentans,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,Chironomus tentans
 chironomus xanthus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Chironomus,Chironomus xanthus
+chironomus sp.,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,chironomus,NA
+cinygmula sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,cinygmula,NA
 claassenia sabulosa,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,Claassenia,Claassenia sabulosa
+clinocardium nuttallii,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Clinocardium,Clinocardium nuttallii
 cloeon dipterum,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,Cloeon,Cloeon dipterum
+cloeon sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,cloeon,NA
+corbicula manilensis,Animalia,Mollusca,Bivalvia,Venerida,Cyrenidae,Corbicula,Corbicula manilensis
 corixa punctata,Animalia,Arthropoda,Insecta,Hemiptera,Corixidae,Corixa,Corixa punctata
 crocothemis erythraea,Animalia,Arthropoda,Insecta,Odonata,Libellulidae,Crocothemis,Crocothemis erythraea
 culex fatigans,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culex,Culex quinquefasciatus
@@ -84,96 +97,72 @@ culex quinquefasciatus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culex,Culex
 culex restuans,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culex,Culex restuans
 culex tarsalis,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culex,Culex tarsalis
 culex tritaeniorhynchus,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culex,Culex tritaeniorhynchus
+culex sp.,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culex,NA
 culicoides variipennis,Animalia,Arthropoda,Insecta,Diptera,Ceratopogonidae,Culicoides,Culicoides variipennis
 culiseta incidens,Animalia,Arthropoda,Insecta,Diptera,Culicidae,Culiseta,Culiseta incidens
 cyrnus trimaculatus,Animalia,Arthropoda,Insecta,Trichoptera,Polycentropodidae,Cyrnus,Cyrnus trimaculatus
 daphnia magna,Animalia,Arthropoda,Branchiopoda,Diplostraca,Daphniidae,Daphnia,Daphnia magna
-ephemera orientalis,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemeridae,Ephemera,Ephemera orientalis
-ephemerella subvaria,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemerellidae,Ephemerella,Ephemerella subvaria
-ephoron virgo,Animalia,Arthropoda,Insecta,Ephemeroptera,Polymitarcyidae,Ephoron,Ephoron virgo
-gammarus pseudolimnaeus,Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Gammarus,Gammarus pseudolimnaeus
-glyptotendipes paripes,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Glyptotendipes,Glyptotendipes paripes
-goeldichironomus holoprasinus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Goeldichironomus,Goeldichironomus holoprasinus
-hesperoperla pacifica,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,Hesperoperla,Hesperoperla pacifica
-hexagenia bilineata,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemeridae,Hexagenia,Hexagenia bilineata
-homarus americanus,Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Homarus,Homarus americanus
-hyalella azteca,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyalellidae,Hyalella,Hyalella azteca
-hydrophilus triangularis,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,Hydrophilus,Hydrophilus triangularis
-hydropsyche angustipennis,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,Hydropsyche,Hydropsyche angustipennis
-hydropsyche californica,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,Hydropsyche,Hydropsyche californica
-ischnura elegans,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Ischnura,Ischnura elegans
-ischnura heterosticta,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Ischnura,Ischnura heterosticta
-ischnura verticalis,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Ischnura,Ischnura verticalis
-isonychia bicolor,Animalia,Arthropoda,Insecta,Ephemeroptera,Isonychiidae,Isonychia,Isonychia bicolor
-jappa kutera,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Jappa,Jappa kutera
-laccophilus maculosus ssp. maculosus,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Laccophilus,Laccophilus maculosus
-lestes congener,Animalia,Arthropoda,Insecta,Odonata,Lestidae,Lestes,Lestes congener
-limnephilus bipunctatus,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Limnephilus,Limnephilus bipunctatus
-limnephilus lunatus,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Limnephilus,Limnephilus lunatus
-macromia sp.,Animalia,Arthropoda,Ostracoda,Halocyprida,Halocyprididae,Muelleroecia,NA
-nemoura cinerea,Animalia,Arthropoda,Insecta,Plecoptera,Nemouridae,Nemoura,Nemoura cinerea
-nigronia serricornis,Animalia,Arthropoda,Insecta,Megaloptera,Corydalidae,Nigronia,Nigronia serricornis
-notonecta maculata,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,Notonecta,Notonecta maculata
-notonecta undulata,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,Notonecta,Notonecta undulata
-oithona davisae,Animalia,Arthropoda,Copepoda,Cyclopoida,Oithonidae,Oithona,Oithona davisae
-palaemonetes pugio,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon pugio
-paraleptophlebia praepedita,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Paraleptophlebia,Paraleptophlebia praepedita
-parapoynx stratiotata,Animalia,Arthropoda,Insecta,Lepidoptera,Crambidae,Parapoynx,Parapoynx stratiotata
-philarctus quaeris,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Philarctus,Philarctus quaeris
-plea minutissima,Animalia,Arthropoda,Insecta,Hemiptera,Pleidae,Plea,Plea minutissima
-polypedilum nubifer,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Polypedilum,Polypedilum nubifer
-protonemura meyeri,Animalia,Arthropoda,Insecta,Plecoptera,Nemouridae,Protonemura,Protonemura meyeri
-pteronarcella badia,Animalia,Arthropoda,Insecta,Plecoptera,Pteronarcyidae,Pteronarcella,Pteronarcella badia
-pteronarcys californica,Animalia,Arthropoda,Insecta,Plecoptera,Pteronarcyidae,Pteronarcys,Pteronarcys californica
-ranatra linearis,Animalia,Arthropoda,Insecta,Hemiptera,Nepidae,Ranatra,Ranatra linearis
-rhithrogena hageni,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,Rhithrogena,Rhithrogena hageni
-sialis lutaria,Animalia,Arthropoda,Insecta,Megaloptera,Sialidae,Sialis,Sialis lutaria
-sigara alternata,Animalia,Arthropoda,Insecta,Hemiptera,Corixidae,Sigara,Sigara alternata
-simulium venustum,Animalia,Arthropoda,Insecta,Diptera,Simuliidae,Simulium,Simulium venustum
-simulium vittatum,Animalia,Arthropoda,Insecta,Diptera,Simuliidae,Simulium,Simulium vittatum
-stenacron interpunctatum,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,Stenacron,Stenacron interpunctatum
-taeniopteryx nivalis,Animalia,Arthropoda,Insecta,Plecoptera,Taeniopterygidae,Taeniopteryx,Taeniopteryx nivalis
-tanytarsus dissimilis,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Tanytarsus,Tanytarsus dissimilis
-tanytarsus flumineus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Tanytarsus,Tanytarsus flumineus
-thermonectus basillaris,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Thermonectus,Thermonectus basillaris
-tisbe battagliai,Animalia,Arthropoda,Copepoda,Harpacticoida,Tisbidae,Tisbe,Tisbe battagliai
-tropisternus lateralis,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,Tropisternus,Tropisternus lateralis
-xanthocnemis zealandica,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Xanthocnemis,Xanthocnemis zealandica
-amnicola sp.,Animalia,Mollusca,Gastropoda,Littorinimorpha,Amnicolidae,amnicola,NA
-anculosa sp.,Animalia,Mollusca,Gastropoda,Littorinimorpha,Lithoglyphidae,Anculosa,NA
-hydrophilus sp.,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,hydrophilus,NA
-actinonaias ligamentina,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Ortmanniana,Ortmanniana ligamentina
-actinonaias pectorosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Ortmanniana,Ortmanniana pectorosa
-alasmidonta heterodon,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Alasmidonta,Alasmidonta heterodon
-amnicola limosa,Animalia,Mollusca,Gastropoda,Littorinimorpha,Amnicolidae,Amnicola,Amnicola limosus
-anodonta imbecillis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Utterbackia,Utterbackia imbecillis
-aplexa hypnorum,Animalia,Mollusca,Gastropoda,NA,Physidae,Aplexa,Aplexa hypnorum
-bellamya bengalensis,Animalia,Mollusca,Gastropoda,Architaenioglossa,Viviparidae,Filopaludina,Filopaludina bengalensis
-biomphalaria alexandrina,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Biomphalaria,Biomphalaria alexandrina
-biomphalaria glabrata,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Biomphalaria,Biomphalaria glabrata
-biomphalaria havanensis,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Biomphalaria,Biomphalaria havanensis
-bulinus truncatus,Animalia,Mollusca,Gastropoda,NA,Bulinidae,Bulinus,Bulinus truncatus
-burnupia stenochorias,Animalia,Mollusca,Gastropoda,NA,Burnupiidae,Burnupia,Burnupia stenochorias
-clinocardium nuttallii,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Clinocardium,Clinocardium nuttallii
-corbicula manilensis,Animalia,Mollusca,Bivalvia,Venerida,Cyrenidae,Corbicula,Corbicula manilensis
-crassostrea gigas,Animalia,Mollusca,Bivalvia,Ostreida,Ostreidae,Magallana,Magallana gigas
-crassostrea madrasensis,Animalia,Mollusca,Bivalvia,Ostreida,Ostreidae,Magallana,Magallana bilineata
+dendrocoelum lacteum,Animalia,Platyhelminthes,NA,Tricladida,Dendrocoelidae,Dendrocoelum,Dendrocoelum lacteum
+dinophilus gyrociliatus,Animalia,Annelida,Polychaeta,Eunicida,Dinophilidae,Dimorphilus,Dimorphilus gyrociliatus
+diplogasteritus sp.,Animalia,Nematoda,Chromadorea,Rhabditida,Diplogastridae,diplogasteritus,NA
+dorylaimus stagnalis,Animalia,Nematoda,NA,Dorylaimida,Dorylaimidae,Dorylaimus,Dorylaimus stagnalis
 dreissena polymorpha,Animalia,Mollusca,Bivalvia,Myida,Dreissenidae,Dreissena,Dreissena polymorpha
+dugesia japonica,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Dugesia,Dugesia japonica
+dugesia lugubris,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Dugesia,Dugesia lugubris
+dugesia sp.,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Dugesia,NA
 elimia livescens,Animalia,Mollusca,Gastropoda,NA,Pleuroceridae,Elimia,Elimia livescens
 elliptio icterina,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Elliptio,Elliptio icterina
+spirosperma nikolskyi,Animalia,Annelida,Clitellata,Tubificida,Naididae,Embolocephalus,Embolocephalus nikolskyi
+enallagma sp.,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,enallagma,NA
 ensis minor,Animalia,Mollusca,Bivalvia,Adapedonta,Pharidae,Ensis,Ensis minor
+ephemera orientalis,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemeridae,Ephemera,Ephemera orientalis
+ephemerella subvaria,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemerellidae,Ephemerella,Ephemerella subvaria
+ephemerella sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemerellidae,ephemerella,NA
+ephoron virgo,Animalia,Arthropoda,Insecta,Ephemeroptera,Polymitarcyidae,Ephoron,Ephoron virgo
 epioblasma capsaeformis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Epioblasma,Epioblasma capsaeformis
 epioblasma torulosa ssp. rangiana,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Epioblasma,Epioblasma rangiana
 epioblasma triquetra,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Epioblasma,Epioblasma triquetra
+erpobdella octoculata,Animalia,Annelida,Clitellata,Arhynchobdellida,Erpobdellidae,Erpobdella,Erpobdella octoculata
+pisidium casertanum,Animalia,Mollusca,Bivalvia,Sphaeriida,Sphaeriidae,Euglesa,Euglesa casertana
+pisidium compressum,Animalia,Mollusca,Bivalvia,Sphaeriida,Sphaeriidae,Euglesa,Euglesa compressa
+bellamya bengalensis,Animalia,Mollusca,Gastropoda,Architaenioglossa,Viviparidae,Filopaludina,Filopaludina bengalensis
+viviparus bengalensis,Animalia,Mollusca,Gastropoda,Architaenioglossa,Viviparidae,Filopaludina,Filopaludina bengalensis
 fluminicola virens,Animalia,Mollusca,Gastropoda,Littorinimorpha,Lithoglyphidae,Fluminicola,Fluminicola virens
 fusconaia masoni,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Fusconaia,Fusconaia masoni
+gammarus pseudolimnaeus,Animalia,Arthropoda,Malacostraca,Amphipoda,Gammaridae,Gammarus,Gammarus pseudolimnaeus
 gillia altilis,Animalia,Mollusca,Gastropoda,Littorinimorpha,Lithoglyphidae,Gillia,Gillia altilis
+girardia tigrina,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Girardia,Girardia tigrina
+glyptotendipes paripes,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Glyptotendipes,Glyptotendipes paripes
+goeldichironomus holoprasinus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Goeldichironomus,Goeldichironomus holoprasinus
 gyraulus circumstriatus,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Gyraulus,Gyraulus circumstriatus
+lampsilis subangulata,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Hamiota,Hamiota subangulata
+hesperoperla pacifica,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,Hesperoperla,Hesperoperla pacifica
+heteromastus filiformis,Animalia,Annelida,Polychaeta,NA,Capitellidae,Heteromastus,Heteromastus filiformis
+hexagenia bilineata,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemeridae,Hexagenia,Hexagenia bilineata
+hexagenia sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemeridae,hexagenia,NA
+hexatoma sp.,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,hexatoma,NA
+homarus americanus,Animalia,Arthropoda,Malacostraca,Decapoda,Nephropidae,Homarus,Homarus americanus
+hyalella azteca,Animalia,Arthropoda,Malacostraca,Amphipoda,Hyalellidae,Hyalella,Hyalella azteca
+hydrophilus triangularis,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,Hydrophilus,Hydrophilus triangularis
+hydrophilus sp.,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,Hydrophilus,NA
+hydropsyche angustipennis,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,Hydropsyche,Hydropsyche angustipennis
+hydropsyche californica,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,Hydropsyche,Hydropsyche californica
+hydropsyche sp.,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,hydropsyche,NA
+hygrotus sp.,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,hygrotus,NA
 indonaia caerulea,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Indonaia,Indonaia caerulea
 ischadium recurvum,Animalia,Mollusca,Bivalvia,Mytilida,Mytilidae,Ischadium,Ischadium recurvum
+ischnura elegans,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Ischnura,Ischnura elegans
+ischnura heterosticta,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Ischnura,Ischnura heterosticta
+ischnura verticalis,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Ischnura,Ischnura verticalis
 isidorella newcombi,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Isidorella,Isidorella newcombi
+isogenus sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlodidae,isogenus,NA
+isonychia bicolor,Animalia,Arthropoda,Insecta,Ephemeroptera,Isonychiidae,Isonychia,Isonychia bicolor
+isonychia sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Isonychiidae,isonychia,NA
+isoperla sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlodidae,isoperla,NA
+jappa kutera,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Jappa,Jappa kutera
 juga plicifera,Animalia,Mollusca,Gastropoda,NA,Semisulcospiridae,Juga,Juga plicifera
-katelysia opima,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Marcia,Marcia opima
+laccophilus maculosus ssp. maculosus,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Laccophilus,Laccophilus maculosus
+laeonereis acuta,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,Laeonereis,Laeonereis acuta
 laevicardium mortoni,Animalia,Mollusca,Bivalvia,Cardiida,Cardiidae,Laevicardium,Laevicardium mortoni
 lamellidens corrianus,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lamellidens,Lamellidens corrianus
 lamellidens marginalis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lamellidens,Lamellidens marginalis
@@ -183,111 +172,122 @@ lampsilis fasciola,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lampsilis,Lamps
 lampsilis rafinesqueana,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lampsilis,Lampsilis rafinesqueana
 lampsilis siliquoidea,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lampsilis,Lampsilis siliquoidea
 lampsilis straminea ssp. claibornensis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lampsilis,Lampsilis straminea
-lampsilis subangulata,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Hamiota,Hamiota subangulata
 lanistes carinatus,Animalia,Mollusca,Gastropoda,Architaenioglossa,Ampullariidae,Lanistes,Lanistes boltenianus
 lasmigona subviridis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Lasmigona,Lasmigona subviridis
-leptodea fragilis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Potamilus,Potamilus fragilis
-leptodea leptodon,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Potamilus,Potamilus leptodon
+villosa lienosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Leaunio,Leaunio lienosus
 leptoxis dilatata,Animalia,Mollusca,Gastropoda,NA,Pleuroceridae,Leptoxis,Leptoxis dilatata
+lestes congener,Animalia,Arthropoda,Insecta,Odonata,Lestidae,Lestes,Lestes congener
+lethocerus sp.,Animalia,Arthropoda,Insecta,Hemiptera,Belostomatidae,lethocerus,NA
 ligumia recta,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Ligumia,Ligumia recta
-ligumia subrostrata,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Sagittunio,Sagittunio subrostratus
+limnephilus bipunctatus,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Limnephilus,Limnephilus bipunctatus
+limnephilus lunatus,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Limnephilus,Limnephilus lunatus
+limnephilus sp.,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,limnephilus,NA
+limnodrilus hoffmeisteri,Animalia,Annelida,Clitellata,Tubificida,Naididae,Limnodrilus,Limnodrilus hoffmeisteri
+lumbriculus variegatus,Animalia,Annelida,Clitellata,Lumbriculida,Lumbriculidae,Lumbriculus,Lumbriculus variegatus
 lymnaea acuminata,Animalia,Mollusca,Gastropoda,NA,Lymnaeidae,Lymnaea,Lymnaea acuminata
 lymnaea stagnalis,Animalia,Mollusca,Gastropoda,NA,Lymnaeidae,Lymnaea,Lymnaea stagnalis
+crassostrea gigas,Animalia,Mollusca,Bivalvia,Ostreida,Ostreidae,Magallana,Magallana gigas
+crassostrea madrasensis,Animalia,Mollusca,Bivalvia,Ostreida,Ostreidae,Magallana,Magallana bilineata
+katelysia opima,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Marcia,Marcia opima
 medionidus conradicus,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Medionidus,Medionidus conradicus
 megalonaias nervosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Megalonaias,Megalonaias nervosa
 melanoides tuberculata,Animalia,Mollusca,Gastropoda,NA,Thiaridae,Melanoides,Melanoides tuberculata
+monopylephorus rubroniveus,Animalia,Annelida,Clitellata,Tubificida,Naididae,Monopylephorus,Monopylephorus rubroniveus
+macromia sp.,Animalia,Arthropoda,Ostracoda,Halocyprida,Halocyprididae,Muelleroecia,NA
 mulinia lateralis,Animalia,Mollusca,Bivalvia,Venerida,Mactridae,Mulinia,Mulinia lateralis
 mytilus edulis,Animalia,Mollusca,Bivalvia,Mytilida,Mytilidae,Mytilus,Mytilus edulis
-nais sp.,Animalia,Mollusca,Gastropoda,Pleurotomariida,Porcelliidae,nais,NA
+tanypus bilobatus,Animalia,NA,NA,NA,NA,NA,NA
+erpobdellidae,Animalia,Arthropoda,Clitellata,Arhynchobdellida,Erpobdellidae,NA,NA
+heptageniidae,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,NA,NA
+hydropsychidae,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,NA,NA
+leptoceridae,Animalia,Arthropoda,Insecta,Trichoptera,Leptoceridae,NA,NA
+odonata,Animalia,Arthropoda,Insecta,Odonata,NA,NA,NA
+paphia laterisulca,NA,NA,NA,NA,NA,NA,NA
+plecoptera,Animalia,Arthropoda,Insecta,Lepidoptera,Erebidae,NA,NA
+tubificidae,Animalia,Annelida,Clitellata,Tubificida,NA,NA,NA
+zygoptera,NA,NA,NA,NA,NA,NA,NA
+nais elinguis,Animalia,Annelida,Clitellata,Tubificida,Naididae,Nais,Nais elinguis
+nais sp.,Animalia,Annelida,Clitellata,Tubificida,Naididae,Nais,NA
+neanthes arenaceodentata,Animalia,Annelida,Polychaeta,Phyllodocida,Nereididae,Neanthes,Neanthes arenaceodentata
+nemoura cinerea,Animalia,Arthropoda,Insecta,Plecoptera,Nemouridae,Nemoura,Nemoura cinerea
+nephelopsis obscura,Animalia,Annelida,Clitellata,Arhynchobdellida,Erpobdellidae,Nephelopsis,Nephelopsis obscura
+nigronia serricornis,Animalia,Arthropoda,Insecta,Megaloptera,Corydalidae,Nigronia,Nigronia serricornis
+notonecta maculata,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,Notonecta,Notonecta maculata
+notonecta undulata,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,Notonecta,Notonecta undulata
+notonecta sp.,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,notonecta,NA
 obovaria subrotunda,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Obovaria,Obovaria subrotunda
+oithona davisae,Animalia,Arthropoda,Copepoda,Cyclopoida,Oithonidae,Oithona,Oithona davisae
+ophiogomphus sp.,Animalia,Arthropoda,Insecta,Odonata,Gomphidae,ophiogomphus,NA
+ophryotrocha diadema,Animalia,Annelida,Polychaeta,Eunicida,Dorvilleidae,Ophryotrocha,Ophryotrocha diadema
+actinonaias ligamentina,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Ortmanniana,Ortmanniana ligamentina
+actinonaias pectorosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Ortmanniana,Ortmanniana pectorosa
+villosa fabalis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Paetulunio,Paetulunio fabalis
+palaemonetes pugio,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,Palaemon,Palaemon pugio
+palaemonetes sp.,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,palaemonetes,NA
+paraleptophlebia praepedita,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,Paraleptophlebia,Paraleptophlebia praepedita
+parapoynx stratiotata,Animalia,Arthropoda,Insecta,Lepidoptera,Crambidae,Parapoynx,Parapoynx stratiotata
+peltodytes sp.,Animalia,Arthropoda,Insecta,Coleoptera,Haliplidae,peltodytes,NA
+philarctus quaeris,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,Philarctus,Philarctus quaeris
 physa gyrina,Animalia,Mollusca,Gastropoda,NA,Physidae,Physella,Physella gyrina
 physella acuta,Animalia,Mollusca,Gastropoda,NA,Physidae,Physella,Physella acuta
 physella virgata,Animalia,Mollusca,Gastropoda,NA,Physidae,Physella,Physella acuta
+physella sp.,Animalia,Mollusca,Gastropoda,NA,Physidae,physella,NA
 pila globosa,Animalia,Mollusca,Gastropoda,Architaenioglossa,Ampullariidae,Pila,Pila globosa
-pisidium casertanum,Animalia,Mollusca,Bivalvia,Sphaeriida,Sphaeriidae,Euglesa,Euglesa casertana
-pisidium compressum,Animalia,Mollusca,Bivalvia,Sphaeriida,Sphaeriidae,Euglesa,Euglesa compressa
 planorbella trivolvis,Animalia,Mollusca,Gastropoda,NA,Planorbidae,Planorbella,Planorbella trivolvis
+plea minutissima,Animalia,Arthropoda,Insecta,Hemiptera,Pleidae,Plea,Plea minutissima
+plectus communis,Animalia,Nematoda,Chromadorea,Plectida,Plectidae,Plectus,Plectus communis
+polycelis tenuis,Animalia,Platyhelminthes,NA,Tricladida,Planariidae,Polycelis,Polycelis tenuis
+polypedilum nubifer,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Polypedilum,Polypedilum nubifer
 pomacea paludosa,Animalia,Mollusca,Gastropoda,Architaenioglossa,Ampullariidae,Pomacea,Pomacea paludosa
 pomacea patula,Animalia,Mollusca,Gastropoda,Architaenioglossa,Ampullariidae,Pomacea,Pomacea patula
+leptodea fragilis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Potamilus,Potamilus fragilis
+leptodea leptodon,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Potamilus,Potamilus leptodon
 potamilus ohiensis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Potamilus,Potamilus ohiensis
 potamopyrgus jenkinsi,Animalia,Mollusca,Gastropoda,Littorinimorpha,Tateidae,Potamopyrgus,Potamopyrgus antipodarum
+prionchulus punctatus,Animalia,Nematoda,NA,Mononchida,Mononchidae,Prionchulus,Prionchulus punctatus
+pristina leidyi,Animalia,Annelida,Clitellata,Tubificida,Naididae,Pristina,Pristina leidyi
+procloeon sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,procloeon,NA
+protonemura meyeri,Animalia,Arthropoda,Insecta,Plecoptera,Nemouridae,Protonemura,Protonemura meyeri
+pseudagrion sp.,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,pseudagrion,NA
+pteronarcella badia,Animalia,Arthropoda,Insecta,Plecoptera,Pteronarcyidae,Pteronarcella,Pteronarcella badia
+pteronarcys californica,Animalia,Arthropoda,Insecta,Plecoptera,Pteronarcyidae,Pteronarcys,Pteronarcys californica
 ptychobranchus fasciolaris,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Ptychobranchus,Ptychobranchus fasciolaris
+pycnopsyche sp.,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,pycnopsyche,NA
 pyganodon grandis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Pyganodon,Pyganodon grandis
+quistadrilus multisetosus,Animalia,Annelida,Clitellata,Tubificida,Naididae,Quistadrilus,Quistadrilus multisetosus
 radix luteola,Animalia,Mollusca,Gastropoda,NA,Lymnaeidae,Racesina,Racesina luteola
 radix natalensis,Animalia,Mollusca,Gastropoda,NA,Lymnaeidae,Radix,Radix natalensis
-ruditapes decussatus,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Ruditapes,Ruditapes decussatus
-utterbackia imbecillis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Utterbackia,Utterbackia imbecillis
-venustaconcha ellipsiformis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Venustaconcha,Venustaconcha ellipsiformis
-villosa fabalis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Paetulunio,Paetulunio fabalis
-villosa iris,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Cambarunio,Cambarunio iris
-villosa lienosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Leaunio,Leaunio lienosus
-villosa villosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Villosa,Villosa villosa
-viviparus bengalensis,Animalia,Mollusca,Gastropoda,Architaenioglossa,Viviparidae,Filopaludina,Filopaludina bengalensis
-tanypus bilobatus,Animalia,NA,NA,NA,NA,NA,NA
-acrobeloides buetschlii,Animalia,Nematoda,Chromadorea,Rhabditida,Cephalobidae,Acrobeloides,Acrobeloides buetschlii
-aphelenchus avenae,Animalia,Nematoda,Chromadorea,Rhabditida,Aphelenchidae,Aphelenchus,Aphelenchus avenae
-aporcelaimellus obtusicaudatus,Animalia,Nematoda,NA,Dorylaimida,Aporcelaimidae,Aporcelaimellus,Aporcelaimellus obtusicaudatus
-caenorhabditis elegans,Animalia,Nematoda,Chromadorea,Rhabditida,Rhabditidae,Caenorhabditis,Caenorhabditis elegans
-cephalobus persegnis,Animalia,Nematoda,Chromadorea,Rhabditida,Cephalobidae,Cephalobus,Cephalobus persegnis
-dorylaimus stagnalis,Animalia,Nematoda,NA,Dorylaimida,Dorylaimidae,Dorylaimus,Dorylaimus stagnalis
-plectus communis,Animalia,Nematoda,Chromadorea,Plectida,Plectidae,Plectus,Plectus communis
-prionchulus punctatus,Animalia,Nematoda,NA,Mononchida,Mononchidae,Prionchulus,Prionchulus punctatus
-tobrilus gracilis,Animalia,Nematoda,NA,Triplonchida,Tobrilidae,Tobrilus,Tobrilus gracilis
-tylenchus elegans,Animalia,Nematoda,Chromadorea,Rhabditida,Tylenchidae,Tylenchus,Tylenchus elegans
-dendrocoelum lacteum,Animalia,Platyhelminthes,NA,Tricladida,Dendrocoelidae,Dendrocoelum,Dendrocoelum lacteum
-dugesia japonica,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Dugesia,Dugesia japonica
-dugesia lugubris,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Dugesia,Dugesia lugubris
-girardia tigrina,Animalia,Platyhelminthes,NA,Tricladida,Dugesiidae,Girardia,Girardia tigrina
-polycelis tenuis,Animalia,Platyhelminthes,NA,Tricladida,Planariidae,Polycelis,Polycelis tenuis
-sagitta sp.,Animalia,Arthropoda,Insecta,Coleoptera,Meloidae,Sagitta,NA
-acroneuria sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,acroneuria,NA
-agnetina sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlidae,agnetina,NA
-anodonta sp.,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,anodonta,NA
-argia sp.,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,argia,NA
-atalophlebia sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Leptophlebiidae,atalophlebia,NA
-baetis sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,baetis,NA
-belostoma sp.,Animalia,Arthropoda,Insecta,Hemiptera,Belostomatidae,belostoma,NA
-brotia sp.,Animalia,Mollusca,Gastropoda,NA,Pachychilidae,brotia,NA
-chaoborus sp.,Animalia,Arthropoda,Insecta,Diptera,Chaoboridae,chaoborus,NA
-chauliodes sp.,Animalia,Arthropoda,Insecta,Megaloptera,Corydalidae,chauliodes,NA
-cheumatopsyche sp.,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,cheumatopsyche,NA
-chironomus sp.,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,chironomus,NA
-cinygmula sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,cinygmula,NA
-cloeon sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,cloeon,NA
-culex sp.,Animalia,Arthropoda,Insecta,Diptera,Culicidae,culex,NA
-diplogasteritus sp.,Animalia,Nematoda,Chromadorea,Rhabditida,Diplogastridae,diplogasteritus,NA
-dugesia sp.,Animalia,Arthropoda,Arachnida,Trombidiformes,Smarididae,dugesia,NA
-enallagma sp.,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,enallagma,NA
-ephemerella sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemerellidae,ephemerella,NA
-erpobdellidae,Animalia,Arthropoda,Clitellata,Arhynchobdellida,Erpobdellidae,NA,NA
-heptageniidae,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,NA,NA
-hexagenia sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Ephemeridae,hexagenia,NA
-hexatoma sp.,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,hexatoma,NA
-hydropsyche sp.,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,hydropsyche,NA
-hydropsychidae,Animalia,Arthropoda,Insecta,Trichoptera,Hydropsychidae,NA,NA
-hygrotus sp.,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,hygrotus,NA
-isogenus sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlodidae,isogenus,NA
-isonychia sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Isonychiidae,isonychia,NA
-isoperla sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlodidae,isoperla,NA
-leptoceridae,Animalia,Arthropoda,Insecta,Trichoptera,Leptoceridae,NA,NA
-lethocerus sp.,Animalia,Arthropoda,Insecta,Hemiptera,Belostomatidae,lethocerus,NA
-limnephilus sp.,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,limnephilus,NA
-notonecta sp.,Animalia,Arthropoda,Insecta,Hemiptera,Notonectidae,notonecta,NA
-odonata,Animalia,Arthropoda,Insecta,Odonata,NA,NA,NA
-ophiogomphus sp.,Animalia,Arthropoda,Insecta,Odonata,Gomphidae,ophiogomphus,NA
-palaemonetes sp.,Animalia,Arthropoda,Malacostraca,Decapoda,Palaemonidae,palaemonetes,NA
-paphia laterisulca,NA,NA,NA,NA,NA,NA,NA
-peltodytes sp.,Animalia,Arthropoda,Insecta,Coleoptera,Haliplidae,peltodytes,NA
-physella sp.,Animalia,Mollusca,Gastropoda,NA,Physidae,physella,NA
-plecoptera,Animalia,Arthropoda,Insecta,Lepidoptera,Erebidae,NA,NA
-procloeon sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Baetidae,procloeon,NA
-pseudagrion sp.,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,pseudagrion,NA
-pycnopsyche sp.,Animalia,Arthropoda,Insecta,Trichoptera,Limnephilidae,pycnopsyche,NA
+ranatra linearis,Animalia,Arthropoda,Insecta,Hemiptera,Nepidae,Ranatra,Ranatra linearis
 rhabditis sp.,Animalia,Nematoda,Chromadorea,Rhabditida,Rhabditidae,rhabditis,NA
+rhithrogena hageni,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,Rhithrogena,Rhithrogena hageni
+rhyacodrilus montanus,Animalia,Annelida,Clitellata,Tubificida,Naididae,Rhyacodrilus,Rhyacodrilus montana
+ruditapes decussatus,Animalia,Mollusca,Bivalvia,Venerida,Veneridae,Ruditapes,Ruditapes decussatus
+sagitta sp.,Animalia,Arthropoda,Insecta,Coleoptera,Meloidae,Sagitta,NA
+ligumia subrostrata,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Sagittunio,Sagittunio subrostratus
+sialis lutaria,Animalia,Arthropoda,Insecta,Megaloptera,Sialidae,Sialis,Sialis lutaria
+sigara alternata,Animalia,Arthropoda,Insecta,Hemiptera,Corixidae,Sigara,Sigara alternata
+simulium venustum,Animalia,Arthropoda,Insecta,Diptera,Simuliidae,Simulium,Simulium venustum
+simulium vittatum,Animalia,Arthropoda,Insecta,Diptera,Simuliidae,Simulium,Simulium vittatum
 skwala sp.,Animalia,Arthropoda,Insecta,Plecoptera,Perlodidae,skwala,NA
+peloscolex ferox,Animalia,Annelida,Clitellata,Tubificida,Naididae,Spirosperma,Spirosperma ferox
+stenacron interpunctatum,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,Stenacron,Stenacron interpunctatum
 stenonema sp.,Animalia,Arthropoda,Insecta,Ephemeroptera,Heptageniidae,stenonema,NA
+stylodrilus heringianus,Animalia,Annelida,Clitellata,Lumbriculida,Lumbriculidae,Stylodrilus,Stylodrilus heringianus
+taeniopteryx nivalis,Animalia,Arthropoda,Insecta,Plecoptera,Taeniopterygidae,Taeniopteryx,Taeniopteryx nivalis
+tanytarsus dissimilis,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Tanytarsus,Tanytarsus dissimilis
+tanytarsus flumineus,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,Tanytarsus,Tanytarsus flumineus
 tanytarsus sp.,Animalia,Arthropoda,Insecta,Diptera,Chironomidae,tanytarsus,NA
+thermonectus basillaris,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Thermonectus,Thermonectus basillaris
 tipula sp.,Animalia,Arthropoda,Insecta,Diptera,Tipulidae,tipula,NA
+tisbe battagliai,Animalia,Arthropoda,Copepoda,Harpacticoida,Tisbidae,Tisbe,Tisbe battagliai
+tobrilus gracilis,Animalia,Nematoda,NA,Triplonchida,Tobrilidae,Tobrilus,Tobrilus gracilis
 trichoptera,Animalia,Arthropoda,Insecta,Diptera,Trichoceridae,trichoptera,NA
-tubificidae,Animalia,Annelida,Clitellata,Tubificida,NA,NA,NA
-zygoptera,NA,NA,NA,NA,NA,NA,NA
+tropisternus lateralis,Animalia,Arthropoda,Insecta,Coleoptera,Hydrophilidae,Tropisternus,Tropisternus lateralis
+tubifex tubifex,Animalia,Annelida,Clitellata,Tubificida,Naididae,Tubifex,Tubifex tubifex
+tylenchus elegans,Animalia,Nematoda,Chromadorea,Rhabditida,Tylenchidae,Tylenchus,Tylenchus elegans
+anodonta imbecillis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Utterbackia,Utterbackia imbecillis
+utterbackia imbecillis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Utterbackia,Utterbackia imbecillis
+varichaeta pacifica,Animalia,Annelida,Clitellata,Tubificida,Naididae,Varichaetadrilus,Varichaetadrilus pacificus
+venustaconcha ellipsiformis,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Venustaconcha,Venustaconcha ellipsiformis
+villosa villosa,Animalia,Mollusca,Bivalvia,Unionida,Unionidae,Villosa,Villosa villosa
+xanthocnemis zealandica,Animalia,Arthropoda,Insecta,Odonata,Coenagrionidae,Xanthocnemis,Xanthocnemis zealandica

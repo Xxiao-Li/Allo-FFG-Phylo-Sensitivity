@@ -1,0 +1,554 @@
+---
+title: "Combine Species Taxonomy, Phylogeny, Body Mass, Function Groups, and Machine-learning Predicted Sensitivity"
+output:
+  html_document: 
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    css: styles.css
+    df_print: kable
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+editor_options: 
+  markdown: 
+    wrap: 72
+  chunk_output_type: console
+---
+
+This script will combine predicted species sensitivity with species
+information (taxonomy, phylogeny, body mass, and functional groups) for
+further analysis.
+
+This notebook will also read chemical group information collected from
+PPDB database and filter the combined dataset to selected chemicals with
+known pesticide types.
+
+Hence, combined dataset and sub dataset for selected chemicals will be
+saved in the end.
+
+```{r setup, message=FALSE, warning=FALSE}
+rm(list=ls())
+library(here)
+library(tidyverse)  
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(data.table)
+library(stringr)
+
+options(dplyr.summarise.inform = FALSE)
+```
+
+# 1. Prepare chemcial sensitivity data
+## 1.1 Read ML predicted sensitivity 
+```{r message=FALSE, warning=FALSE}
+# Load the prediction dataset
+# predicted_sensitivity <- read_csv(here("data/2_predicted_sensitivity/predictions.csv"))
+# predicitons_ML_duration48h <- predicted_sensitivity %>% filter(duration ==48)
+# saveRDS(predicitons_ML_duration48h, here("data/2_predicted_sensitivity/predicitons_ML_duration48h.rds"))
+
+predicitons_ML_duration48h <- readRDS(here("data/2_predicted_sensitivity/predicitons_ML_duration48h.rds"))
+
+```
+
+## 1.2 Add chemcial-use groupings
+We assigned each of the 3297 chemicals in our dataset to a primary use category by matching with the classification in Kramer et al. (2024) and the Pesticide Properties Database (PPDB).
+
+```{r}
+# Read gathered chemical groups
+chem_groups_source <- read_csv(file=here("data/6_combined/chem_groups.csv")) 
+
+chem_groups_source <- chem_groups_source %>%
+  mutate(CAS = str_squish(CAS),
+         broad_group = str_squish(use_group),
+         p_sub_group = str_squish(Pesticide_sub_group)) %>%
+  select(CAS, broad_group, p_sub_group) %>%
+  filter(! is.na(broad_group)) %>%
+  filter(! broad_group == "Metal")
+
+unique(chem_groups_source$broad_group) 
+# "Industrial Chemical" "Pesticide" "Pharmaceutical" 
+
+```
+
+Clean and map PPDB pesticide types to final chemical groups
+```{r}
+unique(chem_groups_source$p_sub_group)
+tag_to_group <- c(
+  # Arthropod control
+  "Insecticide"               = "arthropod-control",
+  "Acaricide"                 = "arthropod-control",
+  "Miticide"                  = "arthropod-control",
+  "Larvicide"                 = "arthropod-control",
+  "Termiticide"               = "arthropod-control",
+  "Insect Growth Regulator"   = "arthropod-control",
+  
+  # Plant control
+  "Herbicide"                     = "plant-control",
+  "Plant Growth Regulator"        = "plant-control",
+  "Plant Growth Regulator precursor" = "plant-control",
+  "Desiccant"                     = "plant-control",
+  "Defoliant"                     = "plant-control",
+  "Graminicide"                   = "plant-control",
+  
+  # Microorganism control
+  "Fungicide"       = "microbial-control",
+  "Microbiocide"    = "microbial-control",
+  "Algicide"        = "microbial-control",
+  "bacteria"        = "microbial-control",
+  "bacteria, fungi" = "microbial-control",
+  
+  # Nematode control
+  "Nematicide" = "nematode-control",
+  
+  # Mollusc control
+  "Molluscicide" = "mollusc-control",
+  
+  # Vertebrate control
+  "Rodenticide" = "vertebrate-control",
+  "Avicide"     = "vertebrate-control",
+  "Piscicide"   = "vertebrate-control",
+  "Lampricide"  = "vertebrate-control",
+  
+  # Veterinary antiparasitic / drug
+  "Veterinary substance" = "veterinary-drug",
+  "Crop antibiotic"      = "veterinary-drug",
+  
+  # Repellent / chemical signals
+  "Repellent"     = "repellent-signal",
+  "Semiochemical" = "repellent-signal",
+  "Attractant"    = "repellent-signal",
+  
+  # Fumigant / soil sterilant
+  "Fumigant"       = "fumigant-soil-sterilant",
+  "Soil sterilant" = "fumigant-soil-sterilant",
+  
+  # Auxiliary (only used if no other group present)
+  "Metabolite" = "auxiliary",
+  "Adjuvant"   = "auxiliary"
+  
+  # Note: "Other substance" is intentionally NOT mapped
+)
+
+map_subgroup_to_target <- function(x, tag_to_group) {
+  # NA or empty
+  if (is.na(x) || str_squish(x) == "") return(NA_character_)
+  
+  # Split on ";" only (keep "bacteria, fungi" together)
+  tags <- str_split(x, pattern = ";", simplify = FALSE)[[1]]
+  tags <- str_squish(tags)
+  
+  # Drop explicit "Other substance" (ignored by design)
+  tags <- tags[tags != "Other substance"]
+  
+  # Shortcut: original label "Mixed"
+  if (length(tags) == 1 && identical(tags, "Mixed")) {
+    return("mixed-target")
+  }
+  
+  # Map tags to groups; ignore unrecognised tags
+  groups_all <- unique(na.omit(tag_to_group[tags]))
+  
+  # Separate "auxiliary" from true target-control groups
+  main_groups <- setdiff(groups_all, "auxiliary")
+  has_auxiliary <- "auxiliary" %in% groups_all
+  
+  # Decision rules:
+  if (length(main_groups) == 0 && !has_auxiliary) {
+    # No target-control info (e.g. only unknown tags removed as Other substance)
+    return(NA_character_)
+  } else if (length(main_groups) == 0 && has_auxiliary) {
+    # Only auxiliary info (e.g. Metabolite alone)
+    return("auxiliary")
+  } else if (length(main_groups) == 1) {
+    # Single clear target-control group
+    return(main_groups)
+  } else {
+    # Multiple target-control groups
+    return("mixed-target")
+  }
+}
+
+chem_groups_source <- chem_groups_source %>%
+  mutate(
+    # Fix obvious typos first
+    p_sub_group = str_replace_all(p_sub_group, "Insectiicde", "Insecticide"),
+    
+    # Apply mapping function
+    p_target_group = map_chr(p_sub_group, map_subgroup_to_target, tag_to_group = tag_to_group)
+  )
+
+table(chem_groups_source$p_target_group, useNA = "ifany")
+
+# clean and filter out unknown pesticide types and keep only selected pesticide types based on number of chemicals
+keep_pesticide <- chem_groups_source %>%
+  filter(broad_group == "Pesticide") %>%
+  filter(p_target_group %in% c("arthropod-control", "microbial-control", "plant-control", "mixed-target")) %>%
+  pull(CAS)
+chem_groups_source <- chem_groups_source %>%
+  filter(broad_group != "Pesticide" | CAS %in% keep_pesticide)
+
+unique(chem_groups_source$broad_group)
+unique(chem_groups_source$p_target_group)
+
+# make a final group list, which are Industrial Chemical, Pharmaceutical, arthropod-control, microorganism-control, plant-control, mixed-target
+chem_groups_source <- chem_groups_source %>% mutate(
+  final_group = case_when(
+    broad_group == "Industrial Chemical" ~ "Industrial_Chemical",
+    broad_group == "Pharmaceutical"       ~ "Pharmaceutical",
+    p_target_group == "arthropod-control" ~ "P_Arthropod_control",
+    p_target_group == "microbial-control" ~ "P_Microbial_control",
+    p_target_group == "plant-control"     ~ "P_Plant_control",
+    p_target_group == "mixed-target"      ~ "P_Mixed_target",
+    TRUE                                 ~ NA_character_
+  ) )
+
+count(chem_groups_source, final_group)
+length(unique(chem_groups_source$CAS))  #1103
+```
+ 
+Final chemical-use groups are:
+-industrial chemicals (215)
+-pharmaceuticals (121)
+-pesticides: 
+-- arthropod-control (202)
+-- plant-control (333)
+-- microbial-control (136)
+-- mixed-target (96) 
+
+Prune the chemical groups dataset to only selected chemicals
+```{r}
+sensitivity_subCAS <- predicitons_ML_duration48h %>%
+  filter(CAS %in% chem_groups_source$CAS) 
+length(unique(sensitivity_subCAS$CAS))  #1103
+```
+
+## 1.3 Correct species names in the sensitivity dataset
+```{r}
+# correct species names
+sensitivity_subCAS <- sensitivity_subCAS %>%
+  mutate(latin = species) %>%
+  mutate(
+    latin = case_when(
+      latin == "lithodes antarcticus" ~ "lithodes antarctica",
+      latin == "Viviparus bengalensis" ~ "filopaludina bengalensis",
+      latin == "acanthomysis sculpta" ~ "holmesimysis sculpta",
+      latin == "acartia clausi" ~ "acartia clausii",
+      latin == "acartia lillgeborgi" ~ "acartia lilljeborgii",
+      latin == "acheilognathus moriokae" ~ "acheilognathus melanogaster",
+      latin == "achnanthes minutissima" ~ "achnanthidium minutissimum",
+      latin == "nuria danrica" ~ "esomus danrica",
+      latin == "oreochromis mossambicus x urolepis" ~ "oreochromis mossambicus",
+      latin == "oreochromis mossambicus x niloticus" ~ "oreochromis mossambicus", 
+      latin == "enteromorpha intestinalis" ~ "ulva intestinalis", 
+      TRUE ~ latin   
+    )
+  ) %>% distinct()
+
+length(unique(sensitivity_subCAS$latin)) #1543
+```
+
+
+# 2. Read speices taxonomy, phylogeny, body mass, and FFG
+
+```{r}
+spe_tax_clean_tree_mass_FFG <- readRDS(here("data/6_combined/spe_tax_clean_tree_mass_FFG.rds"))
+
+```
+
+Calculate species log and centered body masses:
+```{r}
+spe_tax_clean_tree_mass_FFG  <- spe_tax_clean_tree_mass_FFG %>% 
+  mutate(log_mass = log10(mean_mass_g)) %>%
+  mutate(log_mass_c = scale(log_mass, center = TRUE, scale = FALSE)[,1])
+```
+
+# 3. Filter predicted sensitivity dataset to avaliable species
+
+```{r message=FALSE, warning=FALSE}
+# correct species names
+sensitivity_subCAS <- sensitivity_subCAS %>%
+  mutate(latin = species) %>%
+  mutate(
+    latin = case_when(
+      latin == "lithodes antarcticus" ~ "lithodes antarctica",
+      latin == "Viviparus bengalensis" ~ "filopaludina bengalensis",
+      latin == "acanthomysis sculpta" ~ "holmesimysis sculpta",
+      latin == "acartia clausi" ~ "acartia clausii",
+      latin == "acartia lillgeborgi" ~ "acartia lilljeborgii",
+      latin == "acheilognathus moriokae" ~ "acheilognathus melanogaster",
+      latin == "achnanthes minutissima" ~ "achnanthidium minutissimum",
+      latin == "nuria danrica" ~ "esomus danrica",
+      latin == "oreochromis mossambicus x urolepis" ~ "oreochromis mossambicus",
+      latin == "oreochromis mossambicus x niloticus" ~ "oreochromis mossambicus", 
+      latin == "enteromorpha intestinalis" ~ "ulva intestinalis", 
+      TRUE ~ latin   
+    )
+  ) %>% distinct()
+
+# only keep latin with avaialable traits
+# since 2 species share the same latin
+dt <- as.data.table(sensitivity_subCAS)
+sensitivity_subCAS_filter <- dt[
+  latin %in% spe_tax_clean_tree_mass_FFG$latin,
+  .(
+    predicted = mean(predicted, na.rm = TRUE),
+    species = first(species)
+  ),
+  by = .(latin, CAS, duration)
+]
+
+length(unique(sensitivity_subCAS_filter$latin)) # should be 579
+
+```
+
+# 4. Combine species predicted sensitivity with traits
+
+We integrate all trait information (taxonomy, phylogeny, body mass, and
+functional groups) with the predicted sensitivity values.
+
+```{r}
+spe_tax_clean_tree_mass_FFG_sens <- left_join(sensitivity_subCAS_filter, spe_tax_clean_tree_mass_FFG, by = "latin")
+length(unique(spe_tax_clean_tree_mass_FFG_sens$latin)) # should be 579
+length(unique(spe_tax_clean_tree_mass_FFG_sens$CAS))   # should be 1103
+
+# rename the dataset columns
+spe_tax_clean_tree_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
+  mutate(
+    sensi = 10^predicted,
+  ) %>% rename(log_sensi = predicted) 
+
+# dataset summary
+length(unique(spe_tax_clean_tree_mass_FFG_sens$CAS))
+
+length(unique(spe_tax_clean_tree_mass_FFG_sens$latin))
+
+```
+
+Different groupings of functional groups:
+```{r}
+spe_tax_clean_tree_mass_FFG_sens  <- spe_tax_clean_tree_mass_FFG_sens  %>%
+  mutate(
+    .g  = str_to_lower(group),
+
+    # FG3: add I_/V_ prefixes by group
+    FG3 = case_when(
+      .g == "algae"        ~ FG2,
+      .g == "invertebrate" ~ paste0("I_", FG2),
+      .g == "vertebrate"   ~ paste0("V_", FG2),
+      TRUE                 ~ FG2
+    ),
+
+    # normalize commas for later splitting
+    FG4 = str_replace_all(FG3, "\\s*,\\s*", ",")
+  ) %>%
+  # FG4: one value per row
+  separate_rows(FG4, sep = ",") %>%
+  mutate(
+    FG4 = str_trim(FG4),
+    # ensure I_ prefix remains after splitting
+    FG4 = if_else(.g == "invertebrate" & !str_starts(FG4, "I_"),
+                  paste0("I_", FG4), FG4),
+    FG4 = str_replace_all(FG4, "\\s*/\\s*", "_"),
+    FG4 = str_squish(FG4),
+    # recode specific cases
+    FG4 = if_else(FG4 %in% c("V_Detritivore_Herbivore", "V_Herbivore", "V_Detritivore"), "V_Detritivore_Herbivore", FG4),
+
+    # FG5: arthropods get "_A"
+    FG5 = if_else(phylum == "arthropoda", paste0(FG4, "_A"), FG4)
+  ) %>%
+  select(-.g) %>%
+  distinct()
+
+
+# dataset summary
+length(unique(spe_tax_clean_tree_mass_FFG_sens $CAS))
+
+length(unique(spe_tax_clean_tree_mass_FFG_sens $latin))
+
+unique(spe_tax_clean_tree_mass_FFG_sens $FG3)
+
+unique(spe_tax_clean_tree_mass_FFG_sens $FG4)
+
+unique(spe_tax_clean_tree_mass_FFG_sens $FG5)
+```
+
+Calculate species relative sensitivity: Given the large variation across
+chemical toxicity effects, we calculate the species relative sensitivty
+for each chemical using the reference species *Daphina manga*, that is,
+for each chemical, we divided species sensitivity by the reference
+species sensitivity, and the use the log 10 ratio to represent the
+species relative sensitivity.
+
+```{r}
+spe_tax_clean_tree_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
+  group_by(CAS) %>%
+  mutate(
+    ref_sensi = sensi[latin == "daphnia magna"],  # D. magna as reference species
+    rel_sensi = sensi / ref_sensi,
+    log_rel_sensi = log10(rel_sensi)
+  ) %>%
+  ungroup() %>%
+  filter(!is.na(log_mass), !is.na(log_rel_sensi), is.finite(log_rel_sensi))
+```
+
+
+
+# 5. Save outputs
+
+## 5.1 Whole dataset including all remaining taxa and selected chemcials
+
+```{r}
+
+# check whether align with the full tree again
+full_tree <- readRDS(here("data/6_combined/full_genus_tree.rds"))
+length(unique(spe_tax_clean_tree_mass_FFG_sens$genus))
+length(full_tree$tip.label)
+setdiff(full_tree$tip.label, unique(spe_tax_clean_tree_mass_FFG_sens$genus))
+setdiff(unique(spe_tax_clean_tree_mass_FFG_sens$genus), full_tree$tip.label)
+
+# save the combined data
+saveRDS(spe_tax_clean_tree_mass_FFG_sens, file=here("data/6_combined/full_mass_FFG_sens.rds"))
+
+```
+
+## 5.2 Algae dataset
+
+```{r}
+# filter the whole dataset to group: alage
+alage_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
+  filter(group == "algae")
+
+# dataset summary
+length(unique(alage_mass_FFG_sens$CAS))   # 1103
+length(unique(alage_mass_FFG_sens$latin)) # 79
+length(unique(alage_mass_FFG_sens$genus)) # 45
+length(unique(alage_mass_FFG_sens$FG5))   # 3
+
+# check whether align with algae tree
+alage_genus_tree <- readRDS(here("data/6_combined/algae_genus_tree.rds"))
+length(unique(alage_mass_FFG_sens$genus))
+length(alage_genus_tree$tip.label)
+setdiff(alage_genus_tree$tip.label, unique(alage_mass_FFG_sens$genus))
+setdiff(unique(alage_mass_FFG_sens$genus), alage_genus_tree$tip.label)
+                                           
+# save the algae dataset
+saveRDS(alage_mass_FFG_sens, file=here("data/6_combined/alage_mass_FFG_sens.rds"))
+
+```
+
+## 5.3 invertebrate dataset
+```{r}
+# filter the whole dataset to group: invertebrate
+invertebrate_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
+  filter(group == "invertebrate")
+
+# dataset summary
+length(unique(invertebrate_mass_FFG_sens$CAS))   # 1103
+length(unique(invertebrate_mass_FFG_sens$latin)) # 336
+length(unique(invertebrate_mass_FFG_sens$genus)) # 2173
+length(unique(invertebrate_mass_FFG_sens$FG5))   # 9
+
+# check whether align with invertebrate tree
+invertebrate_genus_tree <- readRDS(here("data/6_combined/invertebrate_genus_tree.rds"))
+length(unique(invertebrate_mass_FFG_sens$genus))
+length(invertebrate_genus_tree$tip.label)
+setdiff(invertebrate_genus_tree$tip.label, unique(invertebrate_mass_FFG_sens$genus))
+setdiff(unique(invertebrate_mass_FFG_sens$genus), invertebrate_genus_tree$tip.label)
+
+# save the invertebrate dataset
+saveRDS(invertebrate_mass_FFG_sens, file=here("data/6_combined/invertebrate_mass_FFG_sens.rds"))
+
+```
+
+
+## 5.4 vertebrate dataset
+```{r}
+# filter the whole dataset to group: vertebrate
+vertebrate_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
+  filter(group == "vertebrate")
+
+# dataset summary
+length(unique(vertebrate_mass_FFG_sens$CAS))   # 1103
+length(unique(vertebrate_mass_FFG_sens$latin)) # 164
+length(unique(vertebrate_mass_FFG_sens$genus)) # 102
+length(unique(vertebrate_mass_FFG_sens$FG5))   # 5
+
+# check whether align with vertebrate tree
+vertebrate_genus_tree <- readRDS(here("data/6_combined/vertebrate_genus_tree.rds"))
+length(unique(vertebrate_mass_FFG_sens$genus))
+length(vertebrate_genus_tree$tip.label)
+setdiff(vertebrate_genus_tree$tip.label, unique(vertebrate_mass_FFG_sens$genus))
+setdiff(unique(vertebrate_mass_FFG_sens$genus), vertebrate_genus_tree$tip.label)
+
+# save the vertebrate dataset
+saveRDS(vertebrate_mass_FFG_sens, file=here("data/6_combined/vertebrate_mass_FFG_sens.rds"))
+
+
+```
+
+
+
+
+Quick look
+
+```{r}
+plotdf <- spe_tax_phylo_BM_FFG_sensi_subCAS 
+trophic_order <- c(
+  "Cyanobacteria", "Diatom", "Green algae",  "Other algae",        # producers
+  "I_Shredder_A", "I_Filterer_A", "I_Gatherer_A", "I_Predator_A", "I_Herbivore_A",
+  "I_Herbivore", "I_Filterer", "I_Gatherer",  "I_Predator",  # grazers
+  "V_Detritivore_Herbivore", "V_Planktivore", "V_Invertivore", "V_Omnivore", "V_Piscivore" )
+
+plotdf <- plotdf %>%
+  mutate(FG5 = factor(FG5, levels = trophic_order))
+
+chem_group_quicklook <- ggplot(plotdf, 
+                               aes(x = log_mass_c, y = log_rel_sensi, 
+                                   col = chem_group, group = chem_group))+
+  geom_point(alpha = 0.1) +
+  geom_smooth(method = lm, se = FALSE, color="black") +
+  facet_grid(chem_group ~ FG5, scale = "free_x") +
+  theme_bw(base_size = 10) +
+  labs(
+    x = "Centered log10 body mass",
+    y = "log10 relative sensitivity",
+    col = "Chemical group") +
+  theme(legend.position = "none")
+
+chem_group_quicklook
+
+```
+
+# 6. Data first look
+```{r}
+# read saved dataset
+alage_mass_FFG_sens <- readRDS(here("data/6_combined/alage_mass_FFG_sens.rds"))
+invertebrate_mass_FFG_sens <- readRDS(here("data/6_combined/invertebrate_mass_FFG_sens.rds"))
+vertebrate_mass_FFG_sens <- readRDS(here("data/6_combined/vertebrate_mass_FFG_sens.rds"))
+
+# read tree
+alage_genus_tree <- readRDS(here("data/6_combined/algae_genus_tree.rds"))
+invertebrate_genus_tree <- readRDS(here("data/6_combined/invertebrate_genus_tree.rds"))
+vertebrate_genus_tree <- readRDS(here("data/6_combined/vertebrate_genus_tree.rds"))
+
+# check all columns are there
+colnames(alage_mass_FFG_sens)
+# check whether order/family/genus are na
+sum(is.na(alage_mass_FFG_sens$order))
+sum(is.na(alage_mass_FFG_sens$family))
+sum(is.na(alage_mass_FFG_sens$genus))
+
+sum(is.na(invertebrate_mass_FFG_sens$order))
+sum(is.na(invertebrate_mass_FFG_sens$family))
+sum(is.na(invertebrate_mass_FFG_sens$genus))
+
+sum(is.na(vertebrate_mass_FFG_sens$order))
+sum(is.na(vertebrate_mass_FFG_sens$family))
+sum(is.na(vertebrate_mass_FFG_sens$genus))
+
+```
+
+

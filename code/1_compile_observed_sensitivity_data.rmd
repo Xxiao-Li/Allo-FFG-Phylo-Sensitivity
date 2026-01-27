@@ -113,7 +113,7 @@ saveRDS(taxonomy_adore, here("data/1_observed_sensitivity/ADORE/taxonomy_adore.r
 ```
 
 ```{r}
-taxonomy_adore <- readRDS(here("data/1_observed_sensitivity/ADORE/taxonomy_adore.rds"))
+taxonomy_adore <- read_csv(here("data/1_observed_sensitivity/ADORE/taxonomy_adore.csv"))
 
 adore <- left_join(adore, taxonomy_adore, by = c("latin" = "original_name"))
 
@@ -283,8 +283,7 @@ taxonomy <- map_dfr(inv_species$latin, lookup_taxonomy)
 invert_extra_taxonomy <- read_csv(here("data/1_observed_sensitivity/invert_sensitivity_extra/invert_extra_taxonomy.csv"))
 
 inv_tox_merge <- inv_tox_merge %>%
-  left_join(invert_extra_taxonomy, by = "latin") %>%
-   filter(!(is.na(kingdom) & is.na(phylum)))
+  left_join(invert_extra_taxonomy, by = "latin")
 ```
 
 ```{r}
