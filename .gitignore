@@ -1,12 +1,22 @@
+.gitignore
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 .DS_Store
-plot/plot_test
 .Rapp.history
-data/5_FFG/back_up
-.RDataTmp
+.RDataTmp*
 code/0_plot.rmd
-data/2_predicted_sensitivity/*.csv
+figure/
+code/old_versions_on_species level/
+.slurm
+data/5_FFG/~$invert_vert_FG_check1011.xlsx
 
+# large data files
+data/5_FFG/back_up
+data/2_predicted_sensitivity/*.csv
+data/8_bayesian_model_fits/algae_fits/
+data/8_bayesian_model_fits/invertebrate_fits/
+data/8_bayesian_model_fits/fish_fits/
+
+data/6_combined_meta_data/3297chemicals.xlsx
