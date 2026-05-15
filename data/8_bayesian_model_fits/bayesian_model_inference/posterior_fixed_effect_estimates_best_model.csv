@@ -1,0 +1,205 @@
+taxon,chem_gr,taxon_label,chem_gr_label,hypothesis,model_id,hypothesis_label,parameter,Estimate,Est.Error,Q2.5,Q97.5
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,FFGDiatom,-0.04440170067610315,0.26971505333850376,-0.568186078,0.48553124750000026
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,FFGGreenalgae,0.023783021523439758,0.2770972969990247,-0.52086236875,0.5664026905
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,FFGOtheralgae,0.015025719213176875,0.26039580979508736,-0.49160559200000004,0.53054042925
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,FFGDiatom:log_mass_c,0.21714418817375,0.00646959762926243,0.20434084675,0.22979383949999999
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,FFGGreenalgae:log_mass_c,-0.29015570206875,0.010465692199192142,-0.31072123325,-0.269552977
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,FFGOtheralgae:log_mass_c,0.8238171995255,0.13937057799066985,0.5598396112499999,1.1061266699999999
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,FFGDiatom,-0.03520695167831499,0.26253077143895037,-0.557345957,0.47707694175000026
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,FFGGreenalgae,0.030563947019677542,0.2730460310514809,-0.51768564175,0.5577476732500001
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,FFGOtheralgae,0.01379652537063797,0.24988554028432733,-0.47007356975,0.5048116382500003
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,FFGDiatom:log_mass_c,0.25766348075675,0.008382411417441364,0.24122105075,0.27409493674999996
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,FFGGreenalgae:log_mass_c,-0.2232877271765,0.013327823690122484,-0.24954104925,-0.19719911475000002
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,FFGOtheralgae:log_mass_c,0.6604372822195,0.15622858448120167,0.380189608,0.986630825
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,FFGDiatom,-0.0330973809847575,0.26787816479928556,-0.55954175975,0.4940748440000002
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,FFGGreenalgae,0.053963867141585964,0.2679332584402594,-0.472588076,0.5776687290000003
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,FFGOtheralgae,-4.213033773088078e-4,0.24535676938326423,-0.47792644125,0.48079332450000006
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,FFGDiatom:log_mass_c,0.034355847402785335,0.009401589855028848,0.01586713565,0.05282281955
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,FFGGreenalgae:log_mass_c,-0.5781105778945,0.0150023534111698,-0.60740625525,-0.5484028157499999
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,FFGOtheralgae:log_mass_c,0.29266274265107406,0.10480847783340577,0.097081204575,0.5115711945
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,FFGDiatom,-0.02876504235447611,0.2911667445273914,-0.60179032175,0.5452399160000001
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,FFGGreenalgae,0.008919695176671613,0.29149269287019064,-0.562251151,0.5835780095
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,FFGOtheralgae,0.023328078475676778,0.2868752750634154,-0.5387282055,0.5895287447500003
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,FFGDiatom:log_mass_c,0.29837514467925,0.0068700806282144585,0.2849165015,0.31178024525000003
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,FFGGreenalgae:log_mass_c,-0.11144800775505,0.010974953720449298,-0.13282650049999997,-0.0896494474
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,FFGOtheralgae:log_mass_c,1.571600877818,0.14564513664582518,1.2847144700000002,1.856444795
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,FFGDiatom,-0.03288051554176889,0.25701249971005447,-0.53813030025,0.47537406475000016
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,FFGGreenalgae,0.0338128874568716,0.2594202869468837,-0.477030815,0.5405369780000001
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,FFGOtheralgae,0.009836480833554064,0.23812285212893108,-0.45155651625000004,0.48500565475000096
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,FFGDiatom:log_mass_c,0.238513382504,0.008503245016894508,0.22179785800000001,0.25514646074999997
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,FFGGreenalgae:log_mass_c,-0.2907917199005,0.01340610563826811,-0.31733367549999997,-0.26465833424999996
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,FFGOtheralgae:log_mass_c,0.46740101324112504,0.12386910072887443,0.248740837,0.7370382707500001
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,FFGDiatom,-0.03232764588777963,0.2604922916209123,-0.54457442775,0.48296710200000037
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,FFGGreenalgae,0.05293572489148513,0.25967534034771295,-0.45457621600000003,0.5557587520000004
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,FFGOtheralgae,-0.015382527764748655,0.23886587210024898,-0.48442106375,0.45066126250000005
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,FFGDiatom:log_mass_c,0.024341930037422715,0.013674032710339583,-0.00253053428,0.05101330705000002
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,FFGGreenalgae:log_mass_c,-0.605563848476,0.021793971027028753,-0.64891287,-0.5628892182499999
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,FFGOtheralgae:log_mass_c,0.11972129156739372,0.098500654347165,-0.06876954452499999,0.31953072425
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Filterer,0.010291770965555705,0.28319102048011524,-0.54430434475,0.5683797387500005
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Filterer_A,0.08098440266807559,0.1334031563845858,-0.18299509725000002,0.33991753874999997
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Gatherer,-0.006955205623023548,0.22044925346468985,-0.440674448,0.4264290195
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Gatherer_A,0.055145355210414936,0.13351839183121667,-0.209854388,0.31474839625
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Herbivore,-0.0119452381362782,0.2793919682963141,-0.5629204145,0.5377515910000008
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Herbivore_A,0.04358518038772028,0.14871878709855568,-0.24800722449999998,0.33318281675000005
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Predator,0.019202521054649885,0.22138941547346197,-0.41441569475,0.45276786900000027
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Predator_A,0.07389455220612423,0.13333141096345502,-0.18965923,0.33246346
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Shredder_A,-0.22792289090664575,0.13774754478219603,-0.4993860909999999,0.037570795950000076
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Filterer:log_mass_c,0.022698284868345908,0.06783406433332996,-0.11172531100000001,0.154810259
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Filterer_A:log_mass_c,0.006843457258477417,0.003794205481335699,-6.114472344999999e-4,0.0142293702
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Gatherer:log_mass_c,0.026095986941457396,0.04603817649748453,-0.06396123672500001,0.11620250000000001
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Gatherer_A:log_mass_c,0.0064183058460697525,0.00516186325437944,-0.00364087382,0.01651012945
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Herbivore:log_mass_c,0.13939208685125,0.08970386293472357,-0.0365205275,0.31585071675
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Herbivore_A:log_mass_c,0.010472875157703966,0.02814493842934768,-0.04436691895,0.06584662570000002
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Predator:log_mass_c,-0.012453035943488955,0.07811112658807587,-0.165389338,0.1407723215000001
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Predator_A:log_mass_c,-0.005428252568070536,0.003265803402873278,-0.0118143426,0.0010022124250000026
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,FFGI_Shredder_A:log_mass_c,0.08101429047375,0.009558986051278544,0.062261244525,0.099740433
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Filterer,0.012383883373907712,0.2813593169559107,-0.5398145632500001,0.5609261687500001
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Filterer_A,0.07284633125235547,0.13481512604452583,-0.19103565449999999,0.3368388842500001
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Gatherer,-0.007079266569352015,0.22206968901013335,-0.4449339155,0.4277603635000005
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Gatherer_A,0.04511548147450417,0.13519136964492665,-0.21823683575000002,0.308640258
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Herbivore,-0.018749589724366043,0.2821788039401088,-0.5740861555000001,0.5260032472500001
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Herbivore_A,0.04042278030708359,0.15419228941737748,-0.2593027535,0.34571032975000016
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Predator,0.025186469812775027,0.22244948940687068,-0.41586974325,0.46074044875000014
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Predator_A,0.06096879039660881,0.13465397928794393,-0.20238859699999998,0.32416271150000003
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Shredder_A,-0.21352807346618088,0.13997931105193598,-0.489184468,0.05910088372500015
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Filterer:log_mass_c,0.004875836449054717,0.06762325830819758,-0.127756034,0.13839231975
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Filterer_A:log_mass_c,0.008631251673890445,0.004749102261646086,-6.379341139999999e-4,0.017899635325
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Gatherer:log_mass_c,0.028473335306846398,0.04626095203177982,-0.06263429845,0.11898824925000004
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Gatherer_A:log_mass_c,0.004723109060369807,0.006295177730490921,-0.007601046374999999,0.01707967927500001
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Herbivore:log_mass_c,0.15134380196664285,0.09123727238481864,-0.028929031375,0.33063132850000004
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Herbivore_A:log_mass_c,0.006797936437978443,0.030209257316053915,-0.052001591775,0.0662571373
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Predator:log_mass_c,-0.019086224940280217,0.07987902087837567,-0.17765333975,0.1380163065000001
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Predator_A:log_mass_c,-0.006024412776413704,0.00408430261914065,-0.0139890201,0.001992281385000003
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,FFGI_Shredder_A:log_mass_c,0.07303635106817499,0.011867334886935336,0.049959334175,0.09629478717500004
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Filterer,0.026359245973375453,0.2810212315721925,-0.5278357882500001,0.573279343
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Filterer_A,0.15543022442081741,0.1355061903326921,-0.107397439,0.4247302392500001
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Gatherer,-0.01471067513362925,0.22430778024235407,-0.4545722205,0.4244879892500001
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Gatherer_A,0.07131611892469565,0.13584034618689395,-0.19196410325,0.3408399402500001
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Herbivore,-0.016960024422131865,0.2834411380524553,-0.576981372,0.5396022267500002
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Herbivore_A,0.16971271942664692,0.15976167310668718,-0.143049806,0.4840389630000001
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Predator,0.02926464484295651,0.2276272280197634,-0.41755137249999996,0.47805054950000037
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Predator_A,0.13173980363987917,0.1353304785493094,-0.13130646475,0.40155417350000006
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Shredder_A,-0.5247868208429924,0.14495317774815283,-0.8065995460000001,-0.23592158624999987
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Filterer:log_mass_c,0.0015550767780403638,0.07637452838861229,-0.147369336,0.15170784525000014
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Filterer_A:log_mass_c,0.010027411918345582,0.0062260450343420756,-0.0022248434725,0.022188119150000005
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Gatherer:log_mass_c,0.09729465967584904,0.05303345245677711,-0.0083607534775,0.20209262100000003
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Gatherer_A:log_mass_c,0.01500220595153685,0.008338425911213351,-0.0011693060774999999,0.03135742315
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Herbivore:log_mass_c,0.21255967312407006,0.10338418506878568,0.009764195797500002,0.416539049
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Herbivore_A:log_mass_c,-0.015895399894780626,0.03565345354499897,-0.086151110325,0.05399062850000008
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Predator:log_mass_c,0.043286317792308036,0.09029837367116826,-0.13581674875,0.21981668325000014
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Predator_A:log_mass_c,-0.02324508706096725,0.005337789010941208,-0.03365402687499999,-0.012761637524999996
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,FFGI_Shredder_A:log_mass_c,0.17303797217,0.01556686415076799,0.14253282575,0.20336379750000003
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Filterer,0.022007267940292338,0.2816410612314024,-0.5274482385,0.5709749305
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Filterer_A,0.093438845552581265,0.13511573102322724,-0.1703423155,0.3539684005000002
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Gatherer,-0.011425774683867875,0.2216835782928818,-0.44375563025000003,0.42103207525000014
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Gatherer_A,0.0710589367637923,0.13541304910886137,-0.19337416575000002,0.33319263875
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Herbivore,-0.02262157023409185,0.282278211094173,-0.58017304925,0.5383115177500003
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Herbivore_A,-0.08387065940411763,0.1469650556040052,-0.37662239249999996,0.20231425350000007
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Predator,0.024368862458511123,0.22436750332254873,-0.41744430775,0.46723443200000014
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Predator_A,0.0808902752625371,0.13512227639254695,-0.18268354575,0.34155243100000005
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Shredder_A,-0.1609125094759287,0.13858781603692055,-0.431407543,0.10906156425000008
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Filterer:log_mass_c,-0.0038255700204370205,0.07221513111276137,-0.14414083649999998,0.14143820500000007
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Filterer_A:log_mass_c,0.004310979764912011,0.003377620910219655,-0.0022784840225,0.010978312275
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Gatherer:log_mass_c,0.0330075694404757,0.04886709476081813,-0.06361889037500001,0.12945877525000002
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Gatherer_A:log_mass_c,9.11311883559667e-4,0.004678548317315223,-0.008187360722499998,0.0099610520925
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Herbivore:log_mass_c,0.15628233312183137,0.09499234153800282,-0.032100159,0.3427965277500001
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Herbivore_A:log_mass_c,0.050437426516636345,0.029502987217032536,-0.007998167215,0.1081349185
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Predator:log_mass_c,-0.023220439068697335,0.08356973815237623,-0.19050771975,0.13784303675000018
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Predator_A:log_mass_c,-0.006369040326667318,0.0028692047620345576,-0.012010752475,-7.536383344999988e-4
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,FFGI_Shredder_A:log_mass_c,0.0619318013063,0.008677252578367945,0.045132086450000004,0.078978153925
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Filterer,0.014376715411133743,0.27790598237228026,-0.52655429125,0.5656986212500004
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Filterer_A,0.0759519772825615,0.1356504843211631,-0.19130437475,0.34167112725000004
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Gatherer,-0.013154022329698953,0.22175608232785335,-0.44489520174999997,0.4202807817500001
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Gatherer_A,0.04332347196294993,0.13579196634577154,-0.22472958725,0.3095008370000002
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Herbivore,-0.016684696025540784,0.28077187977292967,-0.563986891,0.5367479752500002
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Herbivore_A,0.06272824728344008,0.15285270579227933,-0.23925554925,0.36194486000000003
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Predator,0.026675409996373044,0.22180277215358796,-0.41013926849999993,0.46347765550000003
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Predator_A,0.06439419613952638,0.13546297891600415,-0.20258192825,0.3303743807500001
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Shredder_A,-0.2411898807596168,0.14066410524324952,-0.51865392225,0.03270936812500004
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Filterer:log_mass_c,0.007332019623059578,0.06644144496353878,-0.12309680825,0.13735943900000003
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Filterer_A:log_mass_c,0.008249298466185547,0.004949027792394389,-0.0014079719,0.017981953900000007
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Gatherer:log_mass_c,0.02756916237751117,0.04558332697678037,-0.0627315246,0.11667683125
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Gatherer_A:log_mass_c,0.005662707387076531,0.006579317507998295,-0.0072011450375,0.018323949100000004
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Herbivore:log_mass_c,0.1521591645007446,0.08901212948299601,-0.022947441274999997,0.32615024775
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Herbivore_A:log_mass_c,1.0982394705594495e-4,0.02950214735557871,-0.057952920299999995,0.056802316500000005
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Predator:log_mass_c,-0.019790665882123172,0.078314799238507,-0.1733430385,0.13481860700000006
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Predator_A:log_mass_c,-0.008046501660901094,0.004232591257031179,-0.016295896674999998,2.3818795500000356e-4
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,FFGI_Shredder_A:log_mass_c,0.080888415294575,0.012355647554234316,0.056634350975,0.1050036565
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Filterer,0.02919568518874318,0.28385695869402383,-0.52528347675,0.588605575
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Filterer_A,0.14476548446572757,0.13721943225858757,-0.12312659475,0.41716575000000017
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Gatherer,-0.013571683089927202,0.2252682130891528,-0.453317505,0.43044238550000014
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Gatherer_A,0.05990807359648722,0.13782957787615624,-0.20997715325000002,0.3331311020000002
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Herbivore,-0.0209407547448923,0.28559951122893396,-0.583738436,0.5372225992500002
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Herbivore_A,0.19147787438962133,0.1611918938811852,-0.12550273225,0.5049583320000001
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Predator,0.025740775100482505,0.22566295304189332,-0.41777844325,0.46982956050000035
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Predator_A,0.11890483258968121,0.13691529346761794,-0.14940124175,0.39099535850000045
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Shredder_A,-0.5042170182972687,0.15169645624177305,-0.799153142,-0.2069076917499999
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Filterer:log_mass_c,-0.0076723115027779055,0.07722185791354874,-0.159789655,0.14462906375
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Filterer_A:log_mass_c,0.018591485527330375,0.0087804167892664,0.0014542225874999998,0.03572916162500001
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Gatherer:log_mass_c,0.09905865809200184,0.053476035658077334,-0.0055445367725,0.2053246315
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Gatherer_A:log_mass_c,0.01660999884497646,0.011472081255176722,-0.0059220078649999995,0.039150482875
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Herbivore:log_mass_c,0.21351733796798522,0.10257956286988962,0.01239685105,0.4137400912500001
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Herbivore_A:log_mass_c,-0.02471170227075286,0.037580268706627826,-0.09796594315,0.04956032552500002
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Predator:log_mass_c,0.05087138799826032,0.09011595046066997,-0.1260073795,0.2295105965000001
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Predator_A:log_mass_c,-0.02321528753151706,0.007522959346427134,-0.037885978900000006,-0.008342340047499992
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,FFGI_Shredder_A:log_mass_c,0.167759557465075,0.020754109118550017,0.12690936149999998,0.20806000625
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Detritivore_Herbivore,-0.004296485724548505,0.16450346740231803,-0.32830679274999996,0.3179897042500001
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Invertivore,-0.1744735608907926,0.13703132733341086,-0.44738086825,0.0896812492500001
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Omnivore,0.071337873415267275,0.14263426634344012,-0.2073388785,0.35314123450000007
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Piscivore,-0.10699917065989585,0.14134294397276212,-0.38325767399999994,0.16654117025000006
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Planktivore,0.21735017240401142,0.1393256047846284,-0.05652809842499999,0.4841119955000001
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Detritivore_Herbivore:log_mass_c,0.22718643364291774,0.10223390653282437,0.025536611400000006,0.43087273425
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Invertivore:log_mass_c,-0.04638395214030667,0.009412632242328339,-0.06490812362500001,-0.027999401299999997
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Omnivore:log_mass_c,0.0427830897907,0.007205241387539968,0.028738315075,0.056967801625
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Piscivore:log_mass_c,-0.03546669486479,0.006388495127423008,-0.048025747225000005,-0.02297309215
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,FFGF_Planktivore:log_mass_c,0.027580616764716667,0.0034752139121878856,0.020755507275,0.0344210779
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Detritivore_Herbivore,-0.008122647885730664,0.1621241139203407,-0.32453841325,0.30715250175
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Invertivore,-0.17306542607125605,0.13555823253523525,-0.438503378,0.08969243335000004
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Omnivore,0.07426353385853393,0.13917154426487383,-0.19801971699999998,0.3418465522500001
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Piscivore,-0.09427459864689287,0.13761764280497166,-0.36292508125,0.17554629050000012
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Planktivore,0.2126286597442351,0.1378581190759869,-0.053475914975000004,0.48015545875000015
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Detritivore_Herbivore:log_mass_c,0.21444694605633133,0.10086395537645644,0.0133039607,0.4108505112500001
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Invertivore:log_mass_c,-0.046802215800415,0.01084895335682662,-0.06834487165,-0.025821224049999997
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Omnivore:log_mass_c,0.023558824990750474,0.008256254284706523,0.0075391701825,0.03965654457500001
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Piscivore:log_mass_c,-0.044294380839875,0.007505809575716564,-0.059006077425,-0.029539254124999994
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,FFGF_Planktivore:log_mass_c,0.0179274436763675,0.004078931477154201,0.009921035867499999,0.025938038800000004
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Detritivore_Herbivore,-0.03385542012395025,0.16786567474229866,-0.360332224,0.29319793625000007
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Invertivore,-0.013717804019826724,0.13554174605800118,-0.28640142175,0.24541190450000006
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Omnivore,-0.047114870494766224,0.1391375433000991,-0.32414201625000005,0.2190114685000001
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Piscivore,-0.04294045069760441,0.13519843074327284,-0.31344761025,0.2161573887500001
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Planktivore,0.11883439130373182,0.13704986316773007,-0.15059529599999996,0.38553086550000004
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Detritivore_Herbivore:log_mass_c,0.3183989698486246,0.10984863616910227,0.1006489505,0.5341228280000001
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Invertivore:log_mass_c,0.01514711149537597,0.012949101825404374,-0.010146345824999998,0.04054674562500001
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Omnivore:log_mass_c,0.0981666248893,0.011533309054319893,0.07560075345,0.120890225
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Piscivore:log_mass_c,-0.061784312090633335,0.010258775665922202,-0.082207017725,-0.041961827125
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,FFGF_Planktivore:log_mass_c,0.05726967927835,0.005714499251158046,0.04593538785,0.06846536280000001
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Detritivore_Herbivore,0.0046330063451817316,0.16587145484150373,-0.32046502425,0.32878999625
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Invertivore,-0.2074954809863676,0.13634567326009536,-0.48081596225000006,0.057382619750000016
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Omnivore,0.08792551274892883,0.1392980371309022,-0.18894179774999997,0.3610774647500003
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Piscivore,-0.09335256518476029,0.1412669565095321,-0.37745397724999996,0.1783717297500001
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Planktivore,0.2140386664786354,0.13771847818836622,-0.0619697153,0.48341999475
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Detritivore_Herbivore:log_mass_c,0.19881493623454796,0.10466121441482275,-0.006201197412499998,0.40220458425
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Invertivore:log_mass_c,-0.059710044331475,0.009322759735371226,-0.07824110025,-0.04152609095
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Omnivore:log_mass_c,-0.002414208034939649,0.006872816338113956,-0.015865510725,0.011002909025000018
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Piscivore:log_mass_c,-0.054708521308175,0.006266964251017561,-0.06691939062499999,-0.042389804625000006
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,FFGF_Planktivore:log_mass_c,0.009630756173962148,0.0033902450268763333,0.0030495006000000003,0.016302887025000004
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Detritivore_Herbivore,-0.015947952671912523,0.16110635473094628,-0.33312415049999994,0.296888291
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Invertivore,-0.15996620854112492,0.13362115755341367,-0.4248309275,0.09660271785000002
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Omnivore,0.054415299754112,0.13660202314302441,-0.21561110875,0.31762084325
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Piscivore,-0.0928979326399994,0.13510955464400395,-0.35856874675,0.16877284850000018
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Planktivore,0.2126517248024051,0.13562074431004223,-0.05520331825,0.4750126972500001
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Detritivore_Herbivore:log_mass_c,0.21212535520699372,0.09858566526345146,0.017694396950000003,0.4033601570000001
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Invertivore:log_mass_c,-0.041749914680973346,0.012008824708542512,-0.0657325578,-0.0186165248
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Omnivore:log_mass_c,0.0325313532301833,0.00944546854801286,0.01425462785,0.05095406715000002
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Piscivore:log_mass_c,-0.0403106588446975,0.008580734064160269,-0.057217917775,-0.02324286427499999
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,FFGF_Planktivore:log_mass_c,0.01968262509595175,0.004719664829682617,0.010514147275,0.028944807450000005
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Detritivore_Herbivore,-0.0633628145335068,0.16739162885772152,-0.39130324949999995,0.2656466800000001
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Invertivore,0.029488515318289582,0.13803293270941533,-0.24233480775,0.29952847150000006
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Omnivore,-0.054187223817097493,0.14081398076727203,-0.32877069025,0.22171281450000002
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Piscivore,-0.02587810884180109,0.13996358207737322,-0.29923055325000003,0.2490555062500001
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Planktivore,0.11794045386361962,0.14199765482987753,-0.15779288200000002,0.3941938672500004
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Detritivore_Herbivore:log_mass_c,0.3208540518017805,0.11011074510370102,0.1045357725,0.5360096827499999
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Invertivore:log_mass_c,0.02593646075163428,0.016489824256327414,-0.0064914234599999995,0.058218319250000004
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Omnivore:log_mass_c,0.1169839676299,0.016417152520454812,0.0847286909,0.14948284650000002
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Piscivore:log_mass_c,-0.071920472425425,0.014798377181799632,-0.10114727775,-0.04308991199999997
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,FFGF_Planktivore:log_mass_c,0.049936532630525,0.008421617411681471,0.03341724045,0.06647260540000002

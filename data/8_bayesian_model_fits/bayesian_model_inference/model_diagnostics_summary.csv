@@ -1,0 +1,73 @@
+taxon,chem_gr,taxon_label,chem_gr_label,hypothesis,model_id,hypothesis_label,max_rhat,min_bulk_ess,min_tail_ess,n_divergent,max_treedepth
+algae,Industrial_Chemical,Algae,Industrial chemical,H0,M0,Baseline model,1.0000481560334162,35095.58172291566,30981.901824334367,0,6
+algae,Industrial_Chemical,Algae,Industrial chemical,H1,M1,Global allometry,1.0002855159166282,8692.374772469595,16644.58707023076,0,6
+algae,Industrial_Chemical,Algae,Industrial chemical,H2,M2,Group baselines,1.002118062374768,2691.1924033553673,5849.3842309993115,0,11
+algae,Industrial_Chemical,Algae,Industrial chemical,H3,M3,Group allometry,1.0042497248502718,959.1497233344472,2323.5958649497147,0,12
+algae,Pharmaceutical,Algae,Pharmaceutical,H0,M0,Baseline model,1.0001242417993923,19050.244404698653,23012.703937918122,0,9
+algae,Pharmaceutical,Algae,Pharmaceutical,H1,M1,Global allometry,1.0004086591252357,8854.755023920865,16663.951959177077,0,9
+algae,Pharmaceutical,Algae,Pharmaceutical,H2,M2,Group baselines,1.0022252914143082,1642.1657779786738,3257.13263415111,0,11
+algae,Pharmaceutical,Algae,Pharmaceutical,H3,M3,Group allometry,1.0060977313924835,893.2314601117107,2634.0503525216445,0,12
+algae,P_Arthropod_control,Algae,P: Arthropod control,H0,M0,Baseline model,1.0002580175081872,31249.335101839628,37562.33103137311,0,9
+algae,P_Arthropod_control,Algae,P: Arthropod control,H1,M1,Global allometry,1.0003155525195,5383.886432788301,11401.623665500809,0,9
+algae,P_Arthropod_control,Algae,P: Arthropod control,H2,M2,Group baselines,1.0050076628916056,2083.6995414755966,4737.2562139194115,0,10
+algae,P_Arthropod_control,Algae,P: Arthropod control,H3,M3,Group allometry,1.0033022248235368,1939.7976238239025,4686.073365098035,0,11
+algae,P_Plant_control,Algae,P: Plant control,H0,M0,Baseline model,0.9999935823772227,29686.711579812603,27217.10749483489,0,8
+algae,P_Plant_control,Algae,P: Plant control,H1,M1,Global allometry,1.0002244471915374,11508.994669210351,18472.62715991329,0,9
+algae,P_Plant_control,Algae,P: Plant control,H2,M2,Group baselines,1.0037394980028131,2774.667059407581,5728.718064339782,0,9
+algae,P_Plant_control,Algae,P: Plant control,H3,M3,Group allometry,1.0012821870841278,3875.8456853328867,7844.651066729674,0,12
+algae,P_Microbial_control,Algae,P: Microbial control,H0,M0,Baseline model,1.0000561102323706,32970.37014801053,29370.27391439852,0,8
+algae,P_Microbial_control,Algae,P: Microbial control,H1,M1,Global allometry,1.000257002752755,11396.589045277926,18864.507242840693,0,8
+algae,P_Microbial_control,Algae,P: Microbial control,H2,M2,Group baselines,1.0043796858439733,2089.2303635192543,4258.293621210886,0,11
+algae,P_Microbial_control,Algae,P: Microbial control,H3,M3,Group allometry,1.0033990936397714,1367.5865004945622,2627.057444960063,0,11
+algae,P_Mixed_target,Algae,P: Mixed target,H0,M0,Baseline model,1.0001792470834165,40098.78897539843,26482.557362504594,0,10
+algae,P_Mixed_target,Algae,P: Mixed target,H1,M1,Global allometry,1.0006243031151199,10948.14840759162,17851.948794097556,0,10
+algae,P_Mixed_target,Algae,P: Mixed target,H2,M2,Group baselines,1.0010272221510397,7570.705606089582,10634.612226977466,0,12
+algae,P_Mixed_target,Algae,P: Mixed target,H3,M3,Group allometry,1.000737607886718,5903.74849366409,8395.321131713717,0,12
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H0,M0,Baseline model,1.0001439633638998,44834.582469870664,26185.271098360216,0,11
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H1,M1,Global allometry,1.0002166257392668,16933.312001452792,22321.32619438049,0,11
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H2,M2,Group baselines,1.0021743557692975,4219.790643729771,7874.307658443676,0,13
+invertebrate,Industrial_Chemical,Invertebrate,Industrial chemical,H3,M3,Group allometry,1.002469739773632,2588.3795283133927,4545.502730540258,0,14
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H0,M0,Baseline model,1.00005631154426,59534.91665322889,30324.56792860189,0,9
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H1,M1,Global allometry,1.0007602312991366,5384.482689456441,10874.798114779207,0,9
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H2,M2,Group baselines,1.0008132952204754,4549.105208387058,8347.230980893777,0,12
+invertebrate,Pharmaceutical,Invertebrate,Pharmaceutical,H3,M3,Group allometry,1.000531390156674,5565.465637445055,9867.795588648683,0,12
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H0,M0,Baseline model,1.000075936929646,85752.2575538665,28537.992805689057,0,10
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H1,M1,Global allometry,1.0001201936341841,7828.404335391463,15554.82656053155,0,10
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H2,M2,Group baselines,1.000400835856604,6457.488746170304,12233.487512967276,0,12
+invertebrate,P_Arthropod_control,Invertebrate,P: Arthropod control,H3,M3,Group allometry,1.0011325344579713,4596.551825687119,8187.348871928406,0,13
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H0,M0,Baseline model,1.0001755355562938,24279.24717037252,24084.315412334778,0,12
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H1,M1,Global allometry,1.001084178000543,5442.900843123853,9529.64417821252,0,12
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H2,M2,Group baselines,1.0046997380037404,1289.476142849109,2637.0605766883095,0,12
+invertebrate,P_Plant_control,Invertebrate,P: Plant control,H3,M3,Group allometry,1.013839169116135,562.5085107756047,1323.349774319083,0,12
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H0,M0,Baseline model,1.0002508016313707,67773.83553012524,30048.545400980933,0,10
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H1,M1,Global allometry,1.0001982082093395,6459.851468877796,12579.376898414852,0,9
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H2,M2,Group baselines,1.0007896307660853,7979.418625274877,12956.330162329728,0,12
+invertebrate,P_Microbial_control,Invertebrate,P: Microbial control,H3,M3,Group allometry,1.000490143328101,7298.477597796752,12304.465937519628,0,13
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H0,M0,Baseline model,1.0002136189381297,53808.847103080436,29462.917739615576,0,10
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H1,M1,Global allometry,1.0001906188393006,10859.373215460884,18494.997390217166,0,9
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H2,M2,Group baselines,1.0006043721252942,9409.173849855571,15317.71689861714,0,11
+invertebrate,P_Mixed_target,Invertebrate,P: Mixed target,H3,M3,Group allometry,1.0004258532604493,7671.220359795591,13058.698441873292,0,12
+fish,Industrial_Chemical,fish,Industrial chemical,H0,M0,Baseline model,1.000231602968442,20515.743670149088,30678.33554725697,0,10
+fish,Industrial_Chemical,fish,Industrial chemical,H1,M1,Global allometry,1.0012358105795558,3771.9434933578978,8341.800349371964,0,9
+fish,Industrial_Chemical,fish,Industrial chemical,H2,M2,Group baselines,1.0084414921991902,821.2072897309314,1714.697944277319,0,12
+fish,Industrial_Chemical,fish,Industrial chemical,H3,M3,Group allometry,1.0054008473101248,806.4290152218132,1429.8567288286392,0,12
+fish,Pharmaceutical,fish,Pharmaceutical,H0,M0,Baseline model,1.0000842041365436,49314.860578418964,31364.827972145653,0,10
+fish,Pharmaceutical,fish,Pharmaceutical,H1,M1,Global allometry,1.000216622531197,7378.093404653128,13248.731762907024,0,10
+fish,Pharmaceutical,fish,Pharmaceutical,H2,M2,Group baselines,1.0006847793177456,13802.911006708217,14531.515075428515,0,13
+fish,Pharmaceutical,fish,Pharmaceutical,H3,M3,Group allometry,1.001431434054073,3988.1623434999224,5900.354151952069,0,13
+fish,P_Arthropod_control,fish,P: Arthropod control,H0,M0,Baseline model,1.0000705813548636,35044.05646280928,36719.820397257456,0,10
+fish,P_Arthropod_control,fish,P: Arthropod control,H1,M1,Global allometry,1.0008086014638264,8416.777584011767,14830.510607126196,0,11
+fish,P_Arthropod_control,fish,P: Arthropod control,H2,M2,Group baselines,1.0094845168353386,925.2549254652123,1931.3016550275488,0,11
+fish,P_Arthropod_control,fish,P: Arthropod control,H3,M3,Group allometry,1.0034910309339649,1747.5176470322708,3031.28905262961,0,12
+fish,P_Plant_control,fish,P: Plant control,H0,M0,Baseline model,1.0000974277492727,19430.19532868923,25230.874387262356,0,10
+fish,P_Plant_control,fish,P: Plant control,H1,M1,Global allometry,1.0005965695170038,2575.4394002238446,5846.486614261692,0,9
+fish,P_Plant_control,fish,P: Plant control,H2,M2,Group baselines,1.0094409798033135,1192.4764732954845,2212.1982721933705,0,11
+fish,P_Plant_control,fish,P: Plant control,H3,M3,Group allometry,1.001175273559044,1243.8712471705828,2742.4100617216113,0,11
+fish,P_Microbial_control,fish,P: Microbial control,H0,M0,Baseline model,1.0002538587212828,56008.24927103816,29937.923444918295,0,9
+fish,P_Microbial_control,fish,P: Microbial control,H1,M1,Global allometry,1.0001941428244667,8729.572043039925,15688.558734740407,0,10
+fish,P_Microbial_control,fish,P: Microbial control,H2,M2,Group baselines,1.0007266523563565,3813.20873467463,5803.2338871098445,0,13
+fish,P_Microbial_control,fish,P: Microbial control,H3,M3,Group allometry,1.0007879925458052,5448.897944733951,8541.888868058708,0,12
+fish,P_Mixed_target,fish,P: Mixed target,H0,M0,Baseline model,1.000045644363528,50563.997921878065,30419.341189404993,0,10
+fish,P_Mixed_target,fish,P: Mixed target,H1,M1,Global allometry,1.0002102287713637,9040.507194024854,17206.295225714242,0,10
+fish,P_Mixed_target,fish,P: Mixed target,H2,M2,Group baselines,1.0004581842585853,11304.889833275523,15434.598478269805,0,12
+fish,P_Mixed_target,fish,P: Mixed target,H3,M3,Group allometry,1.0002987969627,22063.199439468368,21896.592018492753,0,12
