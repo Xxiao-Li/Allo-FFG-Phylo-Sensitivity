@@ -15,11 +15,11 @@ set.seed(2026)
 
 #---- 0. Load data and basic settings ------------------------------------------
 
-algae_df <- readRDS(here("data/6_combined_meta_data/algae_mass_FFG_sens.rds"))
-invertebrate_df <- readRDS(here("data/6_combined_meta_data/invertebrate_mass_FFG_sens.rds"))
-fish_df <- readRDS(here("data/6_combined_meta_data/fish_mass_FFG_sens.rds"))
+algae_df <- readRDS(here("data/6_combined_meta_data/algae_meta_data.rds"))
+invertebrate_df <- readRDS(here("data/6_combined_meta_data/invertebrate_meta_data.rds"))
+fish_df <- readRDS(here("data/6_combined_meta_data/fish_meta_data.rds"))
 
-full_df <- readRDS(here("data/6_combined_meta_data/full_mass_FFG_sens.rds"))
+full_df <- readRDS(here("data/6_combined_meta_data/full_meta_data.rds"))
 
 algae_tree <- readRDS(here("data/6_combined_meta_data/algae_genus_tree.rds"))
 invertebrate_tree <- readRDS(here("data/6_combined_meta_data/invertebrate_genus_tree.rds"))
