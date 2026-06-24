@@ -16,7 +16,7 @@ job_id <- as.integer(args[1])
 
 #---- 1. Load data -------------------------------------------------------------
 
-fish_df <- readRDS(here("data/6_combined_meta_data/fish_mass_FFG_sens.rds"))
+fish_df <- readRDS(here("data/6_combined_meta_data/fish_meta_data.rds"))
 
 fish_tree <- readRDS(here("data/6_combined_meta_data/fish_genus_tree.rds"))
 

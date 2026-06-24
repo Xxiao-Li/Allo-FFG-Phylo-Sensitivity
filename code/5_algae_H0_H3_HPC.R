@@ -16,7 +16,7 @@ job_id <- as.integer(args[1])
 
 #---- 1. Load data -------------------------------------------------------------
 
-algae_df <- readRDS(here("data/6_combined_meta_data/algae_mass_FFG_sens.rds"))
+algae_df <- readRDS(here("data/6_combined_meta_data/algae_meta_data.rds"))
 algae_tree <- readRDS(here("data/6_combined_meta_data/algae_genus_tree.rds"))
 
 #---- 2. Define jobs -----------------------------------------------------------
