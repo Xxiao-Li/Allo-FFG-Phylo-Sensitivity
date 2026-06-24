@@ -8,7 +8,6 @@
 .RDataTmp*
 
 
-figure/
 code/10_compare_with_susan_dist.r
 .slurm
 data/5_FFG/~$invert_vert_FG_check1011.xlsx
