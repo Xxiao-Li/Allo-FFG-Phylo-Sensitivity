@@ -73,14 +73,10 @@ job_table <- expand_grid(
     # Use 6 chains and 6 cores for these chemical-use groups
     chains = if_else(
       chem_group %in% c("Industrial_Chemical", "P_Arthropod_control"),
-      6L,
-      chains
-    ),
+      6L, chains),
     cores = if_else(
       chem_group %in% c("Industrial_Chemical", "P_Arthropod_control"),
-      6L,
-      cores
-    )
+      6L, cores)
   )
 
 message("Total number of jobs: ", nrow(job_table))
