@@ -23,3 +23,5 @@ data/8_bayesian_model_fits/invertebrate_fits_ws/
 data/8_bayesian_model_fits/fish_fits_ws/
 
 data/6_combined_meta_data/3297chemicals.xlsx
+data/9_checks/susan.csv
+compare_susan_predicted.png
