@@ -17,16 +17,16 @@ editor_options:
 ---
 
 This script integrates taxonomy, genus-level phylogeny, body mass, and
-functional group information for species with observed chemical sensitivity
+functional feeding group information for species with observed chemical sensitivity
 data. Specifically, it:
 
 - builds genus-level phylogenies using the Open Tree of Life;
 - matches species to body mass estimates, using genus-level averages when
   species-level data are unavailable;
-- assigns ecological functional groups, including resource groups for algae,
+- assigns ecological functional feeding groups, including resource groups for algae,
   functional feeding groups for invertebrates, and trophic guilds for fish.
 
-The final outputs are taxon-specific datasets and genus-level phylogenies for
+The final outputs are taxon-specific dataset and genus-level phylogenies for
 algae, invertebrates, and fish.
 
 ```{r setup, message=FALSE, warning=FALSE}
@@ -52,7 +52,7 @@ options(dplyr.summarise.inform = FALSE)
 # 1. Load dataset
 
 The observed sensitivity dataset was compiled in
-`1_compile_observed_sensitivity_data.Rmd`. Here, we extract unique species and standardise scientific names before matching them to phylogeny, body mass, and functional group information.
+`1_compile_observed_sensitivity_data.Rmd`. Here, we extract unique species and standardise scientific names before matching them to phylogeny, body mass, and functional feeding group information.
 
 ```{r}
 combined_observed_sensitivity <- readRDS(here("data/1_observed_sensitivity/combined_observed_sensitivity/combined_observed_sensitivity.rds"))
@@ -138,12 +138,6 @@ spe_tax_clean <- spe_tax_clean %>%
     )
   )
 
-# Inspect unclassified records before removing them
-spe_tax_clean %>%
-  filter(is.na(group)) %>%
-  count(kingdom, phylum, class, sort = TRUE) %>%
-  kable()
-
 spe_tax_clean <- spe_tax_clean %>%
   filter(!is.na(group))
 
@@ -163,7 +157,7 @@ kable(tax_summary_clean)
 
 We build a genus level phylogeny tree using the Open Tree of Life. We standardize
 branch lengths using Grafen’s method and filter our dataset to only
-species present in the tree. In the end of this script, we further prine thr tree to algae tree, invertebrate tree and vertebrate tree.
+species present in the tree. 
 
 At the end of this section, the taxonomy dataset is filtered to retain only
 species whose genus is present in the full genus-level phylogeny.
@@ -545,11 +539,11 @@ mass_summary <- spe_tax_clean_tree_mass %>%
 kable(mass_summary)
 ```
 
-# 4. Assign functional groups
+# 4. Assign functional feeding groups
 
 We classify species into ecological functional groups:
 
--   Algae → resource groups (Cyanobacteria, Diatoms, Green algae, and other algae)
+-   Algae → resource groups (Cyanobacteria, Diatoms, Green algae, and other algae)  Note that cyanobacteria species don't appear in the final dataset.
 
 -   Invertebrates → functional feeding groups (Filterer, Shredder,
     Gatherer, Herbivore, Predator)
@@ -592,6 +586,32 @@ spe_tax_clean_tree_mass_FFG <- spe_tax_clean_tree_mass_FFG %>%
   mutate(FG2 = if_else(group == "algae", algae.group.2, FG)) %>%
   filter(FG != "Parasitic")
 
+# check FFG composition
+spe_tax_clean_tree_mass_FFG %>%
+  filter(group == "algae") %>%
+  group_by(group, FG2) %>%
+  summarise(
+    n_species = n_distinct(latin),
+    n_genus = n_distinct(genus),
+    .groups = "drop"
+  ) %>%
+  arrange(group, FG2) %>%
+  kable()
+
+# show detailed FFG2 composition for algae
+spe_tax_clean_tree_mass_FFG %>%
+  filter(group == "algae") %>%
+  group_by(group, FG2, algae.tax.group) %>%
+  summarise(
+    n_species = n_distinct(latin),
+    n_genus = n_distinct(genus),
+    .groups = "drop"
+  ) %>%
+  arrange(group, FG2, algae.tax.group) %>%
+  kable()
+
+
+
 ```
 
 
@@ -621,18 +641,6 @@ full_tree <- keep.tip(
   full_tree_raw,
   intersect(full_tree_raw$tip.label, final_genus$genus)
 )
-
-final_tree_summary <- tibble(
-  group = c("algae", "invertebrate", "fish", "full"),
-  n_genus_in_tree = c(
-    length(algae_tree$tip.label),
-    length(inv_tree$tip.label),
-    length(fish_tree$tip.label),
-    length(full_tree$tip.label)
-  )
-)
-
-kable(final_tree_summary)
 ```
 
 
@@ -656,4 +664,30 @@ saveRDS(full_tree,  file=here("data/6_combined_meta_data/full_genus_tree.rds"))
 
 
 ```
+
+# 7. Summary of the final dataset
+```{r}
+# Number of total species and genera in the final dataset
+final_total_summary <- spe_tax_clean_tree_mass_FFG %>%
+  summarise(
+    n_species = n_distinct(latin),
+    n_genus   = n_distinct(genus)
+  )
+kable(final_total_summary)
+
+
+# Number of species and genera across taxonomic groups
+final_group_summary <- spe_tax_clean_tree_mass_FFG %>%
+  group_by(group) %>%
+  summarise(
+    n_species = n_distinct(latin),
+    n_genus   = n_distinct(genus),
+    .groups = "drop"
+  )
+
+kable(final_group_summary)
+```
+
+
+
 
