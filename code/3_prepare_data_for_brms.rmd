@@ -1,5 +1,5 @@
 ---
-title: "Combine Species Taxonomy, Phylogeny, Body Mass, Functional Groups, and Machine-Learning Predicted Sensitivity"
+title: "Combine Species Taxonomy, Phylogeny, Body Mass, Functional Feeding Group, and Machine-Learning Predicted Sensitivity"
 output:
   html_document: 
     toc: true
@@ -17,9 +17,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-This script combines machine-learning-predicted species sensitivity with species taxonomy, genus-level phylogeny, body mass, and ecological functional groups for downstream analyses.
+This script combines machine-learning predictions of species chemical sensitivity with species taxonomy, genus-level phylogeny, body mass, and functional feeding groups for downstream analyses.
 
-The script also reads chemical-use group information compiled from Kramer et al. (2024) and the Pesticide Properties Database (PPDB). It then filters the predicted sensitivity dataset to selected chemicals with known and interpretable chemical-use groups.
+The script also reads chemical-use group information compiled from Kramer et al. (2024) and the Pesticide Properties Database (PPDB). It then retains chemicals with known and interpretable chemical-use groups.
 
 The final outputs are combined datasets for all taxa and for each taxonomic group: algae, invertebrates, and fish.
 
@@ -41,12 +41,11 @@ options(dplyr.summarise.inform = FALSE)
 ## 1.1 Read machine-learning-predicted sensitivity
 
 ```{r, message=FALSE, warning=FALSE}
-# Original prediction file, if needed:
+
 # predicted_sensitivity <- read_csv(here("data/2_predicted_sensitivity/predictions.csv"))
 # predictions_ML_duration48h <- predicted_sensitivity %>%
 #   filter(duration == 48)
-# saveRDS(
-#   predictions_ML_duration48h,
+# saveRDS(predictions_ML_duration48h,
 #   here("data/2_predicted_sensitivity/predictions_ML_duration48h.rds")
 # )
 
@@ -332,10 +331,10 @@ trait_summary <- spe_tax_clean_tree_mass_FFG %>%
 kable(trait_summary)
 ```
 
-# 3. Filter predicted sensitivity to species with available trait data
+# 3. Filter predicted sensitivity to species with available trait and phylogeny data
 
 Predicted sensitivity values are retained only for species with taxonomy,
-phylogeny, body mass, and functional group information. When duplicate
+phylogeny, body mass, and functional feeding group information. When duplicate
 predictions exist for the same species, chemical, and chemical-use group, the
 mean predicted value is used.
 
@@ -387,7 +386,7 @@ combined_summary <- tibble(
 kable(combined_summary)
 ```
 
-## 4.1 Harmonise functional group labels
+## 4.1 Harmonise functional feeding group labels
 
 This section creates broader functional group labels for downstream analysis.
 Invertebrate groups are prefixed with `I_`, fish groups are prefixed with `F_`,
