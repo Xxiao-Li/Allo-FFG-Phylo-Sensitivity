@@ -118,8 +118,6 @@ build_wide_nomask <- function(dat, chemgroup) {
   )
 }
 
-#---- 4. Calculate Pagel's lambda for one CAS ----------------------------------
-
 lambda_one_trait <- function(vec_named, tree, min_n = 4) {
   
   vec_named <- vec_named[!is.na(vec_named)]
@@ -152,8 +150,6 @@ lambda_one_trait <- function(vec_named, tree, min_n = 4) {
     status = "ok"
   )
 }
-
-#---- 5. Calculate lambda for one chemical-use × taxonomic group ----------------
 
 compute_lambda_one_group <- function(dat, tree, chemgroup, taxgroup, fits_dir) {
 
@@ -212,8 +208,6 @@ compute_lambda_one_group <- function(dat, tree, chemgroup, taxgroup, fits_dir) {
   
   df_out
 }
-
-#---- 6. Run current SLURM task -------------------------------------------------
 
 lambda_results <- compute_lambda_one_group(
   dat = dat_this,
