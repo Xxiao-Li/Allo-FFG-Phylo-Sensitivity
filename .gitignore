@@ -6,9 +6,10 @@
 .DS_Store
 .Rapp.history
 .RDataTmp*
-code/0_plot.rmd
+
+
 figure/
-code/old_versions_on_species level/
+code/10_compare_with_susan_dist.r
 .slurm
 data/5_FFG/~$invert_vert_FG_check1011.xlsx
 
@@ -18,5 +19,8 @@ data/2_predicted_sensitivity/*.csv
 data/8_bayesian_model_fits/algae_fits/
 data/8_bayesian_model_fits/invertebrate_fits/
 data/8_bayesian_model_fits/fish_fits/
+data/8_bayesian_model_fits/algae_fits_ws/
+data/8_bayesian_model_fits/invertebrate_fits_ws/
+data/8_bayesian_model_fits/fish_fits_ws/
 
 data/6_combined_meta_data/3297chemicals.xlsx

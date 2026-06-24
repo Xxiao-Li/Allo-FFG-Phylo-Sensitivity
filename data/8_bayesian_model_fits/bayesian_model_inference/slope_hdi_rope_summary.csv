@@ -1,0 +1,86 @@
+taxon_label_plot,chem_gr_label_plot,hdi_rope_status,n,prop
+Algae,"Industrial
+chemical",Outside ±0.20,3,1
+Algae,Pharmaceutical,Outside ±0.20,3,1
+Algae,"P: Arthropod
+control",Inside ±0.10,1,0.3333333333333333
+Algae,"P: Arthropod
+control",Overlaps ±0.20,1,0.3333333333333333
+Algae,"P: Arthropod
+control",Outside ±0.20,1,0.3333333333333333
+Algae,"P: Plant
+control",Inside ±0.20,1,0.3333333333333333
+Algae,"P: Plant
+control",Outside ±0.20,2,0.6666666666666666
+Algae,"P: Microbial
+control",Outside ±0.20,3,1
+Algae,"P: Mixed
+target",Inside ±0.10,1,0.3333333333333333
+Algae,"P: Mixed
+target",Overlaps ±0.20,1,0.3333333333333333
+Algae,"P: Mixed
+target",Outside ±0.20,1,0.3333333333333333
+Invertebrate,"Industrial
+chemical",Inside ±0.10,3,0.3333333333333333
+Invertebrate,"Industrial
+chemical",Overlaps ±0.20,5,0.5555555555555556
+Invertebrate,"Industrial
+chemical",Outside ±0.20,1,0.1111111111111111
+Invertebrate,Pharmaceutical,Inside ±0.10,3,0.3333333333333333
+Invertebrate,Pharmaceutical,Overlaps ±0.20,5,0.5555555555555556
+Invertebrate,Pharmaceutical,Outside ±0.20,1,0.1111111111111111
+Invertebrate,"P: Arthropod
+control",Inside ±0.10,3,0.3333333333333333
+Invertebrate,"P: Arthropod
+control",Overlaps ±0.20,5,0.5555555555555556
+Invertebrate,"P: Arthropod
+control",Outside ±0.20,1,0.1111111111111111
+Invertebrate,"P: Plant
+control",Inside ±0.10,3,0.3333333333333333
+Invertebrate,"P: Plant
+control",Overlaps ±0.20,6,0.6666666666666666
+Invertebrate,"P: Microbial
+control",Inside ±0.10,3,0.3333333333333333
+Invertebrate,"P: Microbial
+control",Overlaps ±0.20,5,0.5555555555555556
+Invertebrate,"P: Microbial
+control",Outside ±0.20,1,0.1111111111111111
+Invertebrate,"P: Mixed
+target",Inside ±0.10,3,0.3333333333333333
+Invertebrate,"P: Mixed
+target",Overlaps ±0.20,5,0.5555555555555556
+Invertebrate,"P: Mixed
+target",Outside ±0.20,1,0.1111111111111111
+Fish,"Industrial
+chemical",Inside ±0.10,1,0.2
+Fish,"Industrial
+chemical",Inside ±0.20,3,0.6
+Fish,"Industrial
+chemical",Overlaps ±0.20,1,0.2
+Fish,Pharmaceutical,Inside ±0.10,1,0.2
+Fish,Pharmaceutical,Inside ±0.20,2,0.4
+Fish,Pharmaceutical,Overlaps ±0.20,2,0.4
+Fish,"P: Arthropod
+control",Inside ±0.10,2,0.4
+Fish,"P: Arthropod
+control",Inside ±0.20,2,0.4
+Fish,"P: Arthropod
+control",Overlaps ±0.20,1,0.2
+Fish,"P: Plant
+control",Inside ±0.10,2,0.4
+Fish,"P: Plant
+control",Inside ±0.20,1,0.2
+Fish,"P: Plant
+control",Overlaps ±0.20,2,0.4
+Fish,"P: Microbial
+control",Inside ±0.10,1,0.2
+Fish,"P: Microbial
+control",Inside ±0.20,3,0.6
+Fish,"P: Microbial
+control",Overlaps ±0.20,1,0.2
+Fish,"P: Mixed
+target",Inside ±0.10,1,0.2
+Fish,"P: Mixed
+target",Inside ±0.20,2,0.4
+Fish,"P: Mixed
+target",Overlaps ±0.20,2,0.4
