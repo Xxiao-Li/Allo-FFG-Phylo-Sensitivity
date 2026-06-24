@@ -431,10 +431,6 @@ spe_tax_clean_tree_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
   ) %>%
   distinct()
 
-FFG_summary <- spe_tax_clean_tree_mass_FFG_sens %>%
-  count(group, FFG, sort = TRUE)
-
-kable(FFG_summary)
 ```
 
 ## 4.2 Calculate relative sensitivity
@@ -482,10 +478,68 @@ relative_sensitivity_summary <- tibble(
 kable(relative_sensitivity_summary)
 ```
 
-# 5. Check tree alignment and save outputs
+# 5. Add chemical property data
+```{r}
+# read chemical properties data
+chem_prop <- read_lines(here("data", "6_combined_meta_data", "chemprop_EPI.csv")) %>%
+  as_tibble_col("raw_original") %>%
+  mutate(
+    raw = raw_original %>%
+      str_squish() %>%
+      str_remove('^"') %>%   
+      str_remove('"$')       
+  ) %>%
+  extract(
+    raw,
+    into = c(
+      "CAS",
+      "water_sol_mg_L",
+      "log_molar_solubility",
+      "logKow",
+      "chemical_name"
+    ),
+    regex = "^([0-9]{2,7}-[0-9]{2}-[0-9])\\s+([0-9.eE+\\-]+)\\s+\\(mg/L\\)\\s+([0-9.eE+\\-]+)\\s+\\(log molar\\)\\s+([0-9.eE+\\-]+)\\s+\\(log Kow\\)\\s+(.+)$",
+    remove = FALSE
+  ) %>%
+  mutate(
+    water_sol_mg_L = as.numeric(water_sol_mg_L),
+    log_molar_solubility = as.numeric(log_molar_solubility),
+    water_sol_mol_L = 10^log_molar_solubility,
+    logKow = as.numeric(logKow),
+    chemical_name = str_squish(chemical_name),
+    CAS = as.character(CAS),
+    CAS = str_remove(CAS, "^0+") # Remove leading zeros from CAS numbers
+  ) 
 
-## 5.1 Full dataset
+sum(is.na(chem_prop$log_molar_solubility)) #65
 
+spe_tax_clean_tree_mass_FFG_sens_ws <- spe_tax_clean_tree_mass_FFG_sens %>%
+  mutate(CAS = as.character(CAS)) %>%
+  left_join(chem_prop %>% select(CAS, log_molar_solubility, logKow), by = "CAS") 
+```
+
+Current data summary
+```{r}
+length(unique(spe_tax_clean_tree_mass_FFG_sens_ws$CAS)) # 1103
+length(unique(spe_tax_clean_tree_mass_FFG_sens_ws$latin)) # 580
+length(unique(spe_tax_clean_tree_mass_FFG_sens_ws$genus)) # 320
+length(unique(spe_tax_clean_tree_mass_FFG_sens_ws$group)) # 3
+```
+
+
+# 6. Prepare full meta data for downstream analysis
+```{r}
+full_meta_data <- spe_tax_clean_tree_mass_FFG_sens_ws %>%
+  select(chem_group, CAS, log_molar_solubility, logKow, latin, genus,
+         family, order, class, phylum, kingdom, group, log_mass, BMsource,
+         BM_match_level, FFG, FG_source, 
+         ref_sensi, rel_sensi, log_rel_sensi) %>%
+  rename(FFG_source = FG_source,
+         tax_group = group)
+
+```
+
+# 7. Check alignment between phylogeny tree and meta data
 ```{r save-full-dataset}
 full_tree <- readRDS(here("data/6_combined_meta_data/full_genus_tree.rds"))
 
@@ -497,7 +551,7 @@ full_tree_check <- tibble(
     "genus_in_dataset_not_tree"
   ),
   value = c(
-    n_distinct(spe_tax_clean_tree_mass_FFG_sens$genus),
+    n_distinct(full_meta_data$genus),
     length(full_tree$tip.label),
     length(setdiff(full_tree$tip.label, unique(spe_tax_clean_tree_mass_FFG_sens$genus))),
     length(setdiff(unique(spe_tax_clean_tree_mass_FFG_sens$genus), full_tree$tip.label))
@@ -506,19 +560,21 @@ full_tree_check <- tibble(
 
 kable(full_tree_check)
 
-saveRDS(
-  spe_tax_clean_tree_mass_FFG_sens,
-  file = here("data/6_combined_meta_data/full_mass_FFG_sens.rds")
-)
 ```
 
-## 5.2 Taxon-specific datasets
+# 8. Save full metadata and taxon-specific metadata for downstream analysis
+```{r}
+saveRDS(
+  full_meta_data,
+  file = here("data/6_combined_meta_data/full_meta_data.rds")
+)
+```
 
 ```{r save-taxon-specific-datasets}
 save_taxon_dataset <- function(dat, taxon, tree_file, output_file) {
   
   dat_taxon <- dat %>%
-    filter(group == taxon)
+    filter(tax_group == taxon)
   
   genus_tree <- readRDS(here("data/6_combined_meta_data", tree_file))
   
@@ -543,24 +599,24 @@ save_taxon_dataset <- function(dat, taxon, tree_file, output_file) {
 }
 
 algae_check <- save_taxon_dataset(
-  dat = spe_tax_clean_tree_mass_FFG_sens,
+  dat = full_meta_data,
   taxon = "algae",
   tree_file = "algae_genus_tree.rds",
-  output_file = "algae_mass_FFG_sens.rds"
+  output_file = "algae_meta_data.rds"
 )
 
 invertebrate_check <- save_taxon_dataset(
-  dat = spe_tax_clean_tree_mass_FFG_sens,
+  dat = full_meta_data,
   taxon = "invertebrate",
   tree_file = "invertebrate_genus_tree.rds",
-  output_file = "invertebrate_mass_FFG_sens.rds"
+  output_file = "invertebrate_meta_data.rds"
 )
 
 fish_check <- save_taxon_dataset(
-  dat = spe_tax_clean_tree_mass_FFG_sens,
+  dat = full_meta_data,
   taxon = "fish",
   tree_file = "fish_genus_tree.rds",
-  output_file = "fish_mass_FFG_sens.rds"
+  output_file = "fish_meta_data.rds"
 )
 
 taxon_output_summary <- bind_rows(
@@ -570,21 +626,4 @@ taxon_output_summary <- bind_rows(
 )
 
 kable(taxon_output_summary)
-```
-
-# 6. Final summary
-
-```{r final-summary}
-final_summary <- spe_tax_clean_tree_mass_FFG_sens %>%
-  group_by(group, chem_group) %>%
-  summarise(
-    n_species = n_distinct(latin),
-    n_genus = n_distinct(genus),
-    n_CAS = n_distinct(CAS),
-    n_FFG = n_distinct(FFG),
-    .groups = "drop"
-  ) %>%
-  arrange(group, chem_group)
-
-kable(final_summary)
 ```
