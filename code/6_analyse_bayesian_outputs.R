@@ -131,7 +131,7 @@ glimpse(model_priors)
 
 write_csv(model_priors, file.path(output_dir, "model_priors_summary.csv"))
 
-#=======3. Summary model diagnostics (PPC plots, Rhat, ESS) for all models======
+#=======3. Summary model diagnostics for all models======
 extract_diagnostics_one_model <- function(fit) {
   summ <- summary(fit)
   diag_tables <- list(fixed = summ$fixed, random = summ$random, 
@@ -747,4 +747,5 @@ glimpse(random_variance_partition_best)
 
 write_csv(random_variance_partition_best, 
           file.path(output_dir, "random_variance_partition_best_model.csv"))
+
 
