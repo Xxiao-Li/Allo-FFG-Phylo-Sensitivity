@@ -2500,66 +2500,6 @@ body mass, and functional group filtering.</p>
 <span id="cb40-14"><a href="#cb40-14" tabindex="-1"></a></span>
 <span id="cb40-15"><a href="#cb40-15" tabindex="-1"></a><span class="fu">saveRDS</span>(full_tree,  <span class="at">file=</span><span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data/full_genus_tree.rds&quot;</span>))</span></code></pre></div>
 </div>
-<div id="summary-of-the-final-dataset" class="section level1">
-<h1>7. Summary of the final dataset</h1>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># Number of total species and genera in the final dataset</span></span>
-<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>final_total_summary <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG <span class="sc">%&gt;%</span></span>
-<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(latin),</span>
-<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a>    <span class="at">n_genus   =</span> <span class="fu">n_distinct</span>(genus)</span>
-<span id="cb41-6"><a href="#cb41-6" tabindex="-1"></a>  )</span>
-<span id="cb41-7"><a href="#cb41-7" tabindex="-1"></a><span class="fu">kable</span>(final_total_summary)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="right">n_species</th>
-<th align="right">n_genus</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">580</td>
-<td align="right">320</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="co"># Number of species and genera across taxonomic groups</span></span>
-<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a>final_group_summary <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG <span class="sc">%&gt;%</span></span>
-<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
-<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb42-5"><a href="#cb42-5" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(latin),</span>
-<span id="cb42-6"><a href="#cb42-6" tabindex="-1"></a>    <span class="at">n_genus   =</span> <span class="fu">n_distinct</span>(genus),</span>
-<span id="cb42-7"><a href="#cb42-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb42-8"><a href="#cb42-8" tabindex="-1"></a>  )</span>
-<span id="cb42-9"><a href="#cb42-9" tabindex="-1"></a></span>
-<span id="cb42-10"><a href="#cb42-10" tabindex="-1"></a><span class="fu">kable</span>(final_group_summary)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">group</th>
-<th align="right">n_species</th>
-<th align="right">n_genus</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">algae</td>
-<td align="right">79</td>
-<td align="right">45</td>
-</tr>
-<tr class="even">
-<td align="left">fish</td>
-<td align="right">165</td>
-<td align="right">102</td>
-</tr>
-<tr class="odd">
-<td align="left">invertebrate</td>
-<td align="right">336</td>
-<td align="right">173</td>
-</tr>
-</tbody>
-</table>
-</div>
 
 
 

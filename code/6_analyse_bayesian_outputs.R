@@ -46,9 +46,9 @@ chem_gr_order <- c(
 chem_gr_label <- c(
   Industrial_Chemical   = "Industrial chemical",
   Pharmaceutical        = "Pharmaceutical",
-  P_Arthropod_control   = "P: Arthropod control",
-  P_Plant_control       = "P: Plant control",
-  P_Microbial_control   = "P: Microbial control",
+  P_Arthropod_control   = "P: Arthropod",
+  P_Plant_control       = "P: Plant",
+  P_Microbial_control   = "P: Microbial",
   P_Mixed_target        = "P: Mixed target")
 
 hypothesis_order <- c("H0", "H1", "H2", "H3")

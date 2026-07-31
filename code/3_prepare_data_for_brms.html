@@ -1582,7 +1582,7 @@ functional feeding groups for downstream analyses.</p>
 Kramer et al. (2024) and the Pesticide Properties Database (PPDB). It
 then retains chemicals with known and interpretable chemical-use
 groups.</p>
-<p>The final outputs are combined datasets for all taxa and for each
+<p>The final outputs are combined dataset for all taxa and for each
 taxonomic group: algae, invertebrates, and fish.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
@@ -1598,37 +1598,31 @@ taxonomic group: algae, invertebrates, and fish.</p>
 <h1>1. Prepare chemical sensitivity data</h1>
 <div id="read-machine-learning-predicted-sensitivity" class="section level2">
 <h2>1.1 Read machine-learning-predicted sensitivity</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co"># predicted_sensitivity &lt;- read_csv(here(&quot;data/2_predicted_sensitivity/predictions.csv&quot;))</span></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># predictions_ML_duration48h &lt;- predicted_sensitivity %&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#   filter(duration == 48)</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># saveRDS(predictions_ML_duration48h,</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#   here(&quot;data/2_predicted_sensitivity/predictions_ML_duration48h.rds&quot;)</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co"># )</span></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>predictions_ML_duration48h <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>  <span class="fu">here</span>(<span class="st">&quot;data/2_predicted_sensitivity/predictions_ML_duration48h.rds&quot;</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>)</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>prediction_summary <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(predictions_ML_duration48h),</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(predictions_ML_duration48h<span class="sc">$</span>species),</span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(predictions_ML_duration48h<span class="sc">$</span>CAS)</span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>)</span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="fu">kable</span>(prediction_summary)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>predicted_sensitivity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data/2_predicted_sensitivity/predictions.csv&quot;</span>))</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>prediction_summary <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(predicted_sensitivity),</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(predicted_sensitivity<span class="sc">$</span>species),</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(predicted_sensitivity<span class="sc">$</span>CAS),</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>  <span class="at">n_duration =</span> <span class="fu">n_distinct</span>(predicted_sensitivity<span class="sc">$</span>duration)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="fu">kable</span>(prediction_summary)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="right">n_rows</th>
 <th align="right">n_species</th>
 <th align="right">n_CAS</th>
+<th align="right">n_duration</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">5097162</td>
+<td align="right">20388648</td>
 <td align="right">1546</td>
 <td align="right">3297</td>
+<td align="right">4</td>
 </tr>
 </tbody>
 </table>
@@ -1862,7 +1856,7 @@ target-control interpretation were retained.</p>
 <p>The final chemical-use groups are industrial chemicals,
 pharmaceuticals, arthropod-control pesticides, plant-control pesticides,
 microbial-control pesticides, and mixed-target pesticides.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>sensitivity_subCAS <span class="ot">&lt;-</span> predictions_ML_duration48h <span class="sc">%&gt;%</span></span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>sensitivity_subCAS <span class="ot">&lt;-</span> predicted_sensitivity <span class="sc">%&gt;%</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>  <span class="fu">filter</span>(CAS <span class="sc">%in%</span> chem_groups_source<span class="sc">$</span>CAS) <span class="sc">%&gt;%</span></span>
 <span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
 <span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>    chem_groups_source <span class="sc">%&gt;%</span></span>
@@ -1890,7 +1884,7 @@ microbial-control pesticides, and mixed-target pesticides.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">1705238</td>
+<td align="right">6820952</td>
 <td align="right">1546</td>
 <td align="right">1103</td>
 <td align="right">6</td>
@@ -2018,10 +2012,10 @@ chemical, and chemical-use group, the mean predicted value is used.</p>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>sensitivity_subCAS_filter <span class="ot">&lt;-</span> dt[</span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>  latin <span class="sc">%in%</span> spe_tax_clean_tree_mass_FFG<span class="sc">$</span>latin,</span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  .(</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>    <span class="at">predicted =</span> <span class="fu">mean</span>(predicted, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>    <span class="at">predicted =</span> <span class="fu">first</span>(predicted),</span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>    <span class="at">species =</span> <span class="fu">first</span>(species)</span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>  ),</span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>  by <span class="ot">=</span> .(latin, CAS, chem_group)</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>  by <span class="ot">=</span> .(latin, CAS, chem_group, duration)</span>
 <span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a>] <span class="sc">%&gt;%</span></span>
 <span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a>  <span class="fu">as_tibble</span>()</span>
 <span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a></span>
@@ -2029,24 +2023,27 @@ chemical, and chemical-use group, the mean predicted value is used.</p>
 <span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(sensitivity_subCAS_filter),</span>
 <span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(sensitivity_subCAS_filter<span class="sc">$</span>latin),</span>
 <span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(sensitivity_subCAS_filter<span class="sc">$</span>CAS),</span>
-<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>  <span class="at">n_chem_groups =</span> <span class="fu">n_distinct</span>(sensitivity_subCAS_filter<span class="sc">$</span>chem_group)</span>
-<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>)</span>
-<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a><span class="fu">kable</span>(filtered_prediction_summary)</span></code></pre></div>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>  <span class="at">n_duration =</span> <span class="fu">n_distinct</span>(sensitivity_subCAS_filter<span class="sc">$</span>duration),</span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a>  <span class="at">n_chem_groups =</span> <span class="fu">n_distinct</span>(sensitivity_subCAS_filter<span class="sc">$</span>chem_group)</span>
+<span id="cb9-19"><a href="#cb9-19" tabindex="-1"></a>)</span>
+<span id="cb9-20"><a href="#cb9-20" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" tabindex="-1"></a><span class="fu">kable</span>(filtered_prediction_summary)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="right">n_rows</th>
 <th align="right">n_species</th>
 <th align="right">n_CAS</th>
+<th align="right">n_duration</th>
 <th align="right">n_chem_groups</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right">639740</td>
+<td align="right">2558960</td>
 <td align="right">580</td>
 <td align="right">1103</td>
+<td align="right">4</td>
 <td align="right">6</td>
 </tr>
 </tbody>
@@ -2065,15 +2062,28 @@ chemical, and chemical-use group, the mean predicted value is used.</p>
 <span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>predicted)</span>
 <span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a></span>
-<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>combined_summary <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(spe_tax_clean_tree_mass_FFG_sens),</span>
-<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>latin),</span>
-<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a>  <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>genus),</span>
-<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>CAS),</span>
-<span id="cb10-17"><a href="#cb10-17" tabindex="-1"></a>  <span class="at">n_chem_groups =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>chem_group)</span>
-<span id="cb10-18"><a href="#cb10-18" tabindex="-1"></a>)</span>
-<span id="cb10-19"><a href="#cb10-19" tabindex="-1"></a></span>
-<span id="cb10-20"><a href="#cb10-20" tabindex="-1"></a><span class="fu">kable</span>(combined_summary)</span></code></pre></div>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="co"># for algae use duration= 72 h, for fish and invertebrate use duration = 96 h</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a><span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>group)</span></code></pre></div>
+<pre><code>## [1] &quot;algae&quot;        &quot;fish&quot;         &quot;invertebrate&quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>    duration <span class="sc">==</span> <span class="fu">case_when</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;algae&quot;</span> <span class="sc">~</span> <span class="dv">72</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>      group <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;invertebrate&quot;</span>, <span class="st">&quot;fish&quot;</span>) <span class="sc">~</span> <span class="dv">96</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>    )</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>  )</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>duration)</span></code></pre></div>
+<pre><code>## [1] 72 96</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>combined_summary <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(spe_tax_clean_tree_mass_FFG_sens),</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>latin),</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>  <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>genus),</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>CAS),</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>  <span class="at">n_chem_groups =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>chem_group)</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>)</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="fu">kable</span>(combined_summary)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2100,43 +2110,43 @@ chemical, and chemical-use group, the mean predicted value is used.</p>
 analysis. Invertebrate groups are prefixed with <code>I_</code>, fish
 groups are prefixed with <code>F_</code>, and arthropod invertebrates
 are additionally marked with <code>_A</code>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="at">FG3 =</span> <span class="fu">case_when</span>(</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;algae&quot;</span> <span class="sc">~</span> FG2,</span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;invertebrate&quot;</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">&quot;I_&quot;</span>, FG2),</span>
-<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;fish&quot;</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">&quot;F_&quot;</span>, FG2),</span>
-<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> FG2</span>
-<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    ),</span>
-<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_replace_all</span>(FG3, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s*,</span><span class="sc">\\</span><span class="st">s*&quot;</span>, <span class="st">&quot;,&quot;</span>)</span>
-<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>  <span class="fu">separate_rows</span>(FG4, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_trim</span>(FG4),</span>
-<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">if_else</span>(</span>
-<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;invertebrate&quot;</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">str_starts</span>(FG4, <span class="st">&quot;I_&quot;</span>),</span>
-<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="st">&quot;I_&quot;</span>, FG4),</span>
-<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a>      FG4</span>
-<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>    ),</span>
-<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">if_else</span>(</span>
-<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;fish&quot;</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">str_starts</span>(FG4, <span class="st">&quot;F_&quot;</span>),</span>
-<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="st">&quot;F_&quot;</span>, FG4),</span>
-<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a>      FG4</span>
-<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a>    ),</span>
-<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_replace_all</span>(FG4, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s*/</span><span class="sc">\\</span><span class="st">s*&quot;</span>, <span class="st">&quot;_&quot;</span>),</span>
-<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_squish</span>(FG4),</span>
-<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">if_else</span>(</span>
-<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a>      FG4 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;F_Detritivore_Herbivore&quot;</span>, <span class="st">&quot;F_Herbivore&quot;</span>, <span class="st">&quot;F_Detritivore&quot;</span>),</span>
-<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a>      <span class="st">&quot;F_Detritivore_Herbivore&quot;</span>,</span>
-<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a>      FG4</span>
-<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a>    ),</span>
-<span id="cb11-31"><a href="#cb11-31" tabindex="-1"></a>    <span class="at">FFG =</span> <span class="fu">if_else</span>(</span>
-<span id="cb11-32"><a href="#cb11-32" tabindex="-1"></a>      phylum <span class="sc">==</span> <span class="st">&quot;arthropoda&quot;</span>,</span>
-<span id="cb11-33"><a href="#cb11-33" tabindex="-1"></a>      <span class="fu">paste0</span>(FG4, <span class="st">&quot;_A&quot;</span>),</span>
-<span id="cb11-34"><a href="#cb11-34" tabindex="-1"></a>      FG4</span>
-<span id="cb11-35"><a href="#cb11-35" tabindex="-1"></a>    )</span>
-<span id="cb11-36"><a href="#cb11-36" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb11-37"><a href="#cb11-37" tabindex="-1"></a>  <span class="fu">distinct</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="at">FG3 =</span> <span class="fu">case_when</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;algae&quot;</span> <span class="sc">~</span> FG2,</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;invertebrate&quot;</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">&quot;I_&quot;</span>, FG2),</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;fish&quot;</span> <span class="sc">~</span> <span class="fu">paste0</span>(<span class="st">&quot;F_&quot;</span>, FG2),</span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> FG2</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>    ),</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_replace_all</span>(FG3, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s*,</span><span class="sc">\\</span><span class="st">s*&quot;</span>, <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a>  <span class="fu">separate_rows</span>(FG4, <span class="at">sep =</span> <span class="st">&quot;,&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-12"><a href="#cb15-12" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-13"><a href="#cb15-13" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_trim</span>(FG4),</span>
+<span id="cb15-14"><a href="#cb15-14" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">if_else</span>(</span>
+<span id="cb15-15"><a href="#cb15-15" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;invertebrate&quot;</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">str_starts</span>(FG4, <span class="st">&quot;I_&quot;</span>),</span>
+<span id="cb15-16"><a href="#cb15-16" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="st">&quot;I_&quot;</span>, FG4),</span>
+<span id="cb15-17"><a href="#cb15-17" tabindex="-1"></a>      FG4</span>
+<span id="cb15-18"><a href="#cb15-18" tabindex="-1"></a>    ),</span>
+<span id="cb15-19"><a href="#cb15-19" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">if_else</span>(</span>
+<span id="cb15-20"><a href="#cb15-20" tabindex="-1"></a>      group <span class="sc">==</span> <span class="st">&quot;fish&quot;</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">str_starts</span>(FG4, <span class="st">&quot;F_&quot;</span>),</span>
+<span id="cb15-21"><a href="#cb15-21" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="st">&quot;F_&quot;</span>, FG4),</span>
+<span id="cb15-22"><a href="#cb15-22" tabindex="-1"></a>      FG4</span>
+<span id="cb15-23"><a href="#cb15-23" tabindex="-1"></a>    ),</span>
+<span id="cb15-24"><a href="#cb15-24" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_replace_all</span>(FG4, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">s*/</span><span class="sc">\\</span><span class="st">s*&quot;</span>, <span class="st">&quot;_&quot;</span>),</span>
+<span id="cb15-25"><a href="#cb15-25" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">str_squish</span>(FG4),</span>
+<span id="cb15-26"><a href="#cb15-26" tabindex="-1"></a>    <span class="at">FG4 =</span> <span class="fu">if_else</span>(</span>
+<span id="cb15-27"><a href="#cb15-27" tabindex="-1"></a>      FG4 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;F_Detritivore_Herbivore&quot;</span>, <span class="st">&quot;F_Herbivore&quot;</span>, <span class="st">&quot;F_Detritivore&quot;</span>),</span>
+<span id="cb15-28"><a href="#cb15-28" tabindex="-1"></a>      <span class="st">&quot;F_Detritivore_Herbivore&quot;</span>,</span>
+<span id="cb15-29"><a href="#cb15-29" tabindex="-1"></a>      FG4</span>
+<span id="cb15-30"><a href="#cb15-30" tabindex="-1"></a>    ),</span>
+<span id="cb15-31"><a href="#cb15-31" tabindex="-1"></a>    <span class="at">FFG =</span> <span class="fu">if_else</span>(</span>
+<span id="cb15-32"><a href="#cb15-32" tabindex="-1"></a>      phylum <span class="sc">==</span> <span class="st">&quot;arthropoda&quot;</span>,</span>
+<span id="cb15-33"><a href="#cb15-33" tabindex="-1"></a>      <span class="fu">paste0</span>(FG4, <span class="st">&quot;_A&quot;</span>),</span>
+<span id="cb15-34"><a href="#cb15-34" tabindex="-1"></a>      FG4</span>
+<span id="cb15-35"><a href="#cb15-35" tabindex="-1"></a>    )</span>
+<span id="cb15-36"><a href="#cb15-36" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb15-37"><a href="#cb15-37" tabindex="-1"></a>  <span class="fu">distinct</span>()</span></code></pre></div>
 </div>
 <div id="calculate-relative-sensitivity" class="section level2">
 <h2>4.2 Calculate relative sensitivity</h2>
@@ -2147,39 +2157,39 @@ sensitivity is calculated as the ratio between each species’ predicted
 sensitivity and the predicted sensitivity of <em>Daphnia magna</em> for
 the same chemical. The response variable is the log10-transformed
 relative sensitivity.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>ref_sensitivity <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">filter</span>(latin <span class="sc">==</span> <span class="st">&quot;daphnia magna&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">distinct</span>(latin, CAS, chem_group, sensi) <span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">group_by</span>(CAS) <span class="sc">%&gt;%</span></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>    <span class="at">ref_sensi =</span> <span class="fu">mean</span>(sensi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>  )</span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>  <span class="fu">left_join</span>(ref_sensitivity, <span class="at">by =</span> <span class="st">&quot;CAS&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a>    <span class="at">rel_sensi =</span> sensi <span class="sc">/</span> ref_sensi,</span>
-<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a>    <span class="at">log_rel_sensi =</span> <span class="fu">log10</span>(rel_sensi)</span>
-<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a>  )</span>
-<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a>n_missing_reference <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>ref_sensi))</span>
-<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
-<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
-<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(log_mass),</span>
-<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(log_rel_sensi),</span>
-<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a>    <span class="fu">is.finite</span>(log_rel_sensi)</span>
-<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a>  )</span>
-<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a></span>
-<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a>relative_sensitivity_summary <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(spe_tax_clean_tree_mass_FFG_sens),</span>
-<span id="cb12-28"><a href="#cb12-28" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>latin),</span>
-<span id="cb12-29"><a href="#cb12-29" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>CAS),</span>
-<span id="cb12-30"><a href="#cb12-30" tabindex="-1"></a>  <span class="at">n_missing_reference_before_filtering =</span> n_missing_reference</span>
-<span id="cb12-31"><a href="#cb12-31" tabindex="-1"></a>)</span>
-<span id="cb12-32"><a href="#cb12-32" tabindex="-1"></a></span>
-<span id="cb12-33"><a href="#cb12-33" tabindex="-1"></a><span class="fu">kable</span>(relative_sensitivity_summary)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>ref_sensitivity <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">filter</span>(latin <span class="sc">==</span> <span class="st">&quot;daphnia magna&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">distinct</span>(latin, CAS, chem_group, sensi) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">group_by</span>(CAS) <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>    <span class="at">ref_sensi =</span> <span class="fu">mean</span>(sensi, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>  )</span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a>  <span class="fu">left_join</span>(ref_sensitivity, <span class="at">by =</span> <span class="st">&quot;CAS&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>    <span class="at">rel_sensi =</span> sensi <span class="sc">/</span> ref_sensi,</span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a>    <span class="at">log_rel_sensi =</span> <span class="fu">log10</span>(rel_sensi)</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a>  )</span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a>n_missing_reference <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>ref_sensi))</span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(log_mass),</span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a>    <span class="sc">!</span><span class="fu">is.na</span>(log_rel_sensi),</span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a>    <span class="fu">is.finite</span>(log_rel_sensi)</span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a>  )</span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a>relative_sensitivity_summary <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a>  <span class="at">n_rows =</span> <span class="fu">nrow</span>(spe_tax_clean_tree_mass_FFG_sens),</span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a>  <span class="at">n_species =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>latin),</span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a>  <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>CAS),</span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a>  <span class="at">n_missing_reference_before_filtering =</span> n_missing_reference</span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a>)</span>
+<span id="cb16-32"><a href="#cb16-32" tabindex="-1"></a></span>
+<span id="cb16-33"><a href="#cb16-33" tabindex="-1"></a><span class="fu">kable</span>(relative_sensitivity_summary)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2202,82 +2212,82 @@ relative sensitivity.</p>
 </div>
 <div id="add-chemical-property-data" class="section level1">
 <h1>5. Add chemical property data</h1>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># read chemical properties data</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>chem_prop <span class="ot">&lt;-</span> <span class="fu">read_lines</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;6_combined_meta_data&quot;</span>, <span class="st">&quot;chemprop_EPI.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="fu">as_tibble_col</span>(<span class="st">&quot;raw_original&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>    <span class="at">raw =</span> raw_original <span class="sc">%&gt;%</span></span>
-<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>      <span class="fu">str_squish</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>      <span class="fu">str_remove</span>(<span class="st">&#39;^&quot;&#39;</span>) <span class="sc">%&gt;%</span>   </span>
-<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>      <span class="fu">str_remove</span>(<span class="st">&#39;&quot;$&#39;</span>)       </span>
-<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>  <span class="fu">extract</span>(</span>
-<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a>    raw,</span>
-<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(</span>
-<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a>      <span class="st">&quot;CAS&quot;</span>,</span>
-<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a>      <span class="st">&quot;water_sol_mg_L&quot;</span>,</span>
-<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>      <span class="st">&quot;log_molar_solubility&quot;</span>,</span>
-<span id="cb13-16"><a href="#cb13-16" tabindex="-1"></a>      <span class="st">&quot;logKow&quot;</span>,</span>
-<span id="cb13-17"><a href="#cb13-17" tabindex="-1"></a>      <span class="st">&quot;chemical_name&quot;</span></span>
-<span id="cb13-18"><a href="#cb13-18" tabindex="-1"></a>    ),</span>
-<span id="cb13-19"><a href="#cb13-19" tabindex="-1"></a>    <span class="at">regex =</span> <span class="st">&quot;^([0-9]{2,7}-[0-9]{2}-[0-9])</span><span class="sc">\\</span><span class="st">s+([0-9.eE+</span><span class="sc">\\</span><span class="st">-]+)</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">(mg/L</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">s+([0-9.eE+</span><span class="sc">\\</span><span class="st">-]+)</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">(log molar</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">s+([0-9.eE+</span><span class="sc">\\</span><span class="st">-]+)</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">(log Kow</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">s+(.+)$&quot;</span>,</span>
-<span id="cb13-20"><a href="#cb13-20" tabindex="-1"></a>    <span class="at">remove =</span> <span class="cn">FALSE</span></span>
-<span id="cb13-21"><a href="#cb13-21" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-22"><a href="#cb13-22" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb13-23"><a href="#cb13-23" tabindex="-1"></a>    <span class="at">water_sol_mg_L =</span> <span class="fu">as.numeric</span>(water_sol_mg_L),</span>
-<span id="cb13-24"><a href="#cb13-24" tabindex="-1"></a>    <span class="at">log_molar_solubility =</span> <span class="fu">as.numeric</span>(log_molar_solubility),</span>
-<span id="cb13-25"><a href="#cb13-25" tabindex="-1"></a>    <span class="at">water_sol_mol_L =</span> <span class="dv">10</span><span class="sc">^</span>log_molar_solubility,</span>
-<span id="cb13-26"><a href="#cb13-26" tabindex="-1"></a>    <span class="at">logKow =</span> <span class="fu">as.numeric</span>(logKow),</span>
-<span id="cb13-27"><a href="#cb13-27" tabindex="-1"></a>    <span class="at">chemical_name =</span> <span class="fu">str_squish</span>(chemical_name),</span>
-<span id="cb13-28"><a href="#cb13-28" tabindex="-1"></a>    <span class="at">CAS =</span> <span class="fu">as.character</span>(CAS),</span>
-<span id="cb13-29"><a href="#cb13-29" tabindex="-1"></a>    <span class="at">CAS =</span> <span class="fu">str_remove</span>(CAS, <span class="st">&quot;^0+&quot;</span>) <span class="co"># Remove leading zeros from CAS numbers</span></span>
-<span id="cb13-30"><a href="#cb13-30" tabindex="-1"></a>  ) </span>
-<span id="cb13-31"><a href="#cb13-31" tabindex="-1"></a></span>
-<span id="cb13-32"><a href="#cb13-32" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(chem_prop<span class="sc">$</span>log_molar_solubility)) <span class="co">#65</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="co"># read chemical properties data</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>chem_prop <span class="ot">&lt;-</span> <span class="fu">read_lines</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;6_combined_meta_data&quot;</span>, <span class="st">&quot;chemprop_EPI.csv&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="fu">as_tibble_col</span>(<span class="st">&quot;raw_original&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>    <span class="at">raw =</span> raw_original <span class="sc">%&gt;%</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>      <span class="fu">str_squish</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>      <span class="fu">str_remove</span>(<span class="st">&#39;^&quot;&#39;</span>) <span class="sc">%&gt;%</span>   </span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>      <span class="fu">str_remove</span>(<span class="st">&#39;&quot;$&#39;</span>)       </span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>  <span class="fu">extract</span>(</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>    raw,</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(</span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>      <span class="st">&quot;CAS&quot;</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>      <span class="st">&quot;water_sol_mg_L&quot;</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>      <span class="st">&quot;log_molar_solubility&quot;</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a>      <span class="st">&quot;logKow&quot;</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a>      <span class="st">&quot;chemical_name&quot;</span></span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a>    ),</span>
+<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a>    <span class="at">regex =</span> <span class="st">&quot;^([0-9]{2,7}-[0-9]{2}-[0-9])</span><span class="sc">\\</span><span class="st">s+([0-9.eE+</span><span class="sc">\\</span><span class="st">-]+)</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">(mg/L</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">s+([0-9.eE+</span><span class="sc">\\</span><span class="st">-]+)</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">(log molar</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">s+([0-9.eE+</span><span class="sc">\\</span><span class="st">-]+)</span><span class="sc">\\</span><span class="st">s+</span><span class="sc">\\</span><span class="st">(log Kow</span><span class="sc">\\</span><span class="st">)</span><span class="sc">\\</span><span class="st">s+(.+)$&quot;</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a>    <span class="at">remove =</span> <span class="cn">FALSE</span></span>
+<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-22"><a href="#cb17-22" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb17-23"><a href="#cb17-23" tabindex="-1"></a>    <span class="at">water_sol_mg_L =</span> <span class="fu">as.numeric</span>(water_sol_mg_L),</span>
+<span id="cb17-24"><a href="#cb17-24" tabindex="-1"></a>    <span class="at">log_molar_solubility =</span> <span class="fu">as.numeric</span>(log_molar_solubility),</span>
+<span id="cb17-25"><a href="#cb17-25" tabindex="-1"></a>    <span class="at">water_sol_mol_L =</span> <span class="dv">10</span><span class="sc">^</span>log_molar_solubility,</span>
+<span id="cb17-26"><a href="#cb17-26" tabindex="-1"></a>    <span class="at">logKow =</span> <span class="fu">as.numeric</span>(logKow),</span>
+<span id="cb17-27"><a href="#cb17-27" tabindex="-1"></a>    <span class="at">chemical_name =</span> <span class="fu">str_squish</span>(chemical_name),</span>
+<span id="cb17-28"><a href="#cb17-28" tabindex="-1"></a>    <span class="at">CAS =</span> <span class="fu">as.character</span>(CAS),</span>
+<span id="cb17-29"><a href="#cb17-29" tabindex="-1"></a>    <span class="at">CAS =</span> <span class="fu">str_remove</span>(CAS, <span class="st">&quot;^0+&quot;</span>) <span class="co"># Remove leading zeros from CAS numbers</span></span>
+<span id="cb17-30"><a href="#cb17-30" tabindex="-1"></a>  ) </span>
+<span id="cb17-31"><a href="#cb17-31" tabindex="-1"></a></span>
+<span id="cb17-32"><a href="#cb17-32" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(chem_prop<span class="sc">$</span>log_molar_solubility)) <span class="co">#65</span></span></code></pre></div>
 <pre><code>## [1] 65</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens_ws <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CAS =</span> <span class="fu">as.character</span>(CAS)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>  <span class="fu">left_join</span>(chem_prop <span class="sc">%&gt;%</span> <span class="fu">select</span>(CAS, log_molar_solubility, logKow), <span class="at">by =</span> <span class="st">&quot;CAS&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>spe_tax_clean_tree_mass_FFG_sens_ws <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens <span class="sc">%&gt;%</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CAS =</span> <span class="fu">as.character</span>(CAS)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>  <span class="fu">left_join</span>(chem_prop <span class="sc">%&gt;%</span> <span class="fu">select</span>(CAS, log_molar_solubility, logKow), <span class="at">by =</span> <span class="st">&quot;CAS&quot;</span>) </span></code></pre></div>
 <p>Current data summary</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>CAS)) <span class="co"># 1103</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>CAS)) <span class="co"># 1103</span></span></code></pre></div>
 <pre><code>## [1] 1103</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>latin)) <span class="co"># 580</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>latin)) <span class="co"># 580</span></span></code></pre></div>
 <pre><code>## [1] 580</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>genus)) <span class="co"># 320</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>genus)) <span class="co"># 320</span></span></code></pre></div>
 <pre><code>## [1] 320</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>group)) <span class="co"># 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens_ws<span class="sc">$</span>group)) <span class="co"># 3</span></span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 </div>
 <div id="prepare-full-meta-data-for-downstream-analysis" class="section level1">
 <h1>6. Prepare full meta data for downstream analysis</h1>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a>full_meta_data <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens_ws <span class="sc">%&gt;%</span></span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>  <span class="fu">select</span>(chem_group, CAS, log_molar_solubility, logKow, latin, genus,</span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>         family, order, class, phylum, kingdom, group, log_mass, BMsource,</span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>         BM_match_level, FFG, FG_source, </span>
-<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a>         ref_sensi, rel_sensi, log_rel_sensi) <span class="sc">%&gt;%</span></span>
-<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">FFG_source =</span> FG_source,</span>
-<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a>         <span class="at">tax_group =</span> group)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>full_meta_data <span class="ot">&lt;-</span> spe_tax_clean_tree_mass_FFG_sens_ws <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>  <span class="fu">select</span>(chem_group, CAS, log_molar_solubility, logKow, latin, genus,</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>         family, order, class, phylum, kingdom, group, log_mass, BMsource,</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>         BM_match_level, FFG, FG_source, </span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a>         ref_sensi, log_sensi, rel_sensi, log_rel_sensi, duration) <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="#cb28-6" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">FFG_source =</span> FG_source,</span>
+<span id="cb28-7"><a href="#cb28-7" tabindex="-1"></a>         <span class="at">tax_group =</span> group)</span></code></pre></div>
 </div>
 <div id="check-alignment-between-phylogeny-tree-and-meta-data" class="section level1">
 <h1>7. Check alignment between phylogeny tree and meta data</h1>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>full_tree <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data/full_genus_tree.rds&quot;</span>))</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>full_tree_check <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>  <span class="at">item =</span> <span class="fu">c</span>(</span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>    <span class="st">&quot;n_genus_in_dataset&quot;</span>,</span>
-<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>    <span class="st">&quot;n_tips_in_full_tree&quot;</span>,</span>
-<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>    <span class="st">&quot;genus_in_tree_not_dataset&quot;</span>,</span>
-<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>    <span class="st">&quot;genus_in_dataset_not_tree&quot;</span></span>
-<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>  ),</span>
-<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(</span>
-<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a>    <span class="fu">n_distinct</span>(full_meta_data<span class="sc">$</span>genus),</span>
-<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>    <span class="fu">length</span>(full_tree<span class="sc">$</span>tip.label),</span>
-<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a>    <span class="fu">length</span>(<span class="fu">setdiff</span>(full_tree<span class="sc">$</span>tip.label, <span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>genus))),</span>
-<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a>    <span class="fu">length</span>(<span class="fu">setdiff</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>genus), full_tree<span class="sc">$</span>tip.label))</span>
-<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a>  )</span>
-<span id="cb25-16"><a href="#cb25-16" tabindex="-1"></a>)</span>
-<span id="cb25-17"><a href="#cb25-17" tabindex="-1"></a></span>
-<span id="cb25-18"><a href="#cb25-18" tabindex="-1"></a><span class="fu">kable</span>(full_tree_check)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>full_tree <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data/full_genus_tree.rds&quot;</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>full_tree_check <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>  <span class="at">item =</span> <span class="fu">c</span>(</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a>    <span class="st">&quot;n_genus_in_dataset&quot;</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" tabindex="-1"></a>    <span class="st">&quot;n_tips_in_full_tree&quot;</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" tabindex="-1"></a>    <span class="st">&quot;genus_in_tree_not_dataset&quot;</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" tabindex="-1"></a>    <span class="st">&quot;genus_in_dataset_not_tree&quot;</span></span>
+<span id="cb29-9"><a href="#cb29-9" tabindex="-1"></a>  ),</span>
+<span id="cb29-10"><a href="#cb29-10" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(</span>
+<span id="cb29-11"><a href="#cb29-11" tabindex="-1"></a>    <span class="fu">n_distinct</span>(full_meta_data<span class="sc">$</span>genus),</span>
+<span id="cb29-12"><a href="#cb29-12" tabindex="-1"></a>    <span class="fu">length</span>(full_tree<span class="sc">$</span>tip.label),</span>
+<span id="cb29-13"><a href="#cb29-13" tabindex="-1"></a>    <span class="fu">length</span>(<span class="fu">setdiff</span>(full_tree<span class="sc">$</span>tip.label, <span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>genus))),</span>
+<span id="cb29-14"><a href="#cb29-14" tabindex="-1"></a>    <span class="fu">length</span>(<span class="fu">setdiff</span>(<span class="fu">unique</span>(spe_tax_clean_tree_mass_FFG_sens<span class="sc">$</span>genus), full_tree<span class="sc">$</span>tip.label))</span>
+<span id="cb29-15"><a href="#cb29-15" tabindex="-1"></a>  )</span>
+<span id="cb29-16"><a href="#cb29-16" tabindex="-1"></a>)</span>
+<span id="cb29-17"><a href="#cb29-17" tabindex="-1"></a></span>
+<span id="cb29-18"><a href="#cb29-18" tabindex="-1"></a><span class="fu">kable</span>(full_tree_check)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -2308,65 +2318,65 @@ relative sensitivity.</p>
 <div id="save-full-metadata-and-taxon-specific-metadata-for-downstream-analysis" class="section level1">
 <h1>8. Save full metadata and taxon-specific metadata for downstream
 analysis</h1>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">saveRDS</span>(</span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  full_meta_data,</span>
-<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>  <span class="at">file =</span> <span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data/full_meta_data.rds&quot;</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a>save_taxon_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, taxon, tree_file, output_file) {</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>  </span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>  dat_taxon <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>    <span class="fu">filter</span>(tax_group <span class="sc">==</span> taxon)</span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a>  </span>
-<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>  genus_tree <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data&quot;</span>, tree_file))</span>
-<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a>  </span>
-<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a>  check_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a>    <span class="at">group =</span> taxon,</span>
-<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a>    <span class="at">n_rows =</span> <span class="fu">nrow</span>(dat_taxon),</span>
-<span id="cb27-11"><a href="#cb27-11" tabindex="-1"></a>    <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>CAS),</span>
-<span id="cb27-12"><a href="#cb27-12" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>latin),</span>
-<span id="cb27-13"><a href="#cb27-13" tabindex="-1"></a>    <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>genus),</span>
-<span id="cb27-14"><a href="#cb27-14" tabindex="-1"></a>    <span class="at">n_FFG =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>FFG),</span>
-<span id="cb27-15"><a href="#cb27-15" tabindex="-1"></a>    <span class="at">n_tree_tips =</span> <span class="fu">length</span>(genus_tree<span class="sc">$</span>tip.label),</span>
-<span id="cb27-16"><a href="#cb27-16" tabindex="-1"></a>    <span class="at">genus_in_tree_not_dataset =</span> <span class="fu">length</span>(<span class="fu">setdiff</span>(genus_tree<span class="sc">$</span>tip.label, <span class="fu">unique</span>(dat_taxon<span class="sc">$</span>genus))),</span>
-<span id="cb27-17"><a href="#cb27-17" tabindex="-1"></a>    <span class="at">genus_in_dataset_not_tree =</span> <span class="fu">length</span>(<span class="fu">setdiff</span>(<span class="fu">unique</span>(dat_taxon<span class="sc">$</span>genus), genus_tree<span class="sc">$</span>tip.label))</span>
-<span id="cb27-18"><a href="#cb27-18" tabindex="-1"></a>  )</span>
-<span id="cb27-19"><a href="#cb27-19" tabindex="-1"></a>  </span>
-<span id="cb27-20"><a href="#cb27-20" tabindex="-1"></a>  <span class="fu">saveRDS</span>(</span>
-<span id="cb27-21"><a href="#cb27-21" tabindex="-1"></a>    dat_taxon,</span>
-<span id="cb27-22"><a href="#cb27-22" tabindex="-1"></a>    <span class="at">file =</span> <span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data&quot;</span>, output_file)</span>
-<span id="cb27-23"><a href="#cb27-23" tabindex="-1"></a>  )</span>
-<span id="cb27-24"><a href="#cb27-24" tabindex="-1"></a>  </span>
-<span id="cb27-25"><a href="#cb27-25" tabindex="-1"></a>  check_tbl</span>
-<span id="cb27-26"><a href="#cb27-26" tabindex="-1"></a>}</span>
-<span id="cb27-27"><a href="#cb27-27" tabindex="-1"></a></span>
-<span id="cb27-28"><a href="#cb27-28" tabindex="-1"></a>algae_check <span class="ot">&lt;-</span> <span class="fu">save_taxon_dataset</span>(</span>
-<span id="cb27-29"><a href="#cb27-29" tabindex="-1"></a>  <span class="at">dat =</span> full_meta_data,</span>
-<span id="cb27-30"><a href="#cb27-30" tabindex="-1"></a>  <span class="at">taxon =</span> <span class="st">&quot;algae&quot;</span>,</span>
-<span id="cb27-31"><a href="#cb27-31" tabindex="-1"></a>  <span class="at">tree_file =</span> <span class="st">&quot;algae_genus_tree.rds&quot;</span>,</span>
-<span id="cb27-32"><a href="#cb27-32" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;algae_meta_data.rds&quot;</span></span>
-<span id="cb27-33"><a href="#cb27-33" tabindex="-1"></a>)</span>
-<span id="cb27-34"><a href="#cb27-34" tabindex="-1"></a></span>
-<span id="cb27-35"><a href="#cb27-35" tabindex="-1"></a>invertebrate_check <span class="ot">&lt;-</span> <span class="fu">save_taxon_dataset</span>(</span>
-<span id="cb27-36"><a href="#cb27-36" tabindex="-1"></a>  <span class="at">dat =</span> full_meta_data,</span>
-<span id="cb27-37"><a href="#cb27-37" tabindex="-1"></a>  <span class="at">taxon =</span> <span class="st">&quot;invertebrate&quot;</span>,</span>
-<span id="cb27-38"><a href="#cb27-38" tabindex="-1"></a>  <span class="at">tree_file =</span> <span class="st">&quot;invertebrate_genus_tree.rds&quot;</span>,</span>
-<span id="cb27-39"><a href="#cb27-39" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;invertebrate_meta_data.rds&quot;</span></span>
-<span id="cb27-40"><a href="#cb27-40" tabindex="-1"></a>)</span>
-<span id="cb27-41"><a href="#cb27-41" tabindex="-1"></a></span>
-<span id="cb27-42"><a href="#cb27-42" tabindex="-1"></a>fish_check <span class="ot">&lt;-</span> <span class="fu">save_taxon_dataset</span>(</span>
-<span id="cb27-43"><a href="#cb27-43" tabindex="-1"></a>  <span class="at">dat =</span> full_meta_data,</span>
-<span id="cb27-44"><a href="#cb27-44" tabindex="-1"></a>  <span class="at">taxon =</span> <span class="st">&quot;fish&quot;</span>,</span>
-<span id="cb27-45"><a href="#cb27-45" tabindex="-1"></a>  <span class="at">tree_file =</span> <span class="st">&quot;fish_genus_tree.rds&quot;</span>,</span>
-<span id="cb27-46"><a href="#cb27-46" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;fish_meta_data.rds&quot;</span></span>
-<span id="cb27-47"><a href="#cb27-47" tabindex="-1"></a>)</span>
-<span id="cb27-48"><a href="#cb27-48" tabindex="-1"></a></span>
-<span id="cb27-49"><a href="#cb27-49" tabindex="-1"></a>taxon_output_summary <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb27-50"><a href="#cb27-50" tabindex="-1"></a>  algae_check,</span>
-<span id="cb27-51"><a href="#cb27-51" tabindex="-1"></a>  invertebrate_check,</span>
-<span id="cb27-52"><a href="#cb27-52" tabindex="-1"></a>  fish_check</span>
-<span id="cb27-53"><a href="#cb27-53" tabindex="-1"></a>)</span>
-<span id="cb27-54"><a href="#cb27-54" tabindex="-1"></a></span>
-<span id="cb27-55"><a href="#cb27-55" tabindex="-1"></a><span class="fu">kable</span>(taxon_output_summary)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="fu">saveRDS</span>(</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>  full_meta_data,</span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>  <span class="at">file =</span> <span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data/full_meta_data.rds&quot;</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>save_taxon_dataset <span class="ot">&lt;-</span> <span class="cf">function</span>(dat, taxon, tree_file, output_file) {</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>  </span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>  dat_taxon <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a>    <span class="fu">filter</span>(tax_group <span class="sc">==</span> taxon)</span>
+<span id="cb31-5"><a href="#cb31-5" tabindex="-1"></a>  </span>
+<span id="cb31-6"><a href="#cb31-6" tabindex="-1"></a>  genus_tree <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data&quot;</span>, tree_file))</span>
+<span id="cb31-7"><a href="#cb31-7" tabindex="-1"></a>  </span>
+<span id="cb31-8"><a href="#cb31-8" tabindex="-1"></a>  check_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb31-9"><a href="#cb31-9" tabindex="-1"></a>    <span class="at">group =</span> taxon,</span>
+<span id="cb31-10"><a href="#cb31-10" tabindex="-1"></a>    <span class="at">n_rows =</span> <span class="fu">nrow</span>(dat_taxon),</span>
+<span id="cb31-11"><a href="#cb31-11" tabindex="-1"></a>    <span class="at">n_CAS =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>CAS),</span>
+<span id="cb31-12"><a href="#cb31-12" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>latin),</span>
+<span id="cb31-13"><a href="#cb31-13" tabindex="-1"></a>    <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>genus),</span>
+<span id="cb31-14"><a href="#cb31-14" tabindex="-1"></a>    <span class="at">n_FFG =</span> <span class="fu">n_distinct</span>(dat_taxon<span class="sc">$</span>FFG),</span>
+<span id="cb31-15"><a href="#cb31-15" tabindex="-1"></a>    <span class="at">n_tree_tips =</span> <span class="fu">length</span>(genus_tree<span class="sc">$</span>tip.label),</span>
+<span id="cb31-16"><a href="#cb31-16" tabindex="-1"></a>    <span class="at">genus_in_tree_not_dataset =</span> <span class="fu">length</span>(<span class="fu">setdiff</span>(genus_tree<span class="sc">$</span>tip.label, <span class="fu">unique</span>(dat_taxon<span class="sc">$</span>genus))),</span>
+<span id="cb31-17"><a href="#cb31-17" tabindex="-1"></a>    <span class="at">genus_in_dataset_not_tree =</span> <span class="fu">length</span>(<span class="fu">setdiff</span>(<span class="fu">unique</span>(dat_taxon<span class="sc">$</span>genus), genus_tree<span class="sc">$</span>tip.label))</span>
+<span id="cb31-18"><a href="#cb31-18" tabindex="-1"></a>  )</span>
+<span id="cb31-19"><a href="#cb31-19" tabindex="-1"></a>  </span>
+<span id="cb31-20"><a href="#cb31-20" tabindex="-1"></a>  <span class="fu">saveRDS</span>(</span>
+<span id="cb31-21"><a href="#cb31-21" tabindex="-1"></a>    dat_taxon,</span>
+<span id="cb31-22"><a href="#cb31-22" tabindex="-1"></a>    <span class="at">file =</span> <span class="fu">here</span>(<span class="st">&quot;data/6_combined_meta_data&quot;</span>, output_file)</span>
+<span id="cb31-23"><a href="#cb31-23" tabindex="-1"></a>  )</span>
+<span id="cb31-24"><a href="#cb31-24" tabindex="-1"></a>  </span>
+<span id="cb31-25"><a href="#cb31-25" tabindex="-1"></a>  check_tbl</span>
+<span id="cb31-26"><a href="#cb31-26" tabindex="-1"></a>}</span>
+<span id="cb31-27"><a href="#cb31-27" tabindex="-1"></a></span>
+<span id="cb31-28"><a href="#cb31-28" tabindex="-1"></a>algae_check <span class="ot">&lt;-</span> <span class="fu">save_taxon_dataset</span>(</span>
+<span id="cb31-29"><a href="#cb31-29" tabindex="-1"></a>  <span class="at">dat =</span> full_meta_data,</span>
+<span id="cb31-30"><a href="#cb31-30" tabindex="-1"></a>  <span class="at">taxon =</span> <span class="st">&quot;algae&quot;</span>,</span>
+<span id="cb31-31"><a href="#cb31-31" tabindex="-1"></a>  <span class="at">tree_file =</span> <span class="st">&quot;algae_genus_tree.rds&quot;</span>,</span>
+<span id="cb31-32"><a href="#cb31-32" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;algae_meta_data.rds&quot;</span></span>
+<span id="cb31-33"><a href="#cb31-33" tabindex="-1"></a>)</span>
+<span id="cb31-34"><a href="#cb31-34" tabindex="-1"></a></span>
+<span id="cb31-35"><a href="#cb31-35" tabindex="-1"></a>invertebrate_check <span class="ot">&lt;-</span> <span class="fu">save_taxon_dataset</span>(</span>
+<span id="cb31-36"><a href="#cb31-36" tabindex="-1"></a>  <span class="at">dat =</span> full_meta_data,</span>
+<span id="cb31-37"><a href="#cb31-37" tabindex="-1"></a>  <span class="at">taxon =</span> <span class="st">&quot;invertebrate&quot;</span>,</span>
+<span id="cb31-38"><a href="#cb31-38" tabindex="-1"></a>  <span class="at">tree_file =</span> <span class="st">&quot;invertebrate_genus_tree.rds&quot;</span>,</span>
+<span id="cb31-39"><a href="#cb31-39" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;invertebrate_meta_data.rds&quot;</span></span>
+<span id="cb31-40"><a href="#cb31-40" tabindex="-1"></a>)</span>
+<span id="cb31-41"><a href="#cb31-41" tabindex="-1"></a></span>
+<span id="cb31-42"><a href="#cb31-42" tabindex="-1"></a>fish_check <span class="ot">&lt;-</span> <span class="fu">save_taxon_dataset</span>(</span>
+<span id="cb31-43"><a href="#cb31-43" tabindex="-1"></a>  <span class="at">dat =</span> full_meta_data,</span>
+<span id="cb31-44"><a href="#cb31-44" tabindex="-1"></a>  <span class="at">taxon =</span> <span class="st">&quot;fish&quot;</span>,</span>
+<span id="cb31-45"><a href="#cb31-45" tabindex="-1"></a>  <span class="at">tree_file =</span> <span class="st">&quot;fish_genus_tree.rds&quot;</span>,</span>
+<span id="cb31-46"><a href="#cb31-46" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;fish_meta_data.rds&quot;</span></span>
+<span id="cb31-47"><a href="#cb31-47" tabindex="-1"></a>)</span>
+<span id="cb31-48"><a href="#cb31-48" tabindex="-1"></a></span>
+<span id="cb31-49"><a href="#cb31-49" tabindex="-1"></a>taxon_output_summary <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb31-50"><a href="#cb31-50" tabindex="-1"></a>  algae_check,</span>
+<span id="cb31-51"><a href="#cb31-51" tabindex="-1"></a>  invertebrate_check,</span>
+<span id="cb31-52"><a href="#cb31-52" tabindex="-1"></a>  fish_check</span>
+<span id="cb31-53"><a href="#cb31-53" tabindex="-1"></a>)</span>
+<span id="cb31-54"><a href="#cb31-54" tabindex="-1"></a></span>
+<span id="cb31-55"><a href="#cb31-55" tabindex="-1"></a><span class="fu">kable</span>(taxon_output_summary)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="11%" />
@@ -2425,6 +2435,304 @@ analysis</h1>
 <td align="right">102</td>
 <td align="right">0</td>
 <td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dataset-summary" class="section level1">
+<h1>9. Dataset summary</h1>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="co"># Number of species, genera, functional groups, chemicals, species-chemical pairs in the full dataset</span></span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>full_meta_data_summary <span class="ot">&lt;-</span> full_meta_data <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(latin),</span>
+<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a>    <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(genus),</span>
+<span id="cb32-6"><a href="#cb32-6" tabindex="-1"></a>    <span class="at">n_FFG =</span> <span class="fu">n_distinct</span>(FFG, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb32-7"><a href="#cb32-7" tabindex="-1"></a>    <span class="at">n_chemicals =</span> <span class="fu">n_distinct</span>(CAS),</span>
+<span id="cb32-8"><a href="#cb32-8" tabindex="-1"></a>    <span class="at">n_species_chemical_pairs =</span> <span class="fu">n_distinct</span>(latin, CAS)</span>
+<span id="cb32-9"><a href="#cb32-9" tabindex="-1"></a>  )</span>
+<span id="cb32-10"><a href="#cb32-10" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" tabindex="-1"></a><span class="fu">kable</span>(full_meta_data_summary)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">n_species</th>
+<th align="right">n_genus</th>
+<th align="right">n_FFG</th>
+<th align="right">n_chemicals</th>
+<th align="right">n_species_chemical_pairs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">580</td>
+<td align="right">320</td>
+<td align="right">17</td>
+<td align="right">1103</td>
+<td align="right">639740</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="co"># Summary by broad taxonomic group</span></span>
+<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>taxon_meta_data_summary <span class="ot">&lt;-</span> full_meta_data <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a>  <span class="fu">group_by</span>(tax_group) <span class="sc">%&gt;%</span></span>
+<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a>    <span class="at">n_rows =</span> <span class="fu">n</span>(),</span>
+<span id="cb33-6"><a href="#cb33-6" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(latin),</span>
+<span id="cb33-7"><a href="#cb33-7" tabindex="-1"></a>    <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(genus),</span>
+<span id="cb33-8"><a href="#cb33-8" tabindex="-1"></a>    <span class="at">n_FFG =</span> <span class="fu">n_distinct</span>(FFG, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb33-9"><a href="#cb33-9" tabindex="-1"></a>    <span class="at">n_chemicals =</span> <span class="fu">n_distinct</span>(CAS),</span>
+<span id="cb33-10"><a href="#cb33-10" tabindex="-1"></a>    <span class="at">n_species_chemical_pairs =</span> <span class="fu">n_distinct</span>(latin, CAS),</span>
+<span id="cb33-11"><a href="#cb33-11" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb33-12"><a href="#cb33-12" tabindex="-1"></a>  )</span>
+<span id="cb33-13"><a href="#cb33-13" tabindex="-1"></a></span>
+<span id="cb33-14"><a href="#cb33-14" tabindex="-1"></a><span class="fu">kable</span>(taxon_meta_data_summary)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="12%" />
+<col width="9%" />
+<col width="7%" />
+<col width="14%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">tax_group</th>
+<th align="right">n_rows</th>
+<th align="right">n_species</th>
+<th align="right">n_genus</th>
+<th align="right">n_FFG</th>
+<th align="right">n_chemicals</th>
+<th align="right">n_species_chemical_pairs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">algae</td>
+<td align="right">88240</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">1103</td>
+<td align="right">87137</td>
+</tr>
+<tr class="even">
+<td align="left">fish</td>
+<td align="right">181995</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">1103</td>
+<td align="right">181995</td>
+</tr>
+<tr class="odd">
+<td align="left">invertebrate</td>
+<td align="right">409213</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">1103</td>
+<td align="right">370608</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a><span class="co"># Summary by taxonomic group and chemical-use group</span></span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>taxon_chemical_group_summary <span class="ot">&lt;-</span> full_meta_data <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" tabindex="-1"></a>  <span class="fu">group_by</span>(tax_group, chem_group) <span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="#cb34-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb34-5"><a href="#cb34-5" tabindex="-1"></a>    <span class="at">n_species =</span> <span class="fu">n_distinct</span>(latin),</span>
+<span id="cb34-6"><a href="#cb34-6" tabindex="-1"></a>    <span class="at">n_genus =</span> <span class="fu">n_distinct</span>(genus),</span>
+<span id="cb34-7"><a href="#cb34-7" tabindex="-1"></a>    <span class="at">n_FFG =</span> <span class="fu">n_distinct</span>(FFG, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb34-8"><a href="#cb34-8" tabindex="-1"></a>    <span class="at">n_chemicals =</span> <span class="fu">n_distinct</span>(CAS),</span>
+<span id="cb34-9"><a href="#cb34-9" tabindex="-1"></a>    <span class="at">n_species_chemical_pairs =</span> <span class="fu">n_distinct</span>(latin, CAS),</span>
+<span id="cb34-10"><a href="#cb34-10" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb34-11"><a href="#cb34-11" tabindex="-1"></a>  )</span>
+<span id="cb34-12"><a href="#cb34-12" tabindex="-1"></a></span>
+<span id="cb34-13"><a href="#cb34-13" tabindex="-1"></a><span class="fu">kable</span>(taxon_chemical_group_summary)</span></code></pre></div>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="21%" />
+<col width="10%" />
+<col width="8%" />
+<col width="6%" />
+<col width="12%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">tax_group</th>
+<th align="left">chem_group</th>
+<th align="right">n_species</th>
+<th align="right">n_genus</th>
+<th align="right">n_FFG</th>
+<th align="right">n_chemicals</th>
+<th align="right">n_species_chemical_pairs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">algae</td>
+<td align="left">Industrial_Chemical</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">215</td>
+<td align="right">16985</td>
+</tr>
+<tr class="even">
+<td align="left">algae</td>
+<td align="left">P_Arthropod_control</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">202</td>
+<td align="right">15958</td>
+</tr>
+<tr class="odd">
+<td align="left">algae</td>
+<td align="left">P_Microbial_control</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">136</td>
+<td align="right">10744</td>
+</tr>
+<tr class="even">
+<td align="left">algae</td>
+<td align="left">P_Mixed_target</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">96</td>
+<td align="right">7584</td>
+</tr>
+<tr class="odd">
+<td align="left">algae</td>
+<td align="left">P_Plant_control</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">333</td>
+<td align="right">26307</td>
+</tr>
+<tr class="even">
+<td align="left">algae</td>
+<td align="left">Pharmaceutical</td>
+<td align="right">79</td>
+<td align="right">45</td>
+<td align="right">3</td>
+<td align="right">121</td>
+<td align="right">9559</td>
+</tr>
+<tr class="odd">
+<td align="left">fish</td>
+<td align="left">Industrial_Chemical</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">215</td>
+<td align="right">35475</td>
+</tr>
+<tr class="even">
+<td align="left">fish</td>
+<td align="left">P_Arthropod_control</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">202</td>
+<td align="right">33330</td>
+</tr>
+<tr class="odd">
+<td align="left">fish</td>
+<td align="left">P_Microbial_control</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">136</td>
+<td align="right">22440</td>
+</tr>
+<tr class="even">
+<td align="left">fish</td>
+<td align="left">P_Mixed_target</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">96</td>
+<td align="right">15840</td>
+</tr>
+<tr class="odd">
+<td align="left">fish</td>
+<td align="left">P_Plant_control</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">333</td>
+<td align="right">54945</td>
+</tr>
+<tr class="even">
+<td align="left">fish</td>
+<td align="left">Pharmaceutical</td>
+<td align="right">165</td>
+<td align="right">102</td>
+<td align="right">5</td>
+<td align="right">121</td>
+<td align="right">19965</td>
+</tr>
+<tr class="odd">
+<td align="left">invertebrate</td>
+<td align="left">Industrial_Chemical</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">215</td>
+<td align="right">72240</td>
+</tr>
+<tr class="even">
+<td align="left">invertebrate</td>
+<td align="left">P_Arthropod_control</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">202</td>
+<td align="right">67872</td>
+</tr>
+<tr class="odd">
+<td align="left">invertebrate</td>
+<td align="left">P_Microbial_control</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">136</td>
+<td align="right">45696</td>
+</tr>
+<tr class="even">
+<td align="left">invertebrate</td>
+<td align="left">P_Mixed_target</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">96</td>
+<td align="right">32256</td>
+</tr>
+<tr class="odd">
+<td align="left">invertebrate</td>
+<td align="left">P_Plant_control</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">333</td>
+<td align="right">111888</td>
+</tr>
+<tr class="even">
+<td align="left">invertebrate</td>
+<td align="left">Pharmaceutical</td>
+<td align="right">336</td>
+<td align="right">173</td>
+<td align="right">9</td>
+<td align="right">121</td>
+<td align="right">40656</td>
 </tr>
 </tbody>
 </table>

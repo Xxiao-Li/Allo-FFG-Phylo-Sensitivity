@@ -83,7 +83,7 @@ dir.create(fits_dir, recursive = TRUE, showWarnings = FALSE)
 build_wide_nomask <- function(dat, chemgroup) {
   
   dat_sub <- dat %>%
-    filter(chem_group == chemgroup) %>%
+    filter(chem_group == chemgroup)
   
   genus_cas_summary <- dat_sub %>%
     group_by(genus, CAS) %>%

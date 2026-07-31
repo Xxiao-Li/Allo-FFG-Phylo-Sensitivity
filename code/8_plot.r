@@ -49,18 +49,18 @@ chem_gr_order <- c(
 chem_gr_label <- c(
   Industrial_Chemical   = "Industrial chemical",
   Pharmaceutical        = "Pharmaceutical",
-  P_Arthropod_control   = "P: Arthropod control",
-  P_Plant_control       = "P: Plant control",
-  P_Microbial_control   = "P: Microbial control",
-  P_Mixed_target        = "P: Mixed target"
+  P_Arthropod_control   = "P: Arthropods",
+  P_Plant_control       = "P: Plants",
+  P_Microbial_control   = "P: Microbes",
+  P_Mixed_target        = "P: Mixed"
 )
 chem_gr_label_2row <- c(
   Industrial_Chemical   = "Industrial\nchemical",
   Pharmaceutical        = "Pharmaceutical",
-  P_Arthropod_control   = "P: Arthropod\ncontrol",
-  P_Plant_control       = "P: Plant\ncontrol",
-  P_Microbial_control   = "P: Microbial\ncontrol",
-  P_Mixed_target        = "P: Mixed\ntarget"
+  P_Arthropod_control   = "P: Arthropods",
+  P_Plant_control       = "P: Plants",
+  P_Microbial_control   = "P: Microbes",
+  P_Mixed_target        = "P: Mixed"
 )
 chem_gr_label_order_2row <- unname(chem_gr_label_2row[chem_gr_order])
 
@@ -70,8 +70,8 @@ tax_group_order <- c("Algae", "Invertebrate", "Fish")
 
 tax_cols <- c(
   Algae        = "#1b9e77",
-  Invertebrate = "#7570b3",
-  Fish         = "#d95f02"
+  Invertebrate = "#d95f02",
+  Fish         = "#7570b3"
 )
 
 ffg_label_vec <- c(
@@ -254,63 +254,6 @@ make_right_panel <- function(cg) {
   grp_q <- df %>%
     group_by(tax_group) %>%
     summarise(
-      q25_g  = quantile(med, 0.25, na.rm = TRUE, names = FALSE),
-      q75_g  = quantile(med, 0.75, na.rm = TRUE, names = FALSE),
-      q025_g = quantile(med, 0.025, na.rm = TRUE, names = FALSE),
-      q975_g = quantile(med, 0.975, na.rm = TRUE, names = FALSE),
-      y_min = min(y, na.rm = TRUE),
-      y_max = max(y, na.rm = TRUE),
-      .groups = "drop")
-  
-  ggplot(df, aes(y = y)) +
-    geom_segment(aes(x = q25, xend = q75, yend = y),
-                 linewidth = 0.22, color = "grey80", alpha = 0.85, na.rm = TRUE) +
-    geom_point(aes(x = med), size = 0.45, color = "grey65", 
-               alpha = 0.85, na.rm = TRUE) +
-    geom_rect(data = grp_q, 
-              aes(xmin = q025_g, xmax = q975_g, ymin = y_min, ymax = y_max,
-                  fill = tax_group), 
-              inherit.aes = FALSE, alpha = 0.3, color = NA) +
-    geom_rect(data = grp_q, 
-              aes(xmin = q25_g, xmax = q75_g, ymin = y_min, ymax = y_max,
-                  fill = tax_group), 
-              inherit.aes = FALSE, alpha = 0.5, color = NA) +
-    geom_vline(xintercept = 0, linewidth = 0.25, 
-               color = "grey60", linetype = "dashed") +
-    scale_fill_manual(values = tax_cols, breaks = tax_group_order, 
-                      na.value = "grey90", guide = "none") +
-    scale_y_continuous(limits = y_rng, 
-                       expand = expansion(mult = c(0.01, 0.01))) +
-    scale_x_continuous(breaks = xb, labels = as.character(xb), 
-                       expand = expansion(mult = c(0.04, 0.04)) ) +
-    coord_cartesian(xlim = xlim_i) +
-    labs(title = chem_gr_label[[cg]], x = NULL, y = NULL) +
-    theme_minimal(base_size = fs) +
-    theme(
-      plot.title = element_text(size = fs-2, face = "bold", 
-                                hjust = 0.5, margin = margin(b = 4)),
-      axis.text.y = element_blank(),
-      axis.ticks.y = element_blank(),
-      panel.grid.major.y = element_blank(),
-      panel.grid.minor = element_blank(),
-      plot.margin = margin(2, 1, 2, 1), 
-      axis.title = element_text(size = fs, color = "black"), 
-      axis.text = element_text(size = fs, color = "black"),
-      legend.title = element_text(size = fs, color = "black"),
-      legend.text = element_text(size = fs, color = "black"))
-}
-make_right_panel <- function(cg) {
-  
-  df <- summarise_species_sensitivity(fig2_dat, cg)
-  
-  xb <- x_break_map[[cg]]
-  if (is.null(xb)) xb <- c(-1, 0, 1)
-  
-  xlim_i <- range(xb, na.rm = TRUE)
-  
-  grp_q <- df %>%
-    group_by(tax_group) %>%
-    summarise(
       med_g  = median(med, na.rm = TRUE),
       q25_g  = quantile(med, 0.25, na.rm = TRUE, names = FALSE),
       q75_g  = quantile(med, 0.75, na.rm = TRUE, names = FALSE),
@@ -346,7 +289,7 @@ make_right_panel <- function(cg) {
       aes(xmin = q25_g, xmax = q75_g,
           ymin = y_min, ymax = y_max,
           fill = tax_group), 
-      inherit.aes = FALSE, alpha = 0.5, color = NA) +
+      inherit.aes = FALSE, alpha = 0.7, color = NA) +
     # Median [IQR] label
     geom_text(data = grp_q,
       aes(x = x_lab, y = y_lab, label = lab, color = tax_group),
@@ -355,12 +298,12 @@ make_right_panel <- function(cg) {
     # Genus-level IQR
     geom_segment(
       aes(x = q25, xend = q75, yend = y),
-      linewidth = 0.22, color = "grey80", alpha = 0.85) +
+      linewidth = 0.25, color = "grey70", alpha = 0.85) +
     # Genus-level median
     geom_point(aes(x = med),
       size = 0.45, color = "grey65", alpha = 0.85) +
-    geom_vline(xintercept = 0, linewidth = 0.25, color = "grey60", 
-               linetype = "dashed") +
+   # geom_vline(xintercept = 0, linewidth = 0.25, color = "grey60", 
+    #           linetype = "dashed") +
     scale_fill_manual(values = tax_cols, breaks = tax_group_order,
                       guide = "none") +
     scale_color_manual(values = tax_cols, breaks = tax_group_order, 
@@ -374,11 +317,7 @@ make_right_panel <- function(cg) {
     theme_minimal(base_size = fs) +
     theme(
       plot.title = element_text(
-        size = fs - 2,
-        face = "bold",
-        hjust = 0.5,
-        margin = margin(b = 4)
-      ),
+        size = fs - 2, face = "bold", hjust = 0.5, margin = margin(b = 4) ),
       axis.text.y = element_blank(),
       axis.ticks.y = element_blank(),
       panel.grid.major.y = element_blank(),
@@ -386,15 +325,11 @@ make_right_panel <- function(cg) {
       plot.margin = margin(2, 1, 8, 1), 
       axis.line.x = element_line(color = "gray70", linewidth = 0.3),
       
-      axis.title = element_text(size = fs, color = "black"),
+      axis.title = element_text(size = fs + 2, color = "black"),
       axis.text = element_text(size = fs, color = "black"),
       
       # move x-axis tick labels lower
-      axis.text.x = element_text(
-        size = fs,
-        color = "black",
-        margin = margin(t = -10)
-      ),
+      axis.text.x = element_text(size = fs , color = "black", margin = margin(t = -10)),
       
       legend.title = element_text(size = fs, color = "black"),
       legend.text = element_text(size = fs, color = "black")
@@ -423,7 +358,7 @@ fig2 <- p_tree + right_with_xlab +
   theme(
     legend.position = "bottom",
     legend.direction = "horizontal",
-    legend.title = element_text(face = "bold", size = fs),
+    legend.title = element_text(size = fs),
     legend.text = element_text(size = fs),
     legend.key.height = unit(4, "mm"),
     legend.key.width = unit(10, "mm"),
@@ -509,7 +444,7 @@ pal <- setNames(pal_raw[seq_along(chem_gr_order)], chem_gr_order)
 fs <- 18
 
 fig3 <- ggplot(plot_df, aes(x = lambda, y = chem_group, 
-                            color = chem_group, fill = chem_group)) +
+                            color = tax_group)) +
   geom_boxplot(width = 0.55, alpha = 0.20, 
                outlier.shape = NA, linewidth = 0.9) +
   ggbeeswarm::geom_quasirandom(size = 1.6, alpha = 0.60, width = 0.18) +
@@ -525,13 +460,9 @@ fig3 <- ggplot(plot_df, aes(x = lambda, y = chem_group,
   scale_y_discrete(
     labels = chem_gr_label[chem_gr_order],
     drop = FALSE) +
-  scale_color_manual(
-    values = pal,
-    breaks = chem_gr_order,
-    drop = FALSE) +
-  scale_fill_manual(
-    values = pal,
-    breaks = chem_gr_order,
+  scale_colour_manual(
+    values = tax_cols[tax_group_order_fig3],
+    breaks = tax_group_order_fig3,
     drop = FALSE) +
   labs(x = "Phylogenetic signal\n(Pagel's \u03BB)", y = NULL) +
   theme_bw(base_size = fs) +
@@ -558,7 +489,8 @@ ggsave(filename = here("figures", "Figure3.pdf"),
 print(anova_lm)
 
 # entire range
-range(plot_df$lambda, na.rm = TRUE)
+round(range(plot_df$lambda, na.rm = TRUE),2) 
+
 
 #median and IQR for each scenario
 plot_df %>%
@@ -609,7 +541,7 @@ fig4_data <- read_csv(here("data/8_bayesian_model_fits/bayesian_model_inference/
 
 fs <- 18
 
-fig4 <- ggplot(fig4_data, aes(elpd_diff, model_id, colour = model_id)) +
+fig4 <- ggplot(fig4_data, aes(elpd_diff, model_id, colour = taxon_label_plot)) +
   geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.4, colour = "grey70") +
   geom_errorbar(aes(xmin = elpd_diff - se_diff, xmax = elpd_diff + se_diff),
                 orientation = "y", width = 0.25, linewidth = 1.5) +
@@ -617,11 +549,16 @@ fig4 <- ggplot(fig4_data, aes(elpd_diff, model_id, colour = model_id)) +
   facet_grid(taxon_label_plot ~ chem_gr_label_plot, drop = FALSE, scales = "free_x",
              labeller = labeller(taxon_label_plot = label_wrap_gen(12),
                                  chem_gr_label_plot = label_wrap_gen(16))) +
-  scale_colour_brewer(
-    palette = "Dark2", name = NULL,
-    breaks = c("M0", "M1", "M2", "M3"),
-    labels = c("H0: Null model", "H1: Global allometry",
-               "H2: Group baselines", "H3: Group allometry")
+  scale_colour_manual(
+    values = tax_cols[unname(taxon_label_vec[taxon_order])],
+    guide = "none") +
+  scale_x_continuous(breaks = scales::breaks_extended(n = 3)) +
+  scale_y_discrete(
+    labels = c(
+      M0 = "M0",
+      M1 = "M1",
+      M2 = "M2",
+      M3 = "M3")
   ) +
   labs(x = expression(bold(Delta * ELPD~"relative to the best-supported model")),
        y = "Candidate model") +
@@ -642,9 +579,6 @@ ggsave(here("figures/Figure4.jpeg"),
        fig4, width = 15, height = 9, dpi = 600)
 ggsave(here("figures/Figure4.pdf"),
        fig4, width = 15, height = 9, dpi = 600)
-
-# ggsave(here("figures/FigureS7.jpeg"),
-#        fig4, width = 15, height = 9, dpi = 600)
 
 # summary in the text
 loo_summary <- fig4_data %>%
@@ -701,9 +635,9 @@ fs <- 20
 
 fig5 <- ggplot(fig_slope_data, aes(beta_std_median, FFG_plot)) +
   annotate("rect", xmin = -0.20, xmax = 0.20, ymin = -Inf, ymax = Inf,
-           fill = "grey70", alpha = 0.22) +
-  annotate("rect", xmin = -0.10, xmax = 0.10, ymin = -Inf, ymax = Inf,
-           fill = "grey45", alpha = 0.22) +
+           fill = "grey60", alpha = 0.22) +
+  # annotate("rect", xmin = -0.10, xmax = 0.10, ymin = -Inf, ymax = Inf,
+  #          fill = "grey45", alpha = 0.22) +
   geom_vline(xintercept = 0, linetype = "dashed", linewidth = 0.4, colour = "grey35") +
   geom_errorbar(aes(xmin = hdi_low, xmax = hdi_high, colour = hdi_rope_status),
                 orientation = "y", width = 0.28, linewidth = 1.4) +
@@ -739,9 +673,6 @@ ggsave(here("figures", "Figure5.jpeg"),
 
 ggsave(here("figures", "Figure5.pdf"),
        fig5, width = 16, height = 12, dpi = 600)
-
-#ggsave(here("figures", "FigureS8.jpeg"),
-#       fig5, width = 16, height = 12, dpi = 600)
 
 # summaries used in text in result 
 slope_rope_summary <- fig_slope_data %>%
@@ -830,10 +761,6 @@ ggsave(here("figures", "Figure6.jpeg"),
 ggsave(here("figures", "Figure6.pdf"), 
        fig6, width = 14, height = 15, dpi = 600)
 
-# ggsave(here("figures", "FigureS9.jpeg"), 
-#        fig6, width = 14, height = 15, dpi = 600)
-
-
 #=======Figure 7: Pairwise FFG-specific intercept comparison heatmap============
 fig_intercept_heatmap_data <- read.csv(here("data", "8_bayesian_model_fits", "bayesian_model_inference",
                                             "pairwise_FFG_intercept_contrast_summary.csv")) %>%
@@ -891,8 +818,6 @@ ggsave(here("figures", "Figure7.jpeg"),
 ggsave(here("figures", "Figure7.pdf"), 
        fig7, width = 14, height = 15, dpi = 600)
 
-# ggsave(here("figures", "FigureS10.jpeg"), 
-#        fig7, width = 14, height = 15, dpi = 600)
 
 #=======Figure 8: Model explanatory power and random-effect variance partitioning ============
 r2_marginal_conditional_best <- read_csv(here(
@@ -901,13 +826,16 @@ r2_marginal_conditional_best <- read_csv(here(
 random_variance_partition_best <- read_csv(here(
   "data/8_bayesian_model_fits/bayesian_model_inference/random_variance_partition_best_model.csv"))
 
+chem_levels <- rev(chem_gr_order)
+chem_labels <- rev(unname(chem_gr_label[chem_gr_order]))
+
 fs <- 18
 theme_fig8 <- plot_theme(fs) +
   theme(
     panel.grid.major.y = element_blank(),
     legend.position = "bottom",
     legend.box = "horizontal",
-    axis.title = element_text(size = fs, face = "bold"),
+    axis.title = element_text(size = fs),
     axis.text = element_text(size = fs),
     strip.background = element_rect(fill = "grey90", colour = "grey40"),
     strip.text = element_text(size = fs, face = "bold"),
@@ -918,16 +846,19 @@ theme_fig8 <- plot_theme(fs) +
 
 dodge_fig8 <- position_dodge(width = 0.55)
 
-chem_gr_label_levels <- rev(unname(chem_gr_label[chem_gr_order]))
 r2_plot_data <- r2_marginal_conditional_best %>%
   mutate(
-    taxon_label_plot = factor(standardise_tax_group(taxon), levels = tax_group_order),
-    chem_gr_label_plot = factor(.data$chem_gr_label, levels = chem_gr_label_levels),
+    taxon_label_plot = factor(
+      standardise_tax_group(taxon),
+      levels = tax_group_order),
+    chem_gr_label_plot = factor(
+      chem_gr,
+      levels = chem_levels,
+      labels = chem_labels),
     r2_type = case_when(
       str_detect(r2_type, regex("marginal", ignore_case = TRUE)) ~ "Marginal R²",
       str_detect(r2_type, regex("conditional", ignore_case = TRUE)) ~ "Conditional R²",
-      TRUE ~ as.character(r2_type)
-    ),
+      TRUE ~ as.character(r2_type)),
     r2_type = factor(r2_type, levels = c("Marginal R²", "Conditional R²"))
   )
 
@@ -951,13 +882,20 @@ p_r2 <- ggplot(r2_plot_data, aes(Estimate, chem_gr_label_plot,
 variance_plot_data <- random_variance_partition_best %>%
   filter(!str_detect(group, regex("residual", ignore_case = TRUE))) %>%
   mutate(
-    taxon_label_plot = factor(standardise_tax_group(taxon), levels = tax_group_order),
-    chem_gr_label_plot = factor(.data$chem_gr_label, levels = chem_gr_label_levels),
-    variance_source = factor(case_when(
+    taxon_label_plot = factor(
+      standardise_tax_group(taxon),
+      levels = tax_group_order),
+    chem_gr_label_plot = factor(
+      chem_gr,
+      levels = chem_levels,
+      labels = chem_labels),
+    variance_source = case_when(
       group == "CAS" ~ "Chemical identity",
       group == "genus_phylo" ~ "Phylogeny",
-      TRUE ~ group
-    ), levels = c("Chemical identity", "Phylogeny")),
+      TRUE ~ as.character(group)),
+    variance_source = factor(
+      variance_source,
+      levels = c("Chemical identity", "Phylogeny")),
     prop_estimate = variance_proportion,
     prop_lower = pmax(variance_proportion_lower, 0),
     prop_upper = pmin(variance_proportion_upper, 1)
@@ -1001,10 +939,6 @@ ggsave(here("figures", "Figure8.jpeg"),
 ggsave(here("figures", "Figure8.pdf"),
        fig8, width = 14, height = 10, dpi = 600)
 
-# ggsave(here("figures", "FigureS11.jpeg"),
-#        fig8, width = 14, height = 10, dpi = 600)
-
-
 #=======Figure S3: Posterior fitted relationships ==============================
 base_dir <- here("data", "8_bayesian_model_fits")
 
@@ -1023,10 +957,10 @@ taxon_label_vec <- c(
 chem_gr_label_vec <- c(
   Industrial_Chemical   = "Industrial chemical",
   Pharmaceutical        = "Pharmaceutical",
-  P_Arthropod_control   = "P: Arthropod control",
-  P_Plant_control       = "P: Plant control",
-  P_Microbial_control   = "P: Microbial control",
-  P_Mixed_target        = "P: Mixed target"
+  P_Arthropod_control   = "P: Arthropods",
+  P_Plant_control       = "P: Plants",
+  P_Microbial_control   = "P: Microbes",
+  P_Mixed_target        = "P: Mixed"
 )
 
 model_files <- expand_grid(
@@ -1131,11 +1065,6 @@ figS3_data <- best_model_fits %>%
     FFG_plot = factor(FFG_plot, levels = names(ffg_cols))
   )
 
-# Optional checks
-model_files %>%
-  mutate(file_exists = file.exists(file)) %>%
-  count(taxon, chem_gr, file_exists)
-
 figS3_data %>%
   distinct(chem_gr, chem_gr_label_plot) %>%
   arrange(chem_gr)
@@ -1186,9 +1115,6 @@ figS3
 ggsave(here("figures", "FigureS3.jpeg"),
        figS3, width = 15, height = 9, dpi = 600)
 
-ggsave(here("figures", "FigureS3.pdf"),
-       figS3, width = 15, height = 9, dpi = 600)
-
 
 #=======Figure S4-S6: Posterior distributions of H3 slopes and intercepts=======
 base_dir <- here("data", "8_bayesian_model_fits")
@@ -1208,10 +1134,10 @@ taxon_label_vec <- c(
 chem_gr_label_vec <- c(
   Industrial_Chemical   = "Industrial chemical",
   Pharmaceutical        = "Pharmaceutical",
-  P_Arthropod_control   = "P: Arthropod control",
-  P_Plant_control       = "P: Plant control",
-  P_Microbial_control   = "P: Microbial control",
-  P_Mixed_target        = "P: Mixed target"
+  P_Arthropod_control   = "P: Arthropods",
+  P_Plant_control       = "P: Plants",
+  P_Microbial_control   = "P: Microbes",
+  P_Mixed_target        = "P: Mixed"
 )
 
 h3_model_files <- expand_grid(
@@ -1235,17 +1161,9 @@ h3_model_files %>%
 extract_h3_slopes_intercepts <- function(file, taxon, chem_gr, taxon_label, chem_gr_label,
                                          hypothesis, file_exists) {
   
-  if (!file_exists) return(tibble())
-  
-  message("Extracting posterior draws from: ", file)
-  
   fit <- readRDS(file)
   dat <- fit$data
-  
-  if (!all(c("log_mass_c", "FFG") %in% names(dat))) {
-    stop("Variables 'log_mass_c' and/or 'FFG' not found in fit$data for: ", file)
-  }
-  
+
   ffg_levels <- if (is.factor(dat$FFG)) levels(dat$FFG) else sort(unique(dat$FFG))
   
   newdata_0 <- tibble(log_mass_c = 0, FFG = ffg_levels)
@@ -1458,15 +1376,10 @@ ggsave(here("figures", "FigureS5.jpeg"),
 ggsave(here("figures", "FigureS6.jpeg"),
        figS6, width = 15, height = 16, dpi = 600)
 
-#==========Figure S7-S11: model with water solubility===========================
-# Figure S7-S11 will be generated with the code of Figure 4-8, 
-# but change the folder "bayesian_model_inference" to "bayesian_model_inference_ws".
-
-
-#=======Figure S12: Phylogenetic signal across all taxa ========================
+#=======Figure S7: Phylogenetic signal across all taxa ========================
 fits_dir <- here("data", "7_phylogenetic_signal_by_tax_group")
 
-figS12_data <- list.files(fits_dir, "^phytools_lambda_by_CAS_.*\\.rds$", full.names = TRUE) %>%
+figS7_data <- list.files(fits_dir, "^phytools_lambda_by_CAS_.*\\.rds$", full.names = TRUE) %>%
   map_dfr(readRDS) %>%
   mutate(
     tax_group = standardise_tax_group(tax_group),
@@ -1474,7 +1387,7 @@ figS12_data <- list.files(fits_dir, "^phytools_lambda_by_CAS_.*\\.rds$", full.na
   ) %>%
   filter(tax_group == "All taxa", !is.na(chem_group), !is.na(lambda))
 
-figS12_letters <- lm(lambda ~ chem_group, data = figS12_data) %>%
+figS7_letters <- lm(lambda ~ chem_group, data = figS7_data) %>%
   emmeans(~ chem_group) %>%
   emmeans:::cld.emmGrid(adjust = "BH", Letters = letters, sort = TRUE, reversed = TRUE) %>%
   as.data.frame() %>%
@@ -1484,30 +1397,20 @@ figS12_letters <- lm(lambda ~ chem_group, data = figS12_data) %>%
     x_pos = 1.03
   )
 
-figS12_cols <- setNames(
-  as.character(paletteer::paletteer_d("ggthemes::excel_Vapor_Trail"))[seq_along(chem_gr_order)],
-  chem_gr_order
-)
-
 fs <- 18
 
-figS12 <- ggplot(figS12_data, aes(lambda, chem_group, 
-                                  colour = chem_group, fill = chem_group)) +
+figS7 <- ggplot(figS7_data, aes(lambda, chem_group)) +
   geom_boxplot(width = 0.55, alpha = 0.20, 
                outlier.shape = NA, linewidth = 0.9) +
   ggbeeswarm::geom_quasirandom(size = 1.6, alpha = 0.60, 
                                width = 0.18) +
-  geom_text(data = figS12_letters, aes(x_pos, chem_group, label = .group),
+  geom_text(data = figS7_letters, aes(x_pos, chem_group, label = .group),
             inherit.aes = FALSE, hjust = 0, size = 7, colour = "black") +
   facet_wrap(~ tax_group, nrow = 1) +
   scale_x_continuous(breaks = c(0, 0.5, 1), limits = c(0, 1.15),
                      expand = expansion(mult = c(0.02, 0.02))) +
   scale_y_discrete(limits = chem_gr_order, 
                    labels = chem_gr_label[chem_gr_order], drop = FALSE) +
-  scale_colour_manual(values = figS12_cols, 
-                      breaks = chem_gr_order, drop = FALSE) +
-  scale_fill_manual(values = figS12_cols, 
-                    breaks = chem_gr_order, drop = FALSE) +
   labs(x = "Phylogenetic signal\n(Pagel's \u03BB)", y = NULL) +
   coord_cartesian(clip = "off") +
   plot_theme(fs) +
@@ -1518,19 +1421,19 @@ figS12 <- ggplot(figS12_data, aes(lambda, chem_group,
     plot.margin = margin(5.5, 35, 5.5, 5.5)
   )
 
-figS12
+figS7
 
-ggsave(here("figures", "FigureS12.jpeg"), 
-       figS12, width = 7.5, height = 5.5, dpi = 600)
+ggsave(here("figures", "FigureS7.jpeg"), 
+       figS7, width = 7.5, height = 5.5, dpi = 600)
 
 
 
-#=======Figure S13-S15: PhyloPars genus-level prediction =======================
+#=======Figure S8-S10: PhyloPars genus-level prediction =======================
 fits_dir <- here("data", "9_phylopars_pred")
 observed_sensi <- readRDS(here("data", "6_combined_meta_data", "combined_observed_sensitivity.rds"))
 
 mask_fracs <- c(0.30, 0.50, 0.70)
-fig_names  <- c("FigureS13", "FigureS14", "FigureS15")
+fig_names  <- c("FigureS8", "FigureS9", "FigureS10")
 
 chem_title <- setNames(
   paste0("(", letters[seq_along(chem_gr_order)], ") ", chem_gr_label[chem_gr_order]),
@@ -1596,8 +1499,8 @@ make_phylopars_panel <- function(res, chem_group, fs = 18) {
     annotate("text", x = -Inf, y = Inf, label = r_text,
              hjust = -0.05, vjust = 1.2, size = fs / 4, fontface = "bold") +
     labs(title = chem_title[[chem_group]],
-         x = expression("ML- or observed sensitivity (" * log[10] * " LC50)"),
-         y = expression("Phylogeny-predicted sensitivity (" * log[10] * " LC50)")) +
+         x = expression("ML- or observed sensitivity"),
+         y = expression("Phylogeny-predicted sensitivity")) +
     theme_bw(base_size = fs) +
     theme(panel.grid = element_blank(),
           legend.position = "none",
@@ -1616,7 +1519,7 @@ for (i in seq_along(mask_fracs)) {
 }
 
 
-#=======Figure S16: Z-scores of phylogenetic predictions =======================
+#=======Figure S11: Z-scores of phylogenetic predictions =======================
 fits_dir <- here("data", "9_phylopars_pred")
 observed_sensi <- readRDS(here("data", "6_combined_meta_data", "combined_observed_sensitivity.rds"))
 
@@ -1698,7 +1601,7 @@ z_sum <- z_all %>%
 
 fs <- 16
 
-figS16 <- ggplot(z_all, aes(z, chem_group)) +
+figS11 <- ggplot(z_all, aes(z, chem_group)) +
   ggridges::geom_density_ridges(scale = 1.05, rel_min_height = 0.01,
                                 alpha = 0.85, linewidth = 0.25) +
   geom_vline(xintercept = 0, linewidth = 0.4) +
@@ -1716,10 +1619,10 @@ figS16 <- ggplot(z_all, aes(z, chem_group)) +
     strip.text = element_text(size = fs + 1, colour = "black", face = "bold")
   )
 
-figS16
+figS11
 
-ggsave(here("figures", "FigureS16.jpeg"), 
-       figS16, width = 14, height = 8, dpi = 600)
+ggsave(here("figures", "FigureS11.jpeg"), 
+       figS11, width = 14, height = 8, dpi = 600)
 
 
 

@@ -1,6 +1,9 @@
 ---
 title: "Build Genus Level Phylogeny and Assemble Body Mass and Functional Groups"
 output:
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
   html_document: 
     toc: true
     toc_float: true
@@ -8,9 +11,6 @@ output:
     highlight: tango
     css: styles.css
     df_print: kable
-  pdf_document:
-    toc: yes
-    toc_depth: '3'
 editor_options: 
   markdown: 
     wrap: 72
@@ -664,30 +664,6 @@ saveRDS(full_tree,  file=here("data/6_combined_meta_data/full_genus_tree.rds"))
 
 
 ```
-
-# 7. Summary of the final dataset
-```{r}
-# Number of total species and genera in the final dataset
-final_total_summary <- spe_tax_clean_tree_mass_FFG %>%
-  summarise(
-    n_species = n_distinct(latin),
-    n_genus   = n_distinct(genus)
-  )
-kable(final_total_summary)
-
-
-# Number of species and genera across taxonomic groups
-final_group_summary <- spe_tax_clean_tree_mass_FFG %>%
-  group_by(group) %>%
-  summarise(
-    n_species = n_distinct(latin),
-    n_genus   = n_distinct(genus),
-    .groups = "drop"
-  )
-
-kable(final_group_summary)
-```
-
 
 
 

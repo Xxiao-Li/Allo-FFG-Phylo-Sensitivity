@@ -97,6 +97,9 @@ warmup_i <- job$warmup
 chains_i <- job$chains
 cores_i <- job$cores
 
+message("Chemical group: ", cg)
+message("Model type: ", model_type_i)
+
 #---- 3. Prepare data ----------------------------------------------------------
 
 prepare_model_data <- function(df) {

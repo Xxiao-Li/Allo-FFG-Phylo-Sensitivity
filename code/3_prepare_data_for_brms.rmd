@@ -21,7 +21,7 @@ This script combines machine-learning predictions of species chemical sensitivit
 
 The script also reads chemical-use group information compiled from Kramer et al. (2024) and the Pesticide Properties Database (PPDB). It then retains chemicals with known and interpretable chemical-use groups.
 
-The final outputs are combined datasets for all taxa and for each taxonomic group: algae, invertebrates, and fish.
+The final outputs are combined dataset for all taxa and for each taxonomic group: algae, invertebrates, and fish.
 
 ```{r setup, message=FALSE, warning=FALSE}
 rm(list = ls())
@@ -42,21 +42,13 @@ options(dplyr.summarise.inform = FALSE)
 
 ```{r, message=FALSE, warning=FALSE}
 
-# predicted_sensitivity <- read_csv(here("data/2_predicted_sensitivity/predictions.csv"))
-# predictions_ML_duration48h <- predicted_sensitivity %>%
-#   filter(duration == 48)
-# saveRDS(predictions_ML_duration48h,
-#   here("data/2_predicted_sensitivity/predictions_ML_duration48h.rds")
-# )
-
-predictions_ML_duration48h <- readRDS(
-  here("data/2_predicted_sensitivity/predictions_ML_duration48h.rds")
-)
+predicted_sensitivity <- read_csv(here("data/2_predicted_sensitivity/predictions.csv"))
 
 prediction_summary <- tibble(
-  n_rows = nrow(predictions_ML_duration48h),
-  n_species = n_distinct(predictions_ML_duration48h$species),
-  n_CAS = n_distinct(predictions_ML_duration48h$CAS)
+  n_rows = nrow(predicted_sensitivity),
+  n_species = n_distinct(predicted_sensitivity$species),
+  n_CAS = n_distinct(predicted_sensitivity$CAS),
+  n_duration = n_distinct(predicted_sensitivity$duration)
 )
 
 kable(prediction_summary)
@@ -246,7 +238,7 @@ arthropod-control pesticides, plant-control pesticides, microbial-control
 pesticides, and mixed-target pesticides.
 
 ```{r filter-predictions-to-selected-chemicals}
-sensitivity_subCAS <- predictions_ML_duration48h %>%
+sensitivity_subCAS <- predicted_sensitivity %>%
   filter(CAS %in% chem_groups_source$CAS) %>%
   left_join(
     chem_groups_source %>%
@@ -344,10 +336,10 @@ dt <- as.data.table(sensitivity_subCAS)
 sensitivity_subCAS_filter <- dt[
   latin %in% spe_tax_clean_tree_mass_FFG$latin,
   .(
-    predicted = mean(predicted, na.rm = TRUE),
+    predicted = first(predicted),
     species = first(species)
   ),
-  by = .(latin, CAS, chem_group)
+  by = .(latin, CAS, chem_group, duration)
 ] %>%
   as_tibble()
 
@@ -355,6 +347,7 @@ filtered_prediction_summary <- tibble(
   n_rows = nrow(sensitivity_subCAS_filter),
   n_species = n_distinct(sensitivity_subCAS_filter$latin),
   n_CAS = n_distinct(sensitivity_subCAS_filter$CAS),
+  n_duration = n_distinct(sensitivity_subCAS_filter$duration),
   n_chem_groups = n_distinct(sensitivity_subCAS_filter$chem_group)
 )
 
@@ -374,6 +367,18 @@ spe_tax_clean_tree_mass_FFG_sens <- sensitivity_subCAS_filter %>%
     sensi = 10^log_sensi
   ) %>%
   select(-predicted)
+
+# for algae use duration= 72 h, for fish and invertebrate use duration = 96 h
+unique(spe_tax_clean_tree_mass_FFG_sens$group)
+spe_tax_clean_tree_mass_FFG_sens <- spe_tax_clean_tree_mass_FFG_sens %>%
+  filter(
+    duration == case_when(
+      group == "algae" ~ 72,
+      group %in% c("invertebrate", "fish") ~ 96,
+      TRUE ~ NA_real_
+    )
+  )
+unique(spe_tax_clean_tree_mass_FFG_sens$duration)
 
 combined_summary <- tibble(
   n_rows = nrow(spe_tax_clean_tree_mass_FFG_sens),
@@ -533,7 +538,7 @@ full_meta_data <- spe_tax_clean_tree_mass_FFG_sens_ws %>%
   select(chem_group, CAS, log_molar_solubility, logKow, latin, genus,
          family, order, class, phylum, kingdom, group, log_mass, BMsource,
          BM_match_level, FFG, FG_source, 
-         ref_sensi, rel_sensi, log_rel_sensi) %>%
+         ref_sensi, log_sensi, rel_sensi, log_rel_sensi, duration) %>%
   rename(FFG_source = FG_source,
          tax_group = group)
 
@@ -626,4 +631,52 @@ taxon_output_summary <- bind_rows(
 )
 
 kable(taxon_output_summary)
+```
+
+
+# 9. Dataset summary
+```{r}
+# Number of species, genera, functional groups, chemicals, species-chemical pairs in the full dataset
+full_meta_data_summary <- full_meta_data %>%
+  summarise(
+    n_species = n_distinct(latin),
+    n_genus = n_distinct(genus),
+    n_FFG = n_distinct(FFG, na.rm = TRUE),
+    n_chemicals = n_distinct(CAS),
+    n_species_chemical_pairs = n_distinct(latin, CAS)
+  )
+
+kable(full_meta_data_summary)
+
+# Summary by broad taxonomic group
+taxon_meta_data_summary <- full_meta_data %>%
+  group_by(tax_group) %>%
+  summarise(
+    n_rows = n(),
+    n_species = n_distinct(latin),
+    n_genus = n_distinct(genus),
+    n_FFG = n_distinct(FFG, na.rm = TRUE),
+    n_chemicals = n_distinct(CAS),
+    n_species_chemical_pairs = n_distinct(latin, CAS),
+    .groups = "drop"
+  )
+
+kable(taxon_meta_data_summary)
+
+
+# Summary by taxonomic group and chemical-use group
+taxon_chemical_group_summary <- full_meta_data %>%
+  group_by(tax_group, chem_group) %>%
+  summarise(
+    n_species = n_distinct(latin),
+    n_genus = n_distinct(genus),
+    n_FFG = n_distinct(FFG, na.rm = TRUE),
+    n_chemicals = n_distinct(CAS),
+    n_species_chemical_pairs = n_distinct(latin, CAS),
+    .groups = "drop"
+  )
+
+kable(taxon_chemical_group_summary)
+
+
 ```
