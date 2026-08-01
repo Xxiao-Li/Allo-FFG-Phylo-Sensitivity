@@ -1519,7 +1519,7 @@ for (i in seq_along(mask_fracs)) {
 }
 
 
-#=======Figure S11: Z-scores of phylogenetic predictions =======================
+#=======Figure S11datascores of phylogenetic predictions =======================
 fits_dir <- here("data", "9_phylopars_pred")
 observed_sensi <- readRDS(here("data", "6_combined_meta_data", "combined_observed_sensitivity.rds"))
 
