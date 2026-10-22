@@ -6,11 +6,8 @@
 .DS_Store
 .Rapp.history
 .RDataTmp*
-
-
-code/10_compare_with_susan_dist.r
 .slurm
-data/5_FFG/~$invert_vert_FG_check1011.xlsx
+
 
 # large data files
 data/5_FFG/back_up
@@ -18,10 +15,6 @@ data/2_predicted_sensitivity/*.csv
 data/8_bayesian_model_fits/algae_fits/
 data/8_bayesian_model_fits/invertebrate_fits/
 data/8_bayesian_model_fits/fish_fits/
-data/8_bayesian_model_fits/algae_fits_ws/
-data/8_bayesian_model_fits/invertebrate_fits_ws/
-data/8_bayesian_model_fits/fish_fits_ws/
-
 data/6_combined_meta_data/3297chemicals.xlsx
-data/9_checks/susan.csv
-compare_susan_predicted.png
+
+/data/8_bayesian_model_fits/random_exclusion_test

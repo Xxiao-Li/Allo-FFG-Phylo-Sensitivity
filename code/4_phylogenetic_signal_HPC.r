@@ -1,8 +1,6 @@
-#----------------------------------------------------------------------------
 # This script is running on HPC with array jobs.
 # This script will calculate the phylogenetic signal (Pagel’s λ) in species 
 # relative sensitivity estimated within each taxonomic group for each CAS.
-#----------------------------------------------------------------------------
 
 rm(list = ls())
 
@@ -14,7 +12,6 @@ library(phytools)
 set.seed(2026)
 
 #---- 0. Load data and basic settings ------------------------------------------
-
 algae_df <- readRDS(here("data/6_combined_meta_data/algae_meta_data.rds"))
 invertebrate_df <- readRDS(here("data/6_combined_meta_data/invertebrate_meta_data.rds"))
 fish_df <- readRDS(here("data/6_combined_meta_data/fish_meta_data.rds"))
@@ -70,7 +67,7 @@ tree_this <- tree_list[[this_tax_group]]
 
 #---- 2. Output directory -------------------------------------------------------
 
-fits_dir <- here("results/phylogenetic_signal_by_tax_group")
+fits_dir <- here("data/7_phylogenetic_signal_by_tax_group")
 dir.create(fits_dir, recursive = TRUE, showWarnings = FALSE)
 
 #---- 3. Build genus × CAS table ------------------------------------------------
