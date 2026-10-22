@@ -8,7 +8,7 @@ Chemical risk assessment across diverse communities remains challenging because 
 
 The `code` folder contains all R scripts.
 
-The `data` folder contains raw dataset, processed data and model outputs. Large Bayesian fits are stored separately from the repository. Obtain the required datasets and saved fits from the associated data archive and preserve their expected paths. **Data archive:**
+The `data` folder contains raw dataset, processed data and model outputs. Large Bayesian fits are stored separately from the repository. Obtain the required datasets and saved fits from the associated data archive and preserve their expected paths. **Data archive:** Zenodo <https://doi.org/10.5281/zenodo.23559789>.
 
 The `figures` folder contains the generated main and supplementary figures.
 
